@@ -1,0 +1,13 @@
+;;; lex-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'lex-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; lex-autoloads.el ends here
