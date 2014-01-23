@@ -1,0 +1,35 @@
+This is a minimalist class file for formatting manuscripts in the
+style described the American Psychological Association (APA) 6th
+edition guidelines. Perhaps someday the more traditional (and capable)
+apa.cls will gain support for the 6th edition of the APA guidelines,
+in which case you should probably use it instead. But in the mean
+time, this class may be useful.
+
+Here's a sample document to get you started:
+\begin{verbatim}
+  \documentclass{apa6e}
+  \usepackage{apacite} % This is not done automatically!
+  \bibliographystyle{apacite}
+  \title{A simple, correct explanation for every aspect of mental function}
+  \shorttitle{Psychology: the end}
+  \author{Over J.~Optimistic\\Pie in the Sky University}
+  \authornote{\dots}
+  \abstract{\dots}
+  \begin{document}
+  \maketitle
+  I have discovered a truly remarkable theory which
+  this example is too small to contain.
+  \bibliography{my-refs}
+  \end{document}
+\end{verbatim}
+
+This class file is licensed under the 2-clause BSD license, which
+basically means you can do whatever you want with it, so long as you
+leave my copyright on it and don't expect there to be any
+warranty. However, if you're going to make any changes, then it would
+probably be less confusing all around if you either send those changes
+to me to incorporate into the 'official' version, and/or change the
+name of any 'unofficial' versions to something besides apa6e.cls.
+
+Have fun,
+-- Nathaniel J. Smith <njs@pobox.com>

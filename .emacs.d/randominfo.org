@@ -1,0 +1,13 @@
+To change name on docs, edit variable user full name
+
+Per doc
+  #+TITLE:       the title to be shown (default is the buffer name)
+     #+AUTHOR:      the author (default taken from user-full-name)
+     #+DATE:        a date, fixed, or an Org timestamp
+     #+EMAIL:       his/her email address (default from user-mail-address)
+     #+DESCRIPTION: the page description, e.g. for the XHTML meta tag
+     #+KEYWORDS:    the page keywords, e.g. for the XHTML meta tag
+     #+LANGUAGE:    language for HTML, e.g. ‘en’ (org-export-default-language)
+     #+OPTIONS:     H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t ...
+
+http://orgmode.org/guide/Export-options.html

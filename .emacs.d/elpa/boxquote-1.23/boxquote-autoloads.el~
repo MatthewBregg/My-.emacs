@@ -1,0 +1,13 @@
+;;; boxquote-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'boxquote-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; boxquote-autoloads.el ends here
