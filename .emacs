@@ -23,6 +23,10 @@
 ;;(setq org-hide-leading-stars t)
 (setq org-src-fontify-natively t)
 (setq org-odd-level-only nil) 
+
+
+
+
 ;Emacs customizations 
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -43,7 +47,11 @@
 (require 'evil)
     (evil-mode 1)
 (setq evil-default-cursor t)
-
+;Evil nerd commenting
+(evilnc-default-hotkeys)
+;Evil-surround
+(require 'surround)
+(global-surround-mode 1)
 ;;Exit insert mode by pressing j and then j quickly
 (require 'key-chord)
 
@@ -60,7 +68,7 @@
 (require 'tex-site)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
- (setq-default TeX-master nil)
+ ;;(setq-default TeX-master nil)
 (add-hook 'LaTeX-mode-hook
       (lambda()
         (local-set-key [C-tab] 'TeX-complete-symbol)))
