@@ -23,8 +23,9 @@
 ;;(setq org-hide-leading-stars t)
 (setq org-src-fontify-natively t)
 (setq org-odd-level-only nil) 
-
-
+;; ;Smartparens
+;; (require 'smartparens-config)
+;; (smartparens-global-mode t)
 
 
 ;Emacs customizations 
@@ -57,6 +58,14 @@
 
 (setq key-chord-two-keys-delay 0.8)
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-define evil-normal-state-map "gp" 'goto-match-paren)
+(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+(define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
+(define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
+(define-key evil-normal-state-map (kbd "gl") 'goto-line)
+(define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
 (key-chord-mode 1)
 ;Set colors based on mode
                             
@@ -72,8 +81,10 @@
 (add-hook 'LaTeX-mode-hook
       (lambda()
         (local-set-key [C-tab] 'TeX-complete-symbol)))
+;Make emacs docview auto refresh changes to file.
+(add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
-
+;Docview as default viewer
 
 ;Flyspell and linewrap
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
@@ -257,7 +268,7 @@
 ;; C code following this guide http://truongtx.me/2013/03/10/emacs-setting-up-perfect-environment-for-cc-programming/
 (require 'cc-mode)
 
-
+;(global-set-key (kbd "C-c C-c") 'smart-compile)
 
 (setq-default c-basic-offset 4 c-default-style "linux")
 (setq-default tab-width 4 indent-tabs-mode t)
@@ -380,13 +391,30 @@
 
 
 
+;; (defun goto-match-paren (arg)
+;;   "Go to the matching parenthesis if on parenthesis, otherwise insert %.
+;; vi style of % jumping to matching brace."
+;;   (interactive "p")
+;;   (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
+;;         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
+;;         (t (self-insert-command (or arg 1)))))
+
 (defun goto-match-paren (arg)
-  "Go to the matching parenthesis if on parenthesis, otherwise insert %.
-vi style of % jumping to matching brace."
-  (interactive "p")
-  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
-        ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
-        (t (self-insert-command (or arg 1)))))
+	;(modify-syntax-entry ?< \"(>\" )
+   	;(modify-syntax-entry ?> \")<\" )
+ (interactive "p")
+     (let
+         ((syntax (char-syntax (following-char))))
+     (cond
+      ((= syntax ?\()
+       (forward-sexp 1) (backward-char))
+      ((= syntax ?\))
+       (forward-char) (backward-sexp 1))
+      (t (message "No match"))
+      )
+     ))
+; { test }
+
 
 
 (custom-set-variables
