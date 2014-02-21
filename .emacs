@@ -15,6 +15,15 @@
 (package-initialize)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;Add melpa
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;Fix dependency backward issue
+ (defadvice package-compute-transaction
+  (before package-compute-transaction-reverse (package-list requirements) activate compile)
+    "reverse the requirements"
+    (setq requirements (reverse requirements))
+    (print requirements))
 ; sheme enviroment
 (require 'quack)
 ;Org mode stuff
@@ -55,10 +64,13 @@
 (global-surround-mode 1)
 ;;Exit insert mode by pressing j and then j quickly
 (require 'key-chord)
-
+;;Evil matchit
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
+;;Key Chord bindings
 (setq key-chord-two-keys-delay 0.8)
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-(key-chord-define evil-normal-state-map "gp" 'goto-match-paren)
+(key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
@@ -69,18 +81,10 @@
 (key-chord-mode 1)
 ;Set colors based on mode
                             
-(load "~/Dropbox/emacs/colors.el")
+;;;(load "~/Dropbox/emacs/colors.el")
+;Load all the latex and auctex stuff, easily commentoutable for other computers
 
-;Auctex stuff
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-(require 'tex-site)
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
- ;;(setq-default TeX-master nil)
-(add-hook 'LaTeX-mode-hook
-      (lambda()
-        (local-set-key [C-tab] 'TeX-complete-symbol)))
+(load "~/Dropbox/emacs/latex.el")
 ;Make emacs docview auto refresh changes to file.
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
@@ -103,29 +107,10 @@
 (require 'smart-compile)
 (add-to-list 'smart-compile-alist '("\\.cpp$" . "g++ -O2 -Wall -o %n %f")) 
 
-
-
-;; Enable RefTeX
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
-(setq reftex-plug-into-AUCTeX t)
- (setq TeX-PDF-mode t)
-;;(add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
-
-
-
+;Was below auctex stuff
 (require 'xml)
 
 
-
-;;Macros
-;;Macro to insert highlight and red text in latex
-(fset 'latex-red-text
-   [?\\ ?c ?o ?l ?o ?r ?\{ ?r ?e ?d ?\} ?  ?  ?\{ backspace ?\\ ?c ?o ?l ?o ?r ?\{ ?b ?l ?a ?c ?k ?\}])
-
-
-;;Macro for latex list
-(fset 'latex-list
-   [?\\ ?b ?e ?g ?i ?n ?\{ ?l ?i ?s ?t ?\} ?\{ ?\} backspace ?* ?\} ?\{ ?\} return ?\\ ?i ?t ?e ?m return ?\\ ?e ?n ?d ?\{ ?l ?i ?s ?t ?\} return])
 
 
 
@@ -137,61 +122,6 @@
    ;;(require 'cursor-chg)  ; Load the library
    
    ;;(change-cursor-mode 1) ; Turn on change for overwrite, read-only, and input mode
-
-
-;; allow for export=>beamer by placing
-
-;; #+LaTeX_CLASS: beamer in org files
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classes
-  ;; beamer class, for presentations
- '("beamer"
-     "\\documentclass[11pt]{beamer}\n
-      \\mode<{{{beamermode}}}>\n
-      \\usetheme{{{{beamertheme}}}}\n
-      \\usecolortheme{{{{beamercolortheme}}}}\n
-      \\beamertemplateballitem\n
-      \\setbeameroption{show notes}
-      \\usepackage[utf8]{inputenc}\n
-      \\usepackage[T1]{fontenc}\n
-      \\usepackage{hyperref}\n
-      \\usepackage{color}
-      \\usepackage{listings}
-      \\lstset{numbers=none,language=[ISO]C++,tabsize=4,
-  frame=single,
-  basicstyle=\\small,
-  showspaces=false,showstringspaces=false,
-  showtabs=false,
-  keywordstyle=\\color{blue}\\bfseries,
-  commentstyle=\\color{red},
-  }\n
-      \\usepackage{verbatim}\n
-      \\institute{{{{beamerinstitute}}}}\n          
-       \\subject{{{{beamersubject}}}}\n"
-
-     ("\\section{%s}" . "\\section*{%s}")
-     
-     ("\\begin{frame}[fragile]\\frametitle{%s}"
-       "\\end{frame}"
-       "\\begin{frame}[fragile]\\frametitle{%s}"
-       "\\end{frame}")))
-
-  ;; letter class, for formal letters
-
- (add-to-list 'org-export-latex-classes
-
-  '("letter"
-     "\\documentclass[11pt]{letter}\n
-      \\usepackage[utf8]{inputenc}\n
-      \\usepackage[T1]{fontenc}\n
-      \\usepackage{color}"
-     
-     ("\\section{%s}" . "\\section*{%s}")
-     ("\\subsection{%s}" . "\\subsection*{%s}")
-     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-     ("\\paragraph{%s}" . "\\paragraph*{%s}")
-     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
 
@@ -217,50 +147,7 @@
 
 
 
-;latex mla function
-(defun latexmla ()
-"Insert latexmlastyle at cursor point."
-(interactive)
-(insert-file-contents "~/Dropbox/College\  Freshmen/latex/MLA.tex")
- )
 
-
-
-
-
-;; Lisp - Slime
-
-(eval-after-load "slime"
-  '(progn
-     (setq slime-lisp-implementations
-           '((sbcl ("/usr/bin/sbcl"))
-             (ecl ("/usr/bin/ecl"))
-             (clisp ("/usr/bin/clisp"))))
-     (slime-setup '(
-                    slime-asdf
-                    slime-autodoc
-                    slime-editing-commands
-                    slime-fancy-inspector
-                    slime-fontifying-fu
-                    slime-fuzzy
-                    slime-indentation
-                    slime-mdot-fu
-                    slime-package-fu
-                    slime-references
-                    slime-repl
-                    slime-sbcl-exts
-                    slime-scratch
-                    slime-xref-browser
-                    ))
-     (slime-autodoc-mode)
-     (setq slime-complete-symbol*-fancy t)
-     (setq slime-complete-symbol-function
-  'slime-fuzzy-complete-symbol)))
-
-(require 'slime)
-(add-hook 'slime-repl-mode-hook
-          #'(lambda () 
-              (setq autopair-dont-activate t)))
 
 
 
@@ -287,15 +174,13 @@
 ;;Add above two lines to make file to enable flycheck
 (require 'member-function)
 (setq mf--source-file-extension "cpp")
-
-;Latex italics macro
-(fset 'latexitalics
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([123 92 116 101 120 116 105 116 32 125 escape 105] 0 "%d")) arg)))
-
-(add-hook 'LaTeX-mode-hook
-          (lambda () (local-set-key (kbd "C-x i") 'latexitalics)))
+;; CPP std add
 
 
+
+;;Import slime stuff
+
+(load "~/Dropbox/emacs/slime.el")
 
 
 ;;Kill buffer in evil with ,q
@@ -335,7 +220,10 @@
 ;; Bind it to F5
 (global-set-key (kbd "<f5>") 'toggle-bg)
 
-
+;Load linum
+(require 'linum-relative)
+;;Turn relative linum on or off with f8
+(global-set-key (kbd "<f8>") 'linum-relative-toggle)
 
 (require 'cl)
 
@@ -399,21 +287,21 @@
 ;;         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
 ;;         (t (self-insert-command (or arg 1)))))
 
-(defun goto-match-paren (arg)
-	;(modify-syntax-entry ?< \"(>\" )
-   	;(modify-syntax-entry ?> \")<\" )
- (interactive "p")
-     (let
-         ((syntax (char-syntax (following-char))))
-     (cond
-      ((= syntax ?\()
-       (forward-sexp 1) (backward-char))
-      ((= syntax ?\))
-       (forward-char) (backward-sexp 1))
-      (t (message "No match"))
-      )
-     ))
-; { test }
+;; (defun goto-match-paren (arg)
+;; 	;(modify-syntax-entry ?< \"(>\" )
+;;    	;(modify-syntax-entry ?> \")<\" )
+;;  (interactive "p")
+;;      (let
+;;          ((syntax (char-syntax (following-char))))
+;;      (cond
+;;       ((= syntax ?\()
+;;        (forward-sexp 1) (backward-char))
+;;       ((= syntax ?\))
+;;        (forward-char) (backward-sexp 1))
+;;       (t (message "No match"))
+;;       )
+;;      ))
+;; ; { test }
 
 
 
@@ -434,4 +322,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
 
