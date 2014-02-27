@@ -1,9 +1,7 @@
 ;Load path
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
-;;Enable line numbers
-(global-linum-mode 1)
-
+(add-to-list 'load-path "~/.emacs.d/nlinum-1.2")
 ;Background
 (set-background-color "white")
 ; Disable the splash screen
@@ -41,6 +39,15 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(show-paren-mode 1)
+;(setq show-paren-delay 0)
+
+; Give buffers with same file name more distinquished names
+(require 'uniquify)
+
+
+
+
 ;Backward kill word
 (global-set-key "\C-q" 'backward-kill-word)
 
@@ -68,22 +75,30 @@
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
 ;;Key Chord bindings
-(setq key-chord-two-keys-delay 0.8)
-(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-(key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
-(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-(define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
-(define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
+ (setq key-chord-two-keys-delay 0.8)
+ (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+ (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
 (define-key evil-normal-state-map (kbd "gl") 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
+(define-key evil-normal-state-map (kbd "K") 'windmove-up)
+
+(define-key evil-normal-state-map (kbd "J") 'windmove-down)
+(define-key evil-normal-state-map (kbd "H") 'windmove-left)
+(define-key evil-normal-state-map (kbd "L") 'windmove-right)
+;Remap j to gj and such, but is a bad idea
+;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+;; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+;;(define-key evil-normal-state-map (kbd "gj") 'evil-next-line)
+;;(define-key evil-normal-state-map (kbd "gk") 'evil-previous-line)
+
 (key-chord-mode 1)
+
+
 ;Set colors based on mode
                             
 ;;;(load "~/Dropbox/emacs/colors.el")
 ;Load all the latex and auctex stuff, easily commentoutable for other computers
-
 (load "~/Dropbox/emacs/latex.el")
 ;Make emacs docview auto refresh changes to file.
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
@@ -220,11 +235,24 @@
 ;; Bind it to F5
 (global-set-key (kbd "<f5>") 'toggle-bg)
 
+;Line numbering stuff
+
+;;Enable line numbers
+(require 'nlinum)
+(global-linum-mode 1)
+
 ;Load linum
 (require 'linum-relative)
-;;Turn relative linum on or off with f8
+;;Turn relative linum on or off with f8 and enable linum mode
+
+;(global-set-key (kbd "<f8>") 'nlinum-mode)
 (global-set-key (kbd "<f8>") 'linum-relative-toggle)
 
+;(global-set-key (kbd "<f8>") 'linum-mode)
+
+;(global-set-key (kbd "<f9>") 'nlinum-mode)
+
+;Load common lisp
 (require 'cl)
 
 
@@ -277,6 +305,9 @@
 	 	 (car shell-buffer-list))))
      (shell name)))
 
+;Require windmove
+(require 'windmove)
+(windmove-default-keybindings 'shift)
 
 
 ;; (defun goto-match-paren (arg)
@@ -315,6 +346,7 @@
  '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t))))
  '(quack-programs (quote ("mzscheme" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(scheme-program-name "scheme48")
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Matthew Bregg"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
