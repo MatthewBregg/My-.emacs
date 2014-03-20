@@ -14,8 +14,8 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 ;Add melpa
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;(add-to-list 'package-archives
+;  '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;Fix dependency backward issue
  (defadvice package-compute-transaction
   (before package-compute-transaction-reverse (package-list requirements) activate compile)
@@ -132,6 +132,12 @@
 
 (require 'ido)
 (ido-mode t)
+;Ido ubiq stuff
+
+(defvar ido-cur-item nil)
+(defvar ido-default-item nil)
+(defvar ido-cur-list nil)
+(ido-ubiquitous-mode 1)
 
 ;Change cursor color
    ;;(require 'cursor-chg)  ; Load the library
@@ -170,32 +176,35 @@
 ;; C code following this guide http://truongtx.me/2013/03/10/emacs-setting-up-perfect-environment-for-cc-programming/
 (require 'cc-mode)
 
-;(global-set-key (kbd "C-c C-c") 'smart-compile)
+(define-key c++-mode-map (kbd "C-c C-c") 'smart-compile)
 
 (setq-default c-basic-offset 4 c-default-style "linux")
 (setq-default tab-width 4 indent-tabs-mode t)
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
+;Auto completels parens and some other limiters
 (require 'autopair)
 (autopair-global-mode -1)
 (setq autopair-autowrap t)
 (load-library "paren")
-(require 'auto-complete-clang)
-(define-key c++-mode-map (kbd "C-S-<return>") 'ac-complete-clang)
+;(require 'auto-complete-clang)
+;(define-key c++-mode-map (kbd "C-S-<return>") 'ac-complete-clang)
 ;; replace C-S-<return> with a key binding that you want
 
-(require 'flymake)
+;(require 'flymake)
 ;;check-syntax:
 ;;     gcc -o nul -S ${CHK_SOURCES}
 ;;Add above two lines to make file to enable flycheck
 (require 'member-function)
 (setq mf--source-file-extension "cpp")
 ;; CPP std add
+;;Gcc sense
+(require 'gccsense)
 
 
 
 ;;Import slime stuff
 
-(load "~/Dropbox/emacs/slime.el")
+;(load "~/Dropbox/emacs/slime.el")
 
 
 ;;Kill buffer in evil with ,q
@@ -308,6 +317,46 @@
 ;Require windmove
 (require 'windmove)
 (windmove-default-keybindings 'shift)
+;Golden Ratio stuff
+(require 'golden-ratio)
+
+(golden-ratio-mode 1)
+
+ (global-set-key [f9] 'golden-ratio-mode)
+
+
+
+;Browse Kill ring
+;(setq debug-on-error t)
+(require 'browse-kill-ring)
+(browse-kill-ring-default-keybindings)
+(global-set-key "\C-cy" 'browse-kill-ring)
+
+;Ace jump stuff
+(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
+    (require 'ace-jump-mode)
+;    (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+     (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+
+;; Smex bindings
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;;Yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)
+
+;;Fly check
+
+;Winner mode
+
+;(winner-mode)
+;gcc sense
+;;REquires some other packages that must be compiled from source, will do somepoint
+;; http://cx4a.org/software/gccsense/manual.html
+;(require 'gccsense)
 
 
 ;; (defun goto-match-paren (arg)
@@ -343,6 +392,7 @@
  ;; If there is more than one, they won't work right.
  '(TeX-view-program-list (quote (("" "Name = Evince Command evince --page-index=%(outpage)"))))
  '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open"))))
+ '(global-flycheck-mode t nil (flycheck))
  '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t))))
  '(quack-programs (quote ("mzscheme" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(scheme-program-name "scheme48")
