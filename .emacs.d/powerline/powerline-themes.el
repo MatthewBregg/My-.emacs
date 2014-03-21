@@ -113,61 +113,6 @@
                              (powerline-fill face1 (powerline-width rhs))
                              (powerline-render rhs)))))))
 
-(defun powerline-center-evil-theme ()
-  "Setup a mode-line with major, evil, and minor modes centered."
-  (interactive)
-  (setq-default mode-line-format
-                '("%e"
-                  (:eval
-                   (let* ((active (powerline-selected-window-active))
-                          (mode-line (if active 'mode-line 'mode-line-inactive))
-                          (face1 (if active 'powerline-active1 'powerline-inactive1))
-                          (face2 (if active 'powerline-active2 'powerline-inactive2))
-                          (separator-left (intern (format "powerline-%s-%s"
-                                                          powerline-default-separator
-                                                          (car powerline-default-separator-dir))))
-                          (separator-right (intern (format "powerline-%s-%s"
-                                                           powerline-default-separator
-                                                           (cdr powerline-default-separator-dir))))
-                          (lhs (list (powerline-raw "%*" nil 'l)
-                                     (powerline-buffer-size nil 'l)
-                                     (powerline-buffer-id nil 'l)
-                                     (powerline-raw " ")
-                                     (funcall separator-left mode-line face1)
-                                     (powerline-narrow face1 'l)
-                                     (powerline-vc face1)))
-                          (rhs (list (powerline-raw global-mode-string face1 'r)
-                                     (powerline-raw "%4l" face1 'r)
-                                     (powerline-raw ":" face1)
-                                     (powerline-raw "%3c" face1 'r)
-                                     (funcall separator-right face1 mode-line)
-                                     (powerline-raw " ")
-                                     (powerline-raw "%6p" nil 'r)
-                                     (powerline-hud face2 face1)))
-                          (center (append (list (powerline-raw " " face1)
-                                                (funcall separator-left face1 face2)
-                                                (when (boundp 'erc-modified-channels-object)
-                                                  (powerline-raw erc-modified-channels-object face2 'l))
-                                                (powerline-major-mode face2 'l)
-                                                (powerline-process face2)
-                                                (powerline-raw " " face2))
-                                          (if (split-string (format-mode-line minor-mode-alist))
-                                              (append (if evil-mode
-                                                          (list (funcall separator-right face2 face1)
-                                                                (powerline-raw evil-mode-line-tag face1 'l)
-                                                                (powerline-raw " " face1)
-                                                                (funcall separator-left face1 face2)))
-                                                      (list (powerline-minor-modes face2 'l)
-                                                            (powerline-raw " " face2)
-                                                            (funcall separator-right face2 face1)))
-                                            (list (powerline-raw evil-mode-line-tag face2)
-                                                  (funcall separator-right face2 face1))))))
-                     (concat (powerline-render lhs)
-                             (powerline-fill-center face1 (/ (powerline-width center) 2.0))
-                             (powerline-render center)
-                             (powerline-fill face1 (powerline-width rhs))
-                             (powerline-render rhs)))))))
-
 ;;;###autoload
 (defun powerline-vim-theme ()
   "Setup a Vim-like mode-line."
@@ -241,7 +186,159 @@
                              (powerline-render center)
                              (powerline-fill nil (powerline-width rhs))
                              (powerline-render rhs)))))))
+;;;###autoload
+(defun powerline-center-evil-theme ()
+  "Setup a mode-line with major, evil, and minor modes centered."
+  (interactive)
+  (setq-default
+   mode-line-format
+   '("%e"
+     (:eval
+      (let* ((active (powerline-selected-window-active))
+             (mode-line (if active 'mode-line 'mode-line-inactive))
+             (face1 (if active 'powerline-active1 'powerline-inactive1))
+             (face2 (if active 'powerline-active2 'powerline-inactive2))
+             (separator-left (intern (format "powerline-%s-%s"
+                                             powerline-default-separator
+                                             (car powerline-default-separator-dir))))
+             (separator-right (intern (format "powerline-%s-%s"
+                                              powerline-default-separator
+                                              (cdr powerline-default-separator-dir))))
+             (lhs (list
+                   (powerline-raw mode-line-mule-info face2 'l)
+                   (powerline-client face2)
+                   (powerline-raw mode-line-modified face2)
+                   (powerline-remote face2)
+                   (powerline-raw " " face2)
+                   (powerline-frame-id face2)
+                   (powerline-buffer-id face2 'l)
+                   (powerline-raw " " face2)
+                   (funcall separator-left face2 face1)
+                   (powerline-narrow face1 'l)
+                   (powerline-vc face1)))
+             (rhs
+              (append
+               (when (and (boundp 'which-function-mode) which-function-mode)
+                 (list
+                  (powerline-raw "[" face1)
+                  (powerline-which-func)
+                  (powerline-raw "]" face1)))
+               (list
+                (when (and (boundp 'wc-mode) wc-mode)
+                  (powerline-wc-mode face1 'r))
+                (powerline-raw global-mode-string face1 'r)
+                (powerline-raw " " face1)
+                (funcall separator-right face1 face2)
+                (powerline-position face2 'r)
+                (powerline-hud face2 face1)
+                )))
+             (center
+              (append
+               (list (powerline-raw " " face1)
+                     (funcall separator-left face1 face2)
+                     (when (boundp 'erc-modified-channels-object)
+                       (powerline-raw erc-modified-channels-object face2 'l))
+                     (powerline-raw
+                      (if (and (boundp 'mode-line-debug-mode) mode-line-debug-mode)
+                          (mode-line-debug-control)
+                        " ")
+                      face2)
+                     (powerline-recursive-left face2)
+                     (powerline-major-mode face2)
+                     (powerline-process face2)
+                     (powerline-raw " " face2))
+               (let ((evil-face (powerline-evil-face active)))
+                 (if (split-string (format-mode-line minor-mode-alist))
+                     (list (funcall separator-right face2 evil-face)
+                           (powerline-raw (powerline-evil-tag) evil-face 'l)
+                           (powerline-raw " " evil-face)
+                           (funcall separator-left evil-face face2)
+                           (powerline-minor-modes face2 'l)
+                           (powerline-recursive-right face2)
+                           (powerline-raw " " face2)
+                           (funcall separator-right face2 face1))
+                   (list (powerline-raw (concat " " evil-mode-line-tag " ") evil-face)
+                         (powerline-recursive-right evil-face)
+                         (funcall separator-right evil-face face1)))))))
+        (concat (powerline-render lhs)
+                (powerline-fill-center face1 (/ (powerline-width center) 2.0))
+                (powerline-render center)
+                (powerline-fill face1 (powerline-width rhs))
+                (powerline-render rhs)))))))
 
+;;;###autoload
+(defun powerline-evil-theme ()
+  "Setup the default mode-line."
+  (interactive)
+  (setq-default
+   mode-line-format
+   '("%e"
+     (:eval
+      (let* ((active (powerline-selected-window-active))
+             (mode-line (if active 'mode-line 'mode-line-inactive))
+             (face1 (if active 'powerline-active1 'powerline-inactive1))
+             (face2 (if active 'powerline-active2 'powerline-inactive2))
+             (face3 (if active 'powerline-active3 'powerline-inactive2))
+             (separator-left (intern (format "powerline-%s-%s"
+                                             powerline-default-separator
+                                             (car powerline-default-separator-dir))))
+             (separator-right (intern (format "powerline-%s-%s"
+                                              powerline-default-separator
+                                              (cdr powerline-default-separator-dir))))
+             (lhs
+              (append
+               (let ((evil-face (powerline-evil-face active)))
+                 (list 
+                  (powerline-raw (powerline-evil-tag) evil-face)
+                  (funcall separator-left evil-face face3)))
+               (list (powerline-raw " " face3)
+                     (powerline-raw mode-line-mule-info face3 'l)
+                     (powerline-client face3)
+                     (powerline-remote face3)
+                     (powerline-frame-id face3)
+                     (powerline-buffer-id face3 'l)
+                     (powerline-raw " " face3)
+                     (funcall separator-left face3 face2)
+                     (powerline-raw mode-line-modified face2 'l)
+                     (powerline-raw " " face2)
+                     (funcall separator-left face2 face1)
+                     (when (boundp 'erc-modified-channels-object)
+                       (powerline-raw erc-modified-channels-object face1 'l))
+                     (powerline-raw " " face1)
+                     (powerline-raw
+                      (if (and (boundp 'mode-line-debug-mode) mode-line-debug-mode)
+                          (mode-line-debug-control)
+                        " ")
+                      face1)
+                     (powerline-recursive-left face1)
+                     (powerline-major-mode face1)
+                     (powerline-process face1)
+                     (powerline-minor-modes face1 'l)
+                     (powerline-narrow face1 'l)
+                     (powerline-recursive-right face1)
+                     (powerline-raw " " face1)
+                     (funcall separator-left face1 face2)
+                     (powerline-vc face2 'r))))
+             (rhs
+              (append
+               (when (and (boundp 'which-function-mode) which-function-mode)
+                 (list
+                  (powerline-raw "[" face2)
+                  (powerline-which-func)
+                  (powerline-raw "]" face2)))
+               (list
+                (when (and (boundp 'wc-mode) wc-mode)
+                  (powerline-wc-mode face2 'r))
+                (funcall separator-right face2 face1)
+                (powerline-raw "  " face1)
+                (powerline-raw global-mode-string face1 'r)
+                (powerline-raw " " face1)
+                (funcall separator-right face1 face2)
+                (powerline-position face2 'r)
+                (powerline-hud face2 face1)))))
+        (concat (powerline-render lhs)
+                (powerline-fill face2 (powerline-width rhs))
+                (powerline-render rhs)))))))
 
 (provide 'powerline-themes)
 
