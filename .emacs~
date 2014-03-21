@@ -10,9 +10,6 @@
 (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
 ; Add marmalade repo 
 (require 'package)
-(add-to-list 'package-archives
-  '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(require 'package)
 (package-initialize)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -20,11 +17,11 @@
 ;(add-to-list 'package-archives
 ;  '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;Fix dependency backward issue
- ;; (defadvice package-compute-transaction
- ;;  (before package-compute-transaction-reverse (package-list requirements) activate compile)
- ;;    "reverse the requirements"
- ;;    (setq requirements (reverse requirements))
- ;;    (print requirements))
+ (defadvice package-compute-transaction
+  (before package-compute-transaction-reverse (package-list requirements) activate compile)
+    "reverse the requirements"
+    (setq requirements (reverse requirements))
+    (print requirements))
 ; sheme enviroment
 (require 'quack)
 ;Org mode stuff
@@ -47,6 +44,8 @@
 
 ; Give buffers with same file name more distinquished names
 (require 'uniquify)
+
+
 
 
 ;Backward kill word
@@ -118,8 +117,7 @@
 
 ;Autocomplete and smartcompile
 (require 'auto-complete)
-(global-auto-complete-mode 1)	
-
+ 	
 
 (require 'smart-compile)
 (add-to-list 'smart-compile-alist '("\\.cpp$" . "g++ -O2 -Wall -o %n %f")) 
@@ -134,12 +132,6 @@
 
 (require 'ido)
 (ido-mode t)
-;Ido ubiq stuff
-
-(defvar ido-cur-item nil)
-(defvar ido-default-item nil)
-(defvar ido-cur-list nil)
-(ido-ubiquitous-mode 1)
 
 ;Change cursor color
    ;;(require 'cursor-chg)  ; Load the library
@@ -206,7 +198,7 @@
 
 ;;Import slime stuff
 
-;(load "~/Dropbox/emacs/slime.el")
+(load "~/Dropbox/emacs/slime.el")
 
 
 ;;Kill buffer in evil with ,q
@@ -325,40 +317,11 @@
 (golden-ratio-mode 1)
 
  (global-set-key [f9] 'golden-ratio-mode)
-
-
-
 ;Browse Kill ring
 ;(setq debug-on-error t)
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 (global-set-key "\C-cy" 'browse-kill-ring)
-
-;Ace jump stuff
-(add-to-list 'load-path "which-folder-ace-jump-mode-file-in/")
-    (require 'ace-jump-mode)
-;    (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-     (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
-
-;; Smex bindings
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;;Yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
-
-
-;;Power Line
- (add-to-list 'load-path "~/.emacs.d/powerline/")
- (require 'powerline)
-(powerline-evil-theme)
-
-;;Magit Stuff
-(require 'magit)
-
 
 
 ;;Fly check
@@ -367,9 +330,7 @@
 
 ;(winner-mode)
 ;gcc sense
-;;REquires some other packages that must be compiled from source, will do somepoint
-;; http://cx4a.org/software/gccsense/manual.html
-;(require 'gccsense)
+(require 'gccsense)
 
 
 ;; (defun goto-match-paren (arg)
@@ -418,8 +379,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-
-
-(fset 'stdifier
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([98 105 115 116 100 58 58 escape 119 119] 0 "%d")) arg)))
 
