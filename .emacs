@@ -44,10 +44,6 @@
 
 ; Give buffers with same file name more distinquished names
 (require 'uniquify)
-;;Powerline
-;; (add-to-list 'load-path "~/.emacs.d/powerline/")
-;; (require 'powerline)
-;; (powerline-center-theme)
 
 
 ;Backward kill word
@@ -350,6 +346,13 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+
+;;Power Line
+ (add-to-list 'load-path "~/.emacs.d/powerline/")
+ (require 'powerline)
+(powerline-evil-theme)
+
+
 ;;Fly check
 
 ;Winner mode
@@ -407,4 +410,8 @@
  ;; If there is more than one, they won't work right.
  )
 
+
+
+(fset 'stdifier
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([98 105 115 116 100 58 58 escape 119 119] 0 "%d")) arg)))
 

@@ -2,11 +2,12 @@
 
 ;; Copyright (C) 2012-2013 Donald Ephraim Curtis
 ;; Copyright (C) 2013 Jason Milkins
+;; Copyright (C) 2013 Dewdrops
 ;; Copyright (C) 2012 Nicolas Rougier
 
 ;; Author: Donald Ephraim Curtis <dcurtis@milkbox.net>
-;; URL: http://github.com/milkypostman/powerline/
-;; Version: 2.3
+;; URL: http://github.com/Dewdrops/powerline/
+;; Version: 2.4
 ;; Keywords: mode-line
 ;; Package-Requires: ((cl-lib "0.2"))
 
@@ -23,21 +24,25 @@
 
 (require 'cl-lib)
 
-(defface powerline-active1 '((t (:background "grey22" :inherit mode-line)))
+(defface powerline-active1 '((t (:foreground "white" :background "grey22" :inherit mode-line)))
   "Powerline face 1."
   :group 'powerline)
 
-(defface powerline-active2 '((t (:background "grey40" :inherit mode-line)))
+(defface powerline-active2 '((t (:foreground "white" :background "grey40" :inherit mode-line)))
   "Powerline face 2."
   :group 'powerline)
 
+(defface powerline-active3 '((t (:foreground "white" :background "grey60" :inherit mode-line)))
+  "Powerline face 3."
+  :group 'powerline)
+
 (defface powerline-inactive1
-  '((t (:background "grey11" :inherit mode-line-inactive)))
+  '((t (:foreground "white" :background "grey11" :inherit mode-line-inactive)))
   "Powerline face 1."
   :group 'powerline)
 
 (defface powerline-inactive2
-  '((t (:background "grey20" :inherit mode-line-inactive)))
+  '((t (:foreground "white" :background "grey20" :inherit mode-line-inactive)))
   "Powerline face 2."
   :group 'powerline)
 
@@ -415,7 +420,25 @@ static char * %s[] = {
 
 ;;;###autoload
 (defpowerline powerline-buffer-id
-  (format-mode-line mode-line-buffer-identification))
+  #("%12b" 0 4
+   (local-map
+    (keymap
+     (mode-line keymap
+                (mouse-2 . swbuff-kill-this-buffer)
+                (mouse-3 . swbuff-switch-to-next-buffer)
+                (mouse-1 . swbuff-switch-to-previous-buffer)))
+    mouse-face mode-line-highlight
+    help-echo "mouse-1: Previous buffer\nmouse-2: Kill buffer\nmouse-3: Next buffer")))
+
+;;;###autoload
+(defpowerline powerline-recursive-left
+  #("%[" 0 2
+    (help-echo "Recursive edit, type C-M-c to get out")))
+
+;;;###autoload
+(defpowerline powerline-recursive-right
+  #("%]" 0 2
+    (help-echo "Recursive edit, type C-M-c to get out")))
 
 ;;;###autoload
 (defpowerline powerline-process
@@ -423,6 +446,171 @@ static char * %s[] = {
    ((symbolp mode-line-process) (symbol-value mode-line-process))
    ((listp mode-line-process) (format-mode-line mode-line-process))
    (t mode-line-process)))
+
+;;;###autoload
+(defpowerline powerline-frame-id
+  (if (or (null window-system)
+          (eq window-system 'pc))
+      "-%F "
+    ""))
+
+;;;###autoload
+(defpowerline powerline-client
+  (if (frame-parameter nil 'client)
+      "@"
+    ""))
+
+;;;###autoload
+(defpowerline powerline-remote
+  (propertize
+   (if (file-remote-p default-directory)
+       "@"
+     "")
+   'mouse-face 'mode-line-highlight
+   'help-echo (purecopy (lambda (window _object _point)
+                          (format "%s"
+                                  (with-selected-window window
+                                    (concat
+                                     (if (file-remote-p default-directory)
+                                         "Current directory is remote: "
+                                       "Current directory is local: ")
+                                     default-directory)))))))
+
+;;;###autoload
+(defpowerline powerline-which-func
+  (propertize
+   (replace-regexp-in-string "%" "%%"
+                             (or
+                              (gethash
+                               (selected-window)
+                               which-func-table)
+                              which-func-unknown))
+   'mouse-face 'mode-line-highlight
+   'help-echo "mouse-1: go to beginning\n\
+mouse-2: toggle rest visibility\nmouse-3: go to end"
+   'local-map which-func-keymap
+   'face 'which-func))
+
+;;;###autoload
+(defpowerline powerline-position
+  (concat
+   (if (and column-number-mode line-number-mode)
+       (propertize
+        " (%l,%2c)"
+        'local-map mode-line-column-line-number-mode-map
+        'mouse-face 'mode-line-highlight
+        'help-echo "Line number and Column number\n\
+mouse-1: Display Line and Column Mode Menu")
+     (if line-number-mode
+         (propertize
+          " L%l"
+          'local-map mode-line-column-line-number-mode-map
+          'mouse-face 'mode-line-highlight
+          'help-echo "Line Number\n\
+mouse-1: Display Line and Column Mode Menu")
+       (if column-number-mode
+           (propertize
+            " C%c"
+            'local-map mode-line-column-line-number-mode-map
+            'mouse-face 'mode-line-highlight
+            'help-echo "Column number\n\
+mouse-1: Display Line and Column Mode Menu")
+         "")))
+   (propertize
+    " %p"
+    'local-map mode-line-column-line-number-mode-map
+    'mouse-face 'mode-line-highlight
+    'help-echo "Size indication mode\n\
+mouse-1: Display Line and Column Mode Menu")
+   (if size-indication-mode
+       (propertize
+        " of %I"
+        'local-map mode-line-column-line-number-mode-map
+        'mouse-face 'mode-line-highlight
+        'help-echo "Size indication mode\n\
+mouse-1: Display Line and Column Mode Menu")
+     "")))
+
+(eval-after-load 'wc-mode
+  '(defpowerline powerline-wc-mode
+     (if (use-region-p)
+         (format " %d,%d,%d"
+                 (abs (- (point) (mark)))
+                 (count-words-region (point) (mark))
+                 (abs (- (line-number-at-pos (point))
+                         (line-number-at-pos (mark)))))
+       (format " %d,%d,%d"
+               (point-max)
+               (count-words-region (point-min) (point-max))
+               (line-number-at-pos (point-max))))))
+
+(eval-after-load 'evil
+  '(progn
+     (defface powerline-evil-insert-face
+       '((((class color))
+          :foreground "white" :background "green" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil insert state"
+       :group 'powerline)
+
+     (defface powerline-evil-normal-face
+       '((((class color))
+          :foreground "white" :background "red" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil normal state"
+       :group 'powerline)
+
+     (defface powerline-evil-visual-face
+       '((((class color))
+          :foreground "white" :background "orange" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil visual state"
+       :group 'powerline)
+
+     (defface powerline-evil-motion-face
+       '((((class color))
+          :foreground "white" :background "blue" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil motion state"
+       :group 'powerline)
+
+     (defface powerline-evil-emacs-face
+       '((((class color))
+          :foreground "white" :background "blue violet" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil emacs state"
+       :group 'powerline)
+
+     (defface powerline-evil-replace-face
+       '((((class color))
+          :foreground "white" :background "black" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil replace state"
+       :group 'powerline)
+
+     (defface powerline-evil-operator-face
+       '((((class color))
+          :foreground "white" :background "sky blue" :weight bold :inherit mode-line)
+         (t (:weight bold)))
+       "face to fontify evil replace state"
+       :group 'powerline)
+
+     (defun powerline-evil-face (active)
+       (let ((face (intern (concat "powerline-evil-" (symbol-name evil-state) "-face"))))
+         (cond ((and active (facep face))
+                face)
+               (active 'powerline-active2)
+               (t 'powerline-inactive2))))
+
+     (defun powerline-evil-tag ()
+       (cond
+        ((and (evil-visual-state-p) (eq evil-visual-selection 'block))
+         " +V+ ")
+        ((and (evil-visual-state-p) (eq evil-visual-selection 'line))
+         " -V- ")
+        (t
+         evil-mode-line-tag)))
+     ))
 
 (defvar pl/default-mode-line mode-line-format)
 
@@ -445,22 +633,14 @@ static char * %s[] = {
 
 (add-hook 'minibuffer-exit-hook 'pl/minibuffer-exit)
 
-(defun powerline-set-selected-window ()
-  "sets the variable `powerline-selected-window` appropriately"
-  (when (not (minibuffer-window-active-p (frame-selected-window)))
-    (setq powerline-selected-window (frame-selected-window))))
-
-(add-hook 'window-configuration-change-hook 'powerline-set-selected-window)
-(add-hook 'focus-in-hook 'powerline-set-selected-window)
-(add-hook 'focus-out-hook 'powerline-set-selected-window)
-
-(defadvice select-window (after powerline-select-window activate)
-  "makes powerline aware of window changes"
-  (powerline-set-selected-window))
-
 (defun powerline-selected-window-active ()
   "Return whether the current window is active."
-  (eq powerline-selected-window (selected-window)))
+  (or (eq (frame-selected-window)
+          (selected-window))
+      (and (minibuffer-window-active-p
+            (frame-selected-window))
+           (eq (pl/minibuffer-selected-window)
+               (selected-window)))))
 
 (defun powerline-revert ()
   "Revert to the default Emacs mode-line."
