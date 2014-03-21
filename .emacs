@@ -17,11 +17,11 @@
 ;(add-to-list 'package-archives
 ;  '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;Fix dependency backward issue
- (defadvice package-compute-transaction
-  (before package-compute-transaction-reverse (package-list requirements) activate compile)
-    "reverse the requirements"
-    (setq requirements (reverse requirements))
-    (print requirements))
+ ;; (defadvice package-compute-transaction
+ ;;  (before package-compute-transaction-reverse (package-list requirements) activate compile)
+ ;;    "reverse the requirements"
+ ;;    (setq requirements (reverse requirements))
+ ;;    (print requirements))
 ; sheme enviroment
 (require 'quack)
 ;Org mode stuff
@@ -44,8 +44,10 @@
 
 ; Give buffers with same file name more distinquished names
 (require 'uniquify)
-
-
+;;Powerline
+;; (add-to-list 'load-path "~/.emacs.d/powerline/")
+;; (require 'powerline)
+;; (powerline-center-theme)
 
 
 ;Backward kill word
