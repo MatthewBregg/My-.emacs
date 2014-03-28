@@ -297,7 +297,7 @@
 
 
 ;Make f7 toggle between shells, C-u f7 to make a new shell.
- (global-set-key [f7] 'alt-shell-dwim)
+ (global-set-key [f12] 'alt-shell-dwim)
 
  (defun alt-shell-dwim (arg)
    "Run an inferior shell like `shell'. If an inferior shell as its I/O
@@ -359,6 +359,56 @@
 ;;Magit Stuff
 (require 'magit)
 
+;; Hippy expanson
+(global-set-key (kbd "M-\\") 'hippie-expand)
+;; Hide-show mode
+(load-library "hideshow")
+(define-key evil-normal-state-map (kbd "zf") 'hs-toggle-hiding)
+(define-key evil-normal-state-map (kbd "zR") 'hs-hide-all)
+;(define-key evil-normal-state-map (kbd "zr") 'hs-hide-block)
+(define-key evil-normal-state-map (kbd "zM") 'hs-show-all)
+;(define-key evil-normal-state-map (kbd "zm") 'hs-toggle-hiding)
+(add-hook 'cpp 'hs-minor-mode)
+(add-hook 'c-mode-common-hook   'hs-minor-mode)
+(add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
+(add-hook 'java-mode-hook       'hs-minor-mode)
+(add-hook 'lisp-mode-hook       'hs-minor-mode)
+(add-hook 'perl-mode-hook       'hs-minor-mode)
+(add-hook 'sh-mode-hook         'hs-minor-mode)
+
+    ;; zm to unfold
+    ;; zr to fold
+    ;; zM to unfold all
+    ;; zR to fold all
+    ;; zt to toggle
+
+
+
+;;Eshell fuckery
+
+ (global-set-key [f7] 'eshell-to-buffer)
+;;; Kills current eshell, start new one in buffer
+(defun eshell-to-buffer nil
+  (interactive)
+  (when (get-buffer "*eshell*")
+    (kill-buffer "*eshell*"))
+  (eshell))
+;;; Switches the eshell to buffer directory with a cd command, and goes to that eshell. Doesn't work with spaces, would need regex or something
+;; (defun eshell-remote-cd (target)
+;;   (switch-to-buffer-other-window "*eshell*")
+;;   (end-of-buffer)
+;;   (eshell-kill-input)
+;;   (insert (concat "cd " target))
+;;   (eshell-send-input))
+
+;; (defun eshell-to-buffer nil
+;;   (interactive)
+;;   (when (get-buffer "*eshell*")
+;;     (eshell-remote-cd
+;;      (or (buffer-file-name)
+;;          default-directory)))
+;;   (eshell))
+
 
 
 ;;Fly check
@@ -406,7 +456,8 @@
  '(TeX-view-program-list (quote (("" "Name = Evince Command evince --page-index=%(outpage)"))))
  '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open"))))
  '(global-flycheck-mode t nil (flycheck))
- '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t))))
+ '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t) (plantuml . t))))
+ '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
  '(quack-programs (quote ("mzscheme" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(scheme-program-name "scheme48")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
