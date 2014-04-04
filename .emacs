@@ -78,14 +78,26 @@
 ;;Key Chord bindings
  (setq key-chord-two-keys-delay 0.8)
  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;;Visual and Normal mode
  (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
-(define-key evil-normal-state-map (kbd "gl") 'goto-line)
+(key-chord-define evil-normal-state-map  "gl" 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
-(define-key evil-normal-state-map (kbd "K") 'windmove-up)
+(key-chord-define evil-visual-state-map "gp" 'evilmi-jump-items)
+(key-chord-define evil-visual-state-map "gl" 'goto-line)
+(define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
 
+
+
+(define-key evil-visual-state-map (kbd "<tab>") 'c-indent-line-or-region)
+;;Wind move bindings
 (define-key evil-normal-state-map (kbd "J") 'windmove-down)
 (define-key evil-normal-state-map (kbd "H") 'windmove-left)
 (define-key evil-normal-state-map (kbd "L") 'windmove-right)
+(define-key evil-normal-state-map (kbd "K") 'windmove-up)
+(define-key evil-visual-state-map (kbd "J") 'windmove-down)
+(define-key evil-visual-state-map (kbd "H") 'windmove-left)
+(define-key evil-visual-state-map (kbd "L") 'windmove-right)
+(define-key evil-visual-state-map (kbd "K") 'windmove-up)
 ;Remap j to gj and such, but is a bad idea
 ;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 ;; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -117,7 +129,7 @@
  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
 ;Autocomplete and smartcompile
-(require 'auto-complete)
+(require 'auto-complete-clang)
 (global-auto-complete-mode 1)	
 
 
@@ -180,8 +192,60 @@
 
 (define-key c++-mode-map (kbd "C-c C-c") 'smart-compile)
 
-(setq-default c-basic-offset 4 c-default-style "linux")
-(setq-default tab-width 4 indent-tabs-mode t)
+;; (setq-default c-basic-offset 4 c-default-style "linux")
+;; (setq-default tab-width 4 indent-tabs-mode t)
+;;C indenting
+(defun c-lineup-arglist-tabs-only (ignored)
+  "Line up argument lists by tabs, not spaces"
+  (let* ((anchor (c-langelem-pos c-syntactic-element))
+	 (column (c-langelem-2nd-pos c-syntactic-element))
+	 (offset (- (1+ column) anchor))
+	 (steps (floor offset c-basic-offset)))
+    (* (max steps 1)
+       c-basic-offset)))
+
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            ;; Add kernel style
+            (c-add-style
+             "linux-tabs-only"
+             '("linux" (c-offsets-alist
+                        (arglist-cont-nonempty
+                         c-lineup-gcc-asm-reg
+                         c-lineup-arglist-tabs-only))))))
+
+(add-hook 'c-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name)))
+              ;; Enable kernel mode for the appropriate files
+              (when (and filename
+                         (string-match (expand-file-name "~/src/linux-trees")
+                                       filename))
+                (setq indent-tabs-mode t)
+                (c-set-style "linux-tabs-only")))))
+
+(add-hook 'c++-mode-common-hook
+          (lambda ()
+            ;; Add kernel style
+            (c-add-style
+             "linux-tabs-only"
+             '("linux" (c-offsets-alist
+                        (arglist-cont-nonempty
+                         c-lineup-gcc-asm-reg
+                         c-lineup-arglist-tabs-only))))))
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (let ((filename (buffer-file-name)))
+              ;; Enable kernel mode for the appropriate files
+              (when (and filename
+                         (string-match (expand-file-name "~/src/linux-trees")
+                                       filename))
+                (setq indent-tabs-mode t)
+                (c-set-style "linux-tabs-only")))))
+
+
+
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 ;Auto completels parens and some other limiters
 (require 'autopair)
@@ -361,6 +425,8 @@
 
 ;; Hippy expanson
 (global-set-key (kbd "M-\\") 'hippie-expand)
+
+
 ;; Hide-show mode
 (load-library "hideshow")
 (define-key evil-normal-state-map (kbd "zf") 'hs-toggle-hiding)
@@ -368,6 +434,8 @@
 ;(define-key evil-normal-state-map (kbd "zr") 'hs-hide-block)
 (define-key evil-normal-state-map (kbd "zM") 'hs-show-all)
 ;(define-key evil-normal-state-map (kbd "zm") 'hs-toggle-hiding)
+
+
 (add-hook 'cpp 'hs-minor-mode)
 (add-hook 'c-mode-common-hook   'hs-minor-mode)
 (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
