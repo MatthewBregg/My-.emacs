@@ -81,10 +81,10 @@
  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 ;;Visual and Normal mode
  (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
-(key-chord-define evil-normal-state-map  "gl" 'goto-line)
+(define-key evil-normal-state-map  (kbd "gl") 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
 (key-chord-define evil-visual-state-map "gp" 'evilmi-jump-items)
-(key-chord-define evil-visual-state-map "gl" 'goto-line)
+(define-key evil-visual-state-map (kbd "gl") 'goto-line)
 (define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
 
 
