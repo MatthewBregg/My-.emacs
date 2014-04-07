@@ -262,6 +262,7 @@
 ;;     gcc -o nul -S ${CHK_SOURCES}
 ;;Add above two lines to make file to enable flycheck
 (require 'member-function)
+(add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
 (setq mf--source-file-extension "cpp")
 ;; CPP std add
 ;;Gcc sense
@@ -524,6 +525,7 @@
  ;; If there is more than one, they won't work right.
  '(TeX-view-program-list (quote (("" "Name = Evince Command evince --page-index=%(outpage)"))))
  '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open"))))
+ '(flycheck-clang-include-path (quote ("/home/ultimanium/Dropbox/College Freshmen/COP3503/COP3503Code/GroupProject/Project/")))
  '(global-flycheck-mode t nil (flycheck))
  '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t) (plantuml . t))))
  '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
