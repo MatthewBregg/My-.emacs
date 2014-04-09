@@ -11,3 +11,11 @@ Per doc
      #+OPTIONS:     H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t ...
 
 http://orgmode.org/guide/Export-options.html
+
+
+For magit to dif
+Put focus on small window
+A, B to turn read me on /off
+a/b to select
+p/n to go to next/last
+wA to save, which then triggers a stage.

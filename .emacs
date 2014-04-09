@@ -77,7 +77,7 @@
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
 ;;Key Chord bindings
- (setq key-chord-two-keys-delay 0.8)
+ (setq key-chord-two-keys-delay 0.4)
  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 ;;Visual and Normal mode
  (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
@@ -87,8 +87,22 @@
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
 (define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
 
+;; Alternative for `M-x'
+(key-chord-define evil-normal-state-map ";'"   'smex)
 
+;;Magit Stuff
+  (key-chord-define evil-normal-state-map "-[" 'magit-status)
+;;Undo Tree status
+(key-chord-define evil-normal-state-map ";u" 'undo-tree-visualize)
+(when (boundp 'setup-undo-tree-loaded)
+  (key-chord-define-global "UU"   'undo-tree-redo)
+  (key-chord-define-global "\}\}" 'undo-tree-switch-branch))
 
+;;Make C-e and C-r work in evil
+(define-key evil-normal-state-map "\C-r" 'isearch-backward)
+(define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
+(define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
+;;Indenting
 (define-key evil-visual-state-map (kbd "<tab>") 'c-indent-line-or-region)
 ;;Wind move bindings
 (define-key evil-normal-state-map (kbd "J") 'windmove-down)
