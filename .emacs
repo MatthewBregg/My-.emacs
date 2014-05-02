@@ -71,6 +71,8 @@
 ;Evil-surround
 (require 'surround)
 (global-surround-mode 1)
+;Evil-visual star
+(require 'evil-visualstar)
 ;;Exit insert mode by pressing j and then j quickly
 (require 'key-chord)
 ;;Evil matchit
@@ -87,6 +89,7 @@
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
 (define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
 
+
 ;; Alternative for `M-x'
 (key-chord-define evil-normal-state-map ";'"   'smex)
 
@@ -95,11 +98,12 @@
 ;;Undo Tree status
 (key-chord-define evil-normal-state-map ";u" 'undo-tree-visualize)
 (when (boundp 'setup-undo-tree-loaded)
-  (key-chord-define-global "UU"   'undo-tree-redo)
+
+;  (define-key evil-normal-state-map  "U"   'undo-tree-redo)
   (key-chord-define-global "\}\}" 'undo-tree-switch-branch))
 
 ;;Make C-e and C-r work in evil
-(define-key evil-normal-state-map "\C-r" 'isearch-backward)
+;;(define-key evil-normal-state-map "\C-r" 'isearch-backward)
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 ;;Indenting
@@ -377,7 +381,7 @@
 
 
 ;Make f7 toggle between shells, C-u f7 to make a new shell.
- (global-set-key [f12] 'alt-shell-dwim)
+ (global-set-key [f7] 'alt-shell-dwim)
 
  (defun alt-shell-dwim (arg)
    "Run an inferior shell like `shell'. If an inferior shell as its I/O
@@ -467,16 +471,26 @@
     ;; zt to toggle
 
 
+;;Subliminity stuff
+;;(require 'sublimity)
+ (require 'sublimity-scroll)
+;; (require 'sublimity-map)
+;; (require 'sublimity-attractive)
+(setq sublimity-scroll-weight 2
+      sublimity-scroll-drift-length 1)
+
+(sublimity-mode 1)
 
 ;;Eshell fuckery
 
- (global-set-key [f7] 'eshell-to-buffer)
-;;; Kills current eshell, start new one in buffer
-(defun eshell-to-buffer nil
-  (interactive)
-  (when (get-buffer "*eshell*")
-    (kill-buffer "*eshell*"))
-  (eshell))
+;;  (global-set-key [f7] 'eshell-to-buffer)
+;; ;;; Kills current eshell, start new one in buffer
+;; (defun eshell-to-buffer nil
+;;   (interactive)
+;;   (when (get-buffer "*eshell*")
+;;     (kill-buffer "*eshell*"))
+;;   (eshell))
+
 ;;; Switches the eshell to buffer directory with a cd command, and goes to that eshell. Doesn't work with spaces, would need regex or something
 ;; (defun eshell-remote-cd (target)
 ;;   (switch-to-buffer-other-window "*eshell*")
@@ -539,7 +553,6 @@
  ;; If there is more than one, they won't work right.
  '(TeX-view-program-list (quote (("" "Name = Evince Command evince --page-index=%(outpage)"))))
  '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open"))))
- '(flycheck-clang-include-path (quote ("/home/ultimanium/Dropbox/College Freshmen/COP3503/COP3503Code/GroupProject/Project/")))
  '(global-flycheck-mode t nil (flycheck))
  '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t) (plantuml . t))))
  '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
