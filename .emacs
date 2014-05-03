@@ -481,6 +481,11 @@
 
 (sublimity-mode 1)
 
+;;Ace-window mode
+(require 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+(global-set-key (kbd "C-x p") 'ace-window)
+
 ;;Eshell fuckery
 
 ;;  (global-set-key [f7] 'eshell-to-buffer)
