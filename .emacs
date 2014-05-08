@@ -333,11 +333,12 @@
 ;Line numbering stuff
 
 ;;Enable line numbers
-(require 'nlinum)
-(global-linum-mode 1)
+;(require 'nlinum)
+
 
 ;Load linum
 (require 'linum-relative)
+(add-hook 'find-file-hook (lambda () (linum-mode 1)))
 ;;Turn relative linum on or off with f8 and enable linum mode
 
 ;(global-set-key (kbd "<f8>") 'nlinum-mode)
