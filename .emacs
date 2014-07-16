@@ -26,8 +26,15 @@
  ;;    "reverse the requirements"
  ;;    (setq requirements (reverse requirements))
  ;;    (print requirements))
-; sheme enviroment
+
+; scheme enviroment
 (require 'quack)
+(setq scheme-program-name "scheme48")
+(defun scheme-mode-quack-hook ()
+(setq quack-fontify-style 'emacs))
+(add-hook 'scheme-mode-hook 'scheme-mode-quack-hook)
+
+
 ;Org mode stuff
 (require 'org-install)
 (setq org-startup-indented t)
@@ -62,6 +69,39 @@
 ;;disables arrow keys
 ;(require 'no-easy-keys)
 ;(no-easy-keys 1)
+;;more kill stuff
+(defun my-delete-line-backward ()
+  "Delete text between the beginning of the line to the cursor position."
+  (interactive)
+  (let (x1 x2)
+    (setq x1 (point))
+    (move-beginning-of-line 1)
+    (setq x2 (point))
+    (delete-region x1 x2)))
+
+
+(defun my-delete-line ()
+  "Delete text from current position to end of line char."
+  (interactive)
+  (delete-region
+   (point)
+   (save-excursion (move-end-of-line 1) (point)))
+  (delete-char 1)
+)
+(defun my-delete-word (arg)
+  "Delete characters forward until encountering the end of a word.
+With argument, do this that many times.
+This command does not push erased text to kill-ring."
+  (interactive "p")
+  (delete-region (point) (progn (forward-word arg) (point))))
+
+(defun my-backward-delete-word (arg)
+  "Delete characters backward until encountering the beginning of a word.
+With argument, do this that many times.
+This command does not push erased text to kill-ring."
+  (interactive "p")
+  (my-delete-word (- arg)))
+
 ;Evil
 (require 'evil)
     (evil-mode 1)
@@ -88,13 +128,20 @@
 (key-chord-define evil-visual-state-map "gp" 'evilmi-jump-items)
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
 (define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
-
-
+(global-set-key (kbd "<M-backspace>") 'my-backward-delete-word)
+;(global-set-key (kbd "C-S-k") 'my-delete-line-backward) ;; `C-c u'
 ;; Alternative for `M-x'
 (key-chord-define evil-normal-state-map ";'"   'smex)
 
 ;;Magit Stuff
   (key-chord-define evil-normal-state-map "-[" 'magit-status)
+;;;MAgit keybindings
+(add-hook 'magit-mode-hook
+(lambda ()
+(local-set-key (kbd "j") 'evil-next-line)
+(local-set-key (kbd "k") 'evil-previous-line)
+(local-set-key (kbd "K") 'magit-discard-item)
+(local-set-key (kbd "<escape>") 'magit-mode-quit-window)))
 ;;Undo Tree status
 (key-chord-define evil-normal-state-map ";u" 'undo-tree-visualize)
 (when (boundp 'setup-undo-tree-loaded)
@@ -562,7 +609,7 @@
  '(global-flycheck-mode t nil (flycheck))
  '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t) (plantuml . t))))
  '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
- '(quack-programs (quote ("mzscheme" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
+ '(quack-programs (quote ("scheme58" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mzscheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(scheme-program-name "scheme48")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Matthew Bregg"))
