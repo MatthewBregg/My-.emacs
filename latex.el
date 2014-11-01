@@ -92,7 +92,7 @@
 (defun latexmla ()
 "Insert latexmlastyle at cursor point."
 (interactive)
-(insert-file-contents "~/Dropbox/College\  Freshmen/latex/MLA.tex")
+(insert-file-contents "~/Dropbox/College/latex/MLA.tex")
  )
 
 

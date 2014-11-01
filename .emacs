@@ -9,7 +9,7 @@
 (setq inhibit-splash-screen t)
 ;; Set window title to be full file path
 (setq frame-title-format '("Emacs @ " system-name ": %b %+%+ %f"))
-; Add marmalade repo 
+; Add marmalade repo
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -40,13 +40,13 @@
 (setq org-startup-indented t)
 ;;(setq org-hide-leading-stars t)
 (setq org-src-fontify-natively t)
-(setq org-odd-level-only nil) 
+(setq org-odd-level-only nil)
 ;; ;Smartparens
 ;; (require 'smartparens-config)
 ;; (smartparens-global-mode t)
 
 
-;Emacs customizations 
+;Emacs customizations
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -125,6 +125,8 @@ This command does not push erased text to kill-ring."
  (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
 (define-key evil-normal-state-map  (kbd "gl") 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
+(define-key evil-normal-state-map (kbd "gd") 'find-tag)
+(define-key evil-normal-state-map (kbd "gb") 'pop-tag-mark)
 (key-chord-define evil-visual-state-map "gp" 'evilmi-jump-items)
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
 (define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
@@ -132,6 +134,25 @@ This command does not push erased text to kill-ring."
 ;(global-set-key (kbd "C-S-k") 'my-delete-line-backward) ;; `C-c u'
 ;; Alternative for `M-x'
 (key-chord-define evil-normal-state-map ";'"   'smex)
+;;Emacs picture mode hjkl bindings
+
+
+(defun picture-mode-map () 
+(local-set-key (kbd "C-c c") nil)
+(local-set-key (kbd "C-c k") nil)
+
+(local-set-key (kbd "C-c j") 'picture-movement-down)
+(local-set-key (kbd "C-c k") 'picture-movement-up)
+(local-set-key (kbd "C-c l") 'picture-movement-right)
+(local-set-key (kbd "C-c h") 'picture-movement-left)
+
+(local-set-key (kbd "C-c u") 'picture-movement-nw)
+(local-set-key (kbd "C-c o") 'picture-movement-ne)
+(local-set-key (kbd "C-c n") 'picture-movement-sw)
+(local-set-key (kbd "C-c ,") 'picture-movement-se)
+(local-set-key (kbd "C-c C-c")   'picture-mode-exit)
+)
+(add-hook 'picture-mode-hook 'picture-mode-map)
 
 ;;Magit Stuff
   (key-chord-define evil-normal-state-map "-[" 'magit-status)
@@ -175,7 +196,7 @@ This command does not push erased text to kill-ring."
 
 
 ;Set colors based on mode
-                            
+
 ;;;(load "~/Dropbox/emacs/colors.el")
 ;Load all the latex and auctex stuff, easily commentoutable for other computers
 (load "~/Dropbox/emacs/latex.el")
@@ -196,11 +217,11 @@ This command does not push erased text to kill-ring."
 
 ;Autocomplete and smartcompile
 (require 'auto-complete-clang)
-(global-auto-complete-mode 1)	
+(global-auto-complete-mode 1)
 
 
 (require 'smart-compile)
-(add-to-list 'smart-compile-alist '("\\.cpp$" . "g++ -O2 -Wall -o %n %f")) 
+(add-to-list 'smart-compile-alist '("\\.cpp$" . "g++ -O2 -Wall -o %n %f"))
 
 ;Was below auctex stuff
 (require 'xml)
@@ -221,7 +242,7 @@ This command does not push erased text to kill-ring."
 
 ;Change cursor color
    ;;(require 'cursor-chg)  ; Load the library
-   
+
    ;;(change-cursor-mode 1) ; Turn on change for overwrite, read-only, and input mode
 
 
@@ -229,16 +250,16 @@ This command does not push erased text to kill-ring."
 
 
 ;save macro
- (defun save-macro (name)                  
+ (defun save-macro (name)
     "save a macro. Take a name as argument
-     and save the last defined macro under 
+     and save the last defined macro under
      this name at the end of your .emacs"
-     (interactive "SName of the macro :")  ; ask for the name of the macro    
-     (kmacro-name-last-macro name)         ; use this name for the macro    
-     (find-file user-init-file)            ; open ~/.emacs or other user init file 
+     (interactive "SName of the macro :")  ; ask for the name of the macro
+     (kmacro-name-last-macro name)         ; use this name for the macro
+     (find-file user-init-file)            ; open ~/.emacs or other user init file
      (goto-char (point-max))               ; go to the end of the .emacs
      (newline)                             ; insert a newline
-     (insert-kbd-macro name)               ; copy the macro 
+     (insert-kbd-macro name)               ; copy the macro
      (newline)                             ; insert a newline
      (switch-to-buffer nil))               ; return to the initial buffer
 
@@ -309,8 +330,10 @@ This command does not push erased text to kill-ring."
                                        filename))
                 (setq indent-tabs-mode t)
                 (c-set-style "linux-tabs-only")))))
-
-
+(setq c-default-style "linux")
+(setq c++-default-style "linux")
+;;4 space indent, remove when done with project.
+(setq-default c-basic-offset 4)
 
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 ;Auto completels parens and some other limiters
@@ -352,8 +375,10 @@ This command does not push erased text to kill-ring."
 
 
 ;; Pretty parenthesis, usefull for Elisp, Clojure, Scheme, etc.
+(require 'rainbow-delimiters)
 (rainbow-delimiters-mode)
-(global-rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;(global-rainbow-delimiters-mode)
 
 
 ;; enable y/n answers
@@ -421,7 +446,7 @@ This command does not push erased text to kill-ring."
 ;;(define-key compilation-minor-mode-map (kbd "S-")'compile-goto-error))
 
 ;;(add-hook 'shell-mode-hook 'valgrind)
-;Above causes problems with shell mode, so use below toggle instead to manually turn it on and off. 
+;Above causes problems with shell mode, so use below toggle instead to manually turn it on and off.
 ;; Toggles between a dark theme and a light theme.
 ;; Bind it to F5
 (global-set-key (kbd "<f6>") 'compilation-minor-mode)
@@ -454,7 +479,7 @@ This command does not push erased text to kill-ring."
 ;Golden Ratio stuff
 (require 'golden-ratio)
 
-(golden-ratio-mode 1)
+;(golden-ratio-mode 1)
 
  (global-set-key [f9] 'golden-ratio-mode)
 
@@ -533,7 +558,80 @@ This command does not push erased text to kill-ring."
 (require 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 (global-set-key (kbd "C-x p") 'ace-window)
+;;Emacs tags for code navigation
+;http://www.coverfire.com/archives/2004/06/24/emacs-source-code-navigation/
+  (defun create-tags (dir-name)
+    "Create tags file."
+    (interactive "DDirectory: ")
+    (shell-command
+     (format "ctags -f %s -e -R %s" path-to-ctags (directory-file-name dir-name)))
+  )
+  (defadvice find-tag (around refresh-etags activate)
+   "Rerun etags and reload tags if tag not found and redo find-tag.
+   If buffer is modified, ask about save before running etags."
+  (let ((extension (file-name-extension (buffer-file-name))))
+    (condition-case err
+    ad-do-it
+      (error (and (buffer-modified-p)
+          (not (ding))
+          (y-or-n-p "Buffer is modified, save it? ")
+          (save-buffer))
+         (er-refresh-etags extension)
+         ad-do-it))))
 
+  (defun er-refresh-etags (&optional extension)
+  "Run etags on all peer files in current dir and reload them silently."
+  (interactive)
+  (shell-command (format "etags *.%s" (or extension "el")))
+  (let ((tags-revert-without-query t))  ; don't query, revert silently
+    (visit-tags-table default-directory nil)))
+;;Tramp
+ (setq tramp-default-method "ssh")
+;;Rename current buffer
+ (defun delete-current-buffer-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (ido-kill-buffer)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))
+
+(defun rename-current-buffer-file ()
+  "Renames current buffer and file it is visiting."
+  (interactive)
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (let ((new-name (read-file-name "New name: " filename)))
+        (if (get-buffer new-name)
+            (error "A buffer named '%s' already exists!" new-name)
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil)
+          (message "File '%s' successfully renamed to '%s'"
+                   name (file-name-nondirectory new-name)))))))
+
+(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+
+;;Git fringe
+;; (require 'git-gutter-fringe)
+;; (setq git-gutter-fr:side 'right-fringe)
+;; ;;https://github.com/syohex/emacs-git-gutter-fringe
+
+;;Emacs backups
+(setq backup-directory-alist '((".*" . "~/.emacs-autosave/"))
+     backup-by-copying t
+     delete-old-versions t
+     kept-new-versions 6
+     kept-old-versions 2
+     version-control 1)
 ;;Eshell fuckery
 
 ;;  (global-set-key [f7] 'eshell-to-buffer)
@@ -624,4 +722,3 @@ This command does not push erased text to kill-ring."
 
 (fset 'stdifier
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([98 105 115 116 100 58 58 escape 119 119] 0 "%d")) arg)))
-

@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# contributor: Mitchel Humpherys
-# name: cout
-# --
-std::cout << ${1:string} $0<< std::endl;
