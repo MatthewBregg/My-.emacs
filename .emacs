@@ -134,25 +134,30 @@ This command does not push erased text to kill-ring."
 ;(global-set-key (kbd "C-S-k") 'my-delete-line-backward) ;; `C-c u'
 ;; Alternative for `M-x'
 (key-chord-define evil-normal-state-map ";'"   'smex)
+
 ;;Emacs picture mode hjkl bindings
-
-
+(defun pict-mode ()(interactive) (picture-mode) (message "To exit picture mode, C-c C-c"))
 (defun picture-mode-map () 
-(local-set-key (kbd "C-c c") nil)
-(local-set-key (kbd "C-c k") nil)
+(local-set-key (kbd "C-c") nil)
+(local-set-key (kbd "C-k") nil)
+(local-set-key (kbd "C-j") 'picture-movement-down)
+(local-set-key (kbd "C-k") 'picture-movement-up)
+(local-set-key (kbd "C-l") 'picture-movement-right)
+(local-set-key (kbd "C-h") 'picture-movement-left)
 
-(local-set-key (kbd "C-c j") 'picture-movement-down)
-(local-set-key (kbd "C-c k") 'picture-movement-up)
-(local-set-key (kbd "C-c l") 'picture-movement-right)
-(local-set-key (kbd "C-c h") 'picture-movement-left)
+(local-set-key (kbd "C-u") 'picture-movement-nw)
+(local-set-key (kbd "C-o") 'picture-movement-ne)
+(local-set-key (kbd "C-n") 'picture-movement-sw)
+(local-set-key (kbd "C-.") 'picture-movement-se)
 
-(local-set-key (kbd "C-c u") 'picture-movement-nw)
-(local-set-key (kbd "C-c o") 'picture-movement-ne)
-(local-set-key (kbd "C-c n") 'picture-movement-sw)
-(local-set-key (kbd "C-c ,") 'picture-movement-se)
 (local-set-key (kbd "C-c C-c")   'picture-mode-exit)
+(defun picture-normal-exit()(interactive) (picture-mode-exit) (evil-normal-state))
+
+(local-set-key (kbd "C-c C-c")   'picture-normal-exit)
 )
 (add-hook 'picture-mode-hook 'picture-mode-map)
+(add-hook 'picture-mode-hook 'evil-emacs-state)
+
 
 ;;Magit Stuff
   (key-chord-define evil-normal-state-map "-[" 'magit-status)
