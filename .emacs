@@ -1,5 +1,5 @@
 ;Load path
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
 (add-to-list 'load-path "~/.emacs.d/nlinum-1.2")
 
@@ -41,6 +41,7 @@
 ;;(setq org-hide-leading-stars t)
 (setq org-src-fontify-natively t)
 (setq org-odd-level-only nil)
+
 ;; ;Smartparens
 ;; (require 'smartparens-config)
 ;; (smartparens-global-mode t)

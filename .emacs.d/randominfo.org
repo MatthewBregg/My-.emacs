@@ -1,5 +1,8 @@
 To change name on docs, edit variable user full name
 
+
+#+OPTIONS: ^:nil //This option will disable _ to subscript. Useful for writing code documentation where I don't want to use code tags, but want to be able to write, say push_back().
+
 Per doc
   #+TITLE:       the title to be shown (default is the buffer name)
      #+AUTHOR:      the author (default taken from user-full-name)
@@ -19,3 +22,7 @@ A, B to turn read me on /off
 a/b to select
 p/n to go to next/last
 wA to save, which then triggers a stage.
+\begin{verbatim} \end{verbatim} To preserve whitespace
+
+ #+LATEX_HEADER:\usepackage[margin=1.5cm]{geometry}
+
