@@ -33,7 +33,20 @@
 (defun scheme-mode-quack-hook ()
 (setq quack-fontify-style 'emacs))
 (add-hook 'scheme-mode-hook 'scheme-mode-quack-hook)
+;eclim
+(require 'eclim)
+(global-eclim-mode)
+(require 'eclimd)
+(setq help-at-pt-display-when-idle t)
+(setq help-at-pt-timer-delay 0.1)
+(help-at-pt-set-timer)
+;; regular auto-complete initialization
+;(require 'auto-complete-config)
+;(ac-config-default)
 
+;; add the emacs-eclim source
+(require 'ac-emacs-eclim-source)
+(ac-emacs-eclim-config)
 
 ;Org mode stuff
 (require 'org-install)
@@ -45,7 +58,23 @@
 ;; ;Smartparens
 ;; (require 'smartparens-config)
 ;; (smartparens-global-mode t)
+;;Facebook chat
+(require 'jabber-autoloads)
+(setq jabber-account-list '(
+                            ("matthew.bregg.1@chat.facebook.com"
+                             (:network-server . "chat.facebook.com")
+                             (:connection-type . starttls)
+                             (:port . 5222)
 
+                             )
+                            ))
+
+
+;; Disable jabber.el presence notifications
+;; (remove-hook 'jabber-alert-presence-hooks
+;;              'sr-jabber-alert-presence-func)
+;; Connect to all my jabber.el accounts on startup
+;(jabber-connect-all)
 
 ;Emacs customizations
 (menu-bar-mode -1)
@@ -107,6 +136,10 @@ This command does not push erased text to kill-ring."
 (require 'evil)
     (evil-mode 1)
 (setq evil-default-cursor t)
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map
+  (read-kbd-macro evil-toggle-key) 'evil-normal-state)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
 ;Evil nerd commenting
 (evilnc-default-hotkeys)
 ;Evil-surround
@@ -222,12 +255,12 @@ This command does not push erased text to kill-ring."
  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
 ;Autocomplete and smartcompile
-(require 'auto-complete-clang)
-(global-auto-complete-mode 1)
+;(require 'auto-complete-clang)
+;(global-auto-complete-mode 1)
 
 
 (require 'smart-compile)
-(add-to-list 'smart-compile-alist '("\\.cpp$" . "g++ -O2 -Wall -o %n %f"))
+(add-to-list 'smart-compile-alist '("\\.cpp$" . "g++ -O2 -Wall -o %n %f -std=gnu++11"))
 
 ;Was below auctex stuff
 (require 'xml)
@@ -708,12 +741,28 @@ This command does not push erased text to kill-ring."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(TeX-view-program-list (quote (("" "Name = Evince Command evince --page-index=%(outpage)"))))
- '(TeX-view-program-selection (quote (((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open"))))
+ '(TeX-view-program-list
+   (quote
+    (("" "Name = Evince Command evince --page-index=%(outpage)"))))
+ '(TeX-view-program-selection
+   (quote
+    (((output-dvi style-pstricks)
+      "dvips and gv")
+     (output-dvi "xdvi")
+     (output-pdf "Evince")
+     (output-html "xdg-open"))))
+ '(eclimd-wait-for-process nil)
  '(global-flycheck-mode t nil (flycheck))
- '(org-babel-load-languages (quote ((java . t) (emacs-lisp . t) (C . t) (plantuml . t))))
+ '(org-babel-load-languages
+   (quote
+    ((java . t)
+     (emacs-lisp . t)
+     (C . t)
+     (plantuml . t))))
  '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
- '(quack-programs (quote ("scheme58" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mzscheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
+ '(quack-programs
+   (quote
+    ("scheme58" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mzscheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(scheme-program-name "scheme48")
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Matthew Bregg"))
