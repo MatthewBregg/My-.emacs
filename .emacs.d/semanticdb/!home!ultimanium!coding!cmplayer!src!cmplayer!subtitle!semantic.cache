@@ -1,0 +1,223 @@
+;; Object subtitle/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "subtitle/"
+  :tables
+  (list
+    (semanticdb-table "richtexthelper.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("richtexthelper.hpp" include nil nil [1 30])
+            ("misc/log.hpp" include nil nil [31 54]))          
+      :file "richtexthelper.cpp"
+      :pointmax 7808
+      :fsize 7807
+      :lastmodtime '(21681 29824 608735 31000)
+      :unmatched-syntax '((semantic-list 6367 . 7807) (punctuation 6365 . 6366) (symbol 6357 . 6365) (punctuation 6355 . 6356) (INT 6352 . 6355) (punctuation 6351 . 6352) (symbol 6347 . 6351) (punctuation 6345 . 6346) (punctuation 6344 . 6345) (CONST 6338 . 6343) (semantic-list 6335 . 6337) (symbol 6330 . 6335) (punctuation 6329 . 6330) (punctuation 6328 . 6329) (symbol 6325 . 6328) (punctuation 6324 . 6325) (punctuation 6323 . 6324) (symbol 6309 . 6323) (symbol 6304 . 6308) (semantic-list 5378 . 6302) (INT 5374 . 5377) (punctuation 5372 . 5373) (punctuation 5371 . 5372) (semantic-list 5202 . 5370) (symbol 5193 . 5202) (punctuation 5192 . 5193) (punctuation 5191 . 5192) (symbol 5177 . 5191) (symbol 5172 . 5176) (semantic-list 4942 . 5170) (symbol 4936 . 4941) (punctuation 4934 . 4935) (punctuation 4933 . 4934) (semantic-list 4906 . 4932) (symbol 4891 . 4906) (punctuation 4890 . 4891) (punctuation 4889 . 4890) (symbol 4875 . 4889) (symbol 4870 . 4874) (semantic-list 2405 . 4868) (symbol 2401 . 2404) (punctuation 2400 . 2401) (punctuation 2399 . 2400) (symbol 2385 . 2399) (punctuation 2383 . 2384) (punctuation 2382 . 2383) (semantic-list 2317 . 2381) (symbol 2309 . 2317) (punctuation 2308 . 2309) (punctuation 2307 . 2308) (symbol 2293 . 2307) (symbol 2288 . 2292) (semantic-list 1860 . 2286) (INT 1856 . 1859) (punctuation 1854 . 1855) (punctuation 1853 . 1854) (semantic-list 1828 . 1852) (symbol 1813 . 1828) (punctuation 1812 . 1813) (punctuation 1811 . 1812) (symbol 1797 . 1811) (symbol 1792 . 1796) (semantic-list 1694 . 1790) (INT 1690 . 1693) (punctuation 1688 . 1689) (punctuation 1687 . 1688) (semantic-list 1675 . 1686) (symbol 1655 . 1675) (punctuation 1654 . 1655) (punctuation 1653 . 1654) (symbol 1639 . 1653) (symbol 1634 . 1638) (semantic-list 1259 . 1632) (symbol 1251 . 1258) (punctuation 1249 . 1250) (punctuation 1248 . 1249) (semantic-list 1132 . 1247) (symbol 1125 . 1132) (punctuation 1124 . 1125) (punctuation 1123 . 1124) (symbol 1109 . 1123) (symbol 1104 . 1108) (semantic-list 679 . 1102) (symbol 672 . 678) (punctuation 670 . 671) (punctuation 669 . 670) (semantic-list 644 . 668) (symbol 637 . 644) (punctuation 636 . 637) (punctuation 635 . 636) (symbol 621 . 635) (symbol 616 . 620) (semantic-list 496 . 614) (BOOL 491 . 495) (punctuation 489 . 490) (punctuation 488 . 489) (semantic-list 477 . 487) (symbol 465 . 477) (symbol 461 . 464) (semantic-list 420 . 459) (BOOL 415 . 419) (punctuation 413 . 414) (punctuation 412 . 413) (semantic-list 401 . 411) (symbol 392 . 401) (symbol 388 . 391) (semantic-list 145 . 386) (INT 141 . 144) (punctuation 139 . 140) (punctuation 138 . 139) (semantic-list 113 . 137) (symbol 108 . 113) (punctuation 107 . 108) (punctuation 106 . 107) (symbol 92 . 106) (symbol 87 . 91) (semantic-list 75 . 85) (symbol 56 . 75)))
+    (semanticdb-table "richtexthelper.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("RICHTEXTHELPER_HPP" variable (:constant-flag t) nil [36 54])
+            ("RichTextHelper" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [79 86])
+                    ("RichTextHelper" function
+                       (:destructor-flag t
+                        :typemodifiers ("virtual")
+                        :type "void")
+                        (reparse-symbol classsubparts) [91 119])
+                    ("QColor" variable (:type "int") (reparse-symbol classsubparts) [447 454])
+                    ("QString" variable (:type "int") (reparse-symbol classsubparts) [929 937])
+                    ("QChar" variable (:type "int") (reparse-symbol classsubparts) [1729 1735])
+                    ("Tag" type
+                       (:members 
+                          ( ("Attr" type
+                               (:members 
+                                  ( ("Attr" function
+                                       (:constructor-flag t
+                                        :type ("Attr" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [1908 1918])
+                                    ("Attr" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("name" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("QStringRef" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1936 1959])
+                                            ("value" variable
+                                               (:reference 1
+                                                :constant-flag t
+                                                :type ("QStringRef" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [1960 1984]))                                          
+                                        :type ("Attr" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [1931 2031])
+                                    ("name" variable (:type ("QStringRef" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2044 2067])
+                                    ("value" variable (:type ("QStringRef" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2044 2067]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [1882 2078])
+                            ("style" function
+                               (:prototype-flag t
+                                :type ("QMap" type
+                                     (:template-specifier 
+                                        ( ("int" type nil nil nil)
+                                          ("QVariant" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol classsubparts) [2520 2554])
+                            ("pos" variable
+                               (:default-value "-1"
+                                :type "int")
+                                (reparse-symbol classsubparts) [2563 2576])
+                            ("name" variable (:type ("QStringRef" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2585 2601])
+                            ("attr" variable (:type ("QList" type
+                                 (:template-specifier 
+                                    ( ("Attr" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [2610 2627]))                          
+                        :type "struct")
+                        (reparse-symbol classsubparts) [1861 2634])
+                    ("Tag" variable (:type "int") (reparse-symbol classsubparts) [2697 2701]))                  
+                :type "class")
+                nil [56 3277]))          
+      :file "richtexthelper.hpp"
+      :pointmax 3308
+      :fsize 3307
+      :lastmodtime '(21681 29824 608735 31000)
+      :unmatched-syntax '((semantic-list 3207 . 3274) (INT 3195 . 3198) (punctuation 3193 . 3194) (punctuation 3192 . 3193) (semantic-list 3036 . 3191) (symbol 3027 . 3036) (symbol 3022 . 3026) (STATIC 3015 . 3021) (punctuation 3009 . 3010) (INT 3006 . 3009) (punctuation 3004 . 3005) (punctuation 3003 . 3004) (semantic-list 2844 . 3002) (symbol 2835 . 2844) (symbol 2830 . 2834) (STATIC 2823 . 2829) (semantic-list 2773 . 2818) (symbol 2761 . 2764) (punctuation 2759 . 2760) (punctuation 2758 . 2759) (semantic-list 2726 . 2757) (symbol 2718 . 2726) (symbol 2713 . 2717) (STATIC 2706 . 2712) (punctuation 2695 . 2696) (punctuation 2694 . 2695) (semantic-list 2659 . 2693) (symbol 2651 . 2659) (symbol 2646 . 2650) (STATIC 2639 . 2645) (semantic-list 2392 . 2511) (symbol 2373 . 2383) (punctuation 2371 . 2372) (punctuation 2370 . 2371) (CONST 2364 . 2369) (semantic-list 2345 . 2363) (symbol 2340 . 2345) (symbol 2335 . 2339) (semantic-list 2137 . 2326) (INT 2125 . 2128) (punctuation 2123 . 2124) (punctuation 2122 . 2123) (CONST 2116 . 2121) (semantic-list 2097 . 2115) (symbol 2092 . 2097) (symbol 2087 . 2091) (semantic-list 2392 . 2511) (symbol 2373 . 2383) (punctuation 2371 . 2372) (punctuation 2370 . 2371) (CONST 2364 . 2369) (semantic-list 2345 . 2363) (symbol 2340 . 2345) (symbol 2335 . 2339) (semantic-list 2137 . 2326) (INT 2125 . 2128) (punctuation 2123 . 2124) (punctuation 2122 . 2123) (CONST 2116 . 2121) (semantic-list 2097 . 2115) (symbol 2092 . 2097) (symbol 2087 . 2091) (punctuation 1854 . 1855) (INT 1851 . 1854) (punctuation 1849 . 1850) (punctuation 1848 . 1849) (semantic-list 1836 . 1847) (symbol 1816 . 1836) (symbol 1811 . 1815) (STATIC 1804 . 1810) (punctuation 1798 . 1799) (INT 1795 . 1798) (punctuation 1793 . 1794) (punctuation 1792 . 1793) (semantic-list 1767 . 1791) (symbol 1752 . 1767) (symbol 1747 . 1751) (STATIC 1740 . 1746) (punctuation 1727 . 1728) (punctuation 1726 . 1727) (semantic-list 1699 . 1725) (symbol 1684 . 1699) (symbol 1679 . 1683) (STATIC 1672 . 1678) (semantic-list 1620 . 1666) (BOOL 1607 . 1611) (punctuation 1605 . 1606) (punctuation 1604 . 1605) (semantic-list 1572 . 1603) (symbol 1559 . 1572) (symbol 1554 . 1558) (STATIC 1547 . 1553) (semantic-list 1402 . 1542) (BOOL 1393 . 1397) (punctuation 1391 . 1392) (punctuation 1390 . 1391) (semantic-list 1355 . 1389) (symbol 1342 . 1355) (symbol 1337 . 1341) (STATIC 1330 . 1336) (semantic-list 1001 . 1325) (symbol 986 . 996) (punctuation 984 . 985) (punctuation 983 . 984) (semantic-list 958 . 982) (symbol 954 . 958) (symbol 949 . 953) (STATIC 942 . 948) (punctuation 927 . 928) (punctuation 926 . 927) (semantic-list 809 . 925) (symbol 802 . 809) (symbol 797 . 801) (STATIC 790 . 796) (semantic-list 750 . 785) (BOOL 745 . 749) (punctuation 743 . 744) (punctuation 742 . 743) (semantic-list 731 . 741) (symbol 722 . 731) (symbol 717 . 721) (STATIC 710 . 716) (semantic-list 671 . 705) (BOOL 666 . 670) (punctuation 664 . 665) (punctuation 663 . 664) (semantic-list 652 . 662) (symbol 640 . 652) (symbol 635 . 639) (STATIC 628 . 634) (semantic-list 577 . 623) (BOOL 564 . 568) (punctuation 562 . 563) (punctuation 561 . 562) (semantic-list 550 . 560) (symbol 539 . 550) (symbol 534 . 538) (STATIC 527 . 533) (semantic-list 504 . 522) (BOOL 499 . 503) (punctuation 497 . 498) (punctuation 496 . 497) (semantic-list 485 . 495) (symbol 471 . 485) (symbol 466 . 470) (STATIC 459 . 465) (punctuation 445 . 446) (punctuation 444 . 445) (semantic-list 419 . 443) (symbol 412 . 419) (symbol 407 . 411) (STATIC 400 . 406) (punctuation 394 . 395) (INT 391 . 394) (punctuation 389 . 390) (punctuation 388 . 389) (semantic-list 363 . 387) (symbol 358 . 363) (symbol 353 . 357) (STATIC 346 . 352) (semantic-list 299 . 340) (BOOL 290 . 294) (punctuation 288 . 289) (punctuation 287 . 288) (semantic-list 243 . 286) (symbol 238 . 243) (symbol 234 . 237) (semantic-list 187 . 228) (BOOL 178 . 182) (punctuation 176 . 177) (punctuation 175 . 176) (semantic-list 134 . 174) (symbol 129 . 134) (symbol 125 . 128))
+      :lexical-table 
+        '(("RICHTEXTHELPER_HPP")
+          )
+)
+    (semanticdb-table "subtitle_parser.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("subtitle_parser_p.hpp" include nil nil [1 33])
+            ("SubtitleParser::msPerChar" variable
+               (:default-value "-1"
+                :type "int")
+                nil [35 70]))          
+      :file "subtitle_parser.cpp"
+      :pointmax 2960
+      :fsize 2959
+      :lastmodtime '(21681 29824 608735 31000)
+      :unmatched-syntax '((semantic-list 2435 . 2958) (symbol 2424 . 2434) (punctuation 2422 . 2423) (punctuation 2421 . 2422) (CONST 2415 . 2420) (semantic-list 2412 . 2414) (symbol 2405 . 2412) (punctuation 2404 . 2405) (punctuation 2403 . 2404) (symbol 2389 . 2403) (symbol 2384 . 2388) (semantic-list 1894 . 2382) (symbol 1886 . 1893) (punctuation 1884 . 1885) (punctuation 1883 . 1884) (semantic-list 1859 . 1882) (symbol 1847 . 1859) (punctuation 1846 . 1847) (punctuation 1845 . 1846) (symbol 1831 . 1845) (symbol 1826 . 1830) (semantic-list 1721 . 1824) (INT 1717 . 1720) (punctuation 1715 . 1716) (punctuation 1714 . 1715) (semantic-list 1678 . 1713) (symbol 1664 . 1678) (punctuation 1663 . 1664) (punctuation 1662 . 1663) (symbol 1648 . 1662) (symbol 1643 . 1647) (semantic-list 1554 . 1641) (INT 1550 . 1553) (punctuation 1548 . 1549) (punctuation 1547 . 1548) (semantic-list 1511 . 1546) (symbol 1497 . 1511) (punctuation 1496 . 1497) (punctuation 1495 . 1496) (symbol 1481 . 1495) (symbol 1476 . 1480) (semantic-list 1387 . 1474) (INT 1383 . 1386) (punctuation 1381 . 1382) (punctuation 1380 . 1381) (semantic-list 1347 . 1379) (symbol 1333 . 1347) (punctuation 1332 . 1333) (punctuation 1331 . 1332) (symbol 1317 . 1331) (symbol 1312 . 1316) (semantic-list 1014 . 1310) (symbol 1003 . 1013) (punctuation 1001 . 1002) (punctuation 1000 . 1001) (semantic-list 967 . 999) (symbol 956 . 967) (punctuation 955 . 956) (punctuation 954 . 955) (symbol 940 . 954) (symbol 935 . 939) (semantic-list 183 . 933) (symbol 174 . 182) (punctuation 172 . 173) (punctuation 171 . 172) (semantic-list 98 . 170) (symbol 93 . 98) (punctuation 92 . 93) (punctuation 91 . 92) (symbol 77 . 91) (symbol 72 . 76)))
+    (semanticdb-table "subtitle_parser_p.hpp"
+      :file "subtitle_parser_p.hpp"
+      :fsize 1322
+      :lastmodtime '(21681 29824 608735 31000))
+    (semanticdb-table "subtitle_parser_p.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("subtitle_parser_p.hpp" include nil nil [1 33]))          
+      :file "subtitle_parser_p.cpp"
+      :pointmax 7729
+      :fsize 7728
+      :lastmodtime '(21681 29824 608735 31000)
+      :unmatched-syntax '((semantic-list 5067 . 7728) (VOID 5062 . 5066) (punctuation 5060 . 5061) (punctuation 5059 . 5060) (semantic-list 5043 . 5058) (symbol 5037 . 5043) (punctuation 5036 . 5037) (punctuation 5035 . 5036) (symbol 5021 . 5035) (symbol 5016 . 5020) (semantic-list 4421 . 5014) (VOID 4416 . 4420) (punctuation 4414 . 4415) (punctuation 4413 . 4414) (semantic-list 4397 . 4412) (symbol 4391 . 4397) (punctuation 4390 . 4391) (punctuation 4389 . 4390) (symbol 4375 . 4389) (symbol 4370 . 4374) (semantic-list 4143 . 4368) (BOOL 4138 . 4142) (punctuation 4136 . 4137) (punctuation 4135 . 4136) (CONST 4129 . 4134) (semantic-list 4126 . 4128) (symbol 4116 . 4126) (punctuation 4115 . 4116) (punctuation 4114 . 4115) (symbol 4104 . 4114) (symbol 4099 . 4103) (semantic-list 2179 . 4015) (VOID 2174 . 2178) (punctuation 2172 . 2173) (punctuation 2171 . 2172) (semantic-list 2155 . 2170) (symbol 2149 . 2155) (punctuation 2148 . 2149) (punctuation 2147 . 2148) (symbol 2135 . 2147) (symbol 2130 . 2134) (semantic-list 2047 . 2128) (BOOL 2042 . 2046) (punctuation 2040 . 2041) (punctuation 2039 . 2040) (CONST 2033 . 2038) (semantic-list 2030 . 2032) (symbol 2020 . 2030) (punctuation 2019 . 2020) (punctuation 2018 . 2019) (symbol 2006 . 2018) (symbol 2001 . 2005) (semantic-list 455 . 1997) (VOID 450 . 454) (punctuation 448 . 449) (punctuation 447 . 448) (semantic-list 431 . 446) (symbol 425 . 431) (punctuation 424 . 425) (punctuation 423 . 424) (symbol 413 . 423) (symbol 408 . 412) (semantic-list 189 . 406) (BOOL 184 . 188) (punctuation 182 . 183) (punctuation 181 . 182) (CONST 175 . 180) (semantic-list 172 . 174) (symbol 162 . 172) (punctuation 161 . 162) (punctuation 160 . 161) (symbol 150 . 160) (symbol 145 . 149) (semantic-list 95 . 142) (symbol 88 . 94) (punctuation 86 . 87) (punctuation 85 . 86) (semantic-list 51 . 84) (symbol 40 . 51) (symbol 35 . 39)))
+    (semanticdb-table "subtitlerendereritem.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("SUBTITLERENDERERITEM_HPP" variable (:constant-flag t) nil [42 66])
+            ("quick/simpletextureitem.hpp" include nil nil [68 106])
+            ("SubComp" type
+               (:prototype t
+                :type "class")
+                nil [108 122])
+            ("Subtitle" type
+               (:prototype t
+                :type "class")
+                nil [147 162])
+            ("RichTextDocument" type
+               (:prototype t
+                :type "class")
+                nil [163 186])
+            ("SubCompModel" type
+               (:prototype t
+                :type "class")
+                nil [202 221])
+            ("OsdTheme" type
+               (:prototype t
+                :type "struct")
+                nil [222 238])
+            ("SubtitleDrawer" type
+               (:prototype t
+                :type "class")
+                nil [256 277])
+            ("SubtitleRendererItem" type
+               (:superclasses 
+                  ( ("SimpleTextureItem" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [349 356])
+                    ("SubtitleRendererItem" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("parent" variable
+                               (:pointer 1
+                                :default-value "nullptr"
+                                :type ("QQuickItem" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [382 410]))                          
+                        :type ("SubtitleRendererItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [361 412])
+                    ("SubtitleRendererItem" function
+                       (:prototype-flag t
+                        :destructor-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [417 441])
+                    ("QVector" variable (:type "int") (reparse-symbol classsubparts) [777 800])
+                    ("QVector" variable (:type "int") (reparse-symbol classsubparts) [832 857])
+                    ("QImage" variable (:type "int") (reparse-symbol classsubparts) [1509 1516])
+                    ("modelsChanged" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("models" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("QVector" type
+                                     (:template-specifier 
+                                        ( ("SubCompModel" type (:pointer 1) nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [1783 1820]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1764 1821])
+                    ("private" label nil (reparse-symbol classsubparts) [1822 1830])
+                    ("override" variable (:type "void") (reparse-symbol classsubparts) [1963 1977])
+                    ("override" variable (:type "void") (reparse-symbol classsubparts) [2040 2054])
+                    ("override" variable
+                       (:pointer 1
+                        :type ("ShaderIface" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2120 2142])
+                    ("override" variable
+                       (:pointer 1
+                        :type ("ShaderData" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2174 2195])
+                    ("override" variable (:type "void") (reparse-symbol classsubparts) [2324 2338])
+                    ("override" variable (:type "void") (reparse-symbol classsubparts) [2380 2394])
+                    ("override" variable (:type "void") (reparse-symbol classsubparts) [2436 2450])
+                    ("Data" type
+                       (:prototype t
+                        :type "struct")
+                        (reparse-symbol classsubparts) [2455 2467])
+                    ("d" variable
+                       (:pointer 1
+                        :type ("Data" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2468 2476])
+                    ("SubtitleRendererShader" friend nil (reparse-symbol classsubparts) [2481 2516]))                  
+                :type "class")
+                nil [279 2520]))          
+      :file "subtitlerendereritem.hpp"
+      :pointmax 2557
+      :fsize 2556
+      :lastmodtime '(21681 29824 612068 311000)
+      :unmatched-syntax '((punctuation 2516 . 2517) (punctuation 2434 . 2435) (punctuation 2433 . 2434) (semantic-list 2416 . 2432) (symbol 2404 . 2416) (symbol 2399 . 2403) (punctuation 2378 . 2379) (punctuation 2377 . 2378) (semantic-list 2358 . 2376) (symbol 2348 . 2358) (symbol 2343 . 2347) (punctuation 2322 . 2323) (punctuation 2321 . 2322) (semantic-list 2294 . 2320) (symbol 2281 . 2294) (symbol 2276 . 2280) (semantic-list 2236 . 2271) (symbol 2227 . 2235) (punctuation 2225 . 2226) (symbol 2221 . 2225) (punctuation 2219 . 2220) (punctuation 2218 . 2219) (CONST 2212 . 2217) (semantic-list 2209 . 2211) (symbol 2205 . 2209) (symbol 2200 . 2204) (punctuation 2172 . 2173) (punctuation 2171 . 2172) (CONST 2165 . 2170) (semantic-list 2162 . 2164) (symbol 2152 . 2162) (symbol 2147 . 2151) (punctuation 2118 . 2119) (punctuation 2117 . 2118) (CONST 2111 . 2116) (semantic-list 2108 . 2110) (symbol 2096 . 2108) (symbol 2091 . 2095) (punctuation 2085 . 2086) (VOID 2081 . 2085) (punctuation 2079 . 2080) (punctuation 2078 . 2079) (semantic-list 2075 . 2077) (symbol 2064 . 2075) (symbol 2059 . 2063) (punctuation 2038 . 2039) (punctuation 2037 . 2038) (semantic-list 2002 . 2036) (symbol 1987 . 2002) (symbol 1982 . 1986) (punctuation 1961 . 1962) (punctuation 1960 . 1961) (semantic-list 1944 . 1959) (symbol 1933 . 1944) (symbol 1928 . 1932) (punctuation 1922 . 1923) (VOID 1918 . 1922) (punctuation 1916 . 1917) (punctuation 1915 . 1916) (semantic-list 1912 . 1914) (symbol 1904 . 1912) (symbol 1899 . 1903) (punctuation 1893 . 1894) (VOID 1889 . 1893) (punctuation 1887 . 1888) (punctuation 1886 . 1887) (semantic-list 1883 . 1885) (symbol 1873 . 1883) (symbol 1868 . 1872) (punctuation 1862 . 1863) (VOID 1858 . 1862) (punctuation 1856 . 1857) (punctuation 1855 . 1856) (semantic-list 1852 . 1854) (symbol 1840 . 1852) (symbol 1835 . 1839) (punctuation 1758 . 1759) (symbol 1751 . 1758) (punctuation 1749 . 1750) (VOID 1745 . 1749) (punctuation 1743 . 1744) (punctuation 1742 . 1743) (semantic-list 1729 . 1741) (symbol 1723 . 1729) (symbol 1718 . 1722) (punctuation 1712 . 1713) (VOID 1708 . 1712) (punctuation 1706 . 1707) (punctuation 1705 . 1706) (semantic-list 1694 . 1704) (symbol 1681 . 1694) (symbol 1676 . 1680) (punctuation 1670 . 1671) (VOID 1666 . 1670) (punctuation 1664 . 1665) (punctuation 1663 . 1664) (semantic-list 1654 . 1662) (symbol 1648 . 1654) (symbol 1643 . 1647) (punctuation 1637 . 1638) (VOID 1633 . 1637) (punctuation 1631 . 1632) (punctuation 1630 . 1631) (semantic-list 1616 . 1629) (symbol 1607 . 1616) (symbol 1602 . 1606) (semantic-list 1581 . 1597) (symbol 1572 . 1580) (BOOL 1567 . 1571) (punctuation 1565 . 1566) (punctuation 1564 . 1565) (CONST 1558 . 1563) (semantic-list 1555 . 1557) (symbol 1526 . 1555) (symbol 1521 . 1525) (punctuation 1507 . 1508) (punctuation 1506 . 1507) (CONST 1500 . 1505) (semantic-list 1456 . 1499) (symbol 1452 . 1456) (symbol 1447 . 1451) (punctuation 1441 . 1442) (punctuation 1440 . 1441) (symbol 1424 . 1440) (CONST 1418 . 1423) (punctuation 1416 . 1417) (punctuation 1415 . 1416) (CONST 1409 . 1414) (semantic-list 1406 . 1408) (symbol 1402 . 1406) (symbol 1397 . 1401) (punctuation 1391 . 1392) (VOID 1387 . 1391) (punctuation 1385 . 1386) (punctuation 1384 . 1385) (semantic-list 1360 . 1383) (symbol 1352 . 1360) (symbol 1347 . 1351) (punctuation 1341 . 1342) (punctuation 1340 . 1341) (symbol 1332 . 1340) (CONST 1326 . 1331) (punctuation 1324 . 1325) (punctuation 1323 . 1324) (CONST 1317 . 1322) (semantic-list 1314 . 1316) (symbol 1309 . 1314) (symbol 1304 . 1308) (punctuation 1298 . 1299) (VOID 1294 . 1298) (punctuation 1292 . 1293) (punctuation 1291 . 1292) (semantic-list 1276 . 1290) (symbol 1268 . 1276) (symbol 1263 . 1267) (punctuation 1257 . 1258) (VOID 1253 . 1257) (punctuation 1251 . 1252) (punctuation 1250 . 1251) (semantic-list 1240 . 1249) (symbol 1234 . 1240) (symbol 1229 . 1233) (punctuation 1223 . 1224) (VOID 1219 . 1223) (punctuation 1217 . 1218) (punctuation 1216 . 1217) (semantic-list 1213 . 1215) (symbol 1207 . 1213) (symbol 1202 . 1206) (punctuation 1196 . 1197) (BOOL 1192 . 1196) (punctuation 1190 . 1191) (punctuation 1189 . 1190) (semantic-list 1149 . 1188) (symbol 1145 . 1149) (symbol 1140 . 1144) (punctuation 1134 . 1135) (VOID 1130 . 1134) (punctuation 1128 . 1129) (punctuation 1127 . 1128) (semantic-list 1115 . 1126) (symbol 1107 . 1115) (symbol 1102 . 1106) (punctuation 1096 . 1097) (BOOL 1092 . 1096) (punctuation 1090 . 1091) (punctuation 1089 . 1090) (CONST 1083 . 1088) (semantic-list 1080 . 1082) (symbol 1072 . 1080) (symbol 1067 . 1071) (punctuation 1061 . 1062) (VOID 1057 . 1061) (punctuation 1055 . 1056) (punctuation 1054 . 1055) (semantic-list 1041 . 1053) (symbol 1035 . 1041) (symbol 1030 . 1034) (punctuation 1024 . 1025) (VOID 1020 . 1024) (punctuation 1018 . 1019) (punctuation 1017 . 1018) (semantic-list 987 . 1016) (symbol 976 . 987) (symbol 971 . 975) (punctuation 965 . 966) (INT 962 . 965) (punctuation 960 . 961) (punctuation 959 . 960) (CONST 953 . 958) (semantic-list 950 . 952) (symbol 935 . 950) (symbol 930 . 934) (punctuation 924 . 925) (VOID 920 . 924) (punctuation 918 . 919) (punctuation 917 . 918) (semantic-list 880 . 916) (symbol 867 . 880) (symbol 862 . 866) (punctuation 830 . 831) (punctuation 829 . 830) (CONST 823 . 828) (semantic-list 820 . 822) (symbol 810 . 820) (symbol 805 . 809) (punctuation 775 . 776) (punctuation 774 . 775) (CONST 768 . 773) (semantic-list 765 . 767) (symbol 759 . 765) (symbol 754 . 758) (punctuation 748 . 749) (BOOL 744 . 748) (punctuation 742 . 743) (punctuation 741 . 742) (CONST 735 . 740) (semantic-list 732 . 734) (symbol 720 . 732) (symbol 715 . 719) (punctuation 709 . 710) (DOUBLE 703 . 709) (punctuation 701 . 702) (punctuation 700 . 701) (CONST 694 . 699) (semantic-list 691 . 693) (symbol 688 . 691) (symbol 683 . 687) (punctuation 677 . 678) (DOUBLE 671 . 677) (punctuation 669 . 670) (punctuation 668 . 669) (CONST 662 . 667) (semantic-list 659 . 661) (symbol 656 . 659) (symbol 651 . 655) (punctuation 645 . 646) (INT 642 . 645) (punctuation 640 . 641) (punctuation 639 . 640) (CONST 633 . 638) (semantic-list 630 . 632) (symbol 625 . 630) (symbol 620 . 624) (punctuation 614 . 615) (INT 611 . 614) (punctuation 609 . 610) (punctuation 608 . 609) (CONST 602 . 607) (semantic-list 592 . 601) (symbol 586 . 592) (symbol 581 . 585) (punctuation 575 . 576) (INT 572 . 575) (punctuation 570 . 571) (punctuation 569 . 570) (CONST 563 . 568) (semantic-list 553 . 562) (symbol 548 . 553) (symbol 543 . 547) (punctuation 537 . 538) (INT 534 . 537) (punctuation 532 . 533) (punctuation 531 . 532) (CONST 525 . 530) (semantic-list 522 . 524) (symbol 515 . 522) (symbol 510 . 514) (punctuation 504 . 505) (INT 501 . 504) (punctuation 499 . 500) (punctuation 498 . 499) (CONST 492 . 497) (semantic-list 489 . 491) (symbol 485 . 489) (symbol 480 . 484) (punctuation 474 . 475) (INT 471 . 474) (punctuation 469 . 470) (punctuation 468 . 469) (CONST 462 . 467) (semantic-list 459 . 461) (symbol 451 . 459) (symbol 446 . 450) (symbol 340 . 348))
+      :lexical-table 
+        '(("SUBTITLERENDERERITEM_HPP")
+          )
+))
+  :file "!home!ultimanium!coding!cmplayer!src!cmplayer!subtitle!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

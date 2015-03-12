@@ -1,0 +1,103 @@
+;; Object 01_vertex_program/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "01_vertex_program/"
+  :tables
+  (list
+    (semanticdb-table "01_vertex_program.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [266 284])
+            ("stdlib.h" include (:system-flag t) nil [314 333])
+            ("GL/glut.h" include (:system-flag t) nil [394 414])
+            ("Cg/cg.h" include (:system-flag t) nil [422 440])
+            ("Cg/cgGL.h" include (:system-flag t) nil [496 516])
+            ("myCgContext" variable
+               (:typemodifiers ("static")
+                :type ("CGcontext" type (:type "class") nil nil))
+                nil [518 549])
+            ("myCgVertexProfile" variable
+               (:typemodifiers ("static")
+                :type ("CGprofile" type (:type "class") nil nil))
+                nil [550 587])
+            ("myCgVertexProgram" variable
+               (:typemodifiers ("static")
+                :type ("CGprogram" type (:type "class") nil nil))
+                nil [588 625])
+            ("myProgramName" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"01_vertex_program\""
+                :type "char")
+                nil [627 801])
+            ("myVertexProgramFileName" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"C2E1v_green.cg\""
+                :type "char")
+                nil [627 801])
+            ("myVertexProgramName" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "\"C2E1v_green\""
+                :type "char")
+                nil [627 801])
+            ("checkForCgError" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("situation" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [831 853]))                  
+                :type "void")
+                nil [803 1140])
+            ("display" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1220 1225]))                  
+                :type "void")
+                nil [1200 1226])
+            ("keyboard" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("c" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [1248 1264])
+                    ("x" variable (:type "int") (reparse-symbol arg-sub-list) [1265 1271])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [1272 1278]))                  
+                :type "void")
+                nil [1227 1279])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [1290 1299])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1300 1312]))                  
+                :type "int")
+                nil [1281 2528])
+            ("display" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2550 2555]))                  
+                :type "void")
+                nil [2530 3125])
+            ("keyboard" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("c" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [3148 3164])
+                    ("x" variable (:type "int") (reparse-symbol arg-sub-list) [3165 3171])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [3172 3178]))                  
+                :type "void")
+                nil [3127 3462]))          
+      :file "01_vertex_program.c"
+      :pointmax 3463
+      :fsize 3462
+      :lastmodtime '(18947 60050 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!.local!share!Steam!ubuntu12_32!steam-runtime.old!i386!usr!share!doc!nvidia-cg-toolkit!examples!OpenGL!basic!01_vertex_program!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

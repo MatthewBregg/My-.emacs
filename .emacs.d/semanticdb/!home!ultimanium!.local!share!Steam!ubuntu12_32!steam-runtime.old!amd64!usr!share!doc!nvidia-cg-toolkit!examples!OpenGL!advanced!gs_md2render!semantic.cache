@@ -1,0 +1,445 @@
+;; Object gs_md2render/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "gs_md2render/"
+  :tables
+  (list
+    (semanticdb-table "gli_merge.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [110 129])
+            ("stdlib.h" include (:system-flag t) nil [130 149])
+            ("stdio.h" include (:system-flag t) nil [150 168])
+            ("gli.h" include nil nil [170 186])
+            ("__gliVerbose" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "0"
+                :type "int")
+                nil [188 222])
+            ("__gliError" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "char")
+                nil [241 269])
+            ("gliMergeAlpha" function
+               (:arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("gliGenericImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [289 312])
+                    ("alpha" variable
+                       (:pointer 1
+                        :type ("gliGenericImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [313 336]))                  
+                :type "int")
+                nil [271 4031]))          
+      :file "gli_merge.c"
+      :pointmax 4032
+      :fsize 4031
+      :lastmodtime '(19183 62569 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "gli.h"
+      :file "gli.h"
+      :fsize 918
+      :lastmodtime '(18948 13737 0 0))
+    (semanticdb-table "vecutil.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("math.h" include (:system-flag t) nil [86 103])
+            ("vecutil.h" include nil nil [104 124])
+            ("v3zero" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [138 147]))                  
+                :type "void")
+                nil [126 199])
+            ("v3set" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [212 221])
+                    ("x" variable (:type "float") (reparse-symbol arg-sub-list) [222 230])
+                    ("y" variable (:type "float") (reparse-symbol arg-sub-list) [231 239])
+                    ("z" variable (:type "float") (reparse-symbol arg-sub-list) [240 248]))                  
+                :type "void")
+                nil [201 294])
+            ("v3sub" function
+               (:arguments 
+                  ( ("src1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [307 325])
+                    ("src2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [326 344])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [345 356]))                  
+                :type "void")
+                nil [296 456])
+            ("v3copy" function
+               (:arguments 
+                  ( ("v1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [470 486])
+                    ("v2" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [487 497]))                  
+                :type "void")
+                nil [458 574])
+            ("v3cross" function
+               (:arguments 
+                  ( ("v1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [589 605])
+                    ("v2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [606 622])
+                    ("cross" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [623 636]))                  
+                :type "void")
+                nil [576 832])
+            ("v3sqlength" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [851 866]))                  
+                :type "float")
+                nil [834 920])
+            ("v3length" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [937 952]))                  
+                :type "float")
+                nil [922 996])
+            ("v3scale" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1011 1020])
+                    ("div" variable (:type "float") (reparse-symbol arg-sub-list) [1021 1031]))                  
+                :type "void")
+                nil [998 1086])
+            ("v3normal" function
+               (:arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1102 1111]))                  
+                :type "void")
+                nil [1088 1149])
+            ("v3dot" function
+               (:arguments 
+                  ( ("v1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1163 1179])
+                    ("v2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1180 1196]))                  
+                :type "float")
+                nil [1151 1252])
+            ("v3add" function
+               (:arguments 
+                  ( ("src1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1265 1283])
+                    ("src2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1284 1302])
+                    ("dst" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1303 1314]))                  
+                :type "void")
+                nil [1254 1414])
+            ("v4dot" function
+               (:arguments 
+                  ( ("v1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1428 1444])
+                    ("v2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1445 1461]))                  
+                :type "float")
+                nil [1416 1531])
+            ("stdio.h" include (:system-flag t) nil [1533 1551])
+            ("v3print" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1566 1582])
+                    ("v" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1583 1598]))                  
+                :type "void")
+                nil [1553 1668])
+            ("v4print" function
+               (:arguments 
+                  ( ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1683 1699])
+                    ("v" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [1700 1715]))                  
+                :type "void")
+                nil [1670 1795]))          
+      :file "vecutil.c"
+      :pointmax 1796
+      :fsize 1795
+      :lastmodtime '(18948 13737 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "vecutil.h"
+      :file "vecutil.h"
+      :fsize 799
+      :lastmodtime '(18948 13737 0 0))
+    (semanticdb-table "md2.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__MD2_H__" variable (:constant-flag t) nil [27 36])
+            ("stdlib.h" include (:system-flag t) nil [140 159])
+            ("md2file.h" include nil nil [161 181])
+            ("md2ComputeAdjacencyInfo" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1371 1387]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1342 1388])
+            ("md2ReadModel" function
+               (:type ("Md2Model" type (:type "class") nil nil)
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1318 1339]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1288 1340])
+            ("md2FreeModel" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1270 1286]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1245 1287])
+            ("md2VertexNormals" variable
+               (:type "float"
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :dereference 2)
+                (reparse-symbol extern-c-contents) [1192 1243])
+            ("Md2Model" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("header" variable (:type ("Md2Header" type (:type "class") nil nil)) (reparse-symbol classsubparts) [924 941])
+                          ("texCoords" variable
+                             (:pointer 1
+                              :type ("Md2TextureCoordinate" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [975 1007])
+                          ("triangles" variable
+                             (:pointer 1
+                              :type ("Md2Triangle" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1010 1033])
+                          ("frames" variable
+                             (:pointer 1
+                              :type ("Md2Frame" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1036 1053])
+                          ("edgeInfo" variable
+                             (:pointer 1
+                              :type ("Md2TriangleEdgeInfo" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1056 1086])
+                          ("framePlane" variable
+                             (:pointer 1
+                              :type ("Md2FrameTrianglePlane" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1089 1123])
+                          ("filename" variable
+                             (:pointer 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [1126 1141]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [905 1190])
+            ("ADJACENT_EDGE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [852 865])
+            ("SET_ADJACENT_EDGE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [795 812])
+            ("Md2TriangleEdgeInfo" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("adjacentTriangle" variable
+                             (:dereference 1
+                              :type "short")
+                              (reparse-symbol classsubparts) [502 528])
+                          ("adjacentTriangleEdges" variable (:type "unsigned char") (reparse-symbol classsubparts) [696 732])
+                          ("openEdgeMask" variable (:type "unsigned char") (reparse-symbol classsubparts) [735 762]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [483 785])
+            ("Md2FrameTrianglePlane" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("p" variable
+                             (:dereference 1
+                              :type "float")
+                              (reparse-symbol classsubparts) [393 404]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [374 481])
+            ("Md2Boundary" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("vertexIndex" variable (:type "short") (reparse-symbol classsubparts) [243 261])
+                          ("triangle" variable (:type "short") (reparse-symbol classsubparts) [264 279])
+                          ("edge" variable (:type "short") (reparse-symbol classsubparts) [282 293])
+                          ("prev" variable (:type "short") (reparse-symbol classsubparts) [296 307])
+                          ("next" variable
+                             (:dereference 1
+                              :type "short")
+                              (reparse-symbol classsubparts) [310 324])
+                          ("active" variable (:type "int") (reparse-symbol classsubparts) [327 338])
+                          ("maxSqArea" variable (:type "float") (reparse-symbol classsubparts) [341 357]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [224 372]))          
+      :file "md2.h"
+      :pointmax 1443
+      :fsize 1442
+      :lastmodtime '(18948 13737 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__MD2_H__")
+          ("ADJACENT_EDGE" (spp-arg-list ("x" "n") 865 . 871) . ((semantic-list "(((x) >> (2*(n))) & 0x3)" 879 . 903)))
+          ("SET_ADJACENT_EDGE" (spp-arg-list ("x" "n" "e") 812 . 821) . 
+              ((semantic-list "(x)" 822 . 825) (punctuation "|" 826 . 827) (punctuation "=" 827 . 828) (semantic-list "((e) << (2*n))" 829 . 843)))
+          )
+)
+    (semanticdb-table "md2file.h"
+      :file "md2file.h"
+      :fsize 1426
+      :lastmodtime '(18948 13737 0 0))
+    (semanticdb-table "loadtex.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [2 21])
+            ("stdlib.h" include (:system-flag t) nil [22 41])
+            ("gli.h" include nil nil [59 75])
+            ("normalmap.h" include nil nil [76 98])
+            ("myProgramName" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type "char")
+                nil [100 133])
+            ("readImage" function
+               (:pointer 1
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [163 184]))                  
+                :type ("gliGenericImage" type (:type "class") nil nil))
+                nil [135 574])
+            ("roundUp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("v" variable (:type "int") (reparse-symbol arg-sub-list) [595 601]))                  
+                :type "int")
+                nil [576 708])
+            ("loadTextureDecal" function
+               (:pointer 1
+                :arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("gliGenericImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [745 768])
+                    ("mipmap" variable (:type "int") (reparse-symbol arg-sub-list) [769 780]))                  
+                :type ("gliGenericImage" type (:type "class") nil nil))
+                nil [710 2145])
+            ("loadTextureNormalMap" function
+               (:arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("gliGenericImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2173 2196])
+                    ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2197 2218])
+                    ("scale" variable (:type "float") (reparse-symbol arg-sub-list) [2219 2231]))                  
+                :type "void")
+                nil [2147 4004]))          
+      :file "loadtex.c"
+      :pointmax 4005
+      :fsize 4004
+      :lastmodtime '(18948 13737 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "normalmap.h"
+      :file "normalmap.h"
+      :fsize 617
+      :lastmodtime '(18948 13737 0 0)))
+  :file "!home!ultimanium!.local!share!Steam!ubuntu12_32!steam-runtime.old!amd64!usr!share!doc!nvidia-cg-toolkit!examples!OpenGL!advanced!gs_md2render!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

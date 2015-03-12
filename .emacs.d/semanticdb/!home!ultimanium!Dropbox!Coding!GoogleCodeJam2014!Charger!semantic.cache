@@ -1,0 +1,101 @@
+;; Object Charger/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Charger/"
+  :tables
+  (list
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("vector" include (:system-flag t) nil [21 38])
+            ("exception" include (:system-flag t) nil [39 59])
+            ("stdexcept" include (:system-flag t) nil [60 80])
+            ("outlet" type
+               (:members 
+                  ( ("bits" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [99 116])
+                    ("l" variable (:type "int") (reparse-symbol classsubparts) [119 125])
+                    ("outlet" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("length" variable (:type "int") (reparse-symbol arg-sub-list) [135 146])
+                            ("b" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [147 161]))                          
+                        :type ("outlet" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [128 219])
+                    ("flipbit" function
+                       (:arguments 
+                          ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [235 241]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [222 443]))                  
+                :type "struct")
+                nil [81 446])
+            ("device" type
+               (:members 
+                  ( ("bits" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [465 482])
+                    ("l" variable (:type "int") (reparse-symbol classsubparts) [485 491])
+                    ("device" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("length" variable (:type "int") (reparse-symbol arg-sub-list) [501 512])
+                            ("b" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [513 527]))                          
+                        :type ("device" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [494 578]))                  
+                :type "struct")
+                nil [447 581])
+            ("matches" function
+               (:arguments 
+                  ( ("d" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("device" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [595 617])
+                    ("o" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("outlet" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [618 640])
+                    ("bit" variable (:type "int") (reparse-symbol arg-sub-list) [641 649]))                  
+                :type "bool")
+                nil [582 1022])
+            ("reversematches" function
+               (:arguments 
+                  ( ("d" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("device" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [1044 1066])
+                    ("o" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("outlet" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [1067 1089])
+                    ("bit" variable (:type "int") (reparse-symbol arg-sub-list) [1090 1098]))                  
+                :type "bool")
+                nil [1024 1657])
+            ("solver" function
+               (:arguments 
+                  ( ("d" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("device" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [1669 1691])
+                    ("o" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("outlet" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [1692 1714])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [1715 1721])
+                    ("l" variable (:type "int") (reparse-symbol arg-sub-list) [1722 1728])
+                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [1729 1739])
+                    ("j" variable (:type "int") (reparse-symbol arg-sub-list) [1740 1746])
+                    ("testcase" variable (:type "int") (reparse-symbol arg-sub-list) [1747 1760]))                  
+                :type "int")
+                nil [1658 2644])
+            ("main" function (:type "int") nil [2648 3503]))          
+      :file "main.cpp"
+      :pointmax 3504
+      :fsize 3503
+      :lastmodtime '(21339 13991 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!GoogleCodeJam2014!Charger!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

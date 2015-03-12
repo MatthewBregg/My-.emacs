@@ -1,0 +1,130 @@
+;; Object UVA572/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "UVA572/"
+  :tables
+  (list
+    (semanticdb-table "main2.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("m" variable (:type "int") nil [20 26])
+            ("n" variable (:type "int") nil [27 33])
+            ("dfsvisit" function
+               (:arguments 
+                  ( ("visited" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [51 66])
+                    ("graph" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [67 81])
+                    ("i" variable (:type "int") (reparse-symbol arg-sub-list) [82 88])
+                    ("j" variable (:type "int") (reparse-symbol arg-sub-list) [89 95]))                  
+                :type "void")
+                nil [36 1323])
+            ("dfs" function
+               (:arguments 
+                  ( ("visited" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1332 1347])
+                    ("graph" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1348 1362]))                  
+                :type "int")
+                nil [1324 1630])
+            ("main" function (:type "int") nil [1634 2429]))          
+      :file "main2.cpp"
+      :pointmax 2430
+      :fsize 2429
+      :lastmodtime '(21250 60702 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("Coordinate" type
+               (:members 
+                  ( ("rows" variable (:type "int") (reparse-symbol classsubparts) [41 56])
+                    ("cols" variable (:type "int") (reparse-symbol classsubparts) [41 56])
+                    ("x" variable (:type "double") (reparse-symbol classsubparts) [58 70])
+                    ("y" variable (:type "double") (reparse-symbol classsubparts) [58 70])
+                    ("oil" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [72 88])
+                    ("v" variable (:type "int") (reparse-symbol classsubparts) [90 96]))                  
+                :type "struct")
+                nil [20 101])
+            ("dfsvisit" function
+               (:arguments 
+                  ( ("node" variable (:type "int") (reparse-symbol arg-sub-list) [116 125])
+                    ("graph" variable
+                       (:pointer 1
+                        :type ("Coordinate" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [126 144]))                  
+                :type "void")
+                nil [102 1775])
+            ("dfs" function
+               (:arguments 
+                  ( ("nodeL" variable (:type "int") (reparse-symbol arg-sub-list) [1784 1794])
+                    ("graph" variable
+                       (:dereference 1
+                        :type ("Coordinate" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1795 1814]))                  
+                :type "int")
+                nil [1776 2026])
+            ("main" function (:type "int") nil [2027 2695]))          
+      :file "main.cpp"
+      :pointmax 2696
+      :fsize 2695
+      :lastmodtime '(21250 54230 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "main3.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("m" variable (:type "int") nil [20 26])
+            ("n" variable (:type "int") nil [27 33])
+            ("dfsvisit" function
+               (:arguments 
+                  ( ("visited" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [51 66])
+                    ("graph" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [67 80])
+                    ("i" variable (:type "int") (reparse-symbol arg-sub-list) [81 87])
+                    ("j" variable (:type "int") (reparse-symbol arg-sub-list) [88 94]))                  
+                :type "void")
+                nil [36 1306])
+            ("dfs" function
+               (:arguments 
+                  ( ("visited" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1315 1330])
+                    ("graph" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1331 1344]))                  
+                :type "int")
+                nil [1307 1610])
+            ("main" function (:type "int") nil [1614 2377]))          
+      :file "main3.cpp"
+      :pointmax 2378
+      :fsize 2377
+      :lastmodtime '(21250 60199 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!Programmingclub!DFS!UVA572!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,249 @@
+;; Object 16_keyframe_interpolation/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "16_keyframe_interpolation/"
+  :tables
+  (list
+    (semanticdb-table "md2.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__MD2_H__" variable (:constant-flag t) nil [27 36])
+            ("stdlib.h" include (:system-flag t) nil [140 159])
+            ("md2file.h" include nil nil [184 204])
+            ("md2ComputeFrameTrianglePlanes" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1716 1732]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1674 1733])
+            ("md2CloseOpenTriangleGroups" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1656 1672]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1617 1673])
+            ("md2EliminateAdjacentDegenerateTriangles" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1599 1615]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1547 1616])
+            ("md2CheckForBogusAdjacency" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1529 1545]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1491 1546])
+            ("md2ComputeTriangleEdgeInfo" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1473 1489]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1434 1490])
+            ("md2EliminateTrivialDegenerateTriangles" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1416 1432]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1365 1433])
+            ("md2ReadModel" function
+               (:type ("Md2Model" type (:type "class") nil nil)
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1341 1362]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :pointer 1
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1311 1363])
+            ("md2FreeModel" function
+               (:type "void"
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("Md2Model" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1293 1309]))                  
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [1268 1310])
+            ("md2VertexNormals" variable
+               (:type "float"
+                :typemodifiers ("extern" "\"C\"" "extern")
+                :dereference 2)
+                (reparse-symbol extern-c-contents) [1215 1266])
+            ("Md2Model" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("header" variable (:type ("Md2Header" type (:type "class") nil nil)) (reparse-symbol classsubparts) [947 964])
+                          ("texCoords" variable
+                             (:pointer 1
+                              :type ("Md2TextureCoordinate" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [998 1030])
+                          ("triangles" variable
+                             (:pointer 1
+                              :type ("Md2Triangle" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1033 1056])
+                          ("frames" variable
+                             (:pointer 1
+                              :type ("Md2Frame" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1059 1076])
+                          ("edgeInfo" variable
+                             (:pointer 1
+                              :type ("Md2TriangleEdgeInfo" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1079 1109])
+                          ("framePlane" variable
+                             (:pointer 1
+                              :type ("Md2FrameTrianglePlane" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1112 1146])
+                          ("filename" variable
+                             (:pointer 1
+                              :type "char")
+                              (reparse-symbol classsubparts) [1149 1164]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [928 1213])
+            ("ADJACENT_EDGE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [875 888])
+            ("SET_ADJACENT_EDGE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [818 835])
+            ("Md2TriangleEdgeInfo" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("adjacentTriangle" variable
+                             (:dereference 1
+                              :type "short")
+                              (reparse-symbol classsubparts) [525 551])
+                          ("adjacentTriangleEdges" variable (:type "unsigned char") (reparse-symbol classsubparts) [719 755])
+                          ("openEdgeMask" variable (:type "unsigned char") (reparse-symbol classsubparts) [758 785]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [506 808])
+            ("Md2FrameTrianglePlane" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("p" variable
+                             (:dereference 1
+                              :type "float")
+                              (reparse-symbol classsubparts) [416 427]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [397 504])
+            ("Md2Boundary" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("vertexIndex" variable (:type "short") (reparse-symbol classsubparts) [266 284])
+                          ("triangle" variable (:type "short") (reparse-symbol classsubparts) [287 302])
+                          ("edge" variable (:type "short") (reparse-symbol classsubparts) [305 316])
+                          ("prev" variable (:type "short") (reparse-symbol classsubparts) [319 330])
+                          ("next" variable
+                             (:dereference 1
+                              :type "short")
+                              (reparse-symbol classsubparts) [333 347])
+                          ("active" variable (:type "int") (reparse-symbol classsubparts) [350 361])
+                          ("maxSqArea" variable (:type "float") (reparse-symbol classsubparts) [364 380]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [247 395]))          
+      :file "md2.h"
+      :pointmax 1788
+      :fsize 1787
+      :lastmodtime '(18947 60051 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__MD2_H__")
+          ("ADJACENT_EDGE" (spp-arg-list ("x" "n") 888 . 894) . ((semantic-list "(((x) >> (2*(n))) & 0x3)" 902 . 926)))
+          ("SET_ADJACENT_EDGE" (spp-arg-list ("x" "n" "e") 835 . 844) . 
+              ((semantic-list "(x)" 845 . 848) (punctuation "|" 849 . 850) (punctuation "=" 850 . 851) (semantic-list "((e) << (2*n))" 852 . 866)))
+          )
+)
+    (semanticdb-table "md2file.h"
+      :file "md2file.h"
+      :fsize 1489
+      :lastmodtime '(18947 60051 0 0))
+    (semanticdb-table "loadtex.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [2 21])
+            ("stdlib.h" include (:system-flag t) nil [22 41])
+            ("gli.h" include nil nil [59 75])
+            ("myProgramName" variable
+               (:pointer 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type "char")
+                nil [77 110])
+            ("readImage" function
+               (:pointer 1
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [140 161]))                  
+                :type ("gliGenericImage" type (:type "class") nil nil))
+                nil [112 551])
+            ("roundUp" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("v" variable (:type "int") (reparse-symbol arg-sub-list) [572 578]))                  
+                :type "int")
+                nil [553 685])
+            ("loadTextureDecal" function
+               (:pointer 1
+                :arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("gliGenericImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [722 745])
+                    ("mipmap" variable (:type "int") (reparse-symbol arg-sub-list) [746 757]))                  
+                :type ("gliGenericImage" type (:type "class") nil nil))
+                nil [687 2122]))          
+      :file "loadtex.c"
+      :pointmax 2123
+      :fsize 2122
+      :lastmodtime '(18947 60051 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "gli.h"
+      :file "gli.h"
+      :fsize 844
+      :lastmodtime '(18947 60051 0 0)))
+  :file "!home!ultimanium!.local!share!Steam!ubuntu12_32!steam-runtime.old!i386!usr!share!doc!nvidia-cg-toolkit!examples!OpenGL!basic!16_keyframe_interpolation!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

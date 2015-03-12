@@ -1,0 +1,217 @@
+;; Object coding/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "coding/"
+  :tables
+  (list
+    (semanticdb-table "ACODE.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil nil)
+            ("vector" include (:system-flag t) nil nil)
+            ("climits" include (:system-flag t) nil nil)
+            ("stdlib.h" include (:system-flag t) nil nil)
+            ("acode" function
+               (:arguments 
+                  ( ("in" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("i" variable (:type "unsigned long long") (reparse-symbol arg-sub-list) nil)
+                    ("DP" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("unsigned long long" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "long long")
+                nil nil)
+            ("acode2" function
+               (:arguments 
+                  ( ("in" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil)
+                    ("i" variable (:type "long long") (reparse-symbol arg-sub-list) nil)
+                    ("DP" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("unsigned long long" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) nil))                  
+                :type "int")
+                nil nil)
+            ("acodeIter" function
+               (:arguments 
+                  ( ("in" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) nil))                  
+                :type "unsigned long long")
+                nil nil)
+            ("randomSSTR" function (:type ("std::string" type (:type "class") nil nil)) nil nil)
+            ("main" function (:type "int") nil nil))          
+      :file "ACODE.cpp"
+      :pointmax 2507
+      :fsize 2489
+      :lastmodtime '(21592 14206 948778 256000)
+      :unmatched-syntax nil)
+    (semanticdb-table "minRange.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("climits" include (:system-flag t) nil [37 54])
+            ("queue" include (:system-flag t) nil [55 70])
+            ("math.h" include (:system-flag t) nil [71 87])
+            ("node" type
+               (:members 
+                  ( ("a" variable (:type "int") (reparse-symbol classsubparts) [104 118])
+                    ("b" variable (:type "int") (reparse-symbol classsubparts) [104 118])
+                    ("min" variable (:type "int") (reparse-symbol classsubparts) [104 118])
+                    ("node" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("aa" variable (:type "int") (reparse-symbol arg-sub-list) [126 133])
+                            ("bb" variable (:type "int") (reparse-symbol arg-sub-list) [133 140])
+                            ("minn" variable (:type "int") (reparse-symbol arg-sub-list) [140 149]))                          
+                        :type ("node" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [121 173]))                  
+                :type "struct")
+                nil [88 177])
+            ("main" function (:type "int") nil [178 1748]))          
+      :file "minRange.cpp"
+      :pointmax 1750
+      :fsize 1749
+      :lastmodtime '(21582 50270 228139 783000)
+      :unmatched-syntax '((punctuation 173 . 174)))
+    (semanticdb-table "sumQuery.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("vector" include (:system-flag t) nil [1 17])
+            ("iostream" include (:system-flag t) nil [18 36])
+            ("getLeastSignificantBit" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [158 164]))                  
+                :type "int")
+                nil [131 635])
+            ("updateTree" function
+               (:arguments 
+                  ( ("tree" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("int" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1508 1531])
+                    ("nums" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("int" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1532 1555])
+                    ("newVal" variable (:type "int") (reparse-symbol arg-sub-list) [1556 1567])
+                    ("i" variable (:type "int") (reparse-symbol arg-sub-list) [1568 1574]))                  
+                :type "void")
+                nil [1492 2028])
+            ("queryTree" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2271 2277])
+                    ("tree" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("int" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2278 2301]))                  
+                :type "int")
+                nil [2257 2424])
+            ("queryTreeRange" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [2664 2670])
+                    ("j" variable (:type "int") (reparse-symbol arg-sub-list) [2671 2677])
+                    ("tree" variable
+                       (:reference 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("int" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2677 2700]))                  
+                :type "int")
+                nil [2645 2761])
+            ("main" function (:type "int") nil [2762 3806]))          
+      :file "sumQuery.cpp"
+      :pointmax 3807
+      :fsize 3806
+      :lastmodtime '(21582 57226 690346 834000)
+      :unmatched-syntax nil)
+    (semanticdb-table "wormhole.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [48 66])
+            ("fstream" include (:system-flag t) nil [67 84])
+            ("vector" include (:system-flag t) nil [85 101])
+            ("map" include (:system-flag t) nil [102 115])
+            ("maxx" variable
+               (:default-value "0"
+                :type "int")
+                nil [117 135])
+            ("maxy" variable
+               (:default-value "0"
+                :type "int")
+                nil [117 135])
+            ("coord" type
+               (:members 
+                  ( ("x" variable (:type "int") (reparse-symbol classsubparts) [154 163])
+                    ("y" variable (:type "int") (reparse-symbol classsubparts) [154 163])
+                    ("coord" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("xx" variable
+                               (:default-value "0"
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [174 184])
+                            ("yy" variable
+                               (:default-value "0"
+                                :type "int")
+                                (reparse-symbol arg-sub-list) [186 194]))                          
+                        :type ("coord" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [168 209])
+                    (">>" function
+                       (:operator-flag t
+                        :typemodifiers ("friend")
+                        :arguments 
+                          ( ("in" variable
+                               (:reference 1
+                                :type ("std::istream" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [247 264])
+                            ("co" variable
+                               (:reference 1
+                                :type ("coord" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [265 275]))                          
+                        :type ("std::istream" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [215 369]))                  
+                :type "struct")
+                nil [136 372])
+            ("mapinc" function
+               (:arguments 
+                  ( ("hash" variable
+                       (:reference 1
+                        :type ("std::map" type
+                             (:template-specifier 
+                                ( ("int" type nil nil nil)
+                                  ("int" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [386 410])
+                    ("i" variable (:type "int") (reparse-symbol arg-sub-list) [411 417]))                  
+                :type "void")
+                nil [374 507])
+            ("main" function (:type "int") nil [508 943]))          
+      :file "wormhole.cpp"
+      :pointmax 944
+      :fsize 943
+      :lastmodtime '(21719 58045 775169 632000)
+      :unmatched-syntax '((punctuation 209 . 210))))
+  :file "!home!ultimanium!coding!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,55 @@
+;; Object 289/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "289/"
+  :tables
+  (list
+    (semanticdb-table "pebbles.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("cmath" include (:system-flag t) nil [37 52])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [53 73])
+            ("main" function (:type "int") nil [75 1266]))          
+      :file "pebbles.cpp"
+      :pointmax 1267
+      :fsize 1266
+      :lastmodtime '(21708 55343 442163 911000)
+      :unmatched-syntax nil)
+    (semanticdb-table "sums.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [37 57])
+            ("sum_digits" function
+               (:arguments 
+                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [73 79]))                  
+                :type "int")
+                nil [58 160])
+            ("main" function (:type "int") nil [161 531]))          
+      :file "sums.cpp"
+      :pointmax 532
+      :fsize 531
+      :lastmodtime '(21708 56673 995766 600000)
+      :unmatched-syntax nil)
+    (semanticdb-table "tables.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("main" function (:type "int") nil [38 494]))          
+      :file "tables.cpp"
+      :pointmax 495
+      :fsize 494
+      :lastmodtime '(21708 52167 775922 208000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!codeforces!contest!289!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

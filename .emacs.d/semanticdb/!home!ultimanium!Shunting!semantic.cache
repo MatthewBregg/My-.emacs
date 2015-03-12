@@ -1,0 +1,61 @@
+;; Object Shunting/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Shunting/"
+  :tables
+  (list
+    (semanticdb-table "shunting.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("Shunt.hpp" include nil nil [1 21])
+            ("Shunt" function
+               (:constructor-flag t
+                :parent "Shunt"
+                :type ("Shunt" type (:type "class") nil nil))
+                nil [23 51])
+            ("precedence" function
+               (:parent "Shunt"
+                :arguments 
+                  ( ("x" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [76 90])
+                    ("y" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [91 105]))                  
+                :type "bool")
+                nil [53 780])
+            ("placeOperators" function
+               (:parent "Shunt"
+                :arguments 
+                  ( ("x" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [808 822]))                  
+                :type "void")
+                nil [781 1570])
+            ("numToOut" function
+               (:parent "Shunt"
+                :arguments 
+                  ( ("x" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1593 1607]))                  
+                :type "bool")
+                nil [1572 2567])
+            ("checker" function
+               (:parent "Shunt"
+                :arguments 
+                  ( ("x" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2588 2602]))                  
+                :type "void")
+                nil [2568 3188])
+            ("process" function
+               (:parent "Shunt"
+                :arguments 
+                  ( ("in" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3228 3243]))                  
+                :type ("std::list" type
+                     (:template-specifier 
+                        ( ("std::string" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [3190 3803]))          
+      :file "shunting.cpp"
+      :pointmax 3804
+      :fsize 3803
+      :lastmodtime '(21323 28489 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "Shunt.hpp"
+      :file "Shunt.hpp"
+      :fsize 641
+      :lastmodtime '(21323 28489 0 0)))
+  :file "!home!ultimanium!Shunting!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

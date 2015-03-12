@@ -1,0 +1,216 @@
+;; Object OilPanicClone/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "OilPanicClone/"
+  :tables
+  (list
+    (semanticdb-table "bucket.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("bucket.hpp" include nil nil [1 22])
+            ("Bucket" function
+               (:constructor-flag t
+                :parent "Bucket"
+                :arguments 
+                  ( ("t" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("sf::Texture" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol arg-sub-list) [38 65])
+                    ("b" variable
+                       (:pointer 1
+                        :type ("sf::Sprite" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [66 80])
+                    ("winS" variable
+                       (:pointer 1
+                        :type ("sf::Vector2u" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [81 100]))                  
+                :type ("Bucket" type (:type "class") nil nil))
+                nil [23 388])
+            ("draw" function
+               (:parent "Bucket"
+                :arguments 
+                  ( ("w" variable
+                       (:pointer 1
+                        :type ("sf::RenderWindow" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [407 427]))                  
+                :type "void")
+                nil [389 456])
+            ("getOverFlows" function
+               (:parent "Bucket"
+                :type "int")
+                nil [457 506])
+            ("update" function
+               (:parent "Bucket"
+                :type "void")
+                nil [507 739])
+            ("emptyBucket" function
+               (:parent "Bucket"
+                :arguments 
+                  ( ("A" variable
+                       (:pointer 1
+                        :type ("sf::Sprite" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [765 779]))                  
+                :type "void")
+                nil [740 1198])
+            ("move" function
+               (:parent "Bucket"
+                :arguments 
+                  ( ("A" variable (:type "int") (reparse-symbol arg-sub-list) [1217 1223]))                  
+                :type "void")
+                nil [1199 1858])
+            ("getBucket" function
+               (:pointer 1
+                :parent "Bucket"
+                :type ("sf::Sprite" type (:type "class") nil nil))
+                nil [1860 1910])
+            ("hitDrop" function
+               (:parent "Bucket"
+                :type "void")
+                nil [1911 2248])
+            ("getScore" function
+               (:parent "Bucket"
+                :type "int")
+                nil [2249 2291]))          
+      :file "bucket.cpp"
+      :pointmax 2292
+      :fsize 2291
+      :lastmodtime '(21741 64225 207365 256000)
+      :unmatched-syntax nil)
+    (semanticdb-table "bucket.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("SFML/Graphics.hpp" include (:system-flag t) nil [21 49])
+            ("SFML/System.hpp" include (:system-flag t) nil [50 76])
+            ("SFML/Window.hpp" include (:system-flag t) nil [77 103])
+            ("vector" include (:system-flag t) nil [104 121])
+            ("_BUCKET_H_" variable (:constant-flag t) nil [150 160])
+            ("Bucket" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [176 183])
+                    ("Bucket" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("t" variable (:type ("std::vector" type
+                                 (:template-specifier 
+                                    ( ("sf::Texture" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol arg-sub-list) [193 220])
+                            ("b" variable
+                               (:pointer 1
+                                :type ("sf::Sprite" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [221 235])
+                            ("winS" variable
+                               (:pointer 1
+                                :type ("sf::Vector2u" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [236 255]))                          
+                        :type ("Bucket" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [186 256])
+                    ("draw" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("w" variable
+                               (:pointer 1
+                                :type ("sf::RenderWindow" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [269 289]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [259 290])
+                    ("update" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [293 307])
+                    ("move" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("A" variable (:type "int") (reparse-symbol arg-sub-list) [320 326]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [310 327])
+                    ("getBucket" function
+                       (:prototype-flag t
+                        :pointer 1
+                        :type ("sf::Sprite" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [330 354])
+                    ("hitDrop" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [357 372])
+                    ("getOverFlows" function
+                       (:prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [375 394])
+                    ("getScore" function
+                       (:prototype-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [397 412])
+                    ("emptyBucket" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("A" variable
+                               (:pointer 1
+                                :type ("sf::Sprite" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [432 446]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [415 447])
+                    ("private" label nil (reparse-symbol classsubparts) [448 456])
+                    ("score" variable (:type "int") (reparse-symbol classsubparts) [459 469])
+                    ("buck" variable
+                       (:pointer 1
+                        :type ("sf::Sprite" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [472 489])
+                    ("texts" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("sf::Texture" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [492 523])
+                    ("winSize" variable
+                       (:pointer 1
+                        :type ("sf::Vector2u" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [527 549])
+                    ("bucketX" variable (:type "int") (reparse-symbol classsubparts) [552 564])
+                    ("bucketY" variable (:type "int") (reparse-symbol classsubparts) [567 579])
+                    ("overflow" variable (:type "int") (reparse-symbol classsubparts) [582 595])
+                    ("fillStatus" variable (:type "int") (reparse-symbol classsubparts) [598 613])
+                    ("timer" variable (:type ("sf::Clock" type (:type "class") nil nil)) (reparse-symbol classsubparts) [616 632]))                  
+                :type "class")
+                nil [161 635]))          
+      :file "bucket.hpp"
+      :pointmax 662
+      :fsize 661
+      :lastmodtime '(21760 47313 402307 484000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("_BUCKET_H_")
+          )
+)
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("SFML/Graphics.hpp" include (:system-flag t) nil [21 49])
+            ("SFML/System.hpp" include (:system-flag t) nil [50 76])
+            ("SFML/Window.hpp" include (:system-flag t) nil [77 103])
+            ("drops.hpp" include nil nil [104 124])
+            ("vector" include (:system-flag t) nil [125 142])
+            ("bucket.hpp" include nil nil [143 164])
+            ("stdlib.h" include (:system-flag t) nil [165 184])
+            ("stdio.h" include (:system-flag t) nil [185 203])
+            ("sstream" include (:system-flag t) nil [204 222])
+            ("convertInt" function
+               (:arguments 
+                  ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [529 535]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [506 593])
+            ("main" function (:type "int") nil [594 4501]))          
+      :file "main.cpp"
+      :pointmax 4502
+      :fsize 4500
+      :lastmodtime '(21741 64225 224031 661000)
+      :unmatched-syntax nil)
+    (semanticdb-table "drops.hpp"
+      :file "drops.hpp"
+      :fsize 837
+      :lastmodtime '(21741 64225 207365 256000)))
+  :file "!home!ultimanium!coding!OilPanicClone!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

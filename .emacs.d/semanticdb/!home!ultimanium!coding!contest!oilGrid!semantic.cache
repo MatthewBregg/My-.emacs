@@ -1,0 +1,48 @@
+;; Object oilGrid/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "oilGrid/"
+  :tables
+  (list
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("vector" include (:system-flag t) nil [21 37])
+            ("count" variable
+               (:default-value "0"
+                :type "int")
+                nil [38 52])
+            ("m" variable (:type "int") nil [53 59])
+            ("n" variable (:type "int") nil [60 66])
+            ("depoMark" function
+               (:arguments 
+                  ( ("deposits" variable
+                       (:pointer 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("std::vector" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [83 125])
+                    ("i" variable (:type "int") (reparse-symbol arg-sub-list) [126 132])
+                    ("j" variable (:type "int") (reparse-symbol arg-sub-list) [133 139]))                  
+                :type "void")
+                nil [69 585])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [595 604])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [605 618]))                  
+                :type "int")
+                nil [586 1284]))          
+      :file "main.cpp"
+      :pointmax 1285
+      :fsize 1284
+      :lastmodtime '(21525 51060 759042 529000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!contest!oilGrid!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

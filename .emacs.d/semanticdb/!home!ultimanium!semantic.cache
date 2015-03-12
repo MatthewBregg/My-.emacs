@@ -1,0 +1,31 @@
+;; Object ultimanium/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "ultimanium/"
+  :tables
+  (list
+    (semanticdb-table "test.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("math.h" include (:system-flag t) nil [20 36])
+            ("cmath" include (:system-flag t) nil [37 52])
+            ("cstdlib" include (:system-flag t) nil [53 70])
+            ("getString" function
+               (:arguments 
+                  ( ("j" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [93 107]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [71 207])
+            ("getString" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [230 236]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [208 248])
+            ("main" function (:type "int") nil [249 519]))          
+      :file "test.cpp"
+      :pointmax 520
+      :fsize 519
+      :lastmodtime '(21760 58485 452642 230000)
+      :unmatched-syntax '((string 346 . 349) (string 346 . 349))))
+  :file "!home!ultimanium!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

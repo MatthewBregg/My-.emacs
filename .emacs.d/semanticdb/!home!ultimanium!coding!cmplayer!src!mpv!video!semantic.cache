@@ -1,0 +1,2605 @@
+;; Object video/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "video/"
+  :tables
+  (list
+    (semanticdb-table "image_writer.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [676 694])
+            ("stdlib.h" include (:system-flag t) nil [695 714])
+            ("string.h" include (:system-flag t) nil [715 734])
+            ("setjmp.h" include (:system-flag t) nil [735 754])
+            ("libavcodec/avcodec.h" include (:system-flag t) nil [756 787])
+            ("libavutil/mem.h" include (:system-flag t) nil [788 814])
+            ("config.h" include nil nil [816 835])
+            ("osdep/io.h" include nil nil [880 901])
+            ("image_writer.h" include nil nil [903 928])
+            ("talloc.h" include nil nil [929 948])
+            ("video/img_format.h" include nil nil [949 978])
+            ("video/mp_image.h" include nil nil [979 1006])
+            ("video/fmt-conversion.h" include nil nil [1007 1040])
+            ("video/sws_utils.h" include nil nil [1041 1069])
+            ("options/m_option.h" include nil nil [1071 1100])
+            ("image_writer_opts_defaults" variable
+               (:constant-flag t
+                :default-value "{
+    .format = \"jpg\",
+    .png_compression = 7,
+    .png_filter = 5,
+    .jpeg_quality = 90,
+    .jpeg_optimize = 100,
+    .jpeg_smooth = 0,
+    .jpeg_dpi = 72,
+    .jpeg_progressive = 0,
+    .jpeg_baseline = 1,
+}"
+                :type ("image_writer_opts" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1102 1377])
+            ("OPT_BASE_STRUCT" variable (:constant-flag t) nil [1387 1402])
+            ("image_writer_conf" variable
+               (:constant-flag t
+                :default-value "{
+    .opts = (const m_option_t[]) {
+        OPT_INTRANGE(\"jpeg-quality\", jpeg_quality, 0, 0, 100),
+        OPT_INTRANGE(\"jpeg-optimize\", jpeg_optimize, 0, 0, 100),
+        OPT_INTRANGE(\"jpeg-smooth\", jpeg_smooth, 0, 0, 100),
+        OPT_INTRANGE(\"jpeg-dpi\", jpeg_dpi, M_OPT_MIN, 1, 99999),
+        OPT_FLAG(\"jpeg-progressive\", jpeg_progressive, 0),
+        OPT_FLAG(\"jpeg-baseline\", jpeg_baseline, 0),
+        OPT_INTRANGE(\"png-compression\", png_compression, 0, 0, 9),
+        OPT_INTRANGE(\"png-filter\", png_filter, 0, 0, 5),
+        OPT_STRING(\"format\", format, 0),
+        {0},
+    },
+    .size = sizeof(struct image_writer_opts),
+    .defaults = &image_writer_opts_defaults,
+}"
+                :type ("m_sub_options" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1429 2157])
+            ("image_writer_ctx" type
+               (:members 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2189 2208])
+                    ("opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("image_writer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2213 2250])
+                    ("writer" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("img_writer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2255 2287]))                  
+                :type "struct")
+                nil [2159 2290])
+            ("img_writer" type
+               (:members 
+                  ( ("file_ext" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [2316 2337])
+                    ("write" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("ctx" variable
+                               (:pointer 1
+                                :type ("image_writer_ctx" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [2355 2384])
+                            ("image" variable
+                               (:pointer 1
+                                :type ("mp_image_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2385 2403])
+                            ("fp" variable
+                               (:pointer 1
+                                :type ("FILE" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2404 2413]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [2342 2414])
+                    ("pixfmts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol classsubparts) [2419 2438])
+                    ("lavc_codec" variable (:type "int") (reparse-symbol classsubparts) [2443 2458]))                  
+                :type "struct")
+                nil [2292 2461])
+            ("write_lavc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("image_writer_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2485 2514])
+                    ("image" variable
+                       (:pointer 1
+                        :type ("mp_image_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2515 2533])
+                    ("fp" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2534 2543]))                  
+                :type "int")
+                nil [2463 4234])
+            ("img_writers" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    { \"png\", write_lavc, .lavc_codec = AV_CODEC_ID_PNG },
+    { \"ppm\", write_lavc, .lavc_codec = AV_CODEC_ID_PPM },
+    { \"pgm\", write_lavc,
+      .lavc_codec = AV_CODEC_ID_PGM,
+      .pixfmts = (const int[]) { IMGFMT_Y8, 0 },
+    },
+    { \"pgmyuv\", write_lavc,
+      .lavc_codec = AV_CODEC_ID_PGMYUV,
+      .pixfmts = (const int[]) { IMGFMT_420P, 0 },
+    },
+    { \"tga\", write_lavc,
+      .lavc_codec = AV_CODEC_ID_TARGA,
+      .pixfmts = (const int[]) { IMGFMT_BGR24, IMGFMT_BGRA, IMGFMT_RGB555,
+                                 IMGFMT_Y8, 0},
+    },
+#if HAVE_JPEG
+    { \"jpg\", write_jpeg },
+    { \"jpeg\", write_jpeg },
+#endif
+}"
+                :type ("img_writer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6141 6822])
+            ("get_writer" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("image_writer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6867 6904]))                  
+                :type ("img_writer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6824 7204])
+            ("image_writer_file_ext" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("image_writer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7240 7277]))                  
+                :type "char")
+                nil [7206 7423])
+            ("write_image" function
+               (:arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7441 7464])
+                    ("opts" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("image_writer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7465 7502])
+                    ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7519 7540])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7541 7560]))                  
+                :type "int")
+                nil [7425 9198])
+            ("dump_png" function
+               (:arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9214 9237])
+                    ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9238 9259])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9260 9279]))                  
+                :type "void")
+                nil [9200 9418]))          
+      :file "image_writer.c"
+      :pointmax 9419
+      :fsize 9418
+      :lastmodtime '(21681 30008 845672 310000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("OPT_BASE_STRUCT" . ((STRUCT "struct" 1403 . 1409) (symbol "image_writer_opts" 1410 . 1427)))
+          )
+)
+    (semanticdb-table "image_writer.h"
+      :file "image_writer.h"
+      :fsize 1886
+      :lastmodtime '(21681 30008 845672 310000))
+    (semanticdb-table "img_format.h"
+      :file "img_format.h"
+      :fsize 8302
+      :lastmodtime '(21681 30008 849005 589000))
+    (semanticdb-table "mp_image.h"
+      :file "mp_image.h"
+      :fsize 6711
+      :lastmodtime '(21681 30008 849005 589000))
+    (semanticdb-table "fmt-conversion.h"
+      :file "fmt-conversion.h"
+      :fsize 973
+      :lastmodtime '(21681 30008 845672 310000))
+    (semanticdb-table "sws_utils.h"
+      :file "sws_utils.h"
+      :fsize 2080
+      :lastmodtime '(21681 30008 855672 145000))
+    (semanticdb-table "vdpau.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [660 679])
+            ("vdpau.h" include nil nil [681 699])
+            ("osdep/threads.h" include nil nil [701 727])
+            ("osdep/timer.h" include nil nil [728 752])
+            ("video/out/x11_common.h" include nil nil [754 787])
+            ("video/img_format.h" include nil nil [788 817])
+            ("video/mp_image.h" include nil nil [818 845])
+            ("mark_vdpau_objects_uninitialized" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [892 917]))                  
+                :type "void")
+                nil [847 1193])
+            ("preemption_callback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("device" variable (:type ("VdpDevice" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1227 1244])
+                    ("context" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1245 1259]))                  
+                :type "void")
+                nil [1195 1424])
+            ("win_x11_init_vdpau_procs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1462 1487]))                  
+                :type "int")
+                nil [1426 3335])
+            ("handle_preemption" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3366 3391]))                  
+                :type "int")
+                nil [3337 4243])
+            ("mp_vdpau_handle_preemption" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4763 4788])
+                    ("counter" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4789 4807]))                  
+                :type "int")
+                nil [4732 5228])
+            ("surface_ref" type
+               (:members 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5255 5280])
+                    ("index" variable (:type "int") (reparse-symbol classsubparts) [5285 5295]))                  
+                :type "struct")
+                nil [5230 5298])
+            ("release_decoder_surface" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5336 5346]))                  
+                :type "void")
+                nil [5300 5628])
+            ("create_ref" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5665 5690])
+                    ("index" variable (:type "int") (reparse-symbol arg-sub-list) [5691 5701]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5630 6409])
+            ("mp_vdpau_get_surface" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6456 6481])
+                    ("chroma" variable (:type ("VdpChromaType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6527 6548])
+                    ("rgb_format" variable (:type ("VdpRGBAFormat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6594 6619])
+                    ("rgb" variable (:type "bool") (reparse-symbol arg-sub-list) [6665 6674])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [6675 6681])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [6682 6688]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6411 9738])
+            ("mp_vdpau_get_video_surface" function
+               (:pointer 1
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9784 9809])
+                    ("chroma" variable (:type ("VdpChromaType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9854 9875])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [9876 9882])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [9883 9889]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9740 9955])
+            ("mp_vdpau_create_device_x11" function
+               (:pointer 1
+                :arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10005 10024])
+                    ("x11" variable
+                       (:pointer 1
+                        :type ("Display" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10025 10038]))                  
+                :type ("mp_vdpau_ctx" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9957 10481])
+            ("mp_vdpau_destroy" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10505 10530]))                  
+                :type "void")
+                nil [10483 11571])
+            ("mp_vdpau_get_format" function
+               (:arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [11598 11609])
+                    ("out_chroma_type" variable
+                       (:pointer 1
+                        :type ("VdpChromaType" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11610 11641])
+                    ("out_pixel_format" variable
+                       (:pointer 1
+                        :type ("VdpYCbCrFormat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11667 11700]))                  
+                :type "bool")
+                nil [11573 12420])
+            ("mp_vdpau_get_rgb_format" function
+               (:arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [12451 12462])
+                    ("out_rgba_format" variable
+                       (:pointer 1
+                        :type ("VdpRGBAFormat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12463 12494]))                  
+                :type "bool")
+                nil [12422 12759])
+            ("mp_vdpau_upload_video_surface" function
+               (:pointer 1
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12964 12989])
+                    ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13037 13058]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12917 14669])
+            ("mp_vdpau_guess_if_emulated" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14703 14728]))                  
+                :type "bool")
+                nil [14671 15021]))          
+      :file "vdpau.c"
+      :pointmax 15022
+      :fsize 15021
+      :lastmodtime '(21681 30008 855672 145000)
+      :unmatched-syntax nil)
+    (semanticdb-table "vdpau.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MPV_VDPAU_H" variable (:constant-flag t) nil [29 40])
+            ("stdbool.h" include (:system-flag t) nil [42 62])
+            ("inttypes.h" include (:system-flag t) nil [63 84])
+            ("pthread.h" include (:system-flag t) nil [86 106])
+            ("vdpau/vdpau.h" include (:system-flag t) nil [108 132])
+            ("vdpau/vdpau_x11.h" include (:system-flag t) nil [133 161])
+            ("common/msg.h" include nil nil [163 186])
+            ("CHECK_VDP_ERROR" variable (:constant-flag t) nil [196 211])
+            ("CHECK_VDP_WARNING" variable (:constant-flag t) nil [421 438])
+            ("vdp_functions" type
+               (:members 
+                  ( ("VDP_FUNCTION" variable (:constant-flag t) (reparse-symbol classsubparts) [633 645]))                  
+                :type "struct")
+                nil [602 746])
+            ("MAX_VIDEO_SURFACES" variable (:constant-flag t) nil [757 775])
+            ("mp_vdpau_ctx" type
+               (:members 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [957 976])
+                    ("x11" variable
+                       (:pointer 1
+                        :type ("Display" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [981 994])
+                    ("vdp" variable (:type ("vdp_functions" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [1305 1330])
+                    ("get_proc_address" variable
+                       (:pointer 1
+                        :type ("VdpGetProcAddress" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1335 1371])
+                    ("vdp_device" variable (:type ("VdpDevice" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1376 1397])
+                    ("preempt_lock" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1403 1432])
+                    ("is_preempted" variable (:type "bool") (reparse-symbol classsubparts) [1437 1455])
+                    ("preemption_counter" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1514 1542])
+                    ("preemption_user_notified" variable (:type "bool") (reparse-symbol classsubparts) [1587 1617])
+                    ("last_preemption_retry_fail" variable (:type "double") (reparse-symbol classsubparts) [1622 1656])
+                    ("pool_lock" variable (:type ("pthread_mutex_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1682 1708])
+                    ("age_counter" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1713 1733])
+                    ("video_surfaces" variable
+                       (:dereference 1
+                        :type ("surface_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1738 2036])
+                    ("surface_entry" type
+                       (:members 
+                          ( ("surface" variable (:type ("VdpVideoSurface" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1769 1793])
+                            ("osurface" variable (:type ("VdpOutputSurface" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1802 1828])
+                            ("allocated" variable (:type "bool") (reparse-symbol classsubparts) [1837 1852])
+                            ("w" variable (:type "int") (reparse-symbol classsubparts) [1861 1870])
+                            ("h" variable (:type "int") (reparse-symbol classsubparts) [1861 1870])
+                            ("rgb_format" variable (:type ("VdpRGBAFormat" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1879 1904])
+                            ("chroma" variable (:type ("VdpChromaType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1913 1934])
+                            ("rgb" variable (:type "bool") (reparse-symbol classsubparts) [1943 1952])
+                            ("in_use" variable (:type "bool") (reparse-symbol classsubparts) [1961 1973])
+                            ("age" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1982 1994]))                          
+                        :type "struct")
+                        (reparse-symbol classsubparts) [1738 2036]))                  
+                :type "struct")
+                nil [931 2039])
+            ("mp_vdpau_create_device_x11" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2089 2108])
+                    ("x11" variable
+                       (:pointer 1
+                        :type ("Display" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2109 2122]))                  
+                :type ("mp_vdpau_ctx" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2041 2123])
+            ("mp_vdpau_destroy" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2146 2171]))                  
+                :type "void")
+                nil [2124 2172])
+            ("mp_vdpau_handle_preemption" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2205 2230])
+                    ("counter" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2231 2249]))                  
+                :type "int")
+                nil [2174 2250])
+            ("mp_vdpau_get_video_surface" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2296 2321])
+                    ("chroma" variable (:type ("VdpChromaType" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2366 2387])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [2388 2394])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [2395 2401]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2252 2402])
+            ("mp_vdpau_get_format" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [2429 2440])
+                    ("out_chroma_type" variable
+                       (:pointer 1
+                        :type ("VdpChromaType" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2441 2472])
+                    ("out_pixel_format" variable
+                       (:pointer 1
+                        :type ("VdpYCbCrFormat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2498 2531]))                  
+                :type "bool")
+                nil [2404 2532])
+            ("mp_vdpau_get_rgb_format" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [2562 2573])
+                    ("out_rgba_format" variable
+                       (:pointer 1
+                        :type ("VdpRGBAFormat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2574 2605]))                  
+                :type "bool")
+                nil [2533 2606])
+            ("mp_vdpau_upload_video_surface" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2655 2680])
+                    ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2728 2749]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2608 2750])
+            ("mp_vdpau_guess_if_emulated" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2784 2809]))                  
+                :type "bool")
+                nil [2752 2810]))          
+      :file "vdpau.h"
+      :pointmax 2819
+      :fsize 2818
+      :lastmodtime '(21681 30008 855672 145000)
+      :unmatched-syntax '((spp-include "video/vdpau_functions.inc" 687 . 723))
+      :lexical-table 
+        '(("CHECK_VDP_ERROR" (spp-arg-list ("ctx" "message") 211 . 225) . 
+              ((DO "do" 232 . 234) (semantic-list "{ \\
+        if (vdp_st != VDP_STATUS_OK) { \\
+            MP_ERR(ctx, \"%s: %s\\n\", message, vdp->get_error_string(vdp_st)); \\
+            return -1; \\
+        } \\
+    }" 235 . 401) (WHILE "while" 402 . 407) (semantic-list "(0)" 408 . 411)))
+          ("MAX_VIDEO_SURFACES" . ((number "50" 776 . 778)))
+          ("MPV_VDPAU_H")
+          ("CHECK_VDP_WARNING" (spp-arg-list ("ctx" "message") 438 . 452) . 
+              ((DO "do" 459 . 461) (semantic-list "{ \\
+        if (vdp_st != VDP_STATUS_OK) \\
+            MP_WARN(ctx, \"%s: %s\\n\", message, vdp->get_error_string(vdp_st)); \\
+    }" 462 . 590) (WHILE "while" 591 . 596) (semantic-list "(0)" 597 . 600)))
+          )
+)
+    (semanticdb-table "mp_image_pool.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("config.h" include nil nil [731 750])
+            ("stddef.h" include (:system-flag t) nil [752 771])
+            ("stdbool.h" include (:system-flag t) nil [772 792])
+            ("pthread.h" include (:system-flag t) nil [793 813])
+            ("assert.h" include (:system-flag t) nil [814 833])
+            ("talloc.h" include nil nil [835 854])
+            ("common/common.h" include nil nil [856 882])
+            ("video/mp_image.h" include nil nil [883 910])
+            ("mp_image_pool.h" include nil nil [912 938])
+            ("pool_mutex" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_MUTEX_INITIALIZER"
+                :type ("pthread_mutex_t" type (:type "class") nil nil))
+                nil [940 1002])
+            ("pool_lock" variable (:constant-flag t) nil [1011 1020])
+            ("pool_unlock" variable (:constant-flag t) nil [1063 1074])
+            ("mp_image_pool" type
+               (:members 
+                  ( ("max_count" variable (:type "int") (reparse-symbol classsubparts) [1333 1347])
+                    ("images" variable
+                       (:pointer 2
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1353 1378])
+                    ("num_images" variable (:type "int") (reparse-symbol classsubparts) [1383 1398])
+                    ("allocator" variable (:type ("mp_image_allocator" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1404 1433])
+                    ("allocator_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1438 1458])
+                    ("use_lru" variable (:type "bool") (reparse-symbol classsubparts) [1464 1477])
+                    ("lru_counter" variable (:type "unsigned int") (reparse-symbol classsubparts) [1482 1507]))                  
+                :type "struct")
+                nil [1306 1510])
+            ("image_flags" type
+               (:members 
+                  ( ("referenced" variable (:type "bool") (reparse-symbol classsubparts) [1741 1757])
+                    ("pool_alive" variable (:type "bool") (reparse-symbol classsubparts) [1810 1826])
+                    ("order" variable (:type "unsigned int") (reparse-symbol classsubparts) [1879 1898]))                  
+                :type "struct")
+                nil [1656 1955])
+            ("image_pool_destructor" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1991 2001]))                  
+                :type "void")
+                nil [1957 2074])
+            ("mp_image_pool_new" function
+               (:pointer 1
+                :arguments 
+                  ( ("max_count" variable (:type "int") (reparse-symbol arg-sub-list) [2116 2130]))                  
+                :type ("mp_image_pool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2076 2344])
+            ("mp_image_pool_clear" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2371 2398]))                  
+                :type "void")
+                nil [2346 2800])
+            ("unref_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2967 2977]))                  
+                :type "void")
+                nil [2943 3231])
+            ("mp_image_pool_get_no_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3417 3444])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [3445 3453])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [3498 3504])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [3505 3511]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3373 4455])
+            ("mp_image_pool_get" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4747 4774])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [4775 4783])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [4819 4825])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [4826 4832]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4712 5516])
+            ("mp_image_pool_new_copy" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5651 5678])
+                    ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5719 5740]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5611 5939])
+            ("mp_image_pool_make_writeable" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6206 6233])
+                    ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6268 6289]))                  
+                :type "bool")
+                nil [6172 6600])
+            ("mp_image_pool_set_allocator" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6635 6662])
+                    ("cb" variable (:type ("mp_image_allocator" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6696 6718])
+                    ("cb_data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [6719 6734]))                  
+                :type "void")
+                nil [6602 6799])
+            ("mp_image_pool_set_lru" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6910 6937]))                  
+                :type "void")
+                nil [6883 6967]))          
+      :file "mp_image_pool.c"
+      :pointmax 6968
+      :fsize 6967
+      :lastmodtime '(21681 30008 849005 589000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("pool_unlock" (spp-arg-list nil 1074 . 1076) . ((symbol "pthread_mutex_unlock" 1077 . 1097) (semantic-list "(&pool_mutex)" 1097 . 1110)))
+          ("pool_lock" (spp-arg-list nil 1020 . 1022) . ((symbol "pthread_mutex_lock" 1023 . 1041) (semantic-list "(&pool_mutex)" 1041 . 1054)))
+          )
+)
+    (semanticdb-table "mp_image_pool.h"
+      :file "mp_image_pool.h"
+      :fsize 1009
+      :lastmodtime '(21681 30008 849005 589000))
+    (semanticdb-table "vaapi.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [660 679])
+            ("vaapi.h" include nil nil [681 699])
+            ("common/common.h" include nil nil [700 726])
+            ("common/msg.h" include nil nil [727 750])
+            ("osdep/threads.h" include nil nil [751 777])
+            ("mp_image.h" include nil nil [778 799])
+            ("img_format.h" include nil nil [800 823])
+            ("mp_image_pool.h" include nil nil [824 850])
+            ("check_va_status" function
+               (:arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [873 892])
+                    ("status" variable (:type ("VAStatus" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [893 909])
+                    ("msg" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [910 926]))                  
+                :type "bool")
+                nil [852 1072])
+            ("va_get_colorspace_flag" function
+               (:arguments 
+                  ( ("csp" variable (:type ("mp_csp" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [1101 1117]))                  
+                :type "int")
+                nil [1074 1355])
+            ("fmtentry" type
+               (:members 
+                  ( ("va" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1379 1391])
+                    ("mp" variable (:type ("mp_imgfmt" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [1396 1414]))                  
+                :type "struct")
+                nil [1357 1417])
+            ("va_to_imgfmt" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    {VA_FOURCC_YV12, IMGFMT_420P},
+    {VA_FOURCC_I420, IMGFMT_420P},
+    {VA_FOURCC_IYUV, IMGFMT_420P},
+    {VA_FOURCC_NV12, IMGFMT_NV12},
+    {VA_FOURCC_UYVY, IMGFMT_UYVY},
+    {VA_FOURCC_YUY2, IMGFMT_YUYV},
+    // Note: not sure about endian issues (the mp formats are byte-addressed)
+    {VA_FOURCC_RGBA, IMGFMT_RGBA},
+    {VA_FOURCC_RGBX, IMGFMT_RGBA},
+    {VA_FOURCC_BGRA, IMGFMT_BGRA},
+    {VA_FOURCC_BGRX, IMGFMT_BGRA},
+    {0             , IMGFMT_NONE}
+}"
+                :type ("fmtentry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1419 1931])
+            ("va_fourcc_to_imgfmt" function
+               (:arguments 
+                  ( ("fourcc" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1968 1984]))                  
+                :type ("mp_imgfmt" type (:type "enum") nil nil))
+                nil [1933 2157])
+            ("va_fourcc_from_imgfmt" function
+               (:arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [2190 2201]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [2159 2364])
+            ("va_image_formats" type
+               (:members 
+                  ( ("entries" variable
+                       (:pointer 1
+                        :type ("VAImageFormat" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2396 2419])
+                    ("num" variable (:type "int") (reparse-symbol classsubparts) [2424 2432]))                  
+                :type "struct")
+                nil [2366 2435])
+            ("va_get_formats" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2464 2489]))                  
+                :type "void")
+                nil [2437 3124])
+            ("va_initialize" function
+               (:pointer 1
+                :arguments 
+                  ( ("display" variable
+                       (:pointer 1
+                        :type ("VADisplay" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3161 3180])
+                    ("plog" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3181 3201]))                  
+                :type ("mp_vaapi_ctx" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3126 3984])
+            ("va_destroy" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4050 4075]))                  
+                :type "void")
+                nil [4034 4234])
+            ("va_image_format_from_imgfmt" function
+               (:pointer 1
+                :arguments 
+                  ( ("formats" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("va_image_formats" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4279 4318])
+                    ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [4362 4373]))                  
+                :type ("VAImageFormat" type (:type "class") nil nil))
+                nil [4236 4657])
+            ("va_surface" type
+               (:members 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4683 4708])
+                    ("display" variable (:type ("VADisplay" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4713 4731])
+                    ("id" variable (:type ("VASurfaceID" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4737 4752])
+                    ("rt_format" variable (:type "int") (reparse-symbol classsubparts) [4757 4771])
+                    ("image" variable (:type ("VAImage" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4777 4791])
+                    ("is_derived" variable (:type "bool") (reparse-symbol classsubparts) [4837 4853]))                  
+                :type "struct")
+                nil [4659 4900])
+            ("va_surface_id" function
+               (:arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4928 4949]))                  
+                :type ("VASurfaceID" type (:type "class") nil nil))
+                nil [4902 5065])
+            ("va_surface_in_mp_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5116 5137]))                  
+                :type ("va_surface" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5067 5240])
+            ("va_surface_rt_format" function
+               (:arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5267 5288]))                  
+                :type "int")
+                nil [5242 5399])
+            ("release_va_surface" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5432 5442]))                  
+                :type "void")
+                nil [5401 5800])
+            ("alloc_surface" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5840 5865])
+                    ("rt_format" variable (:type "int") (reparse-symbol arg-sub-list) [5866 5880])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [5919 5925])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [5926 5932]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5802 6768])
+            ("va_surface_image_destroy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("surface" variable
+                       (:pointer 1
+                        :type ("va_surface" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6807 6834]))                  
+                :type "void")
+                nil [6770 7057])
+            ("va_surface_image_alloc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7093 7114])
+                    ("format" variable
+                       (:pointer 1
+                        :type ("VAImageFormat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7115 7137]))                  
+                :type "int")
+                nil [7059 8337])
+            ("va_surface_alloc_imgfmt" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8504 8525])
+                    ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [8526 8537]))                  
+                :type "int")
+                nil [8476 9081])
+            ("va_image_map" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9101 9126])
+                    ("image" variable
+                       (:pointer 1
+                        :type ("VAImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9127 9142])
+                    ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9143 9164]))                  
+                :type "bool")
+                nil [9083 9971])
+            ("va_image_unmap" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9993 10018])
+                    ("image" variable
+                       (:pointer 1
+                        :type ("VAImage" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10019 10034]))                  
+                :type "bool")
+                nil [9973 10197])
+            ("va_surface_upload" function
+               (:arguments 
+                  ( ("va_dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10316 10340])
+                    ("sw_src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10341 10365]))                  
+                :type "int")
+                nil [10294 11129])
+            ("try_download" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11168 11189])
+                    ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11227 11254]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11131 12139])
+            ("va_surface_download" function
+               (:pointer 1
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12294 12315])
+                    ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12353 12380]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [12257 13178])
+            ("pool_alloc_ctx" type
+               (:members 
+                  ( ("vaapi" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13208 13235])
+                    ("rt_format" variable (:type "int") (reparse-symbol classsubparts) [13240 13254]))                  
+                :type "struct")
+                nil [13180 13257])
+            ("alloc_pool" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("pctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13294 13305])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [13306 13314])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [13315 13321])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [13322 13328]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13259 13500])
+            ("va_pool_set_allocator" function
+               (:arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13628 13655])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13656 13681])
+                    ("rt_format" variable (:type "int") (reparse-symbol arg-sub-list) [13709 13723]))                  
+                :type "void")
+                nil [13601 13997])
+            ("va_guess_if_emulated" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14025 14050]))                  
+                :type "bool")
+                nil [13999 14191]))          
+      :file "vaapi.c"
+      :pointmax 14192
+      :fsize 14191
+      :lastmodtime '(21681 30008 855672 145000)
+      :unmatched-syntax nil)
+    (semanticdb-table "vaapi.h"
+      :file "vaapi.h"
+      :fsize 3434
+      :lastmodtime '(21681 30008 855672 145000))
+    (semanticdb-table "img_format.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [747 766])
+            ("string.h" include (:system-flag t) nil [767 786])
+            ("libavutil/pixfmt.h" include (:system-flag t) nil [788 817])
+            ("libavutil/pixdesc.h" include (:system-flag t) nil [818 848])
+            ("video/img_format.h" include nil nil [850 879])
+            ("video/mp_image.h" include nil nil [880 907])
+            ("video/fmt-conversion.h" include nil nil [908 941])
+            ("mp_imgfmt_entry" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [972 989])
+                    ("fmt" variable (:type "int") (reparse-symbol classsubparts) [994 1002]))                  
+                :type "struct")
+                nil [943 1005])
+            ("mp_imgfmt_list" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    // not in ffmpeg
+    {\"vdpau_output\",    IMGFMT_VDPAU_OUTPUT},
+    // FFmpeg names have an annoying \"_vld\" suffix
+    {\"vda\",             IMGFMT_VDA},
+    {\"vaapi\",           IMGFMT_VAAPI},
+    // names below this are not preferred over the FFmpeg names
+    // the \"none\" entry makes mp_imgfmt_to_name prefer FFmpeg names
+    {\"none\",            0},
+    // endian-specific aliases (not in FFmpeg)
+    {\"rgb32\",           IMGFMT_RGB32},
+    {\"bgr32\",           IMGFMT_BGR32},
+    // old names we keep around
+    {\"y8\",              IMGFMT_Y8},
+    {\"420p\",            IMGFMT_420P},
+    {\"yv12\",            IMGFMT_420P},
+    {\"420p16\",          IMGFMT_420P16},
+    {\"420p10\",          IMGFMT_420P10},
+    {\"444p\",            IMGFMT_444P},
+    {\"444p9\",           IMGFMT_444P9},
+    {\"444p10\",          IMGFMT_444P10},
+    {\"422p\",            IMGFMT_422P},
+    {\"422p9\",           IMGFMT_422P9},
+    {\"422p10\",          IMGFMT_422P10},
+    {0}
+}"
+                :type ("mp_imgfmt_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1007 2011])
+            ("mp_imgfmt_name_list" function
+               (:pointer 2
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2040 2045]))                  
+                :type "char")
+                nil [2013 2421])
+            ("mp_imgfmt_from_name" function
+               (:arguments 
+                  ( ("name" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2447 2457])
+                    ("allow_hwaccel" variable (:type "bool") (reparse-symbol arg-sub-list) [2458 2477]))                  
+                :type "int")
+                nil [2423 2919])
+            ("mp_imgfmt_to_name_buf" function
+               (:pointer 1
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2949 2959])
+                    ("buf_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2960 2976])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [2977 2985]))                  
+                :type "char")
+                nil [2921 3603])
+            ("mp_only_imgfmt_desc" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpfmt" variable (:type "int") (reparse-symbol arg-sub-list) [3654 3664]))                  
+                :type ("mp_imgfmt_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3605 3994])
+            ("mp_imgfmt_get_desc" function
+               (:arguments 
+                  ( ("mpfmt" variable (:type "int") (reparse-symbol arg-sub-list) [4037 4047]))                  
+                :type ("mp_imgfmt_desc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3996 8194])
+            ("mp_imgfmt_find_yuv_planar" function
+               (:arguments 
+                  ( ("xs" variable (:type "int") (reparse-symbol arg-sub-list) [8302 8309])
+                    ("ys" variable (:type "int") (reparse-symbol arg-sub-list) [8310 8317])
+                    ("planes" variable (:type "int") (reparse-symbol arg-sub-list) [8318 8329])
+                    ("component_bits" variable (:type "int") (reparse-symbol arg-sub-list) [8330 8349]))                  
+                :type "int")
+                nil [8272 8783]))          
+      :file "img_format.c"
+      :pointmax 11189
+      :fsize 11188
+      :lastmodtime '(21681 30008 849005 589000)
+      :unmatched-syntax nil)
+    (semanticdb-table "vdpau_mixer.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [807 826])
+            ("vdpau_mixer.h" include nil nil [828 852])
+            ("free_mixed_frame" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [883 893]))                  
+                :type "void")
+                nil [854 967])
+            ("mp_vdpau_mixed_frame_create" function
+               (:pointer 1
+                :arguments 
+                  ( ("base" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1251 1273]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1206 1859])
+            ("mp_vdpau_mixed_frame_get" function
+               (:pointer 1
+                :arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1915 1936]))                  
+                :type ("mp_vdpau_mixer_frame" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1861 2033])
+            ("mp_vdpau_mixer_create" function
+               (:pointer 1
+                :arguments 
+                  ( ("vdp_ctx" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2080 2109])
+                    ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2155 2174]))                  
+                :type ("mp_vdpau_mixer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2035 2525])
+            ("mp_vdpau_mixer_destroy" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2555 2584]))                  
+                :type "void")
+                nil [2527 2885])
+            ("opts_equal" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_vdpau_mixer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2910 2946])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_vdpau_mixer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2970 3006]))                  
+                :type "bool")
+                nil [2887 3217])
+            ("set_video_attribute" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3250 3279])
+                    ("attr" variable (:type ("VdpVideoMixerAttribute" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3311 3339])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3371 3389])
+                    ("attr_name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3390 3406]))                  
+                :type "int")
+                nil [3219 3826])
+            ("SET_VIDEO_ATTR" variable (:constant-flag t) nil [3836 3850])
+            ("create_vdp_mixer" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4047 4076]))                  
+                :type "int")
+                nil [4019 7972])
+            ("mp_vdpau_mixer_render" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8064 8093])
+                    ("opts" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_mixer_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8120 8153])
+                    ("output" variable (:type ("VdpOutputSurface" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8180 8204])
+                    ("output_rect" variable
+                       (:pointer 1
+                        :type ("VdpRect" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8205 8226])
+                    ("video" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8253 8276])
+                    ("video_rect" variable
+                       (:pointer 1
+                        :type ("VdpRect" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8277 8297]))                  
+                :type "int")
+                nil [8038 10367]))          
+      :file "vdpau_mixer.c"
+      :pointmax 10368
+      :fsize 10367
+      :lastmodtime '(21681 30008 855672 145000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SET_VIDEO_ATTR" (spp-arg-list ("attr_name" "attr_type" "value") 3850 . 3879) . ((symbol "set_video_attribute" 3880 . 3899) (semantic-list "(mixer, \\
+                 VDP_VIDEO_MIXER_ATTRIBUTE_ ## attr_name, &(attr_type){value},\\
+                 # attr_name)" 3899 . 4018)))
+          )
+)
+    (semanticdb-table "vdpau_mixer.h"
+      :file "vdpau_mixer.h"
+      :fsize 1529
+      :lastmodtime '(21681 30008 855672 145000))
+    (semanticdb-table "mp_image.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("config.h" include nil nil [747 766])
+            ("stdio.h" include (:system-flag t) nil [768 786])
+            ("stdlib.h" include (:system-flag t) nil [787 806])
+            ("string.h" include (:system-flag t) nil [807 826])
+            ("limits.h" include (:system-flag t) nil [827 846])
+            ("pthread.h" include (:system-flag t) nil [847 867])
+            ("assert.h" include (:system-flag t) nil [868 887])
+            ("libavutil/mem.h" include (:system-flag t) nil [889 915])
+            ("libavutil/common.h" include (:system-flag t) nil [916 945])
+            ("libavutil/bswap.h" include (:system-flag t) nil [946 974])
+            ("libavcodec/avcodec.h" include (:system-flag t) nil [975 1006])
+            ("talloc.h" include nil nil [1008 1027])
+            ("img_format.h" include nil nil [1029 1052])
+            ("mp_image.h" include nil nil [1053 1074])
+            ("sws_utils.h" include nil nil [1075 1097])
+            ("memcpy_pic.h" include nil nil [1098 1121])
+            ("fmt-conversion.h" include nil nil [1122 1149])
+            ("video/filter/vf.h" include nil nil [1151 1179])
+            ("refcount_mutex" variable
+               (:typemodifiers ("static")
+                :default-value "PTHREAD_MUTEX_INITIALIZER"
+                :type ("pthread_mutex_t" type (:type "class") nil nil))
+                nil [1181 1247])
+            ("refcount_lock" variable (:constant-flag t) nil [1256 1269])
+            ("refcount_unlock" variable (:constant-flag t) nil [1316 1331])
+            ("m_refcount" type
+               (:members 
+                  ( ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [1397 1407])
+                    ("free" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1472 1482]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1459 1483])
+                    ("ext_ref" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1745 1755]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1729 1756])
+                    ("ext_unref" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1779 1789]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1761 1790])
+                    ("ext_is_unique" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [1817 1827]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [1795 1828])
+                    ("refcount" variable (:type "int") (reparse-symbol classsubparts) [1911 1924]))                  
+                :type "struct")
+                nil [1373 1927])
+            ("m_refcount_destructor" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1994 2004]))                  
+                :type "void")
+                nil [1960 2074])
+            ("m_refcount_new" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2190 2195]))                  
+                :type ("m_refcount" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2149 2376])
+            ("m_refcount_ref" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ref" variable
+                       (:pointer 1
+                        :type ("m_refcount" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2405 2428]))                  
+                :type "void")
+                nil [2378 2552])
+            ("m_refcount_unref" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ref" variable
+                       (:pointer 1
+                        :type ("m_refcount" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2583 2606]))                  
+                :type "void")
+                nil [2554 2916])
+            ("m_refcount_is_unique" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ref" variable
+                       (:pointer 1
+                        :type ("m_refcount" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2951 2974]))                  
+                :type "bool")
+                nil [2918 3234])
+            ("mp_image_alloc_planes" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3270 3291]))                  
+                :type "bool")
+                nil [3236 4417])
+            ("mp_image_setfmt" function
+               (:arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4440 4461])
+                    ("out_fmt" variable (:type "int") (reparse-symbol arg-sub-list) [4462 4474]))                  
+                :type "void")
+                nil [4419 4810])
+            ("mp_image_destructor" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4844 4854]))                  
+                :type "void")
+                nil [4812 4922])
+            ("mp_chroma_div_up" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("size" variable (:type "int") (reparse-symbol arg-sub-list) [4952 4961])
+                    ("shift" variable (:type "int") (reparse-symbol arg-sub-list) [4962 4972]))                  
+                :type "int")
+                nil [4924 5023])
+            ("mp_image_set_size" function
+               (:arguments 
+                  ( ("mpi" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5129 5150])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [5151 5157])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [5158 5164]))                  
+                :type "void")
+                nil [5106 5571])
+            ("mp_image_set_params" function
+               (:arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5598 5621])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5647 5684]))                  
+                :type "void")
+                nil [5573 5852])
+            ("mp_image_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [5886 5897])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [5898 5904])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [5905 5911]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5854 6322])
+            ("mp_image_new_copy" function
+               (:pointer 1
+                :arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6359 6380]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6324 6576])
+            ("mp_image_steal_data" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6800 6821])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6822 6843]))                  
+                :type "void")
+                nil [6775 7279])
+            ("mp_image_new_ref" function
+               (:pointer 1
+                :arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7428 7449]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7394 7693])
+            ("mp_image_new_custom_ref" function
+               (:pointer 1
+                :arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7996 8017])
+                    ("free_arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8018 8033])
+                    ("free" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [8088 8098]))                          
+                        :type "void")
+                        nil nil))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7955 8180])
+            ("mp_image_new_external_ref" function
+               (:pointer 1
+                :arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8585 8606])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8607 8617])
+                    ("ref" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [8673 8683]))                          
+                        :type "void")
+                        nil nil)
+                    ("unref" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [8742 8752]))                          
+                        :type "void")
+                        nil nil)
+                    ("is_unique" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [8815 8825]))                          
+                        :type "bool")
+                        nil nil)
+                    ("free" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("arg" variable
+                               (:pointer 1
+                                :type "void")
+                                (reparse-symbol arg-sub-list) [8883 8893]))                          
+                        :type "void")
+                        nil nil))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8542 9257])
+            ("mp_image_is_writeable" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9286 9307]))                  
+                :type "bool")
+                nil [9259 9454])
+            ("mp_image_make_writeable" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9747 9768]))                  
+                :type "bool")
+                nil [9718 10009])
+            ("mp_image_setrefp" function
+               (:arguments 
+                  ( ("p_img" variable
+                       (:pointer 2
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10171 10195])
+                    ("new_value" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10196 10223]))                  
+                :type "void")
+                nil [10149 10358])
+            ("mp_image_unrefp" function
+               (:arguments 
+                  ( ("p_img" variable
+                       (:pointer 2
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10456 10480]))                  
+                :type "void")
+                nil [10435 10528])
+            ("mp_image_copy" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10549 10570])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10571 10592]))                  
+                :type "void")
+                nil [10530 11185])
+            ("mp_image_copy_attributes" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11217 11238])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11239 11260]))                  
+                :type "void")
+                nil [11187 12228])
+            ("mp_image_crop" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12362 12383])
+                    ("x0" variable (:type "int") (reparse-symbol arg-sub-list) [12384 12391])
+                    ("y0" variable (:type "int") (reparse-symbol arg-sub-list) [12392 12399])
+                    ("x1" variable (:type "int") (reparse-symbol arg-sub-list) [12400 12407])
+                    ("y1" variable (:type "int") (reparse-symbol arg-sub-list) [12408 12415]))                  
+                :type "void")
+                nil [12343 12856])
+            ("mp_image_crop_rc" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12880 12901])
+                    ("rc" variable (:type ("mp_rect" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [12902 12920]))                  
+                :type "void")
+                nil [12858 12976])
+            ("mp_image_clear" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13149 13170])
+                    ("x0" variable (:type "int") (reparse-symbol arg-sub-list) [13171 13178])
+                    ("y0" variable (:type "int") (reparse-symbol arg-sub-list) [13179 13186])
+                    ("x1" variable (:type "int") (reparse-symbol arg-sub-list) [13187 13194])
+                    ("y1" variable (:type "int") (reparse-symbol arg-sub-list) [13195 13202]))                  
+                :type "void")
+                nil [13129 14561])
+            ("mp_image_vflip" function
+               (:arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14583 14604]))                  
+                :type "void")
+                nil [14563 14786])
+            ("mp_image_params_to_str_buf" function
+               (:pointer 1
+                :arguments 
+                  ( ("b" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14821 14829])
+                    ("bs" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14830 14840])
+                    ("p" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14874 14906]))                  
+                :type "char")
+                nil [14788 15886])
+            ("mp_image_params_valid" function
+               (:arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16043 16075]))                  
+                :type "bool")
+                nil [16016 16852])
+            ("mp_image_params_equal" function
+               (:arguments 
+                  ( ("p1" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16881 16914])
+                    ("p2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16942 16975]))                  
+                :type "bool")
+                nil [16854 17498])
+            ("mp_image_set_attributes" function
+               (:arguments 
+                  ( ("image" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17629 17652])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17682 17719]))                  
+                :type "void")
+                nil [17600 18235])
+            ("mp_image_params_guess_csp" function
+               (:arguments 
+                  ( ("params" variable
+                       (:pointer 1
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18474 18505]))                  
+                :type "void")
+                nil [18443 21547])
+            ("mp_image_copy_fields_from_av_frame" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21703 21724])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("AVFrame" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21765 21785]))                  
+                :type "void")
+                nil [21663 22332])
+            ("HAVE_AVFRAME_COLORSPACE" variable (:constant-flag t) nil [22405 22428])
+            ("mp_image_copy_fields_to_av_frame" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("AVFrame" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22610 22630])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22669 22690]))                  
+                :type "void")
+                nil [22572 23407])
+            ("frame_free" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23432 23440]))                  
+                :type "void")
+                nil [23409 23495])
+            ("frame_is_unique" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [23525 23533]))                  
+                :type "bool")
+                nil [23497 23601])
+            ("mp_image_from_av_frame" function
+               (:pointer 1
+                :arguments 
+                  ( ("av_frame" variable
+                       (:pointer 1
+                        :type ("AVFrame" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [23691 23716]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [23651 24019])
+            ("free_img" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("opaque" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [24042 24055])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24056 24070]))                  
+                :type "void")
+                nil [24021 24131])
+            ("mp_image_to_av_frame_and_unref" function
+               (:pointer 1
+                :arguments 
+                  ( ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [24546 24567]))                  
+                :type ("AVFrame" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [24499 25729]))          
+      :file "mp_image.c"
+      :pointmax 25730
+      :fsize 25729
+      :lastmodtime '(21681 30008 849005 589000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("refcount_unlock" (spp-arg-list nil 1331 . 1333) . ((symbol "pthread_mutex_unlock" 1334 . 1354) (semantic-list "(&refcount_mutex)" 1354 . 1371)))
+          ("HAVE_AVFRAME_COLORSPACE" . ((symbol "HAVE_AVCODEC_CHROMA_POS_API" 22429 . 22456)))
+          ("refcount_lock" (spp-arg-list nil 1269 . 1271) . ((symbol "pthread_mutex_lock" 1272 . 1290) (semantic-list "(&refcount_mutex)" 1290 . 1307)))
+          )
+)
+    (semanticdb-table "memcpy_pic.h"
+      :file "memcpy_pic.h"
+      :fsize 2573
+      :lastmodtime '(21681 30008 849005 589000))
+    (semanticdb-table "sws_utils.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [747 766])
+            ("libswscale/swscale.h" include (:system-flag t) nil [768 799])
+            ("libavcodec/avcodec.h" include (:system-flag t) nil [800 831])
+            ("libavutil/opt.h" include (:system-flag t) nil [832 858])
+            ("config.h" include nil nil [860 879])
+            ("sws_utils.h" include nil nil [881 903])
+            ("common/common.h" include nil nil [905 931])
+            ("options/m_option.h" include nil nil [932 961])
+            ("video/mp_image.h" include nil nil [962 989])
+            ("video/img_format.h" include nil nil [990 1019])
+            ("fmt-conversion.h" include nil nil [1020 1047])
+            ("csputils.h" include nil nil [1048 1069])
+            ("common/msg.h" include nil nil [1070 1093])
+            ("video/filter/vf.h" include nil nil [1094 1122])
+            ("sws_opts" type
+               (:members 
+                  ( ("scaler" variable (:type "int") (reparse-symbol classsubparts) [1187 1198])
+                    ("lum_gblur" variable (:type "float") (reparse-symbol classsubparts) [1203 1219])
+                    ("chr_gblur" variable (:type "float") (reparse-symbol classsubparts) [1224 1240])
+                    ("chr_vshift" variable (:type "int") (reparse-symbol classsubparts) [1245 1260])
+                    ("chr_hshift" variable (:type "int") (reparse-symbol classsubparts) [1265 1280])
+                    ("chr_sharpen" variable (:type "float") (reparse-symbol classsubparts) [1285 1303])
+                    ("lum_sharpen" variable (:type "float") (reparse-symbol classsubparts) [1308 1326]))                  
+                :type "struct")
+                nil [1165 1329])
+            ("OPT_BASE_STRUCT" variable (:constant-flag t) nil [1339 1354])
+            ("sws_conf" variable
+               (:constant-flag t
+                :default-value "{
+    .opts = (const m_option_t[]) {
+        OPT_CHOICE(\"scaler\", scaler, 0,
+                   ({\"fast-bilinear\",   SWS_FAST_BILINEAR},
+                    {\"bilinear\",        SWS_BILINEAR},
+                    {\"bicubic\",         SWS_BICUBIC},
+                    {\"x\",               SWS_X},
+                    {\"point\",           SWS_POINT},
+                    {\"area\",            SWS_AREA},
+                    {\"bicublin\",        SWS_BICUBLIN},
+                    {\"gauss\",           SWS_GAUSS},
+                    {\"sinc\",            SWS_SINC},
+                    {\"lanczos\",         SWS_LANCZOS},
+                    {\"spline\",          SWS_SPLINE})),
+        OPT_FLOATRANGE(\"lgb\", lum_gblur, 0, 0, 100.0),
+        OPT_FLOATRANGE(\"cgb\", chr_gblur, 0, 0, 100.0),
+        OPT_INT(\"cvs\", chr_vshift, 0),
+        OPT_INT(\"chs\", chr_hshift, 0),
+        OPT_FLOATRANGE(\"ls\", lum_sharpen, 0, -100.0, 100.0),
+        OPT_FLOATRANGE(\"cs\", chr_sharpen, 0, -100.0, 100.0),
+        {0}
+    },
+    .size = sizeof(struct sws_opts),
+    .defaults = &(const struct sws_opts){
+        .scaler = SWS_BICUBIC,
+    },
+}"
+                :type ("m_sub_options" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1371 2521])
+            ("SWS_BITEXACT" variable (:type "int") nil [2720 2733])
+            ("mp_sws_fast_flags" variable
+               (:constant-flag t
+                :default-value "SWS_BILINEAR"
+                :type "int")
+                nil [2751 2794])
+            ("mp_sws_set_from_cmdline" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_sws_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2877 2904])
+                    ("opts" variable
+                       (:pointer 1
+                        :type ("sws_opts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2905 2927]))                  
+                :type "void")
+                nil [2848 3305])
+            ("mp_sws_supported_format" function
+               (:arguments 
+                  ( ("imgfmt" variable (:type "int") (reparse-symbol arg-sub-list) [3336 3347]))                  
+                :type "bool")
+                nil [3307 3530])
+            ("mp_csp_to_sws_colorspace" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("csp" variable (:type ("mp_csp" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [3568 3584]))                  
+                :type "int")
+                nil [3532 3817])
+            ("cache_valid" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_sws_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3843 3870]))                  
+                :type "bool")
+                nil [3819 4265])
+            ("free_mp_sws" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4291 4299]))                  
+                :type "void")
+                nil [4267 4444])
+            ("mp_sws_alloc" function
+               (:pointer 1
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4597 4614]))                  
+                :type ("mp_sws_context" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4561 5086])
+            ("mp_sws_reinit" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_sws_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5235 5262]))                  
+                :type "int")
+                nil [5217 8698])
+            ("mp_sws_scale" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_sws_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8937 8964])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8965 8986])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9004 9025]))                  
+                :type "int")
+                nil [8920 9361])
+            ("mp_image_swscale" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9385 9406])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9407 9428])
+                    ("my_sws_flags" variable (:type "int") (reparse-symbol arg-sub-list) [9451 9468]))                  
+                :type "void")
+                nil [9363 9611])
+            ("mp_image_sw_blur_scale" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9641 9662])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9663 9684])
+                    ("gblur" variable (:type "float") (reparse-symbol arg-sub-list) [9713 9725]))                  
+                :type "void")
+                nil [9613 9974])
+            ("mp_sws_get_vf_equalizer" function
+               (:arguments 
+                  ( ("sws" variable
+                       (:pointer 1
+                        :type ("mp_sws_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10004 10031])
+                    ("eq" variable
+                       (:pointer 1
+                        :type ("vf_seteq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10032 10052]))                  
+                :type "int")
+                nil [9976 10439])
+            ("mp_sws_set_vf_equalizer" function
+               (:arguments 
+                  ( ("sws" variable
+                       (:pointer 1
+                        :type ("mp_sws_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10469 10496])
+                    ("eq" variable
+                       (:pointer 1
+                        :type ("vf_seteq" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10497 10517]))                  
+                :type "int")
+                nil [10441 10925]))          
+      :file "sws_utils.c"
+      :pointmax 10954
+      :fsize 10953
+      :lastmodtime '(21681 30008 855672 145000)
+      :unmatched-syntax '((punctuation 2690 . 2691) (symbol 2673 . 2689) (punctuation 2671 . 2672) (symbol 2652 . 2670) (punctuation 2622 . 2623) (symbol 2603 . 2621) (punctuation 2601 . 2602) (symbol 2589 . 2600) (punctuation 2587 . 2588) (symbol 2571 . 2586) (INT 2567 . 2570) (CONST 2561 . 2566))
+      :lexical-table 
+        '(("OPT_BASE_STRUCT" . ((STRUCT "struct" 1355 . 1361) (symbol "sws_opts" 1362 . 1370)))
+          )
+)
+    (semanticdb-table "csputils.h"
+      :file "csputils.h"
+      :fsize 8630
+      :lastmodtime '(21681 30008 842339 33000)))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!video!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

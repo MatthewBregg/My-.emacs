@@ -1,0 +1,103 @@
+;; Object 543/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "543/"
+  :tables
+  (list
+    (semanticdb-table "Sieve.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__Seive_H_INCLUDED__" variable (:constant-flag t) nil [78 98])
+            ("iostream" include (:system-flag t) nil [162 180])
+            ("string" include (:system-flag t) nil [181 197])
+            ("math.h" include (:system-flag t) nil [198 215])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [216 236])
+            ("Sieve" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [251 258])
+                    ("isprime" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [273 279]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [260 280])
+                    ("Sieve" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [288 294]))                          
+                        :type ("Sieve" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [282 295])
+                    ("getPrime" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [310 316]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [297 317])
+                    ("private" label nil (reparse-symbol classsubparts) [318 326])
+                    ("length" variable (:type "int") (reparse-symbol classsubparts) [328 339])
+                    ("primes" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [341 353])
+                    ("nums" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol classsubparts) [355 366])
+                    ("primecheckinorder" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("a" variable (:type "int") (reparse-symbol arg-sub-list) [391 397]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [368 398])
+                    ("primetotal" variable (:type "int") (reparse-symbol classsubparts) [400 415]))                  
+                :type "class")
+                nil [237 419]))          
+      :file "Sieve.h"
+      :pointmax 427
+      :fsize 426
+      :lastmodtime '(21233 25333 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__Seive_H_INCLUDED__")
+          )
+)
+    (semanticdb-table "Sieve.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("Sieve.h" include nil nil [1 19])
+            ("primecheckinorder" function
+               (:parent "Sieve"
+                :arguments 
+                  ( ("a" variable (:type "int") (reparse-symbol arg-sub-list) [51 57]))                  
+                :type "bool")
+                nil [21 284])
+            ("Sieve" function
+               (:constructor-flag t
+                :parent "Sieve"
+                :arguments 
+                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [298 304]))                  
+                :type ("Sieve" type (:type "class") nil nil))
+                nil [285 731])
+            ("isprime" function
+               (:parent "Sieve"
+                :arguments 
+                  ( ("p" variable (:type "int") (reparse-symbol arg-sub-list) [752 758]))                  
+                :type "bool")
+                nil [732 781])
+            ("getPrime" function
+               (:parent "Sieve"
+                :arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [803 809]))                  
+                :type "int")
+                nil [783 832]))          
+      :file "Sieve.cpp"
+      :pointmax 833
+      :fsize 832
+      :lastmodtime '(21233 25769 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!FreshmanCollege!SieveClass!543!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

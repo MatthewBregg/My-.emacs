@@ -1,0 +1,18 @@
+;; Object Fizzbuzz/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Fizzbuzz/"
+  :tables
+  (list
+    (semanticdb-table "Fizzbuzz.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 18])
+            ("main" function (:type "void") nil [19 433]))          
+      :file "Fizzbuzz.c"
+      :pointmax 434
+      :fsize 433
+      :lastmodtime '(21216 47764 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!FreshmanCollege!Fizzbuzz!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

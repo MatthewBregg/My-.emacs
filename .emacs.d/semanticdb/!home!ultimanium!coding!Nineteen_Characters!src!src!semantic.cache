@@ -1,0 +1,279 @@
+;; Object src/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "src/"
+  :tables
+  (list
+    (semanticdb-table "Function.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [1 13]))          
+      :file "Function.java"
+      :pointmax 332
+      :fsize 330
+      :lastmodtime '(21752 57658 366876 169000)
+      :unmatched-syntax '((BRACE_BLOCK 303 . 330) (GT 301 . 302) (IDENTIFIER 300 . 301) (COMMA 298 . 299) (IDENTIFIER 297 . 298) (PUBLIC 271 . 277) (LT 296 . 297)))
+    (semanticdb-table "Effect.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [186 198]))          
+      :file "Effect.java"
+      :pointmax 278
+      :fsize 277
+      :lastmodtime '(21752 57658 366876 169000)
+      :unmatched-syntax '((BRACE_BLOCK 246 . 277) (IDENTIFIER 239 . 245) (PUBLIC 227 . 233) (IDENTIFIER 234 . 238)))
+    (semanticdb-table "Repeatable.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [10 22])
+            ("src.model.Vector2" include nil nil [24 49])
+            ("Repeatable" type
+               (:typemodifiers ("public" "abstract")
+                :members 
+                  ( ("executeLoop" function
+                       (:arguments 
+                          ( ("start" variable (:type "Vector2") (reparse-symbol formal_parameters) [149 162])
+                            ("end" variable (:type "Vector2") (reparse-symbol formal_parameters) [164 175]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [132 245])
+                    ("executeLoop" function
+                       (:arguments 
+                          ( ("top_left_x" variable (:type "int") (reparse-symbol formal_parameters) [268 282])
+                            ("top_left_y" variable (:type "int") (reparse-symbol formal_parameters) [284 298])
+                            ("width" variable (:type "int") (reparse-symbol formal_parameters) [300 309])
+                            ("height" variable (:type "int") (reparse-symbol formal_parameters) [311 321]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [251 519]))                  
+                :type "class")
+                nil [93 586]))          
+      :file "Repeatable.java"
+      :pointmax 586
+      :fsize 563
+      :lastmodtime '(21752 57658 366876 169000)
+      :unmatched-syntax '(($EOI 586 . 586) (VOID 524 . 528) ($EOI 586 . 586) (RBRACE 585 . 586) (SEMICOLON 583 . 584) (PAREN_BLOCK 569 . 583) (VOID 556 . 560) (ABSTRACT 547 . 555)))
+    (semanticdb-table "IO_Bundle.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [186 198])
+            ("java.awt.Color" include nil nil [200 222])
+            ("java.util.ArrayList" include nil nil [223 250])
+            ("src.model.map.constructs.EntityStatsPack" include nil nil [252 300])
+            ("src.model.map.constructs.Occupation" include nil nil [301 344])
+            ("src.model.map.constructs.PickupableItem" include nil nil [345 392])
+            ("src.model.map.constructs.PrimaryHandHoldable" include nil nil [393 445])
+            ("src.model.map.constructs.SecondaryHandHoldable" include nil nil [446 500])
+            ("IO_Bundle" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("IO_Bundle" function
+                       (:constructor-flag t
+                        :typemodifiers ("public")
+                        :arguments 
+                          ( ("v" variable
+                               (:dereference 2
+                                :type "char")
+                                (reparse-symbol formal_parameters) [628 638])
+                            ("c" variable
+                               (:dereference 2
+                                :type "Color")
+                                (reparse-symbol formal_parameters) [640 651])
+                            ("" variable (:type "i") (reparse-symbol formal_parameters) [679 680])
+                            ("s" variable (:type "EntityStatsPack") (reparse-symbol formal_parameters) [694 711])
+                            ("o" variable (:type "Occupation") (reparse-symbol formal_parameters) [713 725])
+                            ("n" variable (:type "int") (reparse-symbol formal_parameters) [727 732])
+                            ("bi" variable (:type "int") (reparse-symbol formal_parameters) [734 740])
+                            ("ba" variable (:type "int") (reparse-symbol formal_parameters) [742 748])
+                            ("ob" variable (:type "int") (reparse-symbol formal_parameters) [750 756])
+                            ("pri" variable (:type "PrimaryHandHoldable") (reparse-symbol formal_parameters) [770 793])
+                            ("sec" variable (:type "SecondaryHandHoldable") (reparse-symbol formal_parameters) [795 820])
+                            ("" variable (:type "sfc") (reparse-symbol formal_parameters) [852 855])
+                            ("num_coins" variable (:type "int") (reparse-symbol formal_parameters) [857 870]))                          )
+                        (reparse-symbol class_member_declaration) [611 1256])
+                    ("view_for_display_" variable
+                       (:dereference 2
+                        :typemodifiers ("public" "final")
+                        :type "char")
+                        (reparse-symbol class_member_declaration) [1261 1301])
+                    ("color_for_display_" variable
+                       (:dereference 2
+                        :typemodifiers ("public" "final")
+                        :type "Color")
+                        (reparse-symbol class_member_declaration) [1306 1348])
+                    ("primary_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "PrimaryHandHoldable")
+                        (reparse-symbol class_member_declaration) [1353 1395])
+                    ("second_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "SecondaryHandHoldable")
+                        (reparse-symbol class_member_declaration) [1400 1443])
+                    ("stats_for_display_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "EntityStatsPack")
+                        (reparse-symbol class_member_declaration) [1503 1551])
+                    ("occupation_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "Occupation")
+                        (reparse-symbol class_member_declaration) [1556 1592])
+                    ("num_skillpoints_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1597 1631])
+                    ("bind_wounds_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1636 1666])
+                    ("bargain_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1671 1697])
+                    ("observation_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1702 1732])
+                    ("num_coins_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1800 1828])
+                    ("getStatsPack" function
+                       (:typemodifiers ("public")
+                        :type "EntityStatsPack")
+                        (reparse-symbol class_member_declaration) [1834 1914])
+                    ("getOccupation" function
+                       (:typemodifiers ("public")
+                        :type "Occupation")
+                        (reparse-symbol class_member_declaration) [1920 1989])
+                    ("getInventory" function (:constructor-flag t) (reparse-symbol class_member_declaration) [2027 2072])
+                    ("getSkillNames" function (:constructor-flag t) (reparse-symbol class_member_declaration) [2102 2538])
+                    ("getSkillLevels" function (:constructor-flag t) (reparse-symbol class_member_declaration) [2569 2960]))                  
+                :type "class")
+                nil [581 2962]))          
+      :file "IO_Bundle.java"
+      :pointmax 2962
+      :fsize 2961
+      :lastmodtime '(21757 23379 699619 989000)
+      :unmatched-syntax '((GT 2567 . 2568) (PUBLIC 2543 . 2549) (LT 2559 . 2560) (GT 2100 . 2101) (PUBLIC 2077 . 2083) (LT 2093 . 2094) (GT 2025 . 2026) (PUBLIC 1994 . 2000) (LT 2010 . 2011) (SEMICOLON 1794 . 1795) (GT 1766 . 1767) (PUBLIC 1737 . 1743) (LT 1759 . 1760) (SEMICOLON 1497 . 1498) (GT 1485 . 1486) (PUBLIC 1448 . 1454) (LT 1470 . 1471) (GT 850 . 851) (IDENTIFIER 834 . 843) (LT 843 . 844) (GT 677 . 678) (IDENTIFIER 653 . 662) (LT 662 . 663)))
+    (semanticdb-table "HardCodedStrings.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [186 198])
+            ("HardCodedStrings" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("getChatOptions" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [267 323])
+                    ("getReplyOptions" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [348 408])
+                    ("attack" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [431 480])
+                    ("getAllSkills" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [532 586])
+                    ("bind" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [588 633])
+                    ("barter" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [661 710])
+                    ("observe" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [738 789])
+                    ("skill_1" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [791 842])
+                    ("skill_2" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [844 895])
+                    ("skill_3" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [897 948])
+                    ("skill_4" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [950 1001])
+                    ("useItem" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1003 1055])
+                    ("getItemList" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1120 1172])
+                    ("trade" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1218 1265])
+                    ("gameCommands" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1330 1402])
+                    ("command_error" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1443 1504])
+                    ("help" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1506 2366])
+                    ("rebindHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [2370 2625])
+                    ("saveHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [2629 2734])
+                    ("loadHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [2738 2839])
+                    ("saveControlsHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [2843 2963])
+                    ("loadControlsHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [2967 3090])
+                    ("controlsHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3094 3221])
+                    ("helpHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3225 3328])
+                    ("pwdHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3332 3420])
+                    ("manHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3424 3522])
+                    ("bindingsHelp" variable
+                       (:typemodifiers ("public" "final" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3526 3697]))                  
+                :type "class")
+                nil [234 3699]))          
+      :file "HardCodedStrings.java"
+      :pointmax 3700
+      :fsize 3699
+      :lastmodtime '(21759 27584 10552 13000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!Nineteen_Characters!src!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

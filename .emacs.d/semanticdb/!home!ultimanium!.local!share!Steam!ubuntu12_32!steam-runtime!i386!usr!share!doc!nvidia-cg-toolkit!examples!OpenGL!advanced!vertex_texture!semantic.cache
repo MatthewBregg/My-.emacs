@@ -1,0 +1,29 @@
+;; Object vertex_texture/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "vertex_texture/"
+  :tables
+  (list
+    (semanticdb-table "pgm_load.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [57 75])
+            ("stdlib.h" include (:system-flag t) nil [76 95])
+            ("GL/glew.h" include (:system-flag t) nil [97 117])
+            ("pgm_load" function
+               (:arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [135 156])
+                    ("internalFormat" variable (:type ("GLenum" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [157 179]))                  
+                :type ("GLuint" type (:type "class") nil nil))
+                nil [119 1378]))          
+      :file "pgm_load.c"
+      :pointmax 1379
+      :fsize 1378
+      :lastmodtime '(19756 3646 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!.local!share!Steam!ubuntu12_32!steam-runtime!i386!usr!share!doc!nvidia-cg-toolkit!examples!OpenGL!advanced!vertex_texture!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,53 @@
+;; Object video/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "video/"
+  :tables
+  (list
+    (semanticdb-table "videoframeshader.cpp"
+      :major-mode 'c++-mode
+      :tags nil
+      :file "videoframeshader.cpp"
+      :pointmax 19876
+      :fsize 19875
+      :lastmodtime '(21681 29824 628734 709000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ffmpegfilters.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("ffmpegfilters.hpp" include nil nil [1 29])
+            ("video/fmt-conversion.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [205 238])
+            ("video/mp_image.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [177 204])
+            ("libswscale/swscale.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [145 176])
+            ("libavutil/pixdesc.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [114 144])
+            ("libavfilter/buffersrc.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [79 113])
+            ("libavfilter/buffersink.h" include
+               (:typemodifiers ("extern" "\"C\"")
+                :system-flag t)
+                (reparse-symbol extern-c-contents) [43 78]))          
+      :file "ffmpegfilters.cpp"
+      :pointmax 7096
+      :fsize 7095
+      :lastmodtime '(21681 29824 625401 429000)
+      :unmatched-syntax '((semantic-list 6991 . 7095) (VOID 6986 . 6990) (punctuation 6984 . 6985) (punctuation 6983 . 6984) (semantic-list 6980 . 6982) (symbol 6973 . 6980) (punctuation 6972 . 6973) (punctuation 6971 . 6972) (symbol 6957 . 6971) (symbol 6952 . 6956) (semantic-list 6529 . 6950) (symbol 6521 . 6528) (punctuation 6519 . 6520) (punctuation 6518 . 6519) (CONST 6512 . 6517) (semantic-list 6491 . 6511) (symbol 6483 . 6491) (punctuation 6482 . 6483) (punctuation 6481 . 6482) (symbol 6467 . 6481) (symbol 6462 . 6466) (semantic-list 5571 . 6460) (BOOL 5566 . 5570) (punctuation 5564 . 5565) (punctuation 5563 . 5564) (semantic-list 5470 . 5562) (symbol 5460 . 5470) (punctuation 5459 . 5460) (punctuation 5458 . 5459) (symbol 5444 . 5458) (symbol 5439 . 5443) (semantic-list 4940 . 5437) (BOOL 4935 . 4939) (punctuation 4933 . 4934) (punctuation 4932 . 4933) (CONST 4926 . 4931) (semantic-list 4894 . 4925) (symbol 4887 . 4894) (punctuation 4886 . 4887) (punctuation 4885 . 4886) (symbol 4871 . 4885) (symbol 4866 . 4870) (semantic-list 4714 . 4782) (VOID 4709 . 4713) (punctuation 4707 . 4708) (punctuation 4706 . 4707) (semantic-list 4703 . 4705) (symbol 4696 . 4703) (punctuation 4695 . 4696) (punctuation 4694 . 4695) (symbol 4677 . 4694) (symbol 4672 . 4676) (semantic-list 4098 . 4670) (BOOL 4093 . 4097) (punctuation 4091 . 4092) (punctuation 4090 . 4091) (semantic-list 3994 . 4089) (symbol 3984 . 3994) (punctuation 3983 . 3984) (punctuation 3982 . 3983) (symbol 3965 . 3982) (symbol 3960 . 3964) (semantic-list 2070 . 3958) (BOOL 2065 . 2069) (punctuation 2063 . 2064) (punctuation 2062 . 2063) (semantic-list 1986 . 2061) (symbol 1977 . 1986) (punctuation 2056 . 2057) (punctuation 2002 . 2003) (punctuation 1976 . 1977) (punctuation 1975 . 1976) (symbol 1958 . 1975) (punctuation 2056 . 2057) (punctuation 2002 . 2003) (symbol 1953 . 1957) (punctuation 2056 . 2057) (punctuation 2002 . 2003) (semantic-list 1515 . 1951) (symbol 1507 . 1514) (punctuation 1505 . 1506) (punctuation 1504 . 1505) (semantic-list 1501 . 1503) (symbol 1497 . 1501) (punctuation 1496 . 1497) (punctuation 1495 . 1496) (symbol 1478 . 1495) (symbol 1473 . 1477) (semantic-list 498 . 1471) (BOOL 493 . 497) (punctuation 491 . 492) (punctuation 490 . 491) (semantic-list 470 . 489) (symbol 466 . 470) (punctuation 465 . 466) (punctuation 464 . 465) (symbol 447 . 464) (symbol 442 . 446) (punctuation 439 . 440) (INT 436 . 439) (punctuation 434 . 435) (punctuation 433 . 434) (semantic-list 416 . 432) (symbol 398 . 416) (symbol 393 . 397) (semantic-list 316 . 391) (punctuation 310 . 311) (symbol 302 . 310) (punctuation 300 . 301) (punctuation 299 . 300) (semantic-list 267 . 298) (symbol 254 . 267) (symbol 249 . 253) (STATIC 242 . 248)))
+    (semanticdb-table "ffmpegfilters.hpp"
+      :file "ffmpegfilters.hpp"
+      :fsize 1636
+      :lastmodtime '(21681 29824 625401 429000)))
+  :file "!home!ultimanium!coding!cmplayer!src!cmplayer!video!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

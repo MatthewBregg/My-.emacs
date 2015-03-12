@@ -1,0 +1,36 @@
+;; Object simple/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "simple/"
+  :tables
+  (list
+    (semanticdb-table "simple.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stddef.h" include (:system-flag t) nil [1 20])
+            ("stdio.h" include (:system-flag t) nil [21 39])
+            ("stdlib.h" include (:system-flag t) nil [40 59])
+            ("mpv/client.h" include (:system-flag t) nil [61 84])
+            ("check_error" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("status" variable (:type "int") (reparse-symbol arg-sub-list) [117 128]))                  
+                :type "void")
+                nil [86 242])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [253 262])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [263 276]))                  
+                :type "int")
+                nil [244 1350]))          
+      :file "simple.c"
+      :pointmax 1351
+      :fsize 1350
+      :lastmodtime '(21681 30008 799006 417000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!DOCS!client_api_examples!simple!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

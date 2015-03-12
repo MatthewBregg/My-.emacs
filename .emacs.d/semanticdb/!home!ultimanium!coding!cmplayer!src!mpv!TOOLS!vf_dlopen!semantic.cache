@@ -1,0 +1,420 @@
+;; Object vf_dlopen/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "vf_dlopen/"
+  :tables
+  (list
+    (semanticdb-table "tile.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [910 929])
+            ("stdio.h" include (:system-flag t) nil [930 948])
+            ("stdlib.h" include (:system-flag t) nil [949 968])
+            ("string.h" include (:system-flag t) nil [969 988])
+            ("vf_dlopen.h" include nil nil [990 1012])
+            ("filterutils.h" include nil nil [1013 1037])
+            ("ALLFORMATS" variable (:constant-flag t) nil [1263 1273])
+            ("tile_data_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("rows" variable (:type "int") (reparse-symbol classsubparts) [1430 1445])
+                          ("cols" variable (:type "int") (reparse-symbol classsubparts) [1430 1445])
+                          ("buffer_plane" variable
+                             (:pointer 1
+                              :dereference 1
+                              :type "unsigned char")
+                              (reparse-symbol classsubparts) [1450 1481])
+                          ("buffer_size" variable
+                             (:dereference 1
+                              :type ("size_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1486 1508])
+                          ("pos" variable (:type "int") (reparse-symbol classsubparts) [1513 1521])
+                          ("pixelbytes" variable (:type "int") (reparse-symbol classsubparts) [1526 1541]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1409 1556])
+            ("tile_config" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1581 1611]))                  
+                :type "int")
+                nil [1558 2446])
+            ("tile_put_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2474 2504]))                  
+                :type "int")
+                nil [2448 4353])
+            ("tile_uninit" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4372 4402]))                  
+                :type "void")
+                nil [4355 4589])
+            ("vf_dlopen_getcontext" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4616 4646])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [4647 4656])
+                    ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4657 4675]))                  
+                :type "int")
+                nil [4591 5326]))          
+      :file "tile.c"
+      :pointmax 5327
+      :fsize 5326
+      :lastmodtime '(21681 30008 805672 973000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("ALLFORMATS" . 
+              ((symbol "FORMAT" 1326 . 1332) (semantic-list "(\"rgb24\"  ,    3,     1,     1)" 1332 . 1363) (symbol "FORMAT" 1370 . 1376) (semantic-list "(\"yuv420p\",    1,     2,     2)" 1376 . 1407)))
+          )
+)
+    (semanticdb-table "filterutils.h"
+      :file "filterutils.h"
+      :fsize 1070
+      :lastmodtime '(21681 30008 805672 973000))
+    (semanticdb-table "telecine.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [910 929])
+            ("stdio.h" include (:system-flag t) nil [930 948])
+            ("stdlib.h" include (:system-flag t) nil [949 968])
+            ("string.h" include (:system-flag t) nil [969 988])
+            ("vf_dlopen.h" include nil nil [990 1012])
+            ("filterutils.h" include nil nil [1013 1037])
+            ("MIN" variable (:constant-flag t) nil [1047 1050])
+            ("tc_data_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("firstfield" variable (:type "int") (reparse-symbol classsubparts) [1631 1646])
+                          ("pattern" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1651 1671])
+                          ("pattern_pos" variable (:type "unsigned int") (reparse-symbol classsubparts) [1676 1701])
+                          ("buffer_plane" variable
+                             (:pointer 1
+                              :dereference 1
+                              :type "unsigned char")
+                              (reparse-symbol classsubparts) [1706 1737])
+                          ("buffer_size" variable
+                             (:dereference 1
+                              :type ("size_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [1742 1764])
+                          ("pts_num" variable (:type "int") (reparse-symbol classsubparts) [1769 1781])
+                          ("pts_denom" variable (:type "int") (reparse-symbol classsubparts) [1786 1800])
+                          ("occupied" variable (:type "int") (reparse-symbol classsubparts) [1805 1818])
+                          ("lastpts_in" variable (:type "double") (reparse-symbol classsubparts) [1823 1841])
+                          ("lastpts_out" variable (:type "double") (reparse-symbol classsubparts) [1846 1865])
+                          ("first_frame_of_group" variable (:type "int") (reparse-symbol classsubparts) [1870 1895]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1610 1908])
+            ("tc_config" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1931 1961]))                  
+                :type "int")
+                nil [1910 2493])
+            ("tc_put_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2519 2549]))                  
+                :type "int")
+                nil [2495 7053])
+            ("tc_uninit" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7070 7100]))                  
+                :type "void")
+                nil [7055 7273])
+            ("vf_dlopen_getcontext" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7300 7330])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7331 7340])
+                    ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7341 7359]))                  
+                :type "int")
+                nil [7275 8223]))          
+      :file "telecine.c"
+      :pointmax 8224
+      :fsize 8223
+      :lastmodtime '(21681 30008 805672 973000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MIN" (spp-arg-list ("a" "b") 1050 . 1055) . ((semantic-list "((a)<(b)?(a):(b))" 1056 . 1073)))
+          )
+)
+    (semanticdb-table "ildetect.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [910 929])
+            ("stdio.h" include (:system-flag t) nil [930 948])
+            ("stdlib.h" include (:system-flag t) nil [949 968])
+            ("string.h" include (:system-flag t) nil [969 988])
+            ("math.h" include (:system-flag t) nil [989 1006])
+            ("vf_dlopen.h" include nil nil [1008 1030])
+            ("filterutils.h" include nil nil [1032 1056])
+            ("ildetect_data_t" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("method" variable (:type "int") (reparse-symbol classsubparts) [1390 1401])
+                          ("combing_threshold" variable (:type "double") (reparse-symbol classsubparts) [1406 1431])
+                          ("motion_threshold" variable (:type "double") (reparse-symbol classsubparts) [1436 1460])
+                          ("motion_amount" variable (:type "double") (reparse-symbol classsubparts) [1465 1486])
+                          ("yes_threshold" variable (:type "double") (reparse-symbol classsubparts) [1491 1512])
+                          ("no_threshold" variable (:type "double") (reparse-symbol classsubparts) [1517 1537])
+                          ("total_yes_threshold" variable (:type "double") (reparse-symbol classsubparts) [1542 1569])
+                          ("total_no_threshold" variable (:type "double") (reparse-symbol classsubparts) [1574 1600])
+                          ("tc_threshold" variable (:type "double") (reparse-symbol classsubparts) [1605 1625])
+                          ("decision_threshold" variable (:type "double") (reparse-symbol classsubparts) [1630 1656])
+                          ("tc_decision_threshold" variable (:type "double") (reparse-symbol classsubparts) [1661 1690])
+                          ("lastcombed" variable (:type "double") (reparse-symbol classsubparts) [1695 1713])
+                          ("numtotalframes" variable (:type "int") (reparse-symbol classsubparts) [1718 1737])
+                          ("numdecidedframes" variable (:type "int") (reparse-symbol classsubparts) [1742 1763])
+                          ("totalcombedframes" variable (:type "int") (reparse-symbol classsubparts) [1768 1790])
+                          ("numjumpingadjacentframes" variable (:type "int") (reparse-symbol classsubparts) [1795 1824])
+                          ("numdecidedadjacentframes" variable (:type "int") (reparse-symbol classsubparts) [1829 1858])
+                          ("buffer_data" variable
+                             (:pointer 1
+                              :type "unsigned char")
+                              (reparse-symbol classsubparts) [1863 1890])
+                          ("buffer_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1895 1914]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1369 1933])
+            ("il_config" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1956 1986]))                  
+                :type "int")
+                nil [1935 2071])
+            ("il_decision" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2096 2126])
+                    ("p0" variable (:type "int") (reparse-symbol arg-sub-list) [2135 2142])
+                    ("p1" variable (:type "int") (reparse-symbol arg-sub-list) [2143 2150])
+                    ("p2" variable (:type "int") (reparse-symbol arg-sub-list) [2151 2158])
+                    ("p3" variable (:type "int") (reparse-symbol arg-sub-list) [2159 2166])
+                    ("p4" variable (:type "int") (reparse-symbol arg-sub-list) [2167 2174]))                  
+                :type "int")
+                nil [2073 3726])
+            ("il_put_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3752 3782]))                  
+                :type "int")
+                nil [3728 7417])
+            ("il_uninit" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7434 7464]))                  
+                :type "void")
+                nil [7419 9092])
+            ("vf_dlopen_getcontext" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9119 9149])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [9150 9159])
+                    ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9160 9178]))                  
+                :type "int")
+                nil [9094 10045]))          
+      :file "ildetect.c"
+      :pointmax 10046
+      :fsize 10045
+      :lastmodtime '(21681 30008 805672 973000)
+      :unmatched-syntax nil)
+    (semanticdb-table "rectangle.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("assert.h" include (:system-flag t) nil [910 929])
+            ("stdio.h" include (:system-flag t) nil [930 948])
+            ("stdlib.h" include (:system-flag t) nil [949 968])
+            ("string.h" include (:system-flag t) nil [969 988])
+            ("unistd.h" include (:system-flag t) nil [989 1008])
+            ("fcntl.h" include (:system-flag t) nil [1009 1027])
+            ("signal.h" include (:system-flag t) nil [1028 1047])
+            ("sys/stat.h" include (:system-flag t) nil [1048 1069])
+            ("sys/wait.h" include (:system-flag t) nil [1070 1091])
+            ("vf_dlopen.h" include nil nil [1093 1115])
+            ("filterutils.h" include nil nil [1116 1140])
+            ("privdata" type
+               (:typedef ("" type
+                     (:members 
+                        ( ("x" variable (:type "int") (reparse-symbol classsubparts) [1335 1350])
+                          ("y" variable (:type "int") (reparse-symbol classsubparts) [1335 1350])
+                          ("w" variable (:type "int") (reparse-symbol classsubparts) [1335 1350])
+                          ("h" variable (:type "int") (reparse-symbol classsubparts) [1335 1350])
+                          ("step" variable (:type "int") (reparse-symbol classsubparts) [1355 1364])
+                          ("inpid" variable (:type "int") (reparse-symbol classsubparts) [1369 1379])
+                          ("infd" variable (:type "int") (reparse-symbol classsubparts) [1384 1393])
+                          ("ansimode" variable (:type "int") (reparse-symbol classsubparts) [1398 1411])
+                          ("rectmode" variable (:type "int") (reparse-symbol classsubparts) [1416 1429]))                        
+                      :type "struct")
+                      nil nil)
+                :type "typedef")
+                nil [1314 1441])
+            ("" type
+               (:members 
+                  ( ("RECTMODE_LINES" variable
+                       (:constant-flag t
+                        :default-value (1471 1472)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1454 1472])
+                    ("RECTMODE_BOX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1478 1491])
+                    ("RECTMODE_COUNT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1496 1512]))                  
+                :type "enum")
+                nil [1443 1513])
+            ("put_image" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1536 1566]))                  
+                :type "int")
+                nil [1515 9364])
+            ("config" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9377 9407]))                  
+                :type "int")
+                nil [9366 11281])
+            ("uninit" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11295 11325]))                  
+                :type "void")
+                nil [11283 11571])
+            ("vf_dlopen_getcontext" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("vf_dlopen_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11598 11628])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [11629 11638])
+                    ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [11639 11657]))                  
+                :type "int")
+                nil [11573 12266]))          
+      :file "rectangle.c"
+      :pointmax 12267
+      :fsize 12266
+      :lastmodtime '(21681 30008 805672 973000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!TOOLS!vf_dlopen!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

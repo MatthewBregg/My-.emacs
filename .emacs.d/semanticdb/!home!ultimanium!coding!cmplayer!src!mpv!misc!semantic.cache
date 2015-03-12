@@ -1,0 +1,1499 @@
+;; Object misc/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "misc/"
+  :tables
+  (list
+    (semanticdb-table "bstr.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MPLAYER_BSTR_H" variable (:constant-flag t) nil [778 792])
+            ("stdint.h" include (:system-flag t) nil [794 813])
+            ("stddef.h" include (:system-flag t) nil [814 833])
+            ("string.h" include (:system-flag t) nil [834 853])
+            ("stdbool.h" include (:system-flag t) nil [854 874])
+            ("stdarg.h" include (:system-flag t) nil [875 894])
+            ("talloc.h" include nil nil [896 915])
+            ("osdep/compiler.h" include nil nil [916 943])
+            ("bstr" type
+               (:members 
+                  ( ("start" variable
+                       (:pointer 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [1116 1137])
+                    ("len" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1142 1153]))                  
+                :type "struct")
+                nil [1090 1161])
+            ("bstr" type
+               (:typedef ("bstr" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [1090 1161])
+            ("bstrdup0" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1230 1247])
+                    ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1248 1264]))                  
+                :type "char")
+                nil [1201 1335])
+            ("bstrto0" function
+               (:pointer 1
+                :typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1421 1438])
+                    ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1439 1455]))                  
+                :type "char")
+                nil [1393 1541])
+            ("bstrdup" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1635 1652])
+                    ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1653 1669]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1601 1827])
+            ("bstr0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1861 1875]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1829 1944])
+            ("bstrcmp" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1958 1975])
+                    ("str2" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1976 1993]))                  
+                :type "int")
+                nil [1946 1994])
+            ("bstrcasecmp" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2011 2028])
+                    ("str2" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2029 2046]))                  
+                :type "int")
+                nil [1995 2047])
+            ("bstrchr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2060 2076])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [2077 2083]))                  
+                :type "int")
+                nil [2048 2084])
+            ("bstrrchr" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2098 2114])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [2115 2121]))                  
+                :type "int")
+                nil [2085 2122])
+            ("bstrspn" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2135 2151])
+                    ("accept" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2152 2171]))                  
+                :type "int")
+                nil [2123 2172])
+            ("bstrcspn" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2186 2202])
+                    ("reject" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2203 2222]))                  
+                :type "int")
+                nil [2173 2223])
+            ("bstr_find" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("haystack" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2239 2260])
+                    ("needle" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2261 2280]))                  
+                :type "int")
+                nil [2225 2281])
+            ("bstr_splitlines" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2311 2328])
+                    ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2329 2345]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2282 2346])
+            ("bstr_lstrip" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2371 2387]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2347 2388])
+            ("bstr_strip" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2412 2428]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2389 2429])
+            ("bstr_split" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2453 2469])
+                    ("sep" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2470 2486])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2487 2505]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2430 2506])
+            ("bstr_split_tok" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2527 2536])
+                    ("tok" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2537 2553])
+                    ("out_left" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2554 2569])
+                    ("out_right" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2570 2586]))                  
+                :type "bool")
+                nil [2507 2587])
+            ("bstr_splice" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2612 2628])
+                    ("start" variable (:type "int") (reparse-symbol arg-sub-list) [2629 2639])
+                    ("end" variable (:type "int") (reparse-symbol arg-sub-list) [2640 2648]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2588 2649])
+            ("bstrtoll" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2669 2685])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2686 2704])
+                    ("base" variable (:type "int") (reparse-symbol arg-sub-list) [2705 2714]))                  
+                :type "long long")
+                nil [2650 2715])
+            ("bstrtod" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2731 2747])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2748 2766]))                  
+                :type "double")
+                nil [2716 2767])
+            ("bstr_lower" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2784 2800]))                  
+                :type "void")
+                nil [2768 2801])
+            ("bstr_sscanf" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2818 2834])
+                    ("format" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2835 2854])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [2855 2859]))                  
+                :type "int")
+                nil [2802 2860])
+            ("bstr_decode_utf8" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3132 3148])
+                    ("out_next" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3149 3171]))                  
+                :type "int")
+                nil [3111 3172])
+            ("bstr_split_utf8" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3435 3451])
+                    ("out_next" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3452 3474]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3407 3475])
+            ("bstr_parse_utf8_code_length" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("b" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [3786 3802]))                  
+                :type "int")
+                nil [3754 3803])
+            ("bstr_validate_utf8" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4256 4270]))                  
+                :type "int")
+                nil [4233 4271])
+            ("bstr_sanitize_utf8_latin1" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4673 4690])
+                    ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4691 4705]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4635 4706])
+            ("bstr_getline" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4922 4938])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4939 4957]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4897 4958])
+            ("bstr_strip_linebreaks" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5125 5141]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5091 5142])
+            ("bstr_xappend" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5162 5179])
+                    ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5180 5188])
+                    ("append" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5189 5201]))                  
+                :type "void")
+                nil [5144 5202])
+            ("PRINTF_ATTRIBUTE" function
+               (:prototype-flag t
+                :type "int")
+                nil [5283 5306])
+            ("PRINTF_ATTRIBUTE" function
+               (:prototype-flag t
+                :type "int")
+                nil [5395 5418])
+            ("bstr_eatstart" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5519 5534])
+                    ("prefix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5535 5554]))                  
+                :type "bool")
+                nil [5500 5555])
+            ("bstr_case_startswith" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5583 5597])
+                    ("prefix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5598 5617]))                  
+                :type "bool")
+                nil [5557 5618])
+            ("bstr_case_endswith" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5643 5657])
+                    ("suffix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5658 5677]))                  
+                :type "bool")
+                nil [5619 5678])
+            ("bstr_strip_ext" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5706 5722]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5679 5723])
+            ("bstr_get_ext" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5749 5763]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5724 5764])
+            ("bstr_cut" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5801 5817])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [5818 5824]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5766 6017])
+            ("bstr_startswith" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6054 6070])
+                    ("prefix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6071 6090]))                  
+                :type "bool")
+                nil [6019 6203])
+            ("bstr_startswith0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6241 6257])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6258 6277]))                  
+                :type "bool")
+                nil [6205 6329])
+            ("bstr_endswith" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6364 6380])
+                    ("suffix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6381 6400]))                  
+                :type "bool")
+                nil [6331 6536])
+            ("bstr_endswith0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6572 6588])
+                    ("suffix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6589 6608]))                  
+                :type "bool")
+                nil [6538 6658])
+            ("bstrcmp0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6687 6704])
+                    ("str2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6705 6722]))                  
+                :type "int")
+                nil [6660 6765])
+            ("bstr_equals" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6798 6815])
+                    ("str2" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6816 6833]))                  
+                :type "bool")
+                nil [6767 6874])
+            ("bstr_equals0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6908 6925])
+                    ("str2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6926 6943]))                  
+                :type "bool")
+                nil [6876 6991])
+            ("bstrcasecmp0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [7024 7041])
+                    ("str2" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7042 7059]))                  
+                :type "int")
+                nil [6993 7106])
+            ("bstr_find0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("haystack" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [7137 7158])
+                    ("needle" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7159 7178]))                  
+                :type "int")
+                nil [7108 7229])
+            ("bstr_eatstart0" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7264 7279])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7280 7299]))                  
+                :type "int")
+                nil [7231 7347])
+            ("BSTR_P" variable (:constant-flag t) nil [7419 7425])
+            ("WHITESPACE" variable (:constant-flag t) nil [7473 7483]))          
+      :file "bstr.h"
+      :pointmax 7527
+      :fsize 7526
+      :lastmodtime '(21681 30008 822339 364000)
+      :unmatched-syntax '((number 5415 . 5416) (number 5412 . 5413) (semantic-list 5334 . 5390) (symbol 5312 . 5334) (VOID 5307 . 5311) (number 5303 . 5304) (number 5300 . 5301) (semantic-list 5229 . 5278) (symbol 5208 . 5229) (VOID 5203 . 5207))
+      :lexical-table 
+        '(("BSTR_P" (spp-arg-list ("bstr") 7425 . 7431) . 
+              ((semantic-list "(int)" 7432 . 7437) (semantic-list "((bstr).len)" 7437 . 7449) (punctuation "," 7449 . 7450) (semantic-list "(bstr)" 7451 . 7457) (punctuation "." 7457 . 7458) (symbol "start" 7458 . 7463)))
+          ("WHITESPACE" . ((string "\" \\f\\n\\r\\t\\v\"" 7484 . 7497)))
+          ("MPLAYER_BSTR_H")
+          )
+)
+    (semanticdb-table "bstr.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("string.h" include (:system-flag t) nil [747 766])
+            ("strings.h" include (:system-flag t) nil [767 787])
+            ("assert.h" include (:system-flag t) nil [788 807])
+            ("stdarg.h" include (:system-flag t) nil [808 827])
+            ("stdint.h" include (:system-flag t) nil [828 847])
+            ("stdlib.h" include (:system-flag t) nil [848 867])
+            ("libavutil/common.h" include (:system-flag t) nil [869 898])
+            ("talloc.h" include nil nil [900 919])
+            ("common/common.h" include nil nil [921 947])
+            ("misc/ctype.h" include nil nil [948 971])
+            ("bstr.h" include nil nil [972 989])
+            ("bstrcmp" function
+               (:arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1003 1020])
+                    ("str2" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1021 1038]))                  
+                :type "int")
+                nil [991 1353])
+            ("bstrcasecmp" function
+               (:arguments 
+                  ( ("str1" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1371 1388])
+                    ("str2" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1389 1406]))                  
+                :type "int")
+                nil [1355 1726])
+            ("bstrchr" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1740 1756])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [1757 1763]))                  
+                :type "int")
+                nil [1728 1873])
+            ("bstrrchr" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1888 1904])
+                    ("c" variable (:type "int") (reparse-symbol arg-sub-list) [1905 1911]))                  
+                :type "int")
+                nil [1875 2026])
+            ("bstrcspn" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2041 2057])
+                    ("reject" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2058 2077]))                  
+                :type "int")
+                nil [2028 2201])
+            ("bstrspn" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2215 2231])
+                    ("accept" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2232 2251]))                  
+                :type "int")
+                nil [2203 2376])
+            ("bstr_find" function
+               (:arguments 
+                  ( ("haystack" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2392 2413])
+                    ("needle" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2414 2433]))                  
+                :type "int")
+                nil [2378 2594])
+            ("bstr_lstrip" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2620 2636]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2596 2750])
+            ("bstr_strip" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2775 2791]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2752 2916])
+            ("bstr_split" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [2941 2957])
+                    ("sep" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2958 2974])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2975 2993]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2918 3282])
+            ("bstr_split_tok" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3517 3526])
+                    ("tok" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3527 3543])
+                    ("out_left" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3544 3559])
+                    ("out_right" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3560 3576]))                  
+                :type "bool")
+                nil [3497 3801])
+            ("bstr_splice" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [3827 3843])
+                    ("start" variable (:type "int") (reparse-symbol arg-sub-list) [3844 3854])
+                    ("end" variable (:type "int") (reparse-symbol arg-sub-list) [3855 3863]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3803 4109])
+            ("bstrtoll" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4130 4146])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4147 4165])
+                    ("base" variable (:type "int") (reparse-symbol arg-sub-list) [4166 4175]))                  
+                :type "long long")
+                nil [4111 4448])
+            ("bstrtod" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4465 4481])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4482 4500]))                  
+                :type "double")
+                nil [4450 4765])
+            ("bstr_splitlines" function
+               (:pointer 1
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4796 4813])
+                    ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4814 4830]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4767 5372])
+            ("bstr_getline" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5399 5415])
+                    ("rest" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5416 5434]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5374 5607])
+            ("bstr_strip_linebreaks" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5643 5659]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5609 5864])
+            ("bstr_eatstart" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5885 5900])
+                    ("prefix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [5901 5920]))                  
+                :type "bool")
+                nil [5866 6036])
+            ("bstr_lower" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6054 6070]))                  
+                :type "void")
+                nil [6038 6161])
+            ("bstr_sscanf" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6179 6195])
+                    ("format" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6196 6215])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [6216 6220]))                  
+                :type "int")
+                nil [6163 6397])
+            ("bstr_parse_utf8_code_length" function
+               (:arguments 
+                  ( ("b" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [6431 6447]))                  
+                :type "int")
+                nil [6399 6576])
+            ("bstr_decode_utf8" function
+               (:arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6599 6613])
+                    ("out_next" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6614 6636]))                  
+                :type "int")
+                nil [6578 7673])
+            ("bstr_split_utf8" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [7703 7719])
+                    ("out_next" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7720 7742]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [7675 7946])
+            ("bstr_validate_utf8" function
+               (:arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [7971 7985]))                  
+                :type "int")
+                nil [7948 8794])
+            ("bstr_sanitize_utf8_latin1" function
+               (:arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [8834 8851])
+                    ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [8852 8866]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8796 9479])
+            ("resize_append" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [9507 9524])
+                    ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9525 9533])
+                    ("append_min" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9534 9552]))                  
+                :type "void")
+                nil [9481 9938])
+            ("bstr_xappend" function
+               (:arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10250 10267])
+                    ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10268 10276])
+                    ("append" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10277 10289]))                  
+                :type "void")
+                nil [10232 10492])
+            ("bstr_xappend_asprintf" function
+               (:arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10521 10538])
+                    ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10539 10547])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10548 10564])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [10565 10569]))                  
+                :type "void")
+                nil [10494 10680])
+            ("bstr_xappend_vasprintf" function
+               (:arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10769 10786])
+                    ("s" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10787 10795])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10796 10812])
+                    ("ap" variable (:type ("va_list" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10841 10852]))                  
+                :type "void")
+                nil [10741 11135])
+            ("bstr_case_startswith" function
+               (:arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11163 11177])
+                    ("prefix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11178 11197]))                  
+                :type "bool")
+                nil [11137 11327])
+            ("bstr_case_endswith" function
+               (:arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11353 11367])
+                    ("suffix" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11368 11387]))                  
+                :type "bool")
+                nil [11329 11506])
+            ("bstr_strip_ext" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11535 11551]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11508 11677])
+            ("bstr_get_ext" function
+               (:arguments 
+                  ( ("s" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [11704 11718]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [11679 11862]))          
+      :file "bstr.c"
+      :pointmax 11863
+      :fsize 11862
+      :lastmodtime '(21681 30008 822339 364000)
+      :unmatched-syntax nil)
+    (semanticdb-table "ctype.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MP_CTYPE_H_" variable (:constant-flag t) nil [29 40])
+            ("mp_isprint" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [214 221]))                  
+                :type "int")
+                nil [185 256])
+            ("mp_isspace" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [286 293]))                  
+                :type "int")
+                nil [257 424])
+            ("mp_isupper" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [454 461]))                  
+                :type "int")
+                nil [425 494])
+            ("mp_islower" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [524 531]))                  
+                :type "int")
+                nil [495 564])
+            ("mp_isdigit" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [594 601]))                  
+                :type "int")
+                nil [565 634])
+            ("mp_isalpha" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [664 671]))                  
+                :type "int")
+                nil [635 714])
+            ("mp_isalnum" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [744 751]))                  
+                :type "int")
+                nil [715 794])
+            ("mp_tolower" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [826 833]))                  
+                :type "char")
+                nil [796 879])
+            ("mp_toupper" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("c" variable (:type "char") (reparse-symbol arg-sub-list) [910 917]))                  
+                :type "char")
+                nil [880 963]))          
+      :file "ctype.h"
+      :pointmax 972
+      :fsize 971
+      :lastmodtime '(21681 30008 822339 364000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MP_CTYPE_H_")
+          )
+)
+    (semanticdb-table "json.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [1561 1580])
+            ("string.h" include (:system-flag t) nil [1581 1600])
+            ("math.h" include (:system-flag t) nil [1601 1618])
+            ("errno.h" include (:system-flag t) nil [1619 1637])
+            ("inttypes.h" include (:system-flag t) nil [1638 1659])
+            ("assert.h" include (:system-flag t) nil [1660 1679])
+            ("common/common.h" include nil nil [1681 1707])
+            ("misc/bstr.h" include nil nil [1708 1730])
+            ("json.h" include nil nil [1732 1749])
+            ("eat_c" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1769 1778])
+                    ("c" variable (:type "char") (reparse-symbol arg-sub-list) [1779 1786]))                  
+                :type "bool")
+                nil [1751 1872])
+            ("eat_ws" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1893 1904]))                  
+                :type "void")
+                nil [1874 2054])
+            ("json_skip_whitespace" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2082 2093]))                  
+                :type "void")
+                nil [2056 2114])
+            ("read_str" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ta_parent" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2136 2152])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("mpv_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2153 2174])
+                    ("src" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2175 2186]))                  
+                :type "int")
+                nil [2116 3197])
+            ("read_sub" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ta_parent" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3219 3235])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("mpv_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3236 3257])
+                    ("src" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3258 3269])
+                    ("max_depth" variable (:type "int") (reparse-symbol arg-sub-list) [3290 3304]))                  
+                :type "int")
+                nil [3199 4472])
+            ("json_parse" function
+               (:arguments 
+                  ( ("ta_parent" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5091 5107])
+                    ("dst" variable
+                       (:pointer 1
+                        :type ("mpv_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5108 5129])
+                    ("src" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5130 5141])
+                    ("max_depth" variable (:type "int") (reparse-symbol arg-sub-list) [5142 5156]))                  
+                :type "int")
+                nil [5076 6836])
+            ("APPEND" variable (:constant-flag t) nil [6847 6853])
+            ("write_json_str" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("b" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6922 6930])
+                    ("str" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6931 6941]))                  
+                :type "void")
+                nil [6895 7339])
+            ("json_append" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("b" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7364 7372])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mpv_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7373 7400]))                  
+                :type "int")
+                nil [7341 8491])
+            ("json_write" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [8764 8775])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mpv_node" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8776 8797]))                  
+                :type "int")
+                nil [8749 8910]))          
+      :file "json.c"
+      :pointmax 8911
+      :fsize 8910
+      :lastmodtime '(21681 30008 822339 364000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("APPEND" (spp-arg-list ("b" "s") 6853 . 6859) . ((symbol "bstr_xappend" 6860 . 6872) (semantic-list "(NULL, (b), bstr0(s))" 6872 . 6893)))
+          )
+)
+    (semanticdb-table "json.h"
+      :file "json.h"
+      :fsize 923
+      :lastmodtime '(21681 30008 825672 642000))
+    (semanticdb-table "charset_conv.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [827 846])
+            ("errno.h" include (:system-flag t) nil [847 865])
+            ("strings.h" include (:system-flag t) nil [866 886])
+            ("assert.h" include (:system-flag t) nil [887 906])
+            ("config.h" include nil nil [908 927])
+            ("common/msg.h" include nil nil [929 952])
+            ("charset_conv.h" include nil nil [1084 1109])
+            ("mp_charset_is_utf8" function
+               (:arguments 
+                  ( ("user_cp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1135 1155]))                  
+                :type "bool")
+                nil [1111 1277])
+            ("split_colon" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("user_cp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1431 1451])
+                    ("max" variable (:type "int") (reparse-symbol arg-sub-list) [1452 1460])
+                    ("out_arr" variable
+                       (:pointer 1
+                        :type ("bstr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1461 1475]))                  
+                :type "int")
+                nil [1408 1897])
+            ("mp_charset_requires_guess" function
+               (:arguments 
+                  ( ("user_cp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2199 2219]))                  
+                :type "bool")
+                nil [2168 2707])
+            ("utf_bom" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{\"\\xEF\\xBB\\xBF\", \"\\xFF\\xFE\", \"\\xFE\\xFF\"}"
+                :type "char")
+                nil [2709 2788])
+            ("utf_enc" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{\"utf-8\",        \"utf-16le\", \"utf-16be\"}"
+                :type "char")
+                nil [2789 2868])
+            ("ms_bom_guess" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("buf" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2902 2911]))                  
+                :type "char")
+                nil [2870 3050])
+            ("mp_charset_guess" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4890 4909])
+                    ("buf" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4910 4919])
+                    ("user_cp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4920 4940])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [4970 4980]))                  
+                :type "char")
+                nil [4861 6632])
+            ("mp_charset_guess_and_conv_to_utf8" function
+               (:arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7120 7139])
+                    ("buf" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7140 7149])
+                    ("user_cp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7189 7209])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [7210 7220]))                  
+                :type ("bstr" type (:type "class") nil nil))
+                nil [7081 7342])
+            ("mp_iconv_to_utf8" function
+               (:arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7955 7974])
+                    ("buf" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7975 7984])
+                    ("cp" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7985 8000])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [8001 8011]))                  
+                :type ("bstr" type (:type "class") nil nil))
+                nil [7933 10201]))          
+      :file "charset_conv.c"
+      :pointmax 10202
+      :fsize 10201
+      :lastmodtime '(21681 30008 822339 364000)
+      :unmatched-syntax nil)
+    (semanticdb-table "charset_conv.h"
+      :file "charset_conv.h"
+      :fsize 791
+      :lastmodtime '(21681 30008 822339 364000)))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!misc!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

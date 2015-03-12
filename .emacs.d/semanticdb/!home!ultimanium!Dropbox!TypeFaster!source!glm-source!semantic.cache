@@ -1,0 +1,376 @@
+;; Object glm-source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "glm-source/"
+  :tables
+  (list
+    (semanticdb-table "glm.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("math.h" include (:system-flag t) nil [380 397])
+            ("stdio.h" include (:system-flag t) nil [398 416])
+            ("stdlib.h" include (:system-flag t) nil [417 436])
+            ("string.h" include (:system-flag t) nil [437 456])
+            ("assert.h" include (:system-flag t) nil [457 476])
+            ("glm.h" include nil nil [477 493])
+            ("T" variable (:constant-flag t) nil [504 505])
+            ("_GLMnode" type
+               (:members 
+                  ( ("index" variable (:type ("GLuint" type (:type "class") nil nil)) (reparse-symbol classsubparts) [602 623])
+                    ("averaged" variable (:type ("GLboolean" type (:type "class") nil nil)) (reparse-symbol classsubparts) [628 652])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_GLMnode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [657 679]))                  
+                :type "struct")
+                nil [572 690])
+            ("GLMnode" type
+               (:typedef ("_GLMnode" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [572 690])
+            ("glmMax" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("a" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [763 773])
+                    ("b" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [774 784]))                  
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [741 836])
+            ("glmAbs" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("f" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [912 922]))                  
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [890 974])
+            ("glmDot" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("u" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1139 1150])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1151 1162]))                  
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [1117 1243])
+            ("glmCross" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("u" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1486 1497])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1498 1509])
+                    ("n" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1510 1521]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [1463 1669])
+            ("glmNormalize" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("v" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1800 1811]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [1773 1958])
+            ("glmEqual" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("u" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2252 2263])
+                    ("v" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2264 2275])
+                    ("epsilon" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2276 2292]))                  
+                :type ("GLboolean" type (:type "class") nil nil))
+                nil [2226 2475])
+            ("glmWeldVectors" function
+               (:pointer 1
+                :arguments 
+                  ( ("vectors" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2755 2772])
+                    ("numvectors" variable
+                       (:pointer 1
+                        :type ("GLuint" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2773 2792])
+                    ("epsilon" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2793 2809]))                  
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [2731 3797])
+            ("glmFindGroup" function
+               (:pointer 1
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3868 3884])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3885 3896]))                  
+                :type ("GLMgroup" type (:type "class") nil nil))
+                nil [3845 4113])
+            ("glmAddGroup" function
+               (:pointer 1
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4181 4197])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4198 4209]))                  
+                :type ("GLMgroup" type (:type "class") nil nil))
+                nil [4159 4605])
+            ("glmFindMaterial" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4679 4695])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4696 4707]))                  
+                :type ("GLuint" type (:type "class") nil nil))
+                nil [4656 5186])
+            ("glmDirName" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5342 5353]))                  
+                :type "char")
+                nil [5318 5531])
+            ("glmReadMTL" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5711 5727])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5728 5739]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [5686 9810])
+            ("glmWriteMTL" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10065 10081])
+                    ("modelpath" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10082 10098])
+                    ("mtllibname" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10099 10116]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [10039 11595])
+            ("glmFirstPass" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11853 11869])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11870 11881]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [11826 16772])
+            ("glmSecondPass" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16979 16995])
+                    ("file" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16996 17007]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [16951 25655])
+            ("glmUnitize" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25920 25936]))                  
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [25901 27683])
+            ("glmDimensions" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27899 27915])
+                    ("dimensions" variable
+                       (:pointer 1
+                        :type ("GLfloat" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27916 27936]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [27878 29076])
+            ("glmScale" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29267 29283])
+                    ("scale" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29284 29298]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [29251 29510])
+            ("glmReverseWinding" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29769 29785]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [29744 30941])
+            ("glmFacetNormals" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [31205 31221]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [31182 32573])
+            ("glmVertexNormals" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [33526 33542])
+                    ("angle" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [33543 33557]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [33502 39326])
+            ("glmLinearTexture" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [39591 39607]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [39567 40977])
+            ("glmSpheremapTexture" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [41568 41584]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [41541 43170])
+            ("glmDelete" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [43282 43298]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [43265 44090])
+            ("glmReadOBJ" function
+               (:pointer 1
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [44353 44368]))                  
+                :type ("GLMmodel" type (:type "class") nil nil))
+                nil [44331 46176])
+            ("glmWriteOBJ" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [46970 46986])
+                    ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [46987 47002])
+                    ("mode" variable (:type ("GLuint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [47003 47015]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [46951 53968])
+            ("glmDraw" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [54687 54703])
+                    ("mode" variable (:type ("GLuint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [54704 54716]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [54672 58536])
+            ("glmList" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59247 59263])
+                    ("mode" variable (:type ("GLuint" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59264 59276]))                  
+                :type ("GLuint" type (:type "class") nil nil))
+                nil [59232 59426])
+            ("glmWeld" function
+               (:arguments 
+                  ( ("model" variable
+                       (:pointer 1
+                        :type ("GLMmodel" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [59697 59713])
+                    ("epsilon" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [59714 59730]))                  
+                :type ("GLvoid" type (:type "class") nil nil))
+                nil [59682 60918])
+            ("glmReadPPM" function
+               (:pointer 1
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [62116 62131])
+                    ("width" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [62132 62143])
+                    ("height" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [62144 62156]))                  
+                :type ("GLubyte" type (:type "class") nil nil))
+                nil [62094 63390]))          
+      :file "glm.c"
+      :pointmax 65797
+      :fsize 65796
+      :lastmodtime '(14633 53840 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("T" (spp-arg-list ("x") 505 . 508) . ((semantic-list "(model->triangles[(x)])" 509 . 532)))
+          )
+)
+    (semanticdb-table "glm.h"
+      :file "glm.h"
+      :fsize 10116
+      :lastmodtime '(16503 60074 0 0)))
+  :file "!home!ultimanium!Dropbox!TypeFaster!source!glm-source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,2512 @@
+;; Object audio/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "audio/"
+  :tables
+  (list
+    (semanticdb-table "chmap_sel.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [660 679])
+            ("assert.h" include (:system-flag t) nil [680 699])
+            ("limits.h" include (:system-flag t) nil [700 719])
+            ("common/common.h" include nil nil [721 747])
+            ("chmap_sel.h" include nil nil [748 770])
+            ("speaker_replacements" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    // 5.1 <-> 5.1 (side)
+    { MP_CHMAP2(SL, SR), MP_CHMAP2(BL, BR) },
+    // 7.1 <-> 7.1 (rear ext)
+    { MP_CHMAP2(SL, SR), MP_CHMAP2(SDL, SDR) },
+}"
+                :type ("mp_chmap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [772 983])
+            ("replace_speakers" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1123 1144])
+                    ("list" variable
+                       (:dereference 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1145 1169]))                  
+                :type "bool")
+                nil [1094 1884])
+            ("mp_chmap_sel_add_any" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2021 2044]))                  
+                :type "void")
+                nil [1995 2073])
+            ("mp_chmap_sel_add_waveext" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2168 2191]))                  
+                :type "void")
+                nil [2138 2224])
+            ("mp_chmap_sel_add_alsa_def" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2296 2319]))                  
+                :type "void")
+                nil [2265 2508])
+            ("mp_chmap_sel_add_map" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2581 2604])
+                    ("map" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2605 2632]))                  
+                :type "void")
+                nil [2555 3070])
+            ("mp_chmap_sel_add_waveext_def" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3153 3176]))                  
+                :type "void")
+                nil [3119 3343])
+            ("mp_chmap_sel_add_speaker" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3481 3504])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [3505 3512]))                  
+                :type "void")
+                nil [3451 3593])
+            ("test_speakers" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3621 3650])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3651 3672]))                  
+                :type "bool")
+                nil [3595 3809])
+            ("test_maps" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3833 3862])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3863 3884]))                  
+                :type "bool")
+                nil [3811 4087])
+            ("test_waveext" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4114 4143])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4144 4165]))                  
+                :type "bool")
+                nil [4089 4392])
+            ("test_layout" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4418 4447])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4448 4469]))                  
+                :type "bool")
+                nil [4394 4635])
+            ("mp_chmap_sel_adjust" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5036 5065])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5066 5087]))                  
+                :type "bool")
+                nil [5011 6008])
+            ("UPMIX_IDX" variable (:constant-flag t) nil [6018 6027])
+            ("DOWNMIX_IDX" variable (:constant-flag t) nil [6038 6049])
+            ("FALLBACK_IDX" variable (:constant-flag t) nil [6060 6072])
+            ("test_fallbacks" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6103 6122])
+                    ("b" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6123 6142])
+                    ("best_diffs" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [6170 6188])
+                    ("best" variable
+                       (:dereference 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6189 6213]))                  
+                :type "bool")
+                nil [6076 7032])
+            ("mp_chmap_sel_fallback" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7519 7548])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7549 7570]))                  
+                :type "bool")
+                nil [7492 8856])
+            ("mp_chmap_sel_get_def" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap_sel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9142 9171])
+                    ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9172 9193])
+                    ("num" variable (:type "int") (reparse-symbol arg-sub-list) [9220 9228]))                  
+                :type "bool")
+                nil [9116 9775]))          
+      :file "chmap_sel.c"
+      :pointmax 9776
+      :fsize 9775
+      :lastmodtime '(21681 30008 809006 252000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("DOWNMIX_IDX" . ((number "1" 6050 . 6051)))
+          ("FALLBACK_IDX" . ((number "2" 6073 . 6074)))
+          ("UPMIX_IDX" . ((number "0" 6028 . 6029)))
+          )
+)
+    (semanticdb-table "chmap_sel.h"
+      :file "chmap_sel.h"
+      :fsize 1691
+      :lastmodtime '(21681 30008 809006 252000))
+    (semanticdb-table "chmap.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [660 679])
+            ("assert.h" include (:system-flag t) nil [680 699])
+            ("common/common.h" include nil nil [701 727])
+            ("common/msg.h" include nil nil [728 751])
+            ("chmap.h" include nil nil [752 770])
+            ("speaker_names" variable
+               (:pointer 1
+                :dereference 2
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    [MP_SPEAKER_ID_FL]          = {\"fl\",   \"front left\"},
+    [MP_SPEAKER_ID_FR]          = {\"fr\",   \"front right\"},
+    [MP_SPEAKER_ID_FC]          = {\"fc\",   \"front center\"},
+    [MP_SPEAKER_ID_LFE]         = {\"lfe\",  \"low frequency\"},
+    [MP_SPEAKER_ID_BL]          = {\"bl\",   \"back left\"},
+    [MP_SPEAKER_ID_BR]          = {\"br\",   \"back right\"},
+    [MP_SPEAKER_ID_FLC]         = {\"flc\",  \"front left-of-center\"},
+    [MP_SPEAKER_ID_FRC]         = {\"frc\",  \"front right-of-center\"},
+    [MP_SPEAKER_ID_BC]          = {\"bc\",   \"back center\"},
+    [MP_SPEAKER_ID_SL]          = {\"sl\",   \"side left\"},
+    [MP_SPEAKER_ID_SR]          = {\"sr\",   \"side right\"},
+    [MP_SPEAKER_ID_TC]          = {\"tc\",   \"top center\"},
+    [MP_SPEAKER_ID_TFL]         = {\"tfl\",  \"top front left\"},
+    [MP_SPEAKER_ID_TFC]         = {\"tfc\",  \"top front center\"},
+    [MP_SPEAKER_ID_TFR]         = {\"tfr\",  \"top front right\"},
+    [MP_SPEAKER_ID_TBL]         = {\"tbl\",  \"top back left\"},
+    [MP_SPEAKER_ID_TBC]         = {\"tbc\",  \"top back center\"},
+    [MP_SPEAKER_ID_TBR]         = {\"tbr\",  \"top back right\"},
+    [MP_SPEAKER_ID_DL]          = {\"dl\",   \"downmix left\"},
+    [MP_SPEAKER_ID_DR]          = {\"dr\",   \"downmix right\"},
+    [MP_SPEAKER_ID_WL]          = {\"wl\",   \"wide left\"},
+    [MP_SPEAKER_ID_WR]          = {\"wr\",   \"wide right\"},
+    [MP_SPEAKER_ID_SDL]         = {\"sdl\",  \"surround direct left\"},
+    [MP_SPEAKER_ID_SDR]         = {\"sdr\",  \"surround direct right\"},
+    [MP_SPEAKER_ID_LFE2]        = {\"lfe2\", \"low frequency 2\"},
+}"
+                :type "char")
+                nil [912 2514])
+            ("std_layout_names" variable
+               (:pointer 1
+                :dereference 2
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    {\"empty\",           \"\"}, // not in lavc
+    {\"mono\",            \"fc\"},
+    {\"stereo\",          \"fl-fr\"},
+    {\"2.1\",             \"fl-fr-lfe\"},
+    {\"3.0\",             \"fl-fr-fc\"},
+    {\"3.0(back)\",       \"fl-fr-bc\"},
+    {\"4.0\",             \"fl-fr-fc-bc\"},
+    {\"quad\",            \"fl-fr-bl-br\"},
+    {\"quad(side)\",      \"fl-fr-sl-sr\"},
+    {\"3.1\",             \"fl-fr-fc-lfe\"},
+    {\"5.0\",             \"fl-fr-fc-bl-br\"},
+    {\"5.0(alsa)\",       \"fl-fr-bl-br-fc\"}, // not in lavc
+    {\"5.0(side)\",       \"fl-fr-fc-sl-sr\"},
+    {\"4.1\",             \"fl-fr-fc-lfe-bc\"},
+    {\"4.1(alsa)\",       \"fl-fr-bl-br-lfe\"}, // not in lavc
+    {\"5.1\",             \"fl-fr-fc-lfe-bl-br\"},
+    {\"5.1(alsa)\",       \"fl-fr-bl-br-fc-lfe\"}, // not in lavc
+    {\"5.1(side)\",       \"fl-fr-fc-lfe-sl-sr\"},
+    {\"6.0\",             \"fl-fr-fc-bc-sl-sr\"},
+    {\"6.0(front)\",      \"fl-fr-flc-frc-sl-sr\"},
+    {\"hexagonal\",       \"fl-fr-fc-bl-br-bc\"},
+    {\"6.1\",             \"fl-fr-fc-lfe-bc-sl-sr\"},
+    {\"6.1(back)\",       \"fl-fr-fc-lfe-bl-br-bc\"}, // lavc calls this \"6.1\" too
+    {\"6.1(front)\",      \"fl-fr-lfe-flc-frc-sl-sr\"},
+    {\"7.0\",             \"fl-fr-fc-bl-br-sl-sr\"},
+    {\"7.0(front)\",      \"fl-fr-fc-flc-frc-sl-sr\"},
+    {\"7.1\",             \"fl-fr-fc-lfe-bl-br-sl-sr\"},
+    {\"7.1(alsa)\",       \"fl-fr-bl-br-fc-lfe-sl-sr\"}, // not in lavc
+    {\"7.1(wide)\",       \"fl-fr-fc-lfe-bl-br-flc-frc\"},
+    {\"7.1(wide-side)\",  \"fl-fr-fc-lfe-flc-frc-sl-sr\"},
+    {\"7.1(rear)\",       \"fl-fr-fc-lfe-bl-br-sdl-sdr\"},
+    {\"octagonal\",       \"fl-fr-fc-bl-br-bc-sl-sr\"},
+    {\"downmix\",         \"dl-dr\"},
+    {\"auto\",            \"\"}, // not in lavc
+    {0}
+}"
+                :type "char")
+                nil [2662 4345])
+            ("default_layouts" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    {0},                                        // empty
+    MP_CHMAP_INIT_MONO,                         // mono
+    MP_CHMAP2(FL, FR),                          // stereo
+    MP_CHMAP3(FL, FR, LFE),                     // 2.1
+    MP_CHMAP4(FL, FR, FC, BC),                  // 4.0
+    MP_CHMAP5(FL, FR, FC, BL,  BR),             // 5.0
+    MP_CHMAP6(FL, FR, FC, LFE, BL, BR),         // 5.1
+    MP_CHMAP7(FL, FR, FC, LFE, BC, SL, SR),     // 6.1
+    MP_CHMAP8(FL, FR, FC, LFE, BL, BR, SL, SR), // 7.1
+}"
+                :type ("mp_chmap" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4347 4920])
+            ("mplayer_layouts" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    [1] = \"mono\",
+    [2] = \"stereo\",
+    [4] = \"quad\",
+    [5] = \"5.0(alsa)\",
+    [6] = \"5.1(alsa)\",
+    [8] = \"7.1(alsa)\",
+}"
+                :type "char")
+                nil [5173 5366])
+            ("mp_chmap_is_valid" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5472 5499]))                  
+                :type "bool")
+                nil [5449 5759])
+            ("mp_chmap_is_empty" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5784 5811]))                  
+                :type "bool")
+                nil [5761 5841])
+            ("mp_chmap_is_unknown" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6001 6028]))                  
+                :type "bool")
+                nil [5976 6261])
+            ("mp_chmap_equals" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6358 6383])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6384 6409]))                  
+                :type "bool")
+                nil [6337 6593])
+            ("mp_chmap_equals_reordered" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6694 6719])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6720 6745]))                  
+                :type "bool")
+                nil [6663 6889])
+            ("mp_chmap_is_compatible" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6919 6944])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6945 6970]))                  
+                :type "bool")
+                nil [6891 7145])
+            ("mp_chmap_is_stereo" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7171 7198]))                  
+                :type "bool")
+                nil [7147 7308])
+            ("comp_uint8" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7332 7346])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [7347 7361]))                  
+                :type "int")
+                nil [7310 7419])
+            ("mp_chmap_reorder_norm" function
+               (:arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7588 7609]))                  
+                :type "void")
+                nil [7561 7691])
+            ("mp_chmap_from_channels" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7902 7923])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [7924 7941]))                  
+                :type "void")
+                nil [7874 8110])
+            ("mp_chmap_from_channels_alsa" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8271 8292])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [8293 8310]))                  
+                :type "void")
+                nil [8238 8581])
+            ("mp_chmap_set_unknown" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8790 8811])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [8812 8829]))                  
+                :type "void")
+                nil [8764 9086])
+            ("mp_chmap_find_speaker" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9174 9201])
+                    ("speaker" variable (:type "int") (reparse-symbol arg-sub-list) [9202 9214]))                  
+                :type "int")
+                nil [9141 9342])
+            ("mp_chmap_remove_speaker" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9380 9401])
+                    ("speaker" variable (:type "int") (reparse-symbol arg-sub-list) [9402 9414]))                  
+                :type "void")
+                nil [9344 9621])
+            ("mp_chmap_remove_useless_channels" function
+               (:arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9998 10019])
+                    ("requested" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10058 10091]))                  
+                :type "void")
+                nil [9960 10340])
+            ("mp_chmap_to_lavc_unchecked" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10601 10628]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [10565 10922])
+            ("mp_chmap_to_lavc" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11103 11130]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [11077 11228])
+            ("mp_chmap_from_lavc" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11420 11441])
+                    ("src" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11442 11455]))                  
+                :type "void")
+                nil [11396 11740])
+            ("mp_chmap_is_lavc" function
+               (:arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11764 11791]))                  
+                :type "bool")
+                nil [11742 12327])
+            ("mp_chmap_reorder_to_lavc" function
+               (:arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12359 12380]))                  
+                :type "void")
+                nil [12329 12521])
+            ("mp_chmap_get_reorder" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12872 12897])
+                    ("from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12898 12926])
+                    ("to" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12953 12979]))                  
+                :type "void")
+                nil [12846 13649])
+            ("mp_chmap_diff" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13982 14007])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14008 14033])
+                    ("diff" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14053 14075]))                  
+                :type "void")
+                nil [13963 14243])
+            ("mp_chmap_contains" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14319 14344])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14345 14370]))                  
+                :type "bool")
+                nil [14296 14541])
+            ("mp_chmap_to_str_buf" function
+               (:pointer 1
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14757 14767])
+                    ("buf_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [14768 14784])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14785 14812]))                  
+                :type "char")
+                nil [14731 15578])
+            ("mp_chmap_from_str" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15899 15920])
+                    ("src" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15921 15930]))                  
+                :type "bool")
+                nil [15876 17643])
+            ("mp_chmap_print_help" function
+               (:arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [17670 17689]))                  
+                :type "void")
+                nil [17645 18224]))          
+      :file "chmap.c"
+      :pointmax 18225
+      :fsize 18224
+      :lastmodtime '(21681 30008 809006 252000)
+      :unmatched-syntax nil)
+    (semanticdb-table "chmap.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MP_CHMAP_H" variable (:constant-flag t) nil [687 697])
+            ("inttypes.h" include (:system-flag t) nil [699 720])
+            ("stdbool.h" include (:system-flag t) nil [721 741])
+            ("misc/bstr.h" include nil nil [742 764])
+            ("MP_NUM_CHANNELS" variable (:constant-flag t) nil [774 789])
+            ("mp_speaker_id" type
+               (:members 
+                  ( ("MP_SPEAKER_ID_FL" variable
+                       (:constant-flag t
+                        :default-value (1056 1057)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1037 1057])
+                    ("MP_SPEAKER_ID_FR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1083 1100])
+                    ("MP_SPEAKER_ID_FC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1130 1147])
+                    ("MP_SPEAKER_ID_LFE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1178 1196])
+                    ("MP_SPEAKER_ID_BL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1227 1244])
+                    ("MP_SPEAKER_ID_BR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1272 1289])
+                    ("MP_SPEAKER_ID_FLC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1318 1336])
+                    ("MP_SPEAKER_ID_FRC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1374 1392])
+                    ("MP_SPEAKER_ID_BC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1431 1448])
+                    ("MP_SPEAKER_ID_SL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1478 1495])
+                    ("MP_SPEAKER_ID_SR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1523 1540])
+                    ("MP_SPEAKER_ID_TC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1569 1586])
+                    ("MP_SPEAKER_ID_TFL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1615 1633])
+                    ("MP_SPEAKER_ID_TFC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1665 1683])
+                    ("MP_SPEAKER_ID_TFR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1717 1735])
+                    ("MP_SPEAKER_ID_TBL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1768 1786])
+                    ("MP_SPEAKER_ID_TBC" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1817 1835])
+                    ("MP_SPEAKER_ID_TBR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1868 1886])
+                    ("MP_SPEAKER_ID_DL" variable
+                       (:constant-flag t
+                        :default-value (1974 1976)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1955 1976])
+                    ("MP_SPEAKER_ID_DR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2036 2053])
+                    ("MP_SPEAKER_ID_WL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2084 2101])
+                    ("MP_SPEAKER_ID_WR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2129 2146])
+                    ("MP_SPEAKER_ID_SDL" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2175 2193])
+                    ("MP_SPEAKER_ID_SDR" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2231 2249])
+                    ("MP_SPEAKER_ID_LFE2" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2288 2307])
+                    ("MP_SPEAKER_ID_UNKNOWN0" variable
+                       (:constant-flag t
+                        :default-value (2467 2469)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2442 2469])
+                    ("MP_SPEAKER_ID_UNKNOWN_LAST" variable
+                       (:constant-flag t
+                        :default-value (2504 2544)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2475 2544])
+                    ("MP_SPEAKER_ID_COUNT" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2671 2691]))                  
+                :type "enum")
+                nil [957 2694])
+            ("mp_chmap" type
+               (:members 
+                  ( ("num" variable (:type ("uint8_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2718 2730])
+                    ("speaker" variable
+                       (:dereference 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2889 2922]))                  
+                :type "struct")
+                nil [2696 2925])
+            ("MP_SP" variable (:constant-flag t) nil [2935 2940])
+            ("MP_CHMAP2" variable (:constant-flag t) nil [2985 2994])
+            ("MP_CHMAP3" variable (:constant-flag t) nil [3041 3050])
+            ("MP_CHMAP4" variable (:constant-flag t) nil [3110 3119])
+            ("MP_CHMAP5" variable (:constant-flag t) nil [3192 3201])
+            ("MP_CHMAP6" variable (:constant-flag t) nil [3287 3296])
+            ("MP_CHMAP7" variable (:constant-flag t) nil [3395 3404])
+            ("MP_CHMAP8" variable (:constant-flag t) nil [3516 3525])
+            ("MP_CHMAP_INIT_MONO" variable (:constant-flag t) nil [3651 3669])
+            ("MP_CHMAP_INIT_STEREO" variable (:constant-flag t) nil [3702 3722])
+            ("mp_chmap_is_valid" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3765 3792]))                  
+                :type "bool")
+                nil [3742 3793])
+            ("mp_chmap_is_empty" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3817 3844]))                  
+                :type "bool")
+                nil [3794 3845])
+            ("mp_chmap_is_unknown" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3871 3898]))                  
+                :type "bool")
+                nil [3846 3899])
+            ("mp_chmap_equals" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3921 3946])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3947 3972]))                  
+                :type "bool")
+                nil [3900 3973])
+            ("mp_chmap_equals_reordered" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4005 4030])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4031 4056]))                  
+                :type "bool")
+                nil [3974 4057])
+            ("mp_chmap_is_compatible" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4086 4111])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4112 4137]))                  
+                :type "bool")
+                nil [4058 4138])
+            ("mp_chmap_is_stereo" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4163 4190]))                  
+                :type "bool")
+                nil [4139 4191])
+            ("mp_chmap_reorder_norm" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4220 4241]))                  
+                :type "void")
+                nil [4193 4242])
+            ("mp_chmap_from_channels" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4272 4293])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [4294 4311]))                  
+                :type "void")
+                nil [4244 4312])
+            ("mp_chmap_set_unknown" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4339 4360])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [4361 4378]))                  
+                :type "void")
+                nil [4313 4379])
+            ("mp_chmap_from_channels_alsa" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4413 4434])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [4435 4452]))                  
+                :type "void")
+                nil [4380 4453])
+            ("mp_chmap_remove_useless_channels" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4493 4514])
+                    ("requested" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4553 4586]))                  
+                :type "void")
+                nil [4455 4587])
+            ("mp_chmap_to_lavc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4615 4642]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [4589 4643])
+            ("mp_chmap_to_lavc_unchecked" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4680 4707]))                  
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [4644 4708])
+            ("mp_chmap_from_lavc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4733 4754])
+                    ("src" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4755 4768]))                  
+                :type "void")
+                nil [4709 4769])
+            ("mp_chmap_is_lavc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4793 4820]))                  
+                :type "bool")
+                nil [4771 4821])
+            ("mp_chmap_reorder_to_lavc" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("map" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4852 4873]))                  
+                :type "void")
+                nil [4822 4874])
+            ("mp_chmap_get_reorder" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4902 4927])
+                    ("from" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4928 4956])
+                    ("to" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4983 5009]))                  
+                :type "void")
+                nil [4876 5010])
+            ("mp_chmap_diff" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5031 5056])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5057 5082])
+                    ("diff" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5102 5124]))                  
+                :type "void")
+                nil [5012 5125])
+            ("mp_chmap_contains" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5150 5175])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5176 5201]))                  
+                :type "bool")
+                nil [5127 5202])
+            ("mp_chmap_to_str_buf" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5230 5240])
+                    ("buf_size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5241 5257])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5258 5285]))                  
+                :type "char")
+                nil [5204 5286])
+            ("mp_chmap_to_str" variable (:constant-flag t) nil [5295 5310])
+            ("mp_chmap_from_str" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5382 5403])
+                    ("src" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5404 5413]))                  
+                :type "bool")
+                nil [5359 5414])
+            ("mp_log" type
+               (:prototype t
+                :type "struct")
+                nil [5416 5430])
+            ("mp_chmap_print_help" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5456 5475]))                  
+                :type "void")
+                nil [5431 5476])
+            ("mp_chmap_to_waveext" variable (:constant-flag t) nil [5564 5583])
+            ("mp_chmap_from_waveext" variable (:constant-flag t) nil [5609 5630])
+            ("mp_chmap_is_waveext" variable (:constant-flag t) nil [5658 5677])
+            ("mp_chmap_reorder_to_waveext" variable (:constant-flag t) nil [5703 5730]))          
+      :file "chmap.h"
+      :pointmax 5764
+      :fsize 5763
+      :lastmodtime '(21681 30008 809006 252000)
+      :unmatched-syntax '((number 2547 . 2548) (punctuation 2545 . 2546))
+      :lexical-table 
+        '(("MP_SP" (spp-arg-list ("speaker") 2940 . 2949) . ((spp-symbol-merge ((symbol "MP_SPEAKER_ID_" 2950 . 2964) (symbol "speaker" 2968 . 2975)) 2950 . 2975)))
+          ("MP_NUM_CHANNELS" . ((number "8" 790 . 791)))
+          ("mp_chmap_to_str" (spp-arg-list ("m") 5310 . 5313) . ((symbol "mp_chmap_to_str_buf" 5314 . 5333) (semantic-list "((char[64]){0}, 64, (m))" 5333 . 5357)))
+          ("MP_CHMAP2" (spp-arg-list ("a" "b") 2994 . 3000) . ((semantic-list "{2, {MP_SP(a), MP_SP(b)}}" 3007 . 3032)))
+          ("mp_chmap_reorder_to_waveext" . ((symbol "mp_chmap_reorder_to_lavc" 5731 . 5755)))
+          ("MP_CHMAP3" (spp-arg-list ("a" "b" "c") 3050 . 3059) . ((semantic-list "{3, {MP_SP(a), MP_SP(b), MP_SP(c)}}" 3066 . 3101)))
+          ("MP_CHMAP4" (spp-arg-list ("a" "b" "c" "d") 3119 . 3131) . ((semantic-list "{4, {MP_SP(a), MP_SP(b), MP_SP(c), MP_SP(d)}}" 3138 . 3183)))
+          ("MP_CHMAP5" (spp-arg-list ("a" "b" "c" "d" "e") 3201 . 3216) . ((semantic-list "{5, {MP_SP(a), MP_SP(b), MP_SP(c), MP_SP(d), MP_SP(e)}}" 3223 . 3278)))
+          ("MP_CHMAP_INIT_STEREO" . ((symbol "MP_CHMAP2" 3723 . 3732) (semantic-list "(FL, FR)" 3732 . 3740)))
+          ("MP_CHMAP6" (spp-arg-list ("a" "b" "c" "d" "e" "f") 3296 . 3314) . ((semantic-list "{6, {MP_SP(a), MP_SP(b), MP_SP(c), MP_SP(d), MP_SP(e), MP_SP(f)}}" 3321 . 3386)))
+          ("MP_CHMAP7" (spp-arg-list ("a" "b" "c" "d" "e" "f" "g") 3404 . 3425) . ((semantic-list "{7, {MP_SP(a), MP_SP(b), MP_SP(c), MP_SP(d), MP_SP(e), MP_SP(f), MP_SP(g)}}" 3432 . 3507)))
+          ("mp_chmap_from_waveext" . ((symbol "mp_chmap_from_lavc" 5631 . 5649)))
+          ("MP_CHMAP8" (spp-arg-list ("a" "b" "c" "d" "e" "f" "g" "h") 3525 . 3549) . ((semantic-list "{8, {MP_SP(a), MP_SP(b), MP_SP(c), MP_SP(d), MP_SP(e), MP_SP(f), MP_SP(g), MP_SP(h)}}" 3556 . 3641)))
+          ("MP_CHMAP_H")
+          ("mp_chmap_is_waveext" . ((symbol "mp_chmap_is_lavc" 5678 . 5694)))
+          ("MP_CHMAP_INIT_MONO" . ((semantic-list "{1, {MP_SPEAKER_ID_FC}}" 3670 . 3693)))
+          ("mp_chmap_to_waveext" . ((symbol "mp_chmap_to_lavc" 5584 . 5600)))
+          )
+)
+    (semanticdb-table "format.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [789 807])
+            ("stdlib.h" include (:system-flag t) nil [808 827])
+            ("string.h" include (:system-flag t) nil [828 847])
+            ("inttypes.h" include (:system-flag t) nil [848 869])
+            ("limits.h" include (:system-flag t) nil [870 889])
+            ("assert.h" include (:system-flag t) nil [890 909])
+            ("common/common.h" include nil nil [911 937])
+            ("audio/filter/af.h" include nil nil [938 966])
+            ("af_fmt2bps" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [983 994]))                  
+                :type "int")
+                nil [968 1242])
+            ("af_fmt2bits" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [1260 1271]))                  
+                :type "int")
+                nil [1244 1310])
+            ("af_fmt_is_float" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [1333 1344]))                  
+                :type "bool")
+                nil [1312 1385])
+            ("bits_to_mask" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("bits" variable (:type "int") (reparse-symbol arg-sub-list) [1411 1420]))                  
+                :type "int")
+                nil [1387 1648])
+            ("af_fmt_change_bits" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [1673 1684])
+                    ("bits" variable (:type "int") (reparse-symbol arg-sub-list) [1685 1694]))                  
+                :type "int")
+                nil [1650 1887])
+            ("planar_formats" variable
+               (:dereference 2
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    {AF_FORMAT_U8P,     AF_FORMAT_U8},
+    {AF_FORMAT_S16P,    AF_FORMAT_S16},
+    {AF_FORMAT_S32P,    AF_FORMAT_S32},
+    {AF_FORMAT_FLOATP,  AF_FORMAT_FLOAT},
+    {AF_FORMAT_DOUBLEP, AF_FORMAT_DOUBLE},
+}"
+                :type "int")
+                nil [1889 2136])
+            ("af_fmt_to_planar" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [2307 2318]))                  
+                :type "int")
+                nil [2286 2560])
+            ("af_fmt_from_planar" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [2774 2785]))                  
+                :type "int")
+                nil [2751 2961])
+            ("af_fmt_is_planar" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [3032 3043]))                  
+                :type "bool")
+                nil [3010 3089])
+            ("af_fmtstr_table" variable
+               (:dereference 1
+                :constant-flag t
+                :default-value "{
+    {\"u8\",          AF_FORMAT_U8},
+    {\"s8\",          AF_FORMAT_S8},
+    {\"u16\",         AF_FORMAT_U16},
+    {\"s16\",         AF_FORMAT_S16},
+    {\"u24\",         AF_FORMAT_U24},
+    {\"s24\",         AF_FORMAT_S24},
+    {\"u32\",         AF_FORMAT_U32},
+    {\"s32\",         AF_FORMAT_S32},
+    {\"float\",       AF_FORMAT_FLOAT},
+    {\"double\",      AF_FORMAT_DOUBLE},
+
+    {\"u8p\",         AF_FORMAT_U8P},
+    {\"s16p\",        AF_FORMAT_S16P},
+    {\"s32p\",        AF_FORMAT_S32P},
+    {\"floatp\",      AF_FORMAT_FLOATP},
+    {\"doublep\",     AF_FORMAT_DOUBLEP},
+
+    {\"spdif-aac\",   AF_FORMAT_S_AAC},
+    {\"spdif-ac3\",   AF_FORMAT_S_AC3},
+    {\"spdif-dts\",   AF_FORMAT_S_DTS},
+    {\"spdif-dtshd\", AF_FORMAT_S_DTSHD},
+    {\"spdif-eac3\",  AF_FORMAT_S_EAC3},
+    {\"spdif-mp3\",   AF_FORMAT_S_MP3},
+    {\"spdif-truehd\",AF_FORMAT_S_TRUEHD},
+
+    {0}
+}"
+                :type ("af_fmt_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3091 3976])
+            ("af_fmt_is_valid" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [3999 4010]))                  
+                :type "bool")
+                nil [3978 4164])
+            ("af_fmt_to_str" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4192 4203]))                  
+                :type "char")
+                nil [4166 4376])
+            ("af_fmt_seconds_to_bytes" function
+               (:arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4406 4417])
+                    ("seconds" variable (:type "float") (reparse-symbol arg-sub-list) [4418 4432])
+                    ("channels" variable (:type "int") (reparse-symbol arg-sub-list) [4433 4446])
+                    ("samplerate" variable (:type "int") (reparse-symbol arg-sub-list) [4447 4462]))                  
+                :type "int")
+                nil [4378 4719])
+            ("af_str2fmt_short" function
+               (:arguments 
+                  ( ("str" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4742 4751]))                  
+                :type "int")
+                nil [4721 4930])
+            ("af_fill_silence" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4953 4963])
+                    ("bytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4964 4977])
+                    ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4978 4989]))                  
+                :type "void")
+                nil [4932 5094])
+            ("FMT_DIFF" variable (:constant-flag t) nil [5104 5112])
+            ("af_format_conversion_score" function
+               (:arguments 
+                  ( ("dst_format" variable (:type "int") (reparse-symbol arg-sub-list) [5471 5486])
+                    ("src_format" variable (:type "int") (reparse-symbol arg-sub-list) [5487 5502]))                  
+                :type "int")
+                nil [5440 6959]))          
+      :file "format.c"
+      :pointmax 6960
+      :fsize 6959
+      :lastmodtime '(21681 30008 812339 529000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("FMT_DIFF" (spp-arg-list ("type" "a" "b") 5112 . 5124) . ((semantic-list "(((a) & type) - ((b) & type))" 5125 . 5154)))
+          )
+)
+    (semanticdb-table "audio.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdint.h" include (:system-flag t) nil [660 679])
+            ("limits.h" include (:system-flag t) nil [680 699])
+            ("stdlib.h" include (:system-flag t) nil [700 719])
+            ("assert.h" include (:system-flag t) nil [720 739])
+            ("libavutil/buffer.h" include (:system-flag t) nil [741 770])
+            ("libavutil/frame.h" include (:system-flag t) nil [771 799])
+            ("libavutil/version.h" include (:system-flag t) nil [800 830])
+            ("talloc.h" include nil nil [832 851])
+            ("common/common.h" include nil nil [852 878])
+            ("fmt-conversion.h" include nil nil [879 906])
+            ("audio.h" include nil nil [907 925])
+            ("update_redundant_info" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [961 982]))                  
+                :type "void")
+                nil [927 1408])
+            ("mp_audio_set_format" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1435 1456])
+                    ("format" variable (:type "int") (reparse-symbol arg-sub-list) [1457 1468]))                  
+                :type "void")
+                nil [1410 1530])
+            ("mp_audio_set_num_channels" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1563 1584])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [1585 1602]))                  
+                :type "void")
+                nil [1532 1696])
+            ("mp_audio_set_channels_old" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1769 1790])
+                    ("num_channels" variable (:type "int") (reparse-symbol arg-sub-list) [1791 1808]))                  
+                :type "void")
+                nil [1738 1907])
+            ("mp_audio_set_channels" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1936 1957])
+                    ("chmap" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_chmap" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1958 1987]))                  
+                :type "void")
+                nil [1909 2051])
+            ("mp_audio_copy_config" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2079 2100])
+                    ("src" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2101 2128]))                  
+                :type "void")
+                nil [2053 2257])
+            ("mp_audio_config_equals" function
+               (:arguments 
+                  ( ("a" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2287 2312])
+                    ("b" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2313 2338]))                  
+                :type "bool")
+                nil [2259 2457])
+            ("mp_audio_config_valid" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2486 2513]))                  
+                :type "bool")
+                nil [2459 2645])
+            ("mp_audio_config_to_str_buf" function
+               (:pointer 1
+                :arguments 
+                  ( ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2680 2690])
+                    ("buf_sz" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2691 2705])
+                    ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2706 2727]))                  
+                :type "char")
+                nil [2647 2910])
+            ("mp_audio_force_interleaved_format" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2951 2972]))                  
+                :type "void")
+                nil [2912 3082])
+            ("mp_audio_psize" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3174 3195]))                  
+                :type "int")
+                nil [3155 3239])
+            ("mp_audio_set_null_data" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3269 3290]))                  
+                :type "void")
+                nil [3241 3435])
+            ("get_plane_size" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3463 3490])
+                    ("samples" variable (:type "int") (reparse-symbol arg-sub-list) [3491 3503]))                  
+                :type "int")
+                nil [3437 3685])
+            ("mp_audio_destructor" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3719 3729]))                  
+                :type "void")
+                nil [3687 3856])
+            ("mp_audio_realloc" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4427 4448])
+                    ("samples" variable (:type "int") (reparse-symbol arg-sub-list) [4449 4461]))                  
+                :type "void")
+                nil [4405 5055])
+            ("mp_audio_realloc_min" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5210 5231])
+                    ("samples" variable (:type "int") (reparse-symbol arg-sub-list) [5232 5244]))                  
+                :type "void")
+                nil [5184 5459])
+            ("mp_audio_get_allocated_size" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5778 5799]))                  
+                :type "int")
+                nil [5746 6016])
+            ("mp_audio_fill_silence" function
+               (:arguments 
+                  ( ("mpa" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6104 6125])
+                    ("start" variable (:type "int") (reparse-symbol arg-sub-list) [6126 6136])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [6137 6148]))                  
+                :type "void")
+                nil [6077 6550])
+            ("mp_audio_copy" function
+               (:arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6641 6662])
+                    ("dst_offset" variable (:type "int") (reparse-symbol arg-sub-list) [6663 6678])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6698 6719])
+                    ("src_offset" variable (:type "int") (reparse-symbol arg-sub-list) [6720 6735])
+                    ("length" variable (:type "int") (reparse-symbol arg-sub-list) [6736 6747]))                  
+                :type "void")
+                nil [6622 7189])
+            ("mp_audio_skip_samples" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7294 7316])
+                    ("samples" variable (:type "int") (reparse-symbol arg-sub-list) [7317 7329]))                  
+                :type "void")
+                nil [7267 7546])
+            ("mp_audio_make_writeable" function
+               (:arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7783 7805]))                  
+                :type "int")
+                nil [7755 8452])
+            ("mp_audio_from_avframe" function
+               (:pointer 1
+                :arguments 
+                  ( ("avframe" variable
+                       (:pointer 1
+                        :type ("AVFrame" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8493 8517]))                  
+                :type ("mp_audio" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [8454 9980])
+            ("mp_audio_pool" type
+               (:members 
+                  ( ("avpool" variable
+                       (:pointer 1
+                        :type ("AVBufferPool" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10009 10030])
+                    ("element_size" variable (:type "int") (reparse-symbol classsubparts) [10035 10052]))                  
+                :type "struct")
+                nil [9982 10055])
+            ("mp_audio_pool_create" function
+               (:pointer 1
+                :arguments 
+                  ( ("ta_parent" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10100 10116]))                  
+                :type ("mp_audio_pool" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10057 10177])
+            ("mp_audio_pool_destructor" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10216 10224]))                  
+                :type "void")
+                nil [10179 10306])
+            ("mp_audio_pool_get" function
+               (:pointer 1
+                :arguments 
+                  ( ("pool" variable
+                       (:pointer 1
+                        :type ("mp_audio_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10432 10459])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_audio" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10495 10522])
+                    ("samples" variable (:type "int") (reparse-symbol arg-sub-list) [10523 10535]))                  
+                :type ("mp_audio" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10397 11475]))          
+      :file "audio.c"
+      :pointmax 11476
+      :fsize 11475
+      :lastmodtime '(21681 30008 805672 973000)
+      :unmatched-syntax nil)
+    (semanticdb-table "fmt-conversion.h"
+      :file "fmt-conversion.h"
+      :fsize 972
+      :lastmodtime '(21681 30008 812339 529000))
+    (semanticdb-table "audio.h"
+      :file "audio.h"
+      :fsize 3240
+      :lastmodtime '(21681 30008 805672 973000))
+    (semanticdb-table "mixer.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("string.h" include (:system-flag t) nil [747 766])
+            ("stdio.h" include (:system-flag t) nil [767 785])
+            ("math.h" include (:system-flag t) nil [786 803])
+            ("libavutil/common.h" include (:system-flag t) nil [805 834])
+            ("config.h" include nil nil [836 855])
+            ("audio/out/ao.h" include nil nil [856 881])
+            ("audio/filter/af.h" include nil nil [882 910])
+            ("common/global.h" include nil nil [911 937])
+            ("common/msg.h" include nil nil [938 961])
+            ("talloc.h" include nil nil [962 981])
+            ("mixer.h" include nil nil [982 1000])
+            ("mixer" type
+               (:members 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1021 1040])
+                    ("opts" variable
+                       (:pointer 1
+                        :type ("MPOpts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1045 1065])
+                    ("ao" variable
+                       (:pointer 1
+                        :type ("ao" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1070 1084])
+                    ("af" variable
+                       (:pointer 1
+                        :type ("af_stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1089 1110])
+                    ("softvol" variable (:type "bool") (reparse-symbol classsubparts) [1163 1176])
+                    ("ao_softvol" variable (:type "bool") (reparse-symbol classsubparts) [1241 1257])
+                    ("emulate_mute" variable (:type "bool") (reparse-symbol classsubparts) [1317 1335])
+                    ("vol_l" variable (:type "float") (reparse-symbol classsubparts) [1457 1476])
+                    ("vol_r" variable (:type "float") (reparse-symbol classsubparts) [1457 1476])
+                    ("muted" variable (:type "bool") (reparse-symbol classsubparts) [1481 1492])
+                    ("muted_by_us" variable (:type "bool") (reparse-symbol classsubparts) [1554 1571])
+                    ("driver" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1718 1737])
+                    ("balance" variable (:type "float") (reparse-symbol classsubparts) [1761 1775]))                  
+                :type "struct")
+                nil [1002 1778])
+            ("mixer_init" function
+               (:pointer 1
+                :arguments 
+                  ( ("talloc_ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1805 1822])
+                    ("global" variable
+                       (:pointer 1
+                        :type ("mpv_global" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1823 1849]))                  
+                :type ("mixer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1780 2121])
+            ("mixer_audio_initialized" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2152 2172]))                  
+                :type "bool")
+                nil [2123 2200])
+            ("mixer_getneutralvolume" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2231 2251]))                  
+                :type "float")
+                nil [2202 2354])
+            ("checkvolume" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2380 2400]))                  
+                :type "void")
+                nil [2356 3813])
+            ("mixer_getvolume" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3836 3856])
+                    ("l" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [3857 3866])
+                    ("r" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [3867 3876]))                  
+                :type "void")
+                nil [3815 3950])
+            ("setvolume_internal" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3983 4003])
+                    ("l" variable (:type "float") (reparse-symbol arg-sub-list) [4004 4012])
+                    ("r" variable (:type "float") (reparse-symbol arg-sub-list) [4013 4021]))                  
+                :type "void")
+                nil [3952 4676])
+            ("mixer_setvolume" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4699 4719])
+                    ("l" variable (:type "float") (reparse-symbol arg-sub-list) [4720 4728])
+                    ("r" variable (:type "float") (reparse-symbol arg-sub-list) [4729 4737]))                  
+                :type "void")
+                nil [4678 5110])
+            ("mixer_getbothvolume" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5137 5157])
+                    ("b" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [5158 5167]))                  
+                :type "void")
+                nil [5112 5281])
+            ("mixer_setmute" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5302 5322])
+                    ("mute" variable (:type "bool") (reparse-symbol arg-sub-list) [5323 5333]))                  
+                :type "void")
+                nil [5283 5806])
+            ("mixer_getmute" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5827 5847]))                  
+                :type "bool")
+                nil [5808 5900])
+            ("mixer_addvolume" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5923 5943])
+                    ("step" variable (:type "float") (reparse-symbol arg-sub-list) [5944 5955]))                  
+                :type "void")
+                nil [5902 6083])
+            ("mixer_getbalance" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6107 6127])
+                    ("val" variable
+                       (:pointer 1
+                        :type "float")
+                        (reparse-symbol arg-sub-list) [6128 6139]))                  
+                :type "void")
+                nil [6085 6273])
+            ("mixer_setbalance" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6764 6784])
+                    ("val" variable (:type "float") (reparse-symbol arg-sub-list) [6785 6795]))                  
+                :type "void")
+                nil [6742 7611])
+            ("mixer_get_volume_restore_data" function
+               (:pointer 1
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7649 7669]))                  
+                :type "char")
+                nil [7613 7916])
+            ("probe_softvol" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7944 7964]))                  
+                :type "void")
+                nil [7918 8910])
+            ("restore_volume" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8939 8959]))                  
+                :type "void")
+                nil [8912 11180])
+            ("mixer_reinit_audio" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11341 11361])
+                    ("ao" variable
+                       (:pointer 1
+                        :type ("ao" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11362 11376])
+                    ("af" variable
+                       (:pointer 1
+                        :type ("af_stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11377 11398]))                  
+                :type "void")
+                nil [11317 11611])
+            ("mixer_uninit_audio" function
+               (:arguments 
+                  ( ("mixer" variable
+                       (:pointer 1
+                        :type ("mixer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11859 11879]))                  
+                :type "void")
+                nil [11835 12698]))          
+      :file "mixer.c"
+      :pointmax 12699
+      :fsize 12698
+      :lastmodtime '(21681 30008 812339 529000)
+      :unmatched-syntax nil)
+    (semanticdb-table "mixer.h"
+      :file "mixer.h"
+      :fsize 1812
+      :lastmodtime '(21681 30008 812339 529000))
+    (semanticdb-table "format.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("MPLAYER_AF_FORMAT_H" variable (:constant-flag t) nil [934 953])
+            ("stdbool.h" include (:system-flag t) nil [955 975])
+            ("misc/bstr.h" include nil nil [977 999])
+            ("AF_FORMAT_SI" variable (:constant-flag t) nil [1028 1040])
+            ("AF_FORMAT_US" variable (:constant-flag t) nil [1077 1089])
+            ("AF_FORMAT_SIGN_MASK" variable (:constant-flag t) nil [1128 1147])
+            ("AF_FORMAT_8BIT" variable (:constant-flag t) nil [1226 1240])
+            ("AF_FORMAT_16BIT" variable (:constant-flag t) nil [1265 1280])
+            ("AF_FORMAT_24BIT" variable (:constant-flag t) nil [1304 1319])
+            ("AF_FORMAT_32BIT" variable (:constant-flag t) nil [1343 1358])
+            ("AF_FORMAT_64BIT" variable (:constant-flag t) nil [1382 1397])
+            ("AF_FORMAT_BITS_MASK" variable (:constant-flag t) nil [1421 1440])
+            ("AF_FORMAT_I" variable (:constant-flag t) nil [1493 1504])
+            ("AF_FORMAT_F" variable (:constant-flag t) nil [1539 1550])
+            ("AF_FORMAT_S" variable (:constant-flag t) nil [1595 1606])
+            ("AF_FORMAT_TYPE_MASK" variable (:constant-flag t) nil [1656 1675])
+            ("AF_FORMAT_INTERLEAVED" variable (:constant-flag t) nil [1775 1796])
+            ("AF_FORMAT_PLANAR" variable (:constant-flag t) nil [1832 1848])
+            ("AF_FORMAT_INTERLEAVING_MASK" variable (:constant-flag t) nil [1876 1903])
+            ("AF_FORMAT_S_CODEC" variable (:constant-flag t) nil [1921 1938])
+            ("AF_FORMAT_S_CODEC_MASK" variable (:constant-flag t) nil [1962 1984])
+            ("AF_FORMAT_MASK" variable (:constant-flag t) nil [2022 2036])
+            ("AF_INTP" variable (:constant-flag t) nil [2067 2074])
+            ("AF_FLTP" variable (:constant-flag t) nil [2114 2121])
+            ("AF_FORMAT_S_" variable (:constant-flag t) nil [2161 2173])
+            ("af_format" type
+               (:members 
+                  ( ("AF_FORMAT_UNKNOWN" variable
+                       (:constant-flag t
+                        :default-value (2297 2298)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2275 2298])
+                    ("AF_FORMAT_U8" variable
+                       (:constant-flag t
+                        :default-value (2327 2368)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2305 2368])
+                    ("AF_FORMAT_S8" variable
+                       (:constant-flag t
+                        :default-value (2396 2437)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2374 2437])
+                    ("AF_FORMAT_U16" variable
+                       (:constant-flag t
+                        :default-value (2465 2507)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2443 2507])
+                    ("AF_FORMAT_S16" variable
+                       (:constant-flag t
+                        :default-value (2535 2577)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2513 2577])
+                    ("AF_FORMAT_U24" variable
+                       (:constant-flag t
+                        :default-value (2605 2647)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2583 2647])
+                    ("AF_FORMAT_S24" variable
+                       (:constant-flag t
+                        :default-value (2675 2717)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2653 2717])
+                    ("AF_FORMAT_U32" variable
+                       (:constant-flag t
+                        :default-value (2745 2787)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2723 2787])
+                    ("AF_FORMAT_S32" variable
+                       (:constant-flag t
+                        :default-value (2815 2857)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2793 2857])
+                    ("AF_FORMAT_FLOAT" variable
+                       (:constant-flag t
+                        :default-value (2886 2915)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2864 2915])
+                    ("AF_FORMAT_DOUBLE" variable
+                       (:constant-flag t
+                        :default-value (2943 2972)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [2921 2972])
+                    ("AF_FORMAT_U8P" variable
+                       (:constant-flag t
+                        :default-value (3024 3061)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3002 3061])
+                    ("AF_FORMAT_S16P" variable
+                       (:constant-flag t
+                        :default-value (3089 3127)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3067 3127])
+                    ("AF_FORMAT_S32P" variable
+                       (:constant-flag t
+                        :default-value (3155 3193)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3133 3193])
+                    ("AF_FORMAT_FLOATP" variable
+                       (:constant-flag t
+                        :default-value (3221 3246)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3199 3246])
+                    ("AF_FORMAT_DOUBLEP" variable
+                       (:constant-flag t
+                        :default-value (3274 3299)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3252 3299])
+                    ("AF_FORMAT_S_AAC" variable
+                       (:constant-flag t
+                        :default-value (3408 3423)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3386 3423])
+                    ("AF_FORMAT_S_AC3" variable
+                       (:constant-flag t
+                        :default-value (3451 3466)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3429 3466])
+                    ("AF_FORMAT_S_DTS" variable
+                       (:constant-flag t
+                        :default-value (3494 3509)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3472 3509])
+                    ("AF_FORMAT_S_DTSHD" variable
+                       (:constant-flag t
+                        :default-value (3537 3552)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3515 3552])
+                    ("AF_FORMAT_S_EAC3" variable
+                       (:constant-flag t
+                        :default-value (3580 3595)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3558 3595])
+                    ("AF_FORMAT_S_MP3" variable
+                       (:constant-flag t
+                        :default-value (3623 3638)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3601 3638])
+                    ("AF_FORMAT_S_TRUEHD" variable
+                       (:constant-flag t
+                        :default-value (3666 3681)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [3644 3681]))                  
+                :type "enum")
+                nil [2254 3685])
+            ("AF_FORMAT_IS_IEC61937" variable (:constant-flag t) nil [3695 3716])
+            ("AF_FORMAT_IS_SPECIAL" variable (:constant-flag t) nil [3773 3793])
+            ("af_fmt_entry" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [3849 3866])
+                    ("format" variable (:type "int") (reparse-symbol classsubparts) [3871 3882]))                  
+                :type "struct")
+                nil [3823 3885])
+            ("af_fmtstr_table" variable
+               (:dereference 1
+                :typemodifiers ("extern")
+                :constant-flag t
+                :type ("af_fmt_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3887 3938])
+            ("af_str2fmt_short" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3961 3970]))                  
+                :type "int")
+                nil [3940 3971])
+            ("af_fmt_to_str" function
+               (:prototype-flag t
+                :pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [3998 4009]))                  
+                :type "char")
+                nil [3972 4010])
+            ("af_fmt2bps" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4027 4038]))                  
+                :type "int")
+                nil [4012 4039])
+            ("af_fmt2bits" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4056 4067]))                  
+                :type "int")
+                nil [4040 4068])
+            ("af_fmt_is_float" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4090 4101]))                  
+                :type "bool")
+                nil [4069 4102])
+            ("af_fmt_change_bits" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4126 4137])
+                    ("bits" variable (:type "int") (reparse-symbol arg-sub-list) [4138 4147]))                  
+                :type "int")
+                nil [4103 4148])
+            ("af_fmt_to_planar" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4171 4182]))                  
+                :type "int")
+                nil [4150 4183])
+            ("af_fmt_from_planar" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4207 4218]))                  
+                :type "int")
+                nil [4184 4219])
+            ("af_fmt_is_planar" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4242 4253]))                  
+                :type "bool")
+                nil [4220 4254])
+            ("af_fmt_seconds_to_bytes" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4364 4375])
+                    ("seconds" variable (:type "float") (reparse-symbol arg-sub-list) [4376 4390])
+                    ("channels" variable (:type "int") (reparse-symbol arg-sub-list) [4391 4404])
+                    ("samplerate" variable (:type "int") (reparse-symbol arg-sub-list) [4405 4420]))                  
+                :type "int")
+                nil [4336 4421])
+            ("af_fmt_is_valid" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4444 4455]))                  
+                :type "bool")
+                nil [4423 4456])
+            ("af_fill_silence" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [4479 4489])
+                    ("bytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4490 4503])
+                    ("format" variable (:type "int") (reparse-symbol arg-sub-list) [4504 4515]))                  
+                :type "void")
+                nil [4458 4516])
+            ("af_format_conversion_score" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("dst_format" variable (:type "int") (reparse-symbol arg-sub-list) [4549 4564])
+                    ("src_format" variable (:type "int") (reparse-symbol arg-sub-list) [4565 4580]))                  
+                :type "int")
+                nil [4518 4581]))          
+      :file "format.h"
+      :pointmax 4616
+      :fsize 4615
+      :lastmodtime '(21681 30008 812339 529000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("AF_FORMAT_US" . ((semantic-list "(1<<0)" 1101 . 1107)))
+          ("AF_FORMAT_SIGN_MASK" . ((semantic-list "(1<<0)" 1152 . 1158)))
+          ("AF_FORMAT_INTERLEAVING_MASK" . ((semantic-list "(1<<7)" 1905 . 1911)))
+          ("MPLAYER_AF_FORMAT_H")
+          ("AF_FORMAT_S_CODEC" (spp-arg-list ("n") 1938 . 1941) . ((semantic-list "((n)<<8)" 1945 . 1953)))
+          ("AF_FORMAT_8BIT" . ((semantic-list "(0<<1)" 1250 . 1256)))
+          ("AF_FORMAT_F" . ((semantic-list "(2<<4)" 1563 . 1569)))
+          ("AF_FORMAT_S" . ((semantic-list "(4<<4)" 1619 . 1625)))
+          ("AF_FORMAT_16BIT" . ((semantic-list "(1<<1)" 1289 . 1295)))
+          ("AF_FORMAT_64BIT" . ((semantic-list "(4<<1)" 1406 . 1412)))
+          ("AF_FORMAT_S_" (spp-arg-list ("n") 2173 . 2176) . ((semantic-list "(AF_FORMAT_S_CODEC(n)|AF_FORMAT_S|AF_FORMAT_16BIT)" 2177 . 2227)))
+          ("AF_FORMAT_24BIT" . ((semantic-list "(2<<1)" 1328 . 1334)))
+          ("AF_INTP" . ((semantic-list "(AF_FORMAT_I|AF_FORMAT_PLANAR)" 2075 . 2105)))
+          ("AF_FORMAT_32BIT" . ((semantic-list "(3<<1)" 1367 . 1373)))
+          ("AF_FORMAT_I" . ((semantic-list "(1<<4)" 1517 . 1523)))
+          ("AF_FORMAT_PLANAR" . ((semantic-list "(1<<7)" 1861 . 1867)))
+          ("AF_FORMAT_BITS_MASK" . ((semantic-list "(7<<1)" 1445 . 1451)))
+          ("AF_FORMAT_S_CODEC_MASK" . ((semantic-list "(15 <<8)" 1986 . 1994)))
+          ("AF_FORMAT_IS_IEC61937" (spp-arg-list ("f") 3716 . 3719) . ((semantic-list "(((f) & AF_FORMAT_TYPE_MASK) == AF_FORMAT_S)" 3720 . 3764)))
+          ("AF_FORMAT_SI" . ((semantic-list "(0<<0)" 1052 . 1058)))
+          ("AF_FORMAT_TYPE_MASK" . ((semantic-list "(7<<4)" 1680 . 1686)))
+          ("AF_FORMAT_MASK" . ((semantic-list "((1<<12)-1)" 2046 . 2057)))
+          ("AF_FORMAT_INTERLEAVED" . ((semantic-list "(0<<7)" 1804 . 1810)))
+          ("AF_FLTP" . ((semantic-list "(AF_FORMAT_F|AF_FORMAT_PLANAR)" 2122 . 2152)))
+          ("AF_FORMAT_IS_SPECIAL" (spp-arg-list ("f") 3793 . 3796) . ((symbol "AF_FORMAT_IS_IEC61937" 3797 . 3818) (semantic-list "(f)" 3818 . 3821)))
+          )
+))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!audio!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

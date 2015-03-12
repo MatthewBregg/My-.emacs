@@ -1,0 +1,648 @@
+;; Object source/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "source/"
+  :tables
+  (list
+    (semanticdb-table "AVL-UnitTests.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("AVL.hpp" include nil nil [20 37])
+            ("CATCH_CONFIG_MAIN" variable (:constant-flag t) nil [46 63])
+            ("SEL.hpp" include nil nil [65 82])
+            ("catch.hpp" include nil nil [83 102])
+            ("TEST_CASE" function (:type "int") nil [104 572])
+            ("TEST_CASE" function (:type "int") nil [573 1138])
+            ("TEST_CASE" function (:type "int") nil [1140 1722])
+            ("TEST_CASE" function (:type "int") nil [1724 2479])
+            ("TEST_CASE" function (:type "int") nil [2480 3739])
+            ("TEST_CASE" function (:type "int") nil [3741 4208])
+            ("TEST_CASE" function (:type "int") nil [4211 6607])
+            ("TEST_CASE" function (:type "int") nil [6609 9200])
+            ("STRESS_TESTS" type
+               (:members 
+                  ( ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [9229 12982])
+                    ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [12987 15686])
+                    ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [15691 17405]))                  
+                :type "namespace")
+                nil [9201 17412])
+            ("TEST_CASE" function (:type "int") nil [17415 18352])
+            ("TEST_CASE" function (:type "int") nil [18354 20854])
+            ("TEST_CASE" function (:type "int") nil [20857 21099])
+            ("TEST_CASE" function (:type "int") nil [21101 21890])
+            ("OTHER_key_types" type
+               (:members 
+                  ( ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [21923 23089])
+                    ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [23094 24330])
+                    ("stringGener" function (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol namespacesubparts) [24335 24532])
+                    ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [24537 25719])
+                    ("cstringGener" function
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol namespacesubparts) [25725 25963])
+                    ("cequals" function
+                       (:arguments 
+                          ( ("a" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [25982 25996])
+                            ("b" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [25996 26016]))                          
+                        :type "bool")
+                        (reparse-symbol namespacesubparts) [25969 26093])
+                    ("cstringE" type
+                       (:members 
+                          ( ("()" function
+                               (:operator-flag t
+                                :arguments 
+                                  ( ("a" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [26132 26140])
+                                    ("b" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [26141 26149]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [26116 26181]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [26098 26189])
+                    ("cstringL" type
+                       (:members 
+                          ( ("()" function
+                               (:operator-flag t
+                                :arguments 
+                                  ( ("a" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [26229 26237])
+                                    ("b" variable
+                                       (:pointer 1
+                                        :type "char")
+                                        (reparse-symbol arg-sub-list) [26238 26246]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [26213 26277]))                          
+                        :type "struct")
+                        (reparse-symbol namespacesubparts) [26195 26284])
+                    ("TEST_CASE" function (:type "int") (reparse-symbol namespacesubparts) [26289 27400]))                  
+                :type "namespace")
+                nil [21891 27403])
+            ("TEST_CASE" function (:type "int") nil [27404 27756]))          
+      :file "AVL-UnitTests.cpp"
+      :pointmax 27760
+      :fsize 27759
+      :lastmodtime '(21628 33962 620209 107000)
+      :unmatched-syntax '((string 27465 . 27530) (string 27414 . 27461) (string 26299 . 26347) (string 24547 . 24601) (string 23104 . 23154) (string 21933 . 21980) (string 21111 . 21126) (string 20867 . 20896) (string 18364 . 18387) (string 17425 . 17442) (string 15701 . 15797) (string 12997 . 13038) (string 9239 . 9282) (string 6619 . 6629) (string 4221 . 4230) (string 3751 . 3774) (string 2490 . 2511) (string 1734 . 1761) (string 1150 . 1202) (string 583 . 597) (string 114 . 122))
+      :lexical-table 
+        '(("CATCH_CONFIG_MAIN")
+          )
+)
+    (semanticdb-table "AVL.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("math.h" include (:system-flag t) nil [20 36])
+            ("random.hpp" include nil nil [37 57])
+            ("SSLL.hpp" include nil nil [58 76])
+            ("SEL.hpp" include nil nil [77 94])
+            ("sstream" include (:system-flag t) nil [95 112])
+            ("stdexcept" include (:system-flag t) nil [113 132])
+            ("string" include (:system-flag t) nil [133 149])
+            ("print.hpp" include nil nil [150 169])
+            ("AVL_H" variable (:constant-flag t) nil [193 198])
+            ("cop3530" type
+               (:members 
+                  ( ("AVL" type
+                       (:template 
+                          ( ("K" type (:type "class") nil nil)
+                            ("T" type (:type "class") nil nil)
+                            ("E" type (:type "class") nil nil)
+                            ("L" type (:type "class") nil nil))                          
+                        :type "class"
+                        :members 
+                          ( ("equals" variable
+                               (:default-value "E()"
+                                :type ("E" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [280 295])
+                            ("less" variable
+                               (:default-value "L()"
+                                :type ("L" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [297 310])
+                            ("node" type
+                               (:members 
+                                  ( ("left" variable (:type "int") (reparse-symbol classsubparts) [437 446])
+                                    ("right" variable (:type "int") (reparse-symbol classsubparts) [452 462])
+                                    ("height" variable (:type "int") (reparse-symbol classsubparts) [468 480])
+                                    ("key" variable (:type ("K" type (:type "class") nil nil)) (reparse-symbol classsubparts) [486 492])
+                                    ("val" variable (:type ("T" type (:type "class") nil nil)) (reparse-symbol classsubparts) [498 504])
+                                    ("node" function
+                                       (:constructor-flag t
+                                        :arguments 
+                                          ( ("l" variable
+                                               (:default-value "-1"
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [515 525])
+                                            ("r" variable
+                                               (:default-value "-1"
+                                                :type "int")
+                                                (reparse-symbol arg-sub-list) [527 537])
+                                            ("h" variable
+                                               (:default-value "1"
+                                                :type ("std::size_t" type (:type "class") nil nil))
+                                                (reparse-symbol arg-sub-list) [539 556]))                                          
+                                        :type ("node" type (:type "struct") nil nil))
+                                        (reparse-symbol classsubparts) [510 586]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [419 591])
+                            ("capp" variable
+                               (:constant-flag t
+                                :type ("std::size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [595 618])
+                            ("array" variable
+                               (:pointer 1
+                                :type ("node" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [620 632])
+                            ("sizeT" variable (:type ("std::size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [634 652])
+                            ("head" variable (:type "int") (reparse-symbol classsubparts) [654 663])
+                            ("freeHead" variable (:type "int") (reparse-symbol classsubparts) [665 678])
+                            ("freeTail" variable (:type "int") (reparse-symbol classsubparts) [680 693])
+                            ("init" function (:type "void") (reparse-symbol classsubparts) [695 949])
+                            ("public" label nil (reparse-symbol classsubparts) [954 961])
+                            ("AVL" function
+                               (:constructor-flag t
+                                :arguments 
+                                  ( ("capacity" variable (:type "int") (reparse-symbol arg-sub-list) [967 980]))                                  
+                                :type ("AVL" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [963 1145])
+                            ("AVL" function
+                               (:destructor-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [1147 1170])
+                            ("size" function (:type ("std::size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1172 1205])
+                            ("capacity" function (:type ("std::size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1207 1243])
+                            ("load" function (:type "double") (reparse-symbol classsubparts) [1245 1286])
+                            ("is_empty" function (:type "bool") (reparse-symbol classsubparts) [1288 1325])
+                            ("clear" function (:type "void") (reparse-symbol classsubparts) [1327 1348])
+                            ("private" label nil (reparse-symbol classsubparts) [1353 1361])
+                            ("get_balance_factor" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [1386 1395]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [1363 1521])
+                            ("update_height" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [1545 1554]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [1526 1716])
+                            ("get_child_height" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [1741 1750]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [1720 1829])
+                            ("getNode" function (:type "int") (reparse-symbol classsubparts) [1831 2050])
+                            ("putNode" function
+                               (:arguments 
+                                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [2065 2071]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2052 2318])
+                            ("gotSpace" function (:type "bool") (reparse-symbol classsubparts) [2320 2359])
+                            ("insert_normalhelper" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [2385 2395])
+                                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [2396 2402])
+                                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [2403 2413]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [2361 2912])
+                            ("balance_insert" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [2934 2944]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [2914 3557])
+                            ("insert_helper" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [3583 3593])
+                                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [3594 3600])
+                                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [3601 3611]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [3565 4043])
+                            ("insert_roothelper" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [4069 4079])
+                                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [4080 4086])
+                                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4087 4097]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [4047 4631])
+                            ("simple_print_helper" function
+                               (:arguments 
+                                  ( ("out" variable
+                                       (:pointer 1
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4658 4675])
+                                    ("count" variable (:type "int") (reparse-symbol arg-sub-list) [4676 4686])
+                                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [4687 4693])
+                                    ("root" variable (:type "int") (reparse-symbol arg-sub-list) [4694 4703])
+                                    ("spaceFactor" variable (:type "int") (reparse-symbol arg-sub-list) [4704 4720])
+                                    ("maxCount" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [4720 4734]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [4633 5379])
+                            ("rotate_left" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [5398 5408]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [5381 5757])
+                            ("rotate_right" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [5777 5787]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [5759 6132])
+                            ("LL_rotation" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [6176 6186]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [6159 6221])
+                            ("RR_rotation" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [6240 6250]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [6223 6285])
+                            ("LR_rotation" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [6304 6314]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [6287 6385])
+                            ("RL_rotation" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [6405 6415]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [6388 6487])
+                            ("insertNormal" function
+                               (:arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("K" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6512 6525])
+                                    ("value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6526 6541]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [6495 6751])
+                            ("insertRoot" function
+                               (:arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("K" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6768 6781])
+                                    ("value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [6782 6797]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [6753 7005])
+                            ("internal_search" function
+                               (:arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("K" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [7027 7040])
+                                    ("root" variable
+                                       (:constant-flag t
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [7041 7056])
+                                    ("count" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [7057 7068])
+                                    ("parent" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [7069 7081]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [7007 7390])
+                            ("child_count" function
+                               (:arguments 
+                                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [7411 7417]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [7395 7622])
+                            ("get_only_child" function
+                               (:arguments 
+                                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [7643 7649]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [7624 7824])
+                            ("getLowestInTree" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [7846 7855]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [7826 8034])
+                            ("balance_remove" function
+                               (:arguments 
+                                  ( ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [8057 8067]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [8037 8946])
+                            ("remove_helper" function
+                               (:arguments 
+                                  ( ("key" variable (:type ("K" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8966 8972])
+                                    ("value" variable
+                                       (:reference 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [8973 8982])
+                                    ("root" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [8983 8993])
+                                    ("parent" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [8993 9005])
+                                    ("count" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [9005 9016]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [8948 10066])
+                            ("inorder_helper" function
+                               (:template 
+                                  ( ("f" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("functor" variable
+                                       (:reference 1
+                                        :type ("f" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [10105 10116])
+                                    ("root" variable (:type "int") (reparse-symbol arg-sub-list) [10117 10126]))                                  )
+                                (reparse-symbol classsubparts) [10068 10307])
+                            ("remove_random_helper" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [10338 10347])
+                                    ("target" variable
+                                       (:constant-flag t
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [10348 10365])
+                                    ("r" variable
+                                       (:reference 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [10366 10373]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [10313 10652])
+                            ("print_helper" function
+                               (:arguments 
+                                  ( ("backing" variable
+                                       (:pointer 1
+                                        :type "int")
+                                        (reparse-symbol arg-sub-list) [10672 10685])
+                                    ("root" variable (:type "int") (reparse-symbol arg-sub-list) [10686 10695])
+                                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [10696 10702]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [10654 10862])
+                            ("cluster_helper" function
+                               (:arguments 
+                                  ( ("height" variable (:type "int") (reparse-symbol arg-sub-list) [10884 10895])
+                                    ("root" variable (:type "int") (reparse-symbol arg-sub-list) [10896 10905])
+                                    ("store" variable
+                                       (:reference 1
+                                        :type ("cop3530::AVL" type
+                                             (:template-specifier 
+                                                ( ("int" type nil nil nil)
+                                                  ("int" type nil nil nil)
+                                                  ("functor::equals" type nil nil nil)
+                                                  ("functor::less" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol arg-sub-list) [10913 10982]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [10864 11272])
+                            ("get_max_height" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [11310 11319]))                                  
+                                :type ("std::size_t" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [11283 11549])
+                            ("AVL_check_helper" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [11573 11582]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [11551 11912])
+                            ("cluster" type
+                               (:members 
+                                  ( ("size" variable (:type "int") (reparse-symbol classsubparts) [11942 11951])
+                                    ("occ" variable (:type "int") (reparse-symbol classsubparts) [11957 11965]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [11921 11970])
+                            ("private" label nil (reparse-symbol classsubparts) [11975 11983])
+                            ("clusterGen" type
+                               (:members 
+                                  ( ("generated" variable
+                                       (:default-value "cop3530::SSLL<cluster>()"
+                                        :type ("cop3530::SSLL" type
+                                             (:template-specifier 
+                                                ( ("cluster" type nil nil nil))                                                
+                                              :type "class")
+                                              nil nil))
+                                        (reparse-symbol classsubparts) [12009 12067])
+                                    ("()" function
+                                       (:operator-flag t
+                                        :arguments 
+                                          ( ("key" variable (:type "int") (reparse-symbol arg-sub-list) [12090 12098])
+                                            ("value" variable (:type "int") (reparse-symbol arg-sub-list) [12099 12109]))                                          
+                                        :type "void")
+                                        (reparse-symbol classsubparts) [12074 12201]))                                  
+                                :type "struct")
+                                (reparse-symbol classsubparts) [11985 12207])
+                            ("public" label nil (reparse-symbol classsubparts) [12212 12219])
+                            ("cluster_distribution" function (:type ("cop3530::SSLL" type
+                                 (:template-specifier 
+                                    ( ("cluster" type nil nil nil))                                    
+                                  :type "class")
+                                  nil nil)) (reparse-symbol classsubparts) [12221 12483])
+                            ("public" label nil (reparse-symbol classsubparts) [12488 12495])
+                            ("print" function
+                               (:arguments 
+                                  ( ("o" variable
+                                       (:reference 1
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [12508 12524]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [12497 13716])
+                            ("remove" function
+                               (:arguments 
+                                  ( ("key" variable (:type ("K" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13729 13735])
+                                    ("value" variable
+                                       (:reference 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13736 13745]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [13718 13907])
+                            ("search" function
+                               (:arguments 
+                                  ( ("key" variable (:type ("K" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13920 13926])
+                                    ("value" variable
+                                       (:reference 1
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [13927 13936]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [13909 14117])
+                            ("insert" function
+                               (:arguments 
+                                  ( ("key" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("K" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [14130 14143])
+                                    ("value" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("T" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [14144 14159]))                                  
+                                :type "int")
+                                (reparse-symbol classsubparts) [14119 14510])
+                            ("simple_print" function
+                               (:arguments 
+                                  ( ("ss" variable
+                                       (:reference 1
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [14530 14547]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [14512 14933])
+                            ("inorder" function
+                               (:template 
+                                  ( ("f" type (:type "class") nil nil))                                  
+                                :type "void"
+                                :arguments 
+                                  ( ("functor" variable
+                                       (:reference 1
+                                        :type ("f" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [14966 14977]))                                  )
+                                (reparse-symbol classsubparts) [14935 15022])
+                            ("remove_random" function (:type ("K" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15024 15394])
+                            ("AVL_check" function (:type "bool") (reparse-symbol classsubparts) [15396 15452])
+                            ("pretty_print" function
+                               (:arguments 
+                                  ( ("out" variable
+                                       (:reference 1
+                                        :type ("std::ostream" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [15473 15491]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [15454 16302])
+                            ("private" label nil (reparse-symbol classsubparts) [16311 16319])
+                            ("leftChild" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [16336 16345]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [16321 16452])
+                            ("rightChild" function
+                               (:arguments 
+                                  ( ("root" variable (:type "int") (reparse-symbol arg-sub-list) [16471 16480]))                                  
+                                :type "bool")
+                                (reparse-symbol classsubparts) [16455 16589])
+                            ("writeKeyIn" function
+                               (:arguments 
+                                  ( ("grid" variable
+                                       (:pointer 1
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [16607 16625])
+                                    ("key" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16626 16642])
+                                    ("start" variable (:type ("std::size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [16643 16661]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [16591 16970])
+                            ("pretty_mid_helper" function
+                               (:arguments 
+                                  ( ("midpoint" variable
+                                       (:pointer 1
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [16995 17017])
+                                    ("indent" variable
+                                       (:reference 1
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [17017 17037]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [16972 17288])
+                            ("prettyPrintTreeHelper2" function
+                               (:arguments 
+                                  ( ("curr" variable (:type "int") (reparse-symbol arg-sub-list) [17318 17327])
+                                    ("indent" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17328 17347])
+                                    ("grid" variable
+                                       (:pointer 1
+                                        :type ("std::string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [17348 17366])
+                                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [17367 17376]))                                  
+                                :type "void")
+                                (reparse-symbol classsubparts) [17290 18513]))                          )
+                        (reparse-symbol namespacesubparts) [222 18529]))                  
+                :type "namespace")
+                nil [199 18532]))          
+      :file "AVL.hpp"
+      :pointmax 18553
+      :fsize 18552
+      :lastmodtime '(21628 33754 272204 591000)
+      :unmatched-syntax '((punctuation 12067 . 12068) (punctuation 12067 . 12068) (punctuation 586 . 587) (punctuation 586 . 587))
+      :lexical-table 
+        '(("AVL_H")
+          )
+)
+    (semanticdb-table "SEL.hpp"
+      :file "SEL.hpp"
+      :fsize 288
+      :lastmodtime '(21623 41224 305264 0))
+    (semanticdb-table "catch.hpp"
+      :file "catch.hpp"
+      :fsize 319984
+      :lastmodtime '(21544 35693 691509 0))
+    (semanticdb-table "random.hpp"
+      :file "random.hpp"
+      :fsize 171
+      :lastmodtime '(21622 34769 579703 0))
+    (semanticdb-table "SSLL.hpp"
+      :file "SSLL.hpp"
+      :fsize 13399
+      :lastmodtime '(21617 45560 272835 0))
+    (semanticdb-table "print.hpp"
+      :file "print.hpp"
+      :fsize 235
+      :lastmodtime '(21623 53455 849529 0)))
+  :file "!home!ultimanium!coding!Project 2!project_2!part4bonus!source!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

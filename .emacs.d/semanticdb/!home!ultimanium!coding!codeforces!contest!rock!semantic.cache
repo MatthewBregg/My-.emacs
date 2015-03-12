@@ -1,0 +1,78 @@
+;; Object rock/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "rock/"
+  :tables
+  (list
+    (semanticdb-table "perms1.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("algorithm" include (:system-flag t) nil [20 39])
+            ("vector" include (:system-flag t) nil [40 56])
+            ("fp" function
+               (:arguments 
+                  ( ("in" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("int" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [64 91]))                  
+                :type "int")
+                nil [57 361])
+            ("pair" type
+               (:members 
+                  ( ("p" variable (:type "int") (reparse-symbol classsubparts) [379 385])
+                    ("permi" variable (:type ("std::vector" type
+                         (:template-specifier 
+                            ( ("int" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [390 413])
+                    ("<" function
+                       (:operator-flag t
+                        :arguments 
+                          ( ("in" variable
+                               (:reference 1
+                                :type ("pair" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [433 442]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [418 617])
+                    ("pair" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("in" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("std::vector" type
+                                     (:template-specifier 
+                                        ( ("int" type nil nil nil))                                        
+                                      :type "class")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [627 654]))                          
+                        :type ("pair" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [622 676]))                  
+                :type "struct")
+                nil [362 680])
+            ("printer" function
+               (:arguments 
+                  ( ("heap" variable
+                       (:pointer 1
+                        :type ("std::vector" type
+                             (:template-specifier 
+                                ( ("pair" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [694 718]))                  
+                :type "void")
+                nil [681 979])
+            ("main" function (:type "int") nil [980 1552]))          
+      :file "perms1.cpp"
+      :pointmax 1553
+      :fsize 1552
+      :lastmodtime '(21718 22632 845684 125000)
+      :unmatched-syntax '((punctuation 676 . 677))))
+  :file "!home!ultimanium!coding!codeforces!contest!rock!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

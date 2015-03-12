@@ -1,0 +1,2565 @@
+;; Object libxml/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "libxml/"
+  :tables
+  (list
+    (semanticdb-table "tree.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__XML_TREE_H__" variable (:constant-flag t) nil [379 393])
+            ("stdio.h" include (:system-flag t) nil [395 413])
+            ("libxml/xmlversion.h" include (:system-flag t) nil [414 444])
+            ("libxml/xmlstring.h" include (:system-flag t) nil [445 474])
+            ("xmlElementTypeVal" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_ELEMENT_TYPE_UNDEFINED" variable
+                             (:constant-flag t
+                              :default-value (7552 7553)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7523 7553])
+                          ("XML_ELEMENT_TYPE_EMPTY" variable
+                             (:constant-flag t
+                              :default-value (7584 7585)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7559 7585])
+                          ("XML_ELEMENT_TYPE_ANY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7591 7612])
+                          ("XML_ELEMENT_TYPE_MIXED" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7617 7640])
+                          ("XML_ELEMENT_TYPE_ELEMENT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [7645 7671]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [7504 7690])
+            ("_xmlElementContent" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("type" variable (:type ("xmlElementContentType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6998 7029])
+                    ("ocur" variable (:type ("xmlElementContentOccur" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7067 7098])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7133 7165])
+                    ("c1" variable
+                       (:pointer 1
+                        :type ("_xmlElementContent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [7189 7219])
+                    ("c2" variable
+                       (:pointer 1
+                        :type ("_xmlElementContent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [7242 7272])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlElementContent" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [7296 7330])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7348 7382]))                  )
+                (reparse-symbol extern-c-contents) [6966 7408])
+            ("xmlElementContentPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlElementContent" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [6917 6965])
+            ("xmlElementContent" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlElementContent" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [6864 6916])
+            ("xmlElementContentOccur" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_ELEMENT_CONTENT_ONCE" variable
+                             (:constant-flag t
+                              :default-value (6627 6628)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6600 6628])
+                          ("XML_ELEMENT_CONTENT_OPT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6634 6658])
+                          ("XML_ELEMENT_CONTENT_MULT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6663 6688])
+                          ("XML_ELEMENT_CONTENT_PLUS" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6693 6719]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [6581 6743])
+            ("xmlElementContentType" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_ELEMENT_CONTENT_PCDATA" variable
+                             (:constant-flag t
+                              :default-value (6369 6370)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6340 6370])
+                          ("XML_ELEMENT_CONTENT_ELEMENT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6376 6404])
+                          ("XML_ELEMENT_CONTENT_SEQ" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6409 6433])
+                          ("XML_ELEMENT_CONTENT_OR" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [6438 6462]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [6321 6485])
+            ("_xmlAttribute" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [5259 5284])
+                    ("type" variable (:type ("xmlElementType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5320 5349])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5403 5432])
+                    ("children" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5458 5487])
+                    ("last" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5503 5532])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlDtd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5548 5577])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5595 5624])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5654 5683])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5717 5746])
+                    ("nexth" variable
+                       (:pointer 1
+                        :type ("_xmlAttribute" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [5788 5817])
+                    ("atype" variable (:type ("xmlAttributeType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5847 5876])
+                    ("def" variable (:type ("xmlAttributeDefault" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5906 5935])
+                    ("defaultValue" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5958 5987])
+                    ("tree" variable (:type ("xmlEnumerationPtr" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6019 6048])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6096 6125])
+                    ("elem" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6164 6193]))                  )
+                (reparse-symbol extern-c-contents) [5232 6232])
+            ("xmlAttributePtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlAttribute" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [5193 5231])
+            ("xmlAttribute" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlAttribute" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [5150 5192])
+            ("_xmlEnumeration" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("_xmlEnumeration" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4972 5004])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5024 5055]))                  )
+                (reparse-symbol extern-c-contents) [4943 5081])
+            ("xmlEnumerationPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlEnumeration" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [4900 4942])
+            ("xmlEnumeration" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlEnumeration" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [4853 4899])
+            ("xmlAttributeDefault" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_ATTRIBUTE_NONE" variable
+                             (:constant-flag t
+                              :default-value (4655 4656)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4634 4656])
+                          ("XML_ATTRIBUTE_REQUIRED" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4662 4685])
+                          ("XML_ATTRIBUTE_IMPLIED" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4690 4712])
+                          ("XML_ATTRIBUTE_FIXED" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4717 4738]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [4615 4759])
+            ("xmlAttributeType" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_ATTRIBUTE_CDATA" variable
+                             (:constant-flag t
+                              :default-value (4275 4276)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4253 4276])
+                          ("XML_ATTRIBUTE_ID" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4282 4299])
+                          ("XML_ATTRIBUTE_IDREF" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4304 4325])
+                          ("XML_ATTRIBUTE_IDREFS" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4330 4351])
+                          ("XML_ATTRIBUTE_ENTITY" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4356 4377])
+                          ("XML_ATTRIBUTE_ENTITIES" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4382 4405])
+                          ("XML_ATTRIBUTE_NMTOKEN" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4410 4432])
+                          ("XML_ATTRIBUTE_NMTOKENS" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4437 4460])
+                          ("XML_ATTRIBUTE_ENUMERATION" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4465 4491])
+                          ("XML_ATTRIBUTE_NOTATION" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [4496 4520]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [4234 4538])
+            ("_xmlNotation" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3948 3982])
+                    ("PublicID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4015 4053])
+                    ("SystemID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4090 4128]))                  )
+                (reparse-symbol extern-c-contents) [3922 4163])
+            ("xmlNotationPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlNotation" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [3885 3921])
+            ("xmlNotation" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlNotation" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [3844 3884])
+            ("xmlElementType" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_ELEMENT_NODE" variable
+                             (:constant-flag t
+                              :default-value (3176 3177)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3157 3177])
+                          ("XML_ATTRIBUTE_NODE" variable
+                             (:constant-flag t
+                              :default-value (3204 3205)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3183 3205])
+                          ("XML_TEXT_NODE" variable
+                             (:constant-flag t
+                              :default-value (3227 3228)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3211 3228])
+                          ("XML_CDATA_SECTION_NODE" variable
+                             (:constant-flag t
+                              :default-value (3258 3259)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3234 3259])
+                          ("XML_ENTITY_REF_NODE" variable
+                             (:constant-flag t
+                              :default-value (3286 3287)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3265 3287])
+                          ("XML_ENTITY_NODE" variable
+                             (:constant-flag t
+                              :default-value (3311 3312)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3293 3312])
+                          ("XML_PI_NODE" variable
+                             (:constant-flag t
+                              :default-value (3332 3333)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3318 3333])
+                          ("XML_COMMENT_NODE" variable
+                             (:constant-flag t
+                              :default-value (3358 3359)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3339 3359])
+                          ("XML_DOCUMENT_NODE" variable
+                             (:constant-flag t
+                              :default-value (3385 3386)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3365 3386])
+                          ("XML_DOCUMENT_TYPE_NODE" variable
+                             (:constant-flag t
+                              :default-value (3416 3418)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3392 3418])
+                          ("XML_DOCUMENT_FRAG_NODE" variable
+                             (:constant-flag t
+                              :default-value (3448 3450)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3424 3450])
+                          ("XML_NOTATION_NODE" variable
+                             (:constant-flag t
+                              :default-value (3476 3478)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3456 3478])
+                          ("XML_HTML_DOCUMENT_NODE" variable
+                             (:constant-flag t
+                              :default-value (3508 3510)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3484 3510])
+                          ("XML_DTD_NODE" variable
+                             (:constant-flag t
+                              :default-value (3531 3533)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3516 3533])
+                          ("XML_ELEMENT_DECL" variable
+                             (:constant-flag t
+                              :default-value (3558 3560)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3539 3560])
+                          ("XML_ATTRIBUTE_DECL" variable
+                             (:constant-flag t
+                              :default-value (3587 3589)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3566 3589])
+                          ("XML_ENTITY_DECL" variable
+                             (:constant-flag t
+                              :default-value (3613 3615)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3595 3615])
+                          ("XML_NAMESPACE_DECL" variable
+                             (:constant-flag t
+                              :default-value (3642 3644)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3621 3644])
+                          ("XML_XINCLUDE_START" variable
+                             (:constant-flag t
+                              :default-value (3671 3673)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3650 3673])
+                          ("XML_XINCLUDE_END" variable
+                             (:constant-flag t
+                              :default-value (3698 3700)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [3679 3700]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [3138 3783])
+            ("XML_XML_ID" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2811 2821])
+            ("XML_XML_NAMESPACE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [2642 2659])
+            ("_xmlBuffer" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("content" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2216 2233])
+                    ("use" variable (:type "unsigned int") (reparse-symbol classsubparts) [2269 2286])
+                    ("size" variable (:type "unsigned int") (reparse-symbol classsubparts) [2319 2337])
+                    ("alloc" variable (:type ("xmlBufferAllocationScheme" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2365 2397])
+                    ("contentIO" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2427 2446]))                  )
+                (reparse-symbol extern-c-contents) [2192 2496])
+            ("xmlBufferPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlBuffer" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [2159 2191])
+            ("xmlBuffer" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlBuffer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [2122 2158])
+            ("xmlBufferAllocationScheme" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_BUFFER_ALLOC_DOUBLEIT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1788 1814])
+                          ("XML_BUFFER_ALLOC_EXACT" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1859 1882])
+                          ("XML_BUFFER_ALLOC_IMMUTABLE" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1923 1950])
+                          ("XML_BUFFER_ALLOC_IO" variable
+                             (:constant-flag t
+                              :type "int")
+                              (reparse-symbol enumsubparts) [1978 2045]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [1769 2072])
+            ("BASE_BUFFER_SIZE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [1321 1337])
+            ("xmlEntityPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlEntity" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [1218 1250])
+            ("xmlEntity" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlEntity" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [1181 1217])
+            ("xmlSAXHandlerPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlSAXHandler" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [1122 1162])
+            ("xmlSAXHandler" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlSAXHandler" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [1077 1121])
+            ("xmlSAXLocatorPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlSAXLocator" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [1035 1075])
+            ("xmlSAXLocator" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlSAXLocator" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [990 1034])
+            ("xmlParserCtxtPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlParserCtxt" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [948 988])
+            ("xmlParserCtxt" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlParserCtxt" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [903 947])
+            ("xmlParserInputPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlParserInput" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [859 901])
+            ("xmlParserInput" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlParserInput" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [812 858])
+            ("xmlOutputBufferPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlOutputBuffer" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [751 795])
+            ("xmlOutputBuffer" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlOutputBuffer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [702 750])
+            ("xmlParserInputBufferPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlParserInputBuffer" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [646 700])
+            ("xmlParserInputBuffer" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlParserInputBuffer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [587 645])
+            ("libxml/xmlregexp.h" include (:system-flag t) nil [7720 7749])
+            ("xmlDOMWrapCloneNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ctxt" variable (:type ("xmlDOMWrapCtxtPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35741 35764])
+                    ("sourceDoc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35771 35791])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35798 35814])
+                    ("clonedNode" variable
+                       (:pointer 1
+                        :type ("xmlNodePtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [35821 35844])
+                    ("destDoc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35851 35869])
+                    ("destParent" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35876 35898])
+                    ("deep" variable (:type "int") (reparse-symbol arg-sub-list) [35905 35914])
+                    ("options" variable (:type "int") (reparse-symbol arg-sub-list) [35921 35933]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35706 35934])
+            ("xmlDOMWrapRemoveNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ctxt" variable (:type ("xmlDOMWrapCtxtPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35604 35627])
+                    ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35634 35648])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35655 35671])
+                    ("options" variable (:type "int") (reparse-symbol arg-sub-list) [35678 35690]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35569 35691])
+            ("xmlDOMWrapAdoptNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ctxt" variable (:type ("xmlDOMWrapCtxtPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35401 35424])
+                    ("sourceDoc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35431 35451])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35458 35474])
+                    ("destDoc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35481 35499])
+                    ("destParent" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35512 35534])
+                    ("options" variable (:type "int") (reparse-symbol arg-sub-list) [35541 35553]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35366 35554])
+            ("xmlDOMWrapReconcileNamespaces" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ctxt" variable (:type ("xmlDOMWrapCtxtPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35285 35308])
+                    ("elem" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35315 35331])
+                    ("options" variable (:type "int") (reparse-symbol arg-sub-list) [35338 35350]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35242 35351])
+            ("xmlDOMWrapFreeCtxt" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ctxt" variable (:type ("xmlDOMWrapCtxtPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [35203 35226]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35173 35227])
+            ("xmlDOMWrapNewCtxt" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [35151 35156]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35122 35157])
+            ("xmlSetCompressMode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [35044 35053]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [35012 35054])
+            ("xmlGetCompressMode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [34990 34995]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [34958 34996])
+            ("xmlSetDocCompressMode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34912 34926])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [34933 34942]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [34877 34943])
+            ("xmlGetDocCompressMode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [34846 34860]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [34811 34861])
+            ("xmlIsXHTML" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("systemID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34716 34740])
+                    ("publicID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [34747 34771]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [34691 34772])
+            ("xmlBufferWriteQuotedString" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32324 32341])
+                    ("string" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32348 32370]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [32285 32371])
+            ("xmlBufferWriteChar" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32225 32242])
+                    ("string" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [32249 32268]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [32193 32269])
+            ("xmlBufferWriteCHAR" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [32130 32147])
+                    ("string" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [32154 32176]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [32098 32177])
+            ("xmlRemoveProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31696 31711]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [31668 31712])
+            ("xmlNodeGetBase" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31424 31438])
+                    ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31445 31460]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [31396 31461])
+            ("xmlNodeGetSpacePreserve" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31127 31142]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [31090 31143])
+            ("xmlNodeGetLang" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [31059 31074]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [31031 31075])
+            ("xmlNodeBufGetContent" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buffer" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30967 30987])
+                    ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30994 31009]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30935 31010])
+            ("xmlNodeGetContent" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30904 30919]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30874 30920])
+            ("xmlNodeAddContentLen" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30792 30807])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30814 30837])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [30844 30852]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30758 30853])
+            ("xmlNodeAddContent" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30696 30711])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30718 30741]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30665 30742])
+            ("xmlNodeSetContent" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30432 30447])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30454 30477]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30401 30478])
+            ("xmlNodeListGetString" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30156 30170])
+                    ("list" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30177 30193])
+                    ("inLine" variable (:type "int") (reparse-symbol arg-sub-list) [30200 30211]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30123 30212])
+            ("xmlStringLenGetNodeList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [30044 30058])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [30065 30086])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [30093 30101]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [30008 30102])
+            ("xmlStringGetNodeList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29943 29957])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29964 29985]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [29910 29986])
+            ("xmlGetNsProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29812 29828])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29835 29855])
+                    ("nameSpace" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29862 29887]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [29786 29888])
+            ("xmlHasNsProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29689 29705])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29712 29732])
+                    ("nameSpace" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29739 29764]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [29663 29765])
+            ("xmlHasProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29597 29613])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29620 29640]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [29573 29641])
+            ("xmlGetProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29507 29523])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29530 29550]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [29483 29551])
+            ("xmlGetNoNsProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [29418 29434])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [29441 29461]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [29390 29462])
+            ("xmlCopyNamespaceList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28784 28797]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [28751 28798])
+            ("xmlCopyNamespace" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28717 28730]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [28688 28731])
+            ("xmlSetNs" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28632 28648])
+                    ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28655 28667]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [28609 28668])
+            ("xmlSearchNsByHref" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28265 28279])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28286 28302])
+                    ("href" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28309 28329]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [28235 28330])
+            ("xmlSearchNs" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28145 28159])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28166 28182])
+                    ("nameSpace" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [28189 28214]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [28120 28215])
+            ("xmlSetListDoc" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("list" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28040 28056])
+                    ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [28063 28077]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [28012 28078])
+            ("xmlSetTreeDoc" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("tree" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27958 27974])
+                    ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27981 27995]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27930 27996])
+            ("xmlFreeNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27898 27913]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27872 27914])
+            ("xmlFreeNodeList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27840 27855]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27810 27856])
+            ("xmlTextConcat" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27732 27748])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27755 27778])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [27785 27793]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27704 27794])
+            ("xmlTextMerge" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("first" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27646 27663])
+                    ("second" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27670 27688]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27620 27689])
+            ("xmlUnlinkNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27582 27597]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27554 27598])
+            ("xmlAddNextSibling" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27499 27514])
+                    ("elem" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27521 27537]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27469 27538])
+            ("xmlAddSibling" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27408 27423])
+                    ("elem" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [27430 27446]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [27381 27447])
+            ("xmlAddChildList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("parent" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26808 26826])
+                    ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26833 26848]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [26779 26849])
+            ("xmlAddChild" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("parent" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26716 26734])
+                    ("cur" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26741 26756]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [26691 26757])
+            ("xmlIsBlankNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26233 26249]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [26204 26250])
+            ("xmlNodeIsText" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26172 26188]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [26144 26189])
+            ("xmlGetLastChild" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("parent" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26110 26128]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [26081 26129])
+            ("xmlDocGetRootElement" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [26044 26058]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [26011 26059])
+            ("xmlGetLineNo" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25765 25781]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [25738 25782])
+            ("xmlCopyNodeList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable
+                       (:constant-flag t
+                        :type ("xmlNodePtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25261 25283]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [25232 25284])
+            ("xmlDocCopyNodeList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25166 25180])
+                    ("node" variable
+                       (:constant-flag t
+                        :type ("xmlNodePtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25187 25209]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [25135 25210])
+            ("xmlDocCopyNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable
+                       (:constant-flag t
+                        :type ("xmlNodePtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [25048 25070])
+                    ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [25077 25091])
+                    ("recursive" variable (:type "int") (reparse-symbol arg-sub-list) [25098 25112]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [25020 25113])
+            ("xmlCopyNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable
+                       (:constant-flag t
+                        :type ("xmlNodePtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24954 24976])
+                    ("recursive" variable (:type "int") (reparse-symbol arg-sub-list) [24983 24997]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24929 24998])
+            ("xmlNewReference" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24865 24879])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24886 24906]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24836 24907])
+            ("xmlNewCharRef" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24772 24786])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24793 24813]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24745 24814])
+            ("xmlNewCDataBlock" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24663 24677])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24684 24707])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [24714 24722]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24634 24723])
+            ("xmlNewComment" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24588 24611]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24561 24612])
+            ("xmlNewDocComment" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24494 24508])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24515 24538]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24465 24539])
+            ("xmlNewTextLen" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24404 24427])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [24434 24442]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24377 24443])
+            ("xmlNewDocTextLen" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24295 24309])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24316 24339])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [24346 24354]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24266 24355])
+            ("xmlNewPI" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24193 24213])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24220 24243]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24171 24244])
+            ("xmlNewDocPI" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [24077 24091])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24098 24118])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24125 24148]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [24052 24149])
+            ("xmlNewText" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [24006 24029]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23982 24030])
+            ("xmlNewDocText" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23915 23929])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23936 23959]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23888 23960])
+            ("xmlNewNodeEatName" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23615 23627])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23634 23648]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23585 23649])
+            ("xmlNewNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23523 23535])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23542 23562]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23499 23563])
+            ("xmlNewDocNodeEatName" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23392 23406])
+                    ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23413 23425])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23432 23446])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23453 23476]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23359 23477])
+            ("xmlNewDocNode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23246 23260])
+                    ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [23267 23279])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23286 23306])
+                    ("content" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [23313 23336]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [23219 23337])
+            ("xmlCopyPropList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("target" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22780 22798])
+                    ("cur" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22805 22820]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22751 22821])
+            ("xmlCopyProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("target" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22688 22706])
+                    ("cur" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22713 22728]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22663 22729])
+            ("xmlFreeProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22625 22640]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22599 22641])
+            ("xmlFreePropList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22567 22582]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22537 22583])
+            ("xmlNewNsPropEatName" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22436 22452])
+                    ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22459 22471])
+                    ("name" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22478 22492])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22499 22520]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22404 22521])
+            ("xmlNewNsProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22291 22307])
+                    ("ns" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [22314 22326])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22333 22353])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [22360 22381]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [22265 22382])
+            ("xmlNewDocProp" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21942 21956])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21963 21983])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21990 22011]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21915 22012])
+            ("xmlFreeDoc" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21878 21892]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21853 21893])
+            ("xmlNewDoc" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("version" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21813 21836]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21789 21837])
+            ("xmlFreeNsList" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21754 21767]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21726 21768])
+            ("xmlFreeNs" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlNsPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21696 21709]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21672 21710])
+            ("xmlNewNs" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21583 21599])
+                    ("href" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21606 21626])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21633 21655]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21561 21656])
+            ("xmlFreeDtd" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("cur" variable (:type ("xmlDtdPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21343 21357]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21318 21358])
+            ("xmlGetIntSubset" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21287 21301]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21258 21302])
+            ("xmlNewDtd" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [21131 21145])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21152 21172])
+                    ("ExternalID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21179 21205])
+                    ("SystemID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21212 21236]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [21108 21237])
+            ("xmlCreateIntSubset" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("doc" variable (:type ("xmlDocPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20981 20995])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21002 21022])
+                    ("ExternalID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21029 21055])
+                    ("SystemID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [21062 21086]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20950 21087])
+            ("xmlBufferLength" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable
+                       (:constant-flag t
+                        :type ("xmlBufferPtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20861 20884]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20831 20885])
+            ("xmlBufferSetAllocationScheme" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20758 20775])
+                    ("scheme" variable (:type ("xmlBufferAllocationScheme" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20782 20815]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20717 20816])
+            ("xmlBufferContent" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable
+                       (:constant-flag t
+                        :type ("xmlBufferPtr" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20677 20700]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20648 20701])
+            ("xmlBufferEmpty" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20604 20621]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20575 20622])
+            ("xmlBufferGrow" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20517 20534])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [20541 20558]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20489 20559])
+            ("xmlBufferShrink" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20432 20449])
+                    ("len" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [20456 20473]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20402 20474])
+            ("xmlBufferCCat" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20346 20363])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20370 20386]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20319 20387])
+            ("xmlBufferCat" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20260 20277])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20284 20303]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20233 20304])
+            ("xmlBufferAddHead" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20159 20176])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20183 20202])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [20209 20217]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20129 20218])
+            ("xmlBufferAdd" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [20055 20072])
+                    ("str" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [20079 20098])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [20105 20113]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [20028 20114])
+            ("xmlBufferDump" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("file" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19977 19988])
+                    ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19995 20012]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19949 20013])
+            ("xmlBufferFree" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19916 19933]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19888 19934])
+            ("xmlBufferResize" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("buf" variable (:type ("xmlBufferPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19829 19846])
+                    ("size" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [19853 19871]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19799 19872])
+            ("xmlBufferCreateStatic" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("mem" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [19754 19764])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19771 19783]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19720 19784])
+            ("xmlBufferCreateSize" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19683 19695]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19651 19696])
+            ("xmlBufferCreate" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19621 19626]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19592 19627])
+            ("xmlGetBufferAllocationScheme" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [19561 19566]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19520 19567])
+            ("xmlSetBufferAllocationScheme" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("scheme" variable (:type ("xmlBufferAllocationScheme" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [19449 19482]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19408 19483])
+            ("xmlSplitQName3" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19325 19345])
+                    ("len" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [19352 19361]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19297 19362])
+            ("xmlSplitQName2" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19225 19245])
+                    ("prefix" variable
+                       (:pointer 2
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19252 19269]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19197 19270])
+            ("xmlBuildQName" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("XMLCALL" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ncname" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19086 19108])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19115 19137])
+                    ("memory" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [19144 19160])
+                    ("len" variable (:type "int") (reparse-symbol arg-sub-list) [19167 19175]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [19059 19176])
+            ("xmlRootNode" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [18238 18249])
+            ("xmlChildrenNode" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [18072 18087])
+            ("_xmlDOMWrapCtxt" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [17506 17522])
+                    ("type" variable (:type "int") (reparse-symbol classsubparts) [17636 17645])
+                    ("namespaceMap" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [17722 17742])
+                    ("getNsForNodeFunc" variable (:type ("xmlDOMWrapAcquireNsFunction" type (:type "class") nil nil)) (reparse-symbol classsubparts) [17882 17927]))                  )
+                (reparse-symbol extern-c-contents) [17477 17930])
+            ("xmlDOMWrapAcquireNsFunction" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type ("xmlNsPtr" type (:type "class") nil nil)
+                :arguments 
+                  ( ("ctxt" variable (:type ("xmlDOMWrapCtxtPtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17296 17319])
+                    ("node" variable (:type ("xmlNodePtr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17327 17343])
+                    ("nsName" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17351 17373])
+                    ("nsPrefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [17381 17405]))                  
+                :function-pointer t
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [17255 17406])
+            ("xmlDOMWrapCtxtPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlDOMWrapCtxt" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [16862 16904])
+            ("xmlDOMWrapCtxt" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlDOMWrapCtxt" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [16815 16861])
+            ("_xmlDoc" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [14949 14974])
+                    ("type" variable (:type ("xmlElementType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [15002 15023])
+                    ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [15076 15097])
+                    ("children" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15142 15168])
+                    ("last" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15197 15219])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15246 15270])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15300 15322])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15352 15374])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15408 15429])
+                    ("compression" variable (:type "int") (reparse-symbol classsubparts) [15494 15522])
+                    ("standalone" variable (:type "int") (reparse-symbol classsubparts) [15558 15585])
+                    ("intSubset" variable
+                       (:pointer 1
+                        :type ("_xmlDtd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15829 15856])
+                    ("extSubset" variable
+                       (:pointer 1
+                        :type ("_xmlDtd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15896 15923])
+                    ("oldNs" variable
+                       (:pointer 1
+                        :type ("_xmlNs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [15963 15986])
+                    ("version" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [16027 16051])
+                    ("encoding" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [16085 16110])
+                    ("ids" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [16157 16177])
+                    ("refs" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [16231 16252])
+                    ("URL" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [16309 16329])
+                    ("charset" variable (:type "int") (reparse-symbol classsubparts) [16366 16390])
+                    ("dict" variable
+                       (:pointer 1
+                        :type ("_xmlDict" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [16473 16495])
+                    ("psvi" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [16547 16568])
+                    ("parseFlags" variable (:type "int") (reparse-symbol classsubparts) [16606 16633])
+                    ("properties" variable (:type "int") (reparse-symbol classsubparts) [16701 16728]))                  )
+                (reparse-symbol extern-c-contents) [14928 16812])
+            ("xmlDocPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlDoc" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [14901 14927])
+            ("xmlDoc" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlDoc" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [14870 14900])
+            ("xmlDocProperties" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("XML_DOC_WELLFORMED" variable
+                             (:constant-flag t
+                              :default-value (14235 14236)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14213 14236])
+                          ("XML_DOC_NSVALID" variable
+                             (:constant-flag t
+                              :default-value (14298 14299)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14279 14299])
+                          ("XML_DOC_OLD10" variable
+                             (:constant-flag t
+                              :default-value (14359 14360)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14342 14360])
+                          ("XML_DOC_DTDVALID" variable
+                             (:constant-flag t
+                              :default-value (14426 14427)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14406 14427])
+                          ("XML_DOC_XINCLUDE" variable
+                             (:constant-flag t
+                              :default-value (14492 14493)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14472 14493])
+                          ("XML_DOC_USERBUILT" variable
+                             (:constant-flag t
+                              :default-value (14560 14561)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14539 14561])
+                          ("XML_DOC_INTERNAL" variable
+                             (:constant-flag t
+                              :default-value (14703 14704)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14683 14704])
+                          ("XML_DOC_HTML" variable
+                             (:constant-flag t
+                              :default-value (14765 14766)
+                              :type "int")
+                              (reparse-symbol enumsubparts) [14749 14766]))                        
+                      :type "enum")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [14194 14826])
+            ("XML_GET_LINE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [13998 14010])
+            ("XML_GET_CONTENT" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [13821 13836])
+            ("_xmlNode" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [12771 12796])
+                    ("type" variable (:type ("xmlElementType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12824 12846])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12887 12909])
+                    ("children" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12961 12987])
+                    ("last" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13018 13040])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13067 13091])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13121 13143])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13173 13195])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13229 13250])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("xmlNs" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [13315 13335])
+                    ("content" variable
+                       (:pointer 1
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [13389 13414])
+                    ("properties" variable
+                       (:pointer 1
+                        :type ("_xmlAttr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [13439 13467])
+                    ("nsDef" variable
+                       (:pointer 1
+                        :type ("xmlNs" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [13493 13516])
+                    ("psvi" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [13566 13588])
+                    ("line" variable (:type "unsigned short") (reparse-symbol classsubparts) [13626 13648])
+                    ("extra" variable (:type "unsigned short") (reparse-symbol classsubparts) [13671 13694]))                  )
+                (reparse-symbol extern-c-contents) [12749 13729])
+            ("xmlNodePtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlNode" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [12720 12748])
+            ("xmlNode" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlNode" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [12687 12719])
+            ("_xmlRef" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("_xmlRef" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12336 12360])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12380 12405])
+                    ("attr" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12429 12452])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12488 12511])
+                    ("lineno" variable (:type "int") (reparse-symbol classsubparts) [12561 12586]))                  )
+                (reparse-symbol extern-c-contents) [12315 12636])
+            ("xmlRefPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlRef" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [12288 12314])
+            ("xmlRef" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlRef" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [12257 12287])
+            ("_xmlID" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("_xmlID" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11849 11872])
+                    ("value" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11891 11915])
+                    ("attr" variable (:type ("xmlAttrPtr" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11938 11961])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11997 12020])
+                    ("lineno" variable (:type "int") (reparse-symbol classsubparts) [12070 12095])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [12147 12169]))                  )
+                (reparse-symbol extern-c-contents) [11829 12206])
+            ("xmlIDPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlID" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [11804 11828])
+            ("xmlID" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlID" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [11775 11803])
+            ("_xmlAttr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [11015 11040])
+                    ("type" variable (:type ("xmlElementType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11068 11090])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11143 11165])
+                    ("children" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11206 11232])
+                    ("last" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11269 11291])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11307 11331])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_xmlAttr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11361 11383])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("_xmlAttr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11413 11435])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [11469 11490])
+                    ("ns" variable
+                       (:pointer 1
+                        :type ("xmlNs" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11525 11545])
+                    ("atype" variable (:type ("xmlAttributeType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [11599 11622])
+                    ("psvi" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [11670 11692]))                  )
+                (reparse-symbol extern-c-contents) [10993 11728])
+            ("xmlAttrPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlAttr" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [10964 10992])
+            ("xmlAttr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlAttr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [10931 10963])
+            ("_xmlDtd" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [9850 9875])
+                    ("type" variable (:type ("xmlElementType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9903 9924])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9972 9992])
+                    ("children" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [10019 10045])
+                    ("last" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [10087 10109])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [10136 10160])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [10190 10212])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [10242 10264])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [10298 10319])
+                    ("notations" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [10384 10409])
+                    ("elements" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [10454 10478])
+                    ("attributes" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [10523 10549])
+                    ("entities" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [10594 10618])
+                    ("ExternalID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10663 10689])
+                    ("SystemID" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10735 10759])
+                    ("pentities" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [10801 10826]))                  )
+                (reparse-symbol extern-c-contents) [9829 10874])
+            ("xmlDtdPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlDtd" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [9802 9828])
+            ("xmlDtd" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlDtd" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [9771 9801])
+            ("_xmlNs" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("next" variable
+                       (:pointer 1
+                        :type ("_xmlNs" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [9300 9321])
+                    ("type" variable (:type ("xmlNsType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [9360 9380])
+                    ("href" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9407 9427])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9460 9482])
+                    ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [9518 9543])
+                    ("context" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [9573 9597]))                  )
+                (reparse-symbol extern-c-contents) [9280 9626])
+            ("xmlNsPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlNs" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [9255 9279])
+            ("xmlNs" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlNs" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [9226 9254])
+            ("xmlNsType" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("xmlElementType" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [8987 9020])
+            ("XML_LOCAL_NAMESPACE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [8948 8967])
+            ("_xmlElement" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "struct"
+                :members 
+                  ( ("_private" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [7958 7983])
+                    ("type" variable (:type ("xmlElementType" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8019 8048])
+                    ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8100 8129])
+                    ("children" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8153 8182])
+                    ("last" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8198 8227])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("_xmlDtd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8243 8272])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8290 8319])
+                    ("prev" variable
+                       (:pointer 1
+                        :type ("_xmlNode" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8349 8378])
+                    ("doc" variable
+                       (:pointer 1
+                        :type ("_xmlDoc" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [8412 8441])
+                    ("etype" variable (:type ("xmlElementTypeVal" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8483 8512])
+                    ("content" variable (:type ("xmlElementContentPtr" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8532 8561])
+                    ("attributes" variable (:type ("xmlAttributePtr" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8600 8629])
+                    ("prefix" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("xmlChar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8672 8701])
+                    ("contModel" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol classsubparts) [8837 8859]))                  )
+                (reparse-symbol extern-c-contents) [7933 8869])
+            ("xmlElementPtr" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :pointer 1
+                :typedef ("xmlElement" type (:type "class") nil nil))
+                (reparse-symbol extern-c-contents) [7898 7932])
+            ("xmlElement" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("_xmlElement" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [7859 7897])
+            ("libxml/xmlmemory.h" include (:system-flag t) nil [36562 36591]))          
+      :file "tree.h"
+      :pointmax 36629
+      :fsize 36628
+      :lastmodtime '(19387 49212 0 0)
+      :unmatched-syntax '((INT 35702 . 35705) (symbol 35692 . 35701) (INT 35565 . 35568) (symbol 35555 . 35564) (INT 35362 . 35365) (symbol 35352 . 35361) (INT 35238 . 35241) (symbol 35228 . 35237) (VOID 35168 . 35172) (symbol 35158 . 35167) (symbol 35104 . 35121) (symbol 35094 . 35103) (VOID 35007 . 35011) (symbol 34997 . 35006) (INT 34954 . 34957) (symbol 34944 . 34953) (VOID 34872 . 34876) (symbol 34862 . 34871) (INT 34807 . 34810) (symbol 34797 . 34806) (INT 34687 . 34690) (symbol 34677 . 34686) (VOID 32280 . 32284) (symbol 32270 . 32279) (VOID 32188 . 32192) (symbol 32178 . 32187) (VOID 32093 . 32097) (symbol 32083 . 32092) (INT 31664 . 31667) (symbol 31654 . 31663) (punctuation 31394 . 31395) (symbol 31386 . 31393) (symbol 31376 . 31385) (INT 31086 . 31089) (symbol 31076 . 31085) (punctuation 31029 . 31030) (symbol 31021 . 31028) (symbol 31011 . 31020) (INT 30931 . 30934) (symbol 30921 . 30930) (punctuation 30872 . 30873) (symbol 30864 . 30871) (symbol 30854 . 30863) (VOID 30753 . 30757) (symbol 30743 . 30752) (VOID 30660 . 30664) (symbol 30650 . 30659) (VOID 30396 . 30400) (symbol 30386 . 30395) (punctuation 30121 . 30122) (symbol 30113 . 30120) (symbol 30103 . 30112) (symbol 29997 . 30007) (symbol 29987 . 29996) (symbol 29899 . 29909) (symbol 29889 . 29898) (punctuation 29784 . 29785) (symbol 29776 . 29783) (symbol 29766 . 29775) (symbol 29652 . 29662) (symbol 29642 . 29651) (symbol 29562 . 29572) (symbol 29552 . 29561) (punctuation 29481 . 29482) (symbol 29473 . 29480) (symbol 29463 . 29472) (punctuation 29388 . 29389) (symbol 29380 . 29387) (symbol 29370 . 29379) (symbol 28742 . 28750) (symbol 28732 . 28741) (symbol 28679 . 28687) (symbol 28669 . 28678) (VOID 28604 . 28608) (symbol 28594 . 28603) (symbol 28226 . 28234) (symbol 28216 . 28225) (symbol 28111 . 28119) (symbol 28101 . 28110) (VOID 28007 . 28011) (symbol 27997 . 28006) (VOID 27925 . 27929) (symbol 27915 . 27924) (VOID 27867 . 27871) (symbol 27857 . 27866) (VOID 27805 . 27809) (symbol 27795 . 27804) (INT 27700 . 27703) (symbol 27690 . 27699) (symbol 27609 . 27619) (symbol 27599 . 27608) (VOID 27549 . 27553) (symbol 27539 . 27548) (symbol 27458 . 27468) (symbol 27448 . 27457) (symbol 27370 . 27380) (symbol 27360 . 27369) (symbol 26768 . 26778) (symbol 26758 . 26767) (symbol 26680 . 26690) (symbol 26670 . 26679) (INT 26200 . 26203) (symbol 26190 . 26199) (INT 26140 . 26143) (symbol 26130 . 26139) (symbol 26070 . 26080) (symbol 26060 . 26069) (symbol 26000 . 26010) (symbol 25990 . 25999) (LONG 25733 . 25737) (symbol 25723 . 25732) (symbol 25221 . 25231) (symbol 25211 . 25220) (symbol 25124 . 25134) (symbol 25114 . 25123) (symbol 25009 . 25019) (symbol 24999 . 25008) (symbol 24918 . 24928) (symbol 24908 . 24917) (symbol 24825 . 24835) (symbol 24815 . 24824) (symbol 24734 . 24744) (symbol 24724 . 24733) (symbol 24623 . 24633) (symbol 24613 . 24622) (symbol 24550 . 24560) (symbol 24540 . 24549) (symbol 24454 . 24464) (symbol 24444 . 24453) (symbol 24366 . 24376) (symbol 24356 . 24365) (symbol 24255 . 24265) (symbol 24245 . 24254) (symbol 24160 . 24170) (symbol 24150 . 24159) (symbol 24041 . 24051) (symbol 24031 . 24040) (symbol 23971 . 23981) (symbol 23961 . 23970) (symbol 23877 . 23887) (symbol 23867 . 23876) (symbol 23574 . 23584) (symbol 23564 . 23573) (symbol 23488 . 23498) (symbol 23478 . 23487) (symbol 23348 . 23358) (symbol 23338 . 23347) (symbol 23208 . 23218) (symbol 23198 . 23207) (symbol 22740 . 22750) (symbol 22730 . 22739) (symbol 22652 . 22662) (symbol 22642 . 22651) (VOID 22594 . 22598) (symbol 22584 . 22593) (VOID 22532 . 22536) (symbol 22522 . 22531) (symbol 22393 . 22403) (symbol 22383 . 22392) (symbol 22254 . 22264) (symbol 22244 . 22253) (symbol 21904 . 21914) (symbol 21894 . 21903) (VOID 21848 . 21852) (symbol 21838 . 21847) (symbol 21779 . 21788) (symbol 21769 . 21778) (VOID 21721 . 21725) (symbol 21711 . 21720) (VOID 21667 . 21671) (symbol 21657 . 21666) (symbol 21552 . 21560) (symbol 21542 . 21551) (VOID 21313 . 21317) (symbol 21303 . 21312) (symbol 21248 . 21257) (symbol 21238 . 21247) (symbol 21098 . 21107) (symbol 21088 . 21097) (symbol 20940 . 20949) (symbol 20930 . 20939) (INT 20827 . 20830) (symbol 20817 . 20826) (VOID 20712 . 20716) (symbol 20702 . 20711) (punctuation 20646 . 20647) (symbol 20639 . 20646) (CONST 20633 . 20638) (symbol 20623 . 20632) (VOID 20570 . 20574) (symbol 20560 . 20569) (INT 20485 . 20488) (symbol 20475 . 20484) (INT 20398 . 20401) (symbol 20388 . 20397) (INT 20315 . 20318) (symbol 20305 . 20314) (INT 20229 . 20232) (symbol 20219 . 20228) (INT 20125 . 20128) (symbol 20115 . 20124) (INT 20024 . 20027) (symbol 20014 . 20023) (INT 19945 . 19948) (symbol 19935 . 19944) (VOID 19883 . 19887) (symbol 19873 . 19882) (INT 19795 . 19798) (symbol 19785 . 19794) (symbol 19707 . 19719) (symbol 19697 . 19706) (symbol 19638 . 19650) (symbol 19628 . 19637) (symbol 19579 . 19591) (symbol 19569 . 19578) (symbol 19494 . 19519) (symbol 19484 . 19493) (VOID 19403 . 19407) (symbol 19393 . 19402) (punctuation 19295 . 19296) (symbol 19287 . 19294) (CONST 19281 . 19286) (symbol 19271 . 19280) (punctuation 19195 . 19196) (symbol 19187 . 19194) (symbol 19177 . 19186) (punctuation 19057 . 19058) (symbol 19049 . 19056) (symbol 19039 . 19048) (TYPEDEF 17247 . 17254) (number 14768 . 14769) (punctuation 14767 . 14768) (punctuation 14766 . 14767) (number 14706 . 14707) (punctuation 14705 . 14706) (punctuation 14704 . 14705) (number 14563 . 14564) (punctuation 14562 . 14563) (punctuation 14561 . 14562) (number 14495 . 14496) (punctuation 14494 . 14495) (punctuation 14493 . 14494) (number 14429 . 14430) (punctuation 14428 . 14429) (punctuation 14427 . 14428) (number 14362 . 14363) (punctuation 14361 . 14362) (punctuation 14360 . 14361) (number 14301 . 14302) (punctuation 14300 . 14301) (punctuation 14299 . 14300) (number 14238 . 14239) (punctuation 14237 . 14238) (punctuation 14236 . 14237))
+      :lexical-table 
+        '(("BASE_BUFFER_SIZE" . ((number "4096" 1338 . 1342)))
+          ("XML_XML_NAMESPACE" . ((semantic-list "(const xmlChar *)" 2666 . 2683) (string "\"http://www.w3.org/XML/1998/namespace\"" 2684 . 2722)))
+          ("__XML_TREE_H__")
+          ("XML_XML_ID" . ((semantic-list "(const xmlChar *)" 2822 . 2839) (string "\"xml:id\"" 2840 . 2848)))
+          ("XML_LOCAL_NAMESPACE" . ((symbol "XML_NAMESPACE_DECL" 8968 . 8986)))
+          ("XML_GET_CONTENT" (spp-arg-list ("n") 13836 . 13839) . ((semantic-list "((n)->type == XML_ELEMENT_NODE ? NULL : (n)->content)" 13850 . 13903)))
+          ("xmlChildrenNode" . ((symbol "children" 18088 . 18096)))
+          ("xmlRootNode" . ((symbol "children" 18250 . 18258)))
+          ("XML_GET_LINE" (spp-arg-list ("n") 14010 . 14013) . ((semantic-list "(xmlGetLineNo(n))" 14025 . 14042)))
+          )
+))
+  :file "!home!ultimanium!.PlayOnLinux!wineprefix!Steam!drive_c!Program Files!Mono-2.10.9!include!libxml2!libxml!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,851 @@
+;; Object timeline/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "timeline/"
+  :tables
+  (list
+    (semanticdb-table "tl_mpv_edl.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [747 766])
+            ("stdbool.h" include (:system-flag t) nil [767 787])
+            ("inttypes.h" include (:system-flag t) nil [788 809])
+            ("math.h" include (:system-flag t) nil [810 827])
+            ("talloc.h" include nil nil [829 848])
+            ("player/core.h" include nil nil [850 874])
+            ("common/msg.h" include nil nil [875 898])
+            ("demux/demux.h" include nil nil [899 923])
+            ("options/path.h" include nil nil [924 949])
+            ("misc/bstr.h" include nil nil [950 972])
+            ("common/common.h" include nil nil [973 999])
+            ("stream/stream.h" include nil nil [1000 1026])
+            ("tl_part" type
+               (:members 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1049 1064])
+                    ("offset" variable (:type "double") (reparse-symbol classsubparts) [1108 1122])
+                    ("offset_set" variable (:type "bool") (reparse-symbol classsubparts) [1171 1187])
+                    ("chapter_ts" variable (:type "bool") (reparse-symbol classsubparts) [1192 1208])
+                    ("length" variable (:type "double") (reparse-symbol classsubparts) [1213 1227]))                  
+                :type "struct")
+                nil [1028 1290])
+            ("tl_parts" type
+               (:members 
+                  ( ("parts" variable
+                       (:pointer 1
+                        :type ("tl_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1314 1336])
+                    ("num_parts" variable (:type "int") (reparse-symbol classsubparts) [1341 1355]))                  
+                :type "struct")
+                nil [1292 1358])
+            ("parse_time" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1495 1504])
+                    ("out_time" variable
+                       (:pointer 1
+                        :type "double")
+                        (reparse-symbol arg-sub-list) [1505 1522]))                  
+                :type "bool")
+                nil [1472 1690])
+            ("parse_edl" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("str" variable (:type ("bstr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1998 2007]))                  
+                :type ("tl_parts" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1964 4272])
+            ("open_file" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4307 4322])
+                    ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4323 4347]))                  
+                :type ("demuxer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4274 4757])
+            ("open_source" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4794 4818])
+                    ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4819 4834]))                  
+                :type ("demuxer" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4759 5163])
+            ("demuxer_chapter_time" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("demuxer" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5200 5224])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [5225 5231]))                  
+                :type "double")
+                nil [5165 5336])
+            ("copy_chapters" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("chapters" variable
+                       (:pointer 2
+                        :type ("demux_chapter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5471 5503])
+                    ("num_chapters" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5504 5522])
+                    ("src" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5549 5569])
+                    ("start" variable (:type "double") (reparse-symbol arg-sub-list) [5570 5583])
+                    ("len" variable (:type "double") (reparse-symbol arg-sub-list) [5584 5595])
+                    ("dest_offset" variable (:type "double") (reparse-symbol arg-sub-list) [5622 5641]))                  
+                :type "void")
+                nil [5445 6060])
+            ("source_get_length" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("demuxer" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6154 6178]))                  
+                :type "double")
+                nil [6122 6373])
+            ("resolve_timestamps" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("part" variable
+                       (:pointer 1
+                        :type ("tl_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6406 6427])
+                    ("demuxer" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6428 6452]))                  
+                :type "void")
+                nil [6375 6927])
+            ("build_timeline" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6956 6980])
+                    ("parts" variable
+                       (:pointer 1
+                        :type ("tl_parts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6981 7004]))                  
+                :type "void")
+                nil [6929 9221])
+            ("fix_filenames" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("parts" variable
+                       (:pointer 1
+                        :type ("tl_parts" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9391 9414])
+                    ("source_path" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [9415 9433]))                  
+                :type "void")
+                nil [9365 9741])
+            ("build_mpv_edl_timeline" function
+               (:arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9771 9795]))                  
+                :type "void")
+                nil [9743 10199]))          
+      :file "tl_mpv_edl.c"
+      :pointmax 10200
+      :fsize 10199
+      :lastmodtime '(21681 30008 835672 477000)
+      :unmatched-syntax nil)
+    (semanticdb-table "tl_cue.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("dirent.h" include (:system-flag t) nil [751 770])
+            ("stdlib.h" include (:system-flag t) nil [771 790])
+            ("stdbool.h" include (:system-flag t) nil [791 811])
+            ("inttypes.h" include (:system-flag t) nil [812 833])
+            ("talloc.h" include nil nil [835 854])
+            ("player/core.h" include nil nil [856 880])
+            ("common/msg.h" include nil nil [881 904])
+            ("demux/demux.h" include nil nil [905 929])
+            ("options/path.h" include nil nil [930 955])
+            ("misc/bstr.h" include nil nil [956 978])
+            ("common/common.h" include nil nil [979 1005])
+            ("stream/stream.h" include nil nil [1006 1032])
+            ("mp_probe_cue" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("data" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [1077 1094]))                  
+                :type "bool")
+                nil [1059 1095])
+            ("SECS_PER_CUE_FRAME" variable (:constant-flag t) nil [1105 1123])
+            ("cue_command" type
+               (:members 
+                  ( ("CUE_ERROR" variable
+                       (:constant-flag t
+                        :default-value (1171 1173)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1159 1173])
+                    ("CUE_EMPTY" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1235 1245])
+                    ("CUE_UNUSED" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1288 1299])
+                    ("CUE_FILE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1359 1368])
+                    ("CUE_TRACK" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1373 1383])
+                    ("CUE_INDEX" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1388 1398])
+                    ("CUE_TITLE" variable
+                       (:constant-flag t
+                        :type "int")
+                        (reparse-symbol enumsubparts) [1403 1413]))                  
+                :type "enum")
+                nil [1136 1416])
+            ("cue_command_strings" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    { CUE_FILE, \"FILE\" },
+    { CUE_TRACK, \"TRACK\" },
+    { CUE_INDEX, \"INDEX\" },
+    { CUE_TITLE, \"TITLE\" },
+    { CUE_UNUSED, \"CATALOG\" },
+    { CUE_UNUSED, \"CDTEXTFILE\" },
+    { CUE_UNUSED, \"FLAGS\" },
+    { CUE_UNUSED, \"ISRC\" },
+    { CUE_UNUSED, \"PERFORMER\" },
+    { CUE_UNUSED, \"POSTGAP\" },
+    { CUE_UNUSED, \"PREGAP\" },
+    { CUE_UNUSED, \"REM\" },
+    { CUE_UNUSED, \"SONGWRITER\" },
+    { CUE_UNUSED, \"MESSAGE\" },
+    { -1 },
+}"
+                :type ("" type
+                     (:members 
+                        ( ("command" variable (:type ("cue_command" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [1444 1469])
+                          ("text" variable
+                             (:pointer 1
+                              :constant-flag t
+                              :type "char")
+                              (reparse-symbol classsubparts) [1474 1491]))                        
+                      :type "struct")
+                      nil nil))
+                nil [1418 1952])
+            ("cue_track" type
+               (:members 
+                  ( ("pregap_start" variable (:type "double") (reparse-symbol classsubparts) [1977 1997])
+                    ("start" variable (:type "double") (reparse-symbol classsubparts) [2036 2049])
+                    ("filename" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2095 2116])
+                    ("source" variable (:type "int") (reparse-symbol classsubparts) [2121 2132])
+                    ("title" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2137 2155]))                  
+                :type "struct")
+                nil [1954 2158])
+            ("read_cmd" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2193 2211])
+                    ("out_params" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2212 2236]))                  
+                :type ("cue_command" type (:type "enum") nil nil))
+                nil [2160 2863])
+            ("eat_char" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2886 2904])
+                    ("ch" variable (:type "char") (reparse-symbol arg-sub-list) [2905 2913]))                  
+                :type "bool")
+                nil [2865 3060])
+            ("read_quoted" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3093 3111]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3062 3401])
+            ("read_int_2" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3494 3512]))                  
+                :type "int")
+                nil [3472 3781])
+            ("read_time" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable
+                       (:pointer 1
+                        :type ("bstr" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3807 3825]))                  
+                :type "double")
+                nil [3783 4148])
+            ("skip_utf8_bom" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("data" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4183 4200]))                  
+                :type ("bstr" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4150 4282])
+            ("mp_probe_cue" function
+               (:arguments 
+                  ( ("data" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [4493 4510]))                  
+                :type "bool")
+                nil [4475 4943])
+            ("add_source" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4968 4992])
+                    ("d" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4993 5011]))                  
+                :type "void")
+                nil [4945 5082])
+            ("try_open" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5105 5129])
+                    ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5130 5145]))                  
+                :type "bool")
+                nil [5084 6471])
+            ("open_source" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6497 6521])
+                    ("filename" variable (:type ("bstr" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol arg-sub-list) [6522 6543]))                  
+                :type "bool")
+                nil [6473 8038])
+            ("source_get_length" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("demuxer" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8132 8156]))                  
+                :type "double")
+                nil [8100 8456])
+            ("build_cue_timeline" function
+               (:arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8482 8506]))                  
+                :type "void")
+                nil [8458 13090]))          
+      :file "tl_cue.c"
+      :pointmax 13091
+      :fsize 13090
+      :lastmodtime '(21681 30008 835672 477000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("SECS_PER_CUE_FRAME" . ((semantic-list "(1.0/75.0)" 1124 . 1134)))
+          )
+)
+    (semanticdb-table "tl_matroska.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [747 766])
+            ("stdbool.h" include (:system-flag t) nil [767 787])
+            ("inttypes.h" include (:system-flag t) nil [788 809])
+            ("assert.h" include (:system-flag t) nil [810 829])
+            ("dirent.h" include (:system-flag t) nil [830 849])
+            ("string.h" include (:system-flag t) nil [850 869])
+            ("strings.h" include (:system-flag t) nil [870 890])
+            ("sys/types.h" include (:system-flag t) nil [891 913])
+            ("sys/stat.h" include (:system-flag t) nil [914 935])
+            ("unistd.h" include (:system-flag t) nil [936 955])
+            ("libavutil/common.h" include (:system-flag t) nil [956 985])
+            ("osdep/io.h" include nil nil [987 1008])
+            ("talloc.h" include nil nil [1010 1029])
+            ("player/core.h" include nil nil [1031 1055])
+            ("common/msg.h" include nil nil [1056 1079])
+            ("demux/demux.h" include nil nil [1080 1104])
+            ("options/path.h" include nil nil [1105 1130])
+            ("misc/bstr.h" include nil nil [1131 1153])
+            ("common/common.h" include nil nil [1154 1180])
+            ("common/playlist.h" include nil nil [1181 1209])
+            ("stream/stream.h" include nil nil [1210 1236])
+            ("find_entry" type
+               (:members 
+                  ( ("name" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1262 1273])
+                    ("matchlen" variable (:type "int") (reparse-symbol classsubparts) [1278 1291])
+                    ("size" variable (:type ("off_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1296 1307]))                  
+                :type "struct")
+                nil [1238 1310])
+            ("cmp_entry" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("pa" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1333 1348])
+                    ("pb" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1349 1364]))                  
+                :type "int")
+                nil [1312 1689])
+            ("test_matroska_ext" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("filename" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1721 1742]))                  
+                :type "bool")
+                nil [1691 2111])
+            ("find_files" function
+               (:pointer 2
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("original_file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2138 2164]))                  
+                :type "char")
+                nil [2113 3845])
+            ("enable_cache" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3871 3895])
+                    ("stream" variable
+                       (:pointer 2
+                        :type ("stream" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3896 3919])
+                    ("demuxer" variable
+                       (:pointer 2
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3944 3969])
+                    ("params" variable
+                       (:pointer 1
+                        :type ("demuxer_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3970 4000]))                  
+                :type "int")
+                nil [3847 4640])
+            ("has_source_request" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("uids" variable
+                       (:pointer 1
+                        :type ("matroska_segment_uid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4673 4707])
+                    ("num_sources" variable (:type "int") (reparse-symbol arg-sub-list) [4739 4755])
+                    ("new_uid" variable
+                       (:pointer 1
+                        :type ("matroska_segment_uid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4787 4824]))                  
+                :type "bool")
+                nil [4642 4977])
+            ("check_file_seg" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5059 5083])
+                    ("sources" variable
+                       (:pointer 3
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5084 5110])
+                    ("num_sources" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5138 5155])
+                    ("uids" variable
+                       (:pointer 2
+                        :type ("matroska_segment_uid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5156 5191])
+                    ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5219 5234])
+                    ("segment" variable (:type "int") (reparse-symbol arg-sub-list) [5235 5247]))                  
+                :type "bool")
+                nil [5032 7238])
+            ("check_file" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7263 7287])
+                    ("sources" variable
+                       (:pointer 3
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7288 7314])
+                    ("num_sources" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7338 7355])
+                    ("uids" variable
+                       (:pointer 2
+                        :type ("matroska_segment_uid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7356 7391])
+                    ("filename" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7415 7430])
+                    ("first" variable (:type "int") (reparse-symbol arg-sub-list) [7431 7441]))                  
+                :type "void")
+                nil [7240 7598])
+            ("missing" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("sources" variable
+                       (:pointer 2
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7620 7645])
+                    ("num_sources" variable (:type "int") (reparse-symbol arg-sub-list) [7646 7662]))                  
+                :type "bool")
+                nil [7600 7784])
+            ("find_ordered_chapter_sources" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7826 7850])
+                    ("sources" variable
+                       (:pointer 3
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7891 7917])
+                    ("num_sources" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7958 7975])
+                    ("uids" variable
+                       (:pointer 2
+                        :type ("matroska_segment_uid" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8016 8051]))                  
+                :type "int")
+                nil [7786 10490])
+            ("add_timeline_part" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10525 10549])
+                    ("source" variable
+                       (:pointer 1
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10583 10606])
+                    ("timeline" variable
+                       (:pointer 2
+                        :type ("timeline_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10640 10672])
+                    ("part_count" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [10706 10722])
+                    ("start" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [10756 10771])
+                    ("last_end_time" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10805 10829])
+                    ("starttime" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10863 10883]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [10492 11876])
+            ("build_timeline_loop" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11910 11934])
+                    ("sources" variable
+                       (:pointer 2
+                        :type ("demuxer" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11967 11992])
+                    ("num_sources" variable (:type "int") (reparse-symbol arg-sub-list) [12025 12041])
+                    ("current_source" variable (:type "int") (reparse-symbol arg-sub-list) [12074 12093])
+                    ("starttime" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12126 12146])
+                    ("missing_time" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12179 12202])
+                    ("last_end_time" variable
+                       (:pointer 1
+                        :type ("uint64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12235 12259])
+                    ("timeline" variable
+                       (:pointer 2
+                        :type ("timeline_part" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12292 12324])
+                    ("chapters" variable
+                       (:pointer 1
+                        :type ("demux_chapter" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12357 12388])
+                    ("part_count" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [12421 12437])
+                    ("skip" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12470 12484])
+                    ("limit" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12517 12532]))                  
+                :type "void")
+                nil [11878 16954])
+            ("build_ordered_chapter_timeline" function
+               (:arguments 
+                  ( ("mpctx" variable
+                       (:pointer 1
+                        :type ("MPContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16992 17016]))                  
+                :type "void")
+                nil [16956 20652]))          
+      :file "tl_matroska.c"
+      :pointmax 20653
+      :fsize 20652
+      :lastmodtime '(21681 30008 835672 477000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!player!timeline!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,65 @@
+;; Object hannoi/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "hannoi/"
+  :tables
+  (list
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("unordered_map" include (:system-flag t) nil [21 45])
+            ("string" include (:system-flag t) nil [46 63])
+            ("queue" include (:system-flag t) nil [64 80])
+            ("pegs" variable
+               (:default-value "3"
+                :type "int")
+                nil [84 97])
+            ("maxradius" variable
+               (:default-value "2"
+                :type "int")
+                nil [98 116])
+            ("peg" type
+               (:members 
+                  ( ("pegA" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [131 144])
+                    ("pegB" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [146 159])
+                    ("pegC" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol classsubparts) [161 174])
+                    ("peg" function
+                       (:constructor-flag t
+                        :type ("peg" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [176 268])
+                    ("copy" function
+                       (:arguments 
+                          ( ("b" variable (:type ("peg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [280 286]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [270 413]))                  
+                :type "struct")
+                nil [117 416])
+            ("hannoiToString" function
+               (:arguments 
+                  ( ("A" variable (:type ("peg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [445 451]))                  
+                :type ("std::string" type (:type "class") nil nil))
+                nil [418 645])
+            ("compare" function
+               (:arguments 
+                  ( ("A" variable (:type ("peg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [660 666])
+                    ("B" variable (:type ("peg" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [667 673]))                  
+                :type "bool")
+                nil [647 762])
+            ("main" function (:type "int") nil [764 2760]))          
+      :file "main.cpp"
+      :pointmax 2761
+      :fsize 2760
+      :lastmodtime '(21296 56170 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!Programmingclub!BFS!hannoi!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

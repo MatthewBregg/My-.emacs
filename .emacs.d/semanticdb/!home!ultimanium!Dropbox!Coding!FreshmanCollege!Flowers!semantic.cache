@@ -1,0 +1,28 @@
+;; Object Flowers/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Flowers/"
+  :tables
+  (list
+    (semanticdb-table "Flowers.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [56 73])
+            ("findnthlowest" function
+               (:arguments 
+                  ( ("C" variable
+                       (:dereference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [92 100])
+                    ("size" variable (:type "int") (reparse-symbol arg-sub-list) [101 110])
+                    ("nth" variable (:type "int") (reparse-symbol arg-sub-list) [111 119]))                  
+                :type "int")
+                nil [74 574])
+            ("main" function (:type "int") nil [809 1509]))          
+      :file "Flowers.c"
+      :pointmax 1510
+      :fsize 1509
+      :lastmodtime '(21130 63654 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!FreshmanCollege!Flowers!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,345 @@
+;; Object panels/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "panels/"
+  :tables
+  (list
+    (semanticdb-table "panel_resize.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("panel.h" include (:system-flag t) nil [1 19])
+            ("_PANEL_DATA" type
+               (:members 
+                  ( ("x" variable (:type "int") (reparse-symbol classsubparts) [51 66])
+                    ("y" variable (:type "int") (reparse-symbol classsubparts) [51 66])
+                    ("w" variable (:type "int") (reparse-symbol classsubparts) [51 66])
+                    ("h" variable (:type "int") (reparse-symbol classsubparts) [51 66])
+                    ("label" variable
+                       (:dereference 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [68 83])
+                    ("label_color" variable (:type "int") (reparse-symbol classsubparts) [86 102])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("PANEL" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [104 116]))                  
+                :type "struct")
+                nil [21 129])
+            ("PANEL_DATA" type
+               (:typedef ("_PANEL_DATA" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [21 129])
+            ("NLINES" variable (:constant-flag t) nil [139 145])
+            ("NCOLS" variable (:constant-flag t) nil [157 162])
+            ("init_wins" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("wins" variable
+                       (:pointer 2
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [182 196])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [197 203]))                  
+                :type "void")
+                nil [167 204])
+            ("win_show" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [219 231])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [232 244])
+                    ("label_color" variable (:type "int") (reparse-symbol arg-sub-list) [245 261]))                  
+                :type "void")
+                nil [205 262])
+            ("print_in_middle" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [284 296])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [297 308])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [309 320])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [321 331])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [332 345])
+                    ("color" variable (:type ("chtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [346 359]))                  
+                :type "void")
+                nil [263 360])
+            ("set_user_ptrs" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("panels" variable
+                       (:pointer 2
+                        :type ("PANEL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [380 395])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [396 402]))                  
+                :type "void")
+                nil [361 403])
+            ("main" function (:type "int") nil [405 3640])
+            ("init_wins" function
+               (:arguments 
+                  ( ("wins" variable
+                       (:pointer 2
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3683 3697])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [3698 3704]))                  
+                :type "void")
+                nil [3668 3925])
+            ("set_user_ptrs" function
+               (:arguments 
+                  ( ("panels" variable
+                       (:pointer 2
+                        :type ("PANEL" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4004 4019])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [4020 4026]))                  
+                :type "void")
+                nil [3985 4562])
+            ("win_show" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4626 4638])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4639 4651])
+                    ("label_color" variable (:type "int") (reparse-symbol arg-sub-list) [4652 4668]))                  
+                :type "void")
+                nil [4612 4978])
+            ("print_in_middle" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5001 5013])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [5014 5025])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [5026 5037])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [5038 5048])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5049 5062])
+                    ("color" variable (:type ("chtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [5063 5076]))                  
+                :type "void")
+                nil [4980 5431]))          
+      :file "panel_resize.c"
+      :pointmax 5432
+      :fsize 5665
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NLINES" . ((number "10" 146 . 148)))
+          ("NCOLS" . ((number "40" 163 . 165)))
+          )
+)
+    (semanticdb-table "panel_hide.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("panel.h" include (:system-flag t) nil [1 19])
+            ("_PANEL_DATA" type
+               (:members 
+                  ( ("hide" variable (:type "int") (reparse-symbol classsubparts) [51 60]))                  
+                :type "struct")
+                nil [21 103])
+            ("PANEL_DATA" type
+               (:typedef ("_PANEL_DATA" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [21 103])
+            ("NLINES" variable (:constant-flag t) nil [113 119])
+            ("NCOLS" variable (:constant-flag t) nil [131 136])
+            ("init_wins" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("wins" variable
+                       (:pointer 2
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [156 170])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [171 177]))                  
+                :type "void")
+                nil [141 178])
+            ("win_show" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [193 205])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [206 218])
+                    ("label_color" variable (:type "int") (reparse-symbol arg-sub-list) [219 235]))                  
+                :type "void")
+                nil [179 236])
+            ("print_in_middle" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [258 270])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [271 282])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [283 294])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [295 305])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [306 319])
+                    ("color" variable (:type ("chtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [320 333]))                  
+                :type "void")
+                nil [237 334])
+            ("main" function (:type "int") nil [336 2512])
+            ("init_wins" function
+               (:arguments 
+                  ( ("wins" variable
+                       (:pointer 2
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2555 2569])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [2570 2576]))                  
+                :type "void")
+                nil [2540 2797])
+            ("win_show" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2861 2873])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2874 2886])
+                    ("label_color" variable (:type "int") (reparse-symbol arg-sub-list) [2887 2903]))                  
+                :type "void")
+                nil [2847 3213])
+            ("print_in_middle" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3236 3248])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [3249 3260])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [3261 3272])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [3273 3283])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3284 3297])
+                    ("color" variable (:type ("chtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3298 3311]))                  
+                :type "void")
+                nil [3215 3666]))          
+      :file "panel_hide.c"
+      :pointmax 3667
+      :fsize 3822
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NLINES" . ((number "10" 120 . 122)))
+          ("NCOLS" . ((number "40" 137 . 139)))
+          )
+)
+    (semanticdb-table "panel_browse.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("panel.h" include (:system-flag t) nil [1 19])
+            ("NLINES" variable (:constant-flag t) nil [29 35])
+            ("NCOLS" variable (:constant-flag t) nil [47 52])
+            ("init_wins" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("wins" variable
+                       (:pointer 2
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [72 86])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [87 93]))                  
+                :type "void")
+                nil [57 94])
+            ("win_show" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [109 121])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [122 134])
+                    ("label_color" variable (:type "int") (reparse-symbol arg-sub-list) [135 151]))                  
+                :type "void")
+                nil [95 152])
+            ("print_in_middle" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [174 186])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [187 198])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [199 210])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [211 221])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [222 235])
+                    ("color" variable (:type ("chtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [236 249]))                  
+                :type "void")
+                nil [153 250])
+            ("main" function (:type "int") nil [252 1590])
+            ("init_wins" function
+               (:arguments 
+                  ( ("wins" variable
+                       (:pointer 2
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1633 1647])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [1648 1654]))                  
+                :type "void")
+                nil [1618 1875])
+            ("win_show" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1939 1951])
+                    ("label" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1952 1964])
+                    ("label_color" variable (:type "int") (reparse-symbol arg-sub-list) [1965 1981]))                  
+                :type "void")
+                nil [1925 2291])
+            ("print_in_middle" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2314 2326])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [2327 2338])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [2339 2350])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [2351 2361])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2362 2375])
+                    ("color" variable (:type ("chtype" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2376 2389]))                  
+                :type "void")
+                nil [2293 2744]))          
+      :file "panel_browse.c"
+      :pointmax 2745
+      :fsize 2861
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("NLINES" . ((number "10" 36 . 38)))
+          ("NCOLS" . ((number "40" 53 . 55)))
+          )
+))
+  :file "!home!ultimanium!Dropbox!Coding!GNoob!Ncurses!ncurses_programs!panels!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

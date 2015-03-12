@@ -1,0 +1,82 @@
+;; Object CompilerIdCXX/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "CompilerIdCXX/"
+  :tables
+  (list
+    (semanticdb-table "CMakeCXXCompilerId.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("COMPILER_ID" variable (:constant-flag t) nil [5105 5116])
+            ("COMPILER_VERSION_MAJOR" variable (:constant-flag t) nil [5132 5154])
+            ("COMPILER_VERSION_MINOR" variable (:constant-flag t) nil [5178 5200])
+            ("COMPILER_VERSION_PATCH" variable (:constant-flag t) nil [5265 5287])
+            ("COMPILER_ID" variable (:constant-flag t) nil [7437 7448])
+            ("info_compiler" variable
+               (:pointer 1
+                :default-value "\"INFO\" \":\" \"compiler[\" COMPILER_ID \"]\""
+                :type "char")
+                nil [7727 7794])
+            ("PLATFORM_ID" variable (:constant-flag t) nil [8069 8080])
+            ("PLATFORM_ID" variable (:constant-flag t) nil [10008 10019])
+            ("ARCHITECTURE_ID" variable (:constant-flag t) nil [10767 10782])
+            ("DEC" variable (:constant-flag t) nil [10852 10855])
+            ("HEX" variable (:constant-flag t) nil [11201 11204])
+            ("info_version" variable
+               (:dereference 1
+                :default-value "{
+  'I', 'N', 'F', 'O', ':',
+  'c','o','m','p','i','l','e','r','_','v','e','r','s','i','o','n','[',
+  COMPILER_VERSION_MAJOR,
+# ifdef COMPILER_VERSION_MINOR
+  '.', COMPILER_VERSION_MINOR,
+#  ifdef COMPILER_VERSION_PATCH
+   '.', COMPILER_VERSION_PATCH,
+#   ifdef COMPILER_VERSION_TWEAK
+    '.', COMPILER_VERSION_TWEAK,
+#   endif
+#  endif
+# endif
+  ']','\\0'}"
+                :type "char")
+                nil [11555 11940])
+            ("info_platform" variable
+               (:pointer 1
+                :default-value "\"INFO\" \":\" \"platform[\" PLATFORM_ID \"]\""
+                :type "char")
+                nil [12721 12788])
+            ("info_arch" variable
+               (:pointer 1
+                :default-value "\"INFO\" \":\" \"arch[\" ARCHITECTURE_ID \"]\""
+                :type "char")
+                nil [12789 12852])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [12946 12955])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12956 12969]))                  
+                :type "int")
+                nil [12937 13301]))          
+      :file "CMakeCXXCompilerId.cpp"
+      :pointmax 13302
+      :fsize 13301
+      :lastmodtime '(21511 9814 249889 408000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("COMPILER_VERSION_MINOR" . ((symbol "DEC" 5201 . 5204) (semantic-list "(__GNUC_MINOR__)" 5204 . 5220)))
+          ("DEC" (spp-arg-list ("n") 10855 . 10858) . 
+              ((semantic-list "('0' + (((n) / 10000000)%10))" 10881 . 10910) (punctuation "," 10910 . 10911) (semantic-list "('0' + (((n) / 1000000)%10))" 10916 . 10944) (punctuation "," 10944 . 10945) (semantic-list "('0' + (((n) / 100000)%10))" 10951 . 10978) (punctuation "," 10978 . 10979) (semantic-list "('0' + (((n) / 10000)%10))" 10986 . 11012) (punctuation "," 11012 . 11013) (semantic-list "('0' + (((n) / 1000)%10))" 11021 . 11046) (punctuation "," 11046 . 11047) (semantic-list "('0' + (((n) / 100)%10))" 11056 . 11080) (punctuation "," 11080 . 11081) (semantic-list "('0' + (((n) / 10)%10))" 11091 . 11114) (punctuation "," 11114 . 11115) (semantic-list "('0' +  ((n) % 10))" 11126 . 11145)))
+          ("PLATFORM_ID" . ((string "\"\"" 10020 . 10022)))
+          ("HEX" (spp-arg-list ("n") 11204 . 11207) . 
+              ((semantic-list "('0' + ((n)>>28 & 0xF))" 11224 . 11247) (punctuation "," 11247 . 11248) (semantic-list "('0' + ((n)>>24 & 0xF))" 11253 . 11276) (punctuation "," 11276 . 11277) (semantic-list "('0' + ((n)>>20 & 0xF))" 11282 . 11305) (punctuation "," 11305 . 11306) (semantic-list "('0' + ((n)>>16 & 0xF))" 11311 . 11334) (punctuation "," 11334 . 11335) (semantic-list "('0' + ((n)>>12 & 0xF))" 11340 . 11363) (punctuation "," 11363 . 11364) (semantic-list "('0' + ((n)>>8  & 0xF))" 11369 . 11392) (punctuation "," 11392 . 11393) (semantic-list "('0' + ((n)>>4  & 0xF))" 11398 . 11421) (punctuation "," 11421 . 11422) (semantic-list "('0' + ((n)     & 0xF))" 11427 . 11450)))
+          ("COMPILER_ID" . ((string "\"\"" 7449 . 7451)))
+          ("COMPILER_VERSION_MAJOR" . ((symbol "DEC" 5155 . 5158) (semantic-list "(__GNUC__)" 5158 . 5168)))
+          ("COMPILER_VERSION_PATCH" . ((symbol "DEC" 5288 . 5291) (semantic-list "(__GNUC_PATCHLEVEL__)" 5291 . 5312)))
+          ("ARCHITECTURE_ID" . ((string "\"\"" 10783 . 10785)))
+          )
+))
+  :file "!home!ultimanium!coding!TraderGame!build!CMakeFiles!3.0.1!CompilerIdCXX!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

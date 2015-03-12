@@ -1,0 +1,1105 @@
+;; Object player/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "player/"
+  :tables
+  (list
+    (semanticdb-table "avinfoobject.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("AVINFOOBJECT_HPP" variable (:constant-flag t) nil [34 50])
+            ("enum/colorrange.hpp" include nil nil [52 82])
+            ("enum/colorspace.hpp" include nil nil [83 113])
+            ("AudioFormat" type
+               (:prototype t
+                :type "class")
+                nil [115 133])
+            ("StreamTrack" type
+               (:prototype t
+                :type "class")
+                nil [155 173])
+            ("QMap" variable (:type "int") nil [193 216])
+            ("CodecInfo" type
+               (:members 
+                  ( ("name" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [433 459])
+                    ("description" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [433 459]))                  
+                :type "struct")
+                nil [218 462])
+            ("CodecInfoObject" type
+               (:superclasses 
+                  ( ("QObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [719 726])
+                    ("familyChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [1182 1203])
+                    ("typeChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [1208 1227])
+                    ("descriptionChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [1232 1258])
+                    ("private" label nil (reparse-symbol classsubparts) [1259 1267])
+                    ("m_family" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1272 1305])
+                    ("m_type" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1272 1305])
+                    ("m_desc" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1272 1305]))                  
+                :type "class")
+                nil [464 1308])
+            ("AvCommonFormatObject" type
+               (:superclasses 
+                  ( ("QObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1547 1554])
+                    ("typeChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [2039 2058])
+                    ("bitrateChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [2063 2085])
+                    ("depthChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [2090 2110])
+                    ("private" label nil (reparse-symbol classsubparts) [2111 2119])
+                    ("m_type" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2124 2139])
+                    ("m_bitrate" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [2144 2175])
+                    ("m_depth" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [2144 2175]))                  
+                :type "class")
+                nil [1310 2178])
+            ("AvTrackInfoObject" type
+               (:superclasses 
+                  ( ("QObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [2605 2612])
+                    ("AvTrackInfoObject" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("track" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("StreamTrack" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2670 2695]))                          
+                        :type ("AvTrackInfoObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2652 2711])
+                    ("codecChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3098 3118])
+                    ("idChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3123 3140])
+                    ("titleChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3145 3165])
+                    ("languageChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3170 3193])
+                    ("validChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3198 3218])
+                    ("selectedChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [3223 3246])
+                    ("private" label nil (reparse-symbol classsubparts) [3247 3261])
+                    ("setId" function
+                       (:arguments 
+                          ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [3277 3283]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [3266 3502])
+                    ("private" label nil (reparse-symbol classsubparts) [3503 3511])
+                    ("PlayEngine" friend nil (reparse-symbol classsubparts) [4008 4031])
+                    ("AvCommonInfoObject" friend nil (reparse-symbol classsubparts) [4037 4068])
+                    ("m_id" variable
+                       (:default-value "-1"
+                        :type "int")
+                        (reparse-symbol classsubparts) [4074 4088])
+                    ("m_title" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4089 4122])
+                    ("m_lang" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4089 4122])
+                    ("m_codec" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4089 4122])
+                    ("m_selected" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [4127 4151]))                  
+                :type "class")
+                nil [2180 4154])
+            ("AvCommonInfoObject" type
+               (:superclasses 
+                  ( ("QObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [4437 4444])
+                    ("QQmlListProperty" variable (:type "int") (reparse-symbol classsubparts) [4472 4508])
+                    ("tracksChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [4782 4803])
+                    ("protected" label nil (reparse-symbol classsubparts) [4804 4814])
+                    ("private" label nil (reparse-symbol classsubparts) [4901 4909])
+                    ("PlayEngine" friend nil (reparse-symbol classsubparts) [5021 5044])
+                    ("m_codec" variable (:type ("CodecInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5050 5074])
+                    ("m_tracks" variable (:type ("QVector" type
+                         (:template-specifier 
+                            ( ("AvTrackInfoObject" type (:pointer 1) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [5079 5116])
+                    ("m_track" variable (:type ("AvTrackInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5121 5147]))                  
+                :type "class")
+                nil [4156 5150])
+            ("AudioFormatInfoObject" type
+               (:superclasses 
+                  ( ("AvCommonFormatObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [5449 5456])
+                    ("samplerateChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [5995 6020])
+                    ("channelsChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [6025 6048])
+                    ("private" label nil (reparse-symbol classsubparts) [6049 6057])
+                    ("m_srate" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [6062 6089])
+                    ("m_nch" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [6062 6089])
+                    ("m_ch" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [6094 6107]))                  
+                :type "class")
+                nil [5234 6110])
+            ("AudioInfoObject" type
+               (:superclasses 
+                  ( ("AvCommonInfoObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [6601 6608])
+                    ("QString" variable (:type "int") (reparse-symbol classsubparts) [7238 7246])
+                    ("public" label nil (reparse-symbol classsubparts) [7313 7326])
+                    ("setDriver" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("driver" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("QString" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7346 7368]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7331 7369])
+                    ("setDevice" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("device" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("QString" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [7389 7411]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [7374 7412])
+                    ("normalizerChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [7426 7451])
+                    ("driverChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [7456 7477])
+                    ("deviceChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [7482 7503])
+                    ("private" label nil (reparse-symbol classsubparts) [7504 7512])
+                    ("m_input" variable (:type ("AudioFormatInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7517 7569])
+                    ("m_output" variable (:type ("AudioFormatInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7517 7569])
+                    ("m_renderer" variable (:type ("AudioFormatInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7517 7569])
+                    ("m_gain" variable
+                       (:default-value "-1.0"
+                        :type "double")
+                        (reparse-symbol classsubparts) [7574 7595])
+                    ("m_driver" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7600 7627])
+                    ("m_device" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [7600 7627]))                  
+                :type "class")
+                nil [6112 7630])
+            ("VideoHwAccInfoObject" type
+               (:superclasses 
+                  ( ("QObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [7894 7901])
+                    ("stateChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [8237 8257])
+                    ("driverChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [8262 8283])
+                    ("private" label nil (reparse-symbol classsubparts) [8284 8292])
+                    ("m_state" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [8297 8313])
+                    ("m_driver" variable (:type ("QString" type (:type "class") nil nil)) (reparse-symbol classsubparts) [8318 8335]))                  
+                :type "class")
+                nil [7714 8338])
+            ("VideoFormatInfoObject" type
+               (:superclasses 
+                  ( ("AvCommonFormatObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [8703 8710])
+                    ("QString" variable (:type "int") (reparse-symbol classsubparts) [8949 8957])
+                    ("QString" variable (:type "int") (reparse-symbol classsubparts) [8988 8996])
+                    ("setFps" function
+                       (:arguments 
+                          ( ("fps" variable (:type "double") (reparse-symbol arg-sub-list) [9959 9970]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [9947 10050])
+                    ("fpsChanged" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("fps" variable (:type "double") (reparse-symbol arg-sub-list) [10080 10091]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [10064 10092])
+                    ("spaceChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [10097 10117])
+                    ("rangeChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [10122 10142])
+                    ("bppChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [10147 10165])
+                    ("sizeChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [10170 10189])
+                    ("private" label nil (reparse-symbol classsubparts) [10190 10198])
+                    ("m_bpp" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [10296 10310])
+                    ("m_fps" variable
+                       (:default-value "0"
+                        :type "double")
+                        (reparse-symbol classsubparts) [10311 10328])
+                    ("m_bppSize" variable (:type ("QSize" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10333 10357])
+                    ("m_size" variable (:type ("QSize" type (:type "class") nil nil)) (reparse-symbol classsubparts) [10333 10357])
+                    ("ColorSpace::Auto" variable (:type "int") (reparse-symbol classsubparts) [10383 10400])
+                    ("ColorRange::Auto" variable (:type "int") (reparse-symbol classsubparts) [10426 10443]))                  
+                :type "class")
+                nil [8340 10446])
+            ("VideoInfoObject" type
+               (:superclasses 
+                  ( ("AvCommonInfoObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [11193 11200])
+                    ("VideoInfoObject" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("VideoInfoObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11205 11223])
+                    ("setDroppedFrames" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("f" variable (:type "int") (reparse-symbol arg-sub-list) [12299 12305]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12277 12306])
+                    ("setDelayedFrames" function
+                       (:arguments 
+                          ( ("f" variable (:type "int") (reparse-symbol arg-sub-list) [12333 12339]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12311 12407])
+                    ("deinterlacerChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [12421 12448])
+                    ("droppedFramesChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [12453 12481])
+                    ("droppedFpsChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [12486 12511])
+                    ("delayedFramesChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [12516 12544])
+                    ("delayedTimeChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [12549 12575])
+                    ("private" label nil (reparse-symbol classsubparts) [12576 12584])
+                    ("m_input" variable (:type ("VideoFormatInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12589 12641])
+                    ("m_output" variable (:type ("VideoFormatInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12589 12641])
+                    ("m_renderer" variable (:type ("VideoFormatInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12589 12641])
+                    ("m_hwacc" variable (:type ("VideoHwAccInfoObject" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12646 12675])
+                    ("m_deint" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [12680 12726])
+                    ("m_dropped" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [12680 12726])
+                    ("m_delayed" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [12680 12726])
+                    ("m_droppedFps" variable
+                       (:default-value "0.0"
+                        :type ("qreal" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12731 12756])
+                    ("m_time" variable (:type ("QTime" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12761 12774])
+                    ("m_timer" variable (:type ("QTimer" type (:type "class") nil nil)) (reparse-symbol classsubparts) [12775 12790]))                  
+                :type "class")
+                nil [10448 12793])
+            ("SubtitleInfoObject" type
+               (:superclasses 
+                  ( ("AvCommonInfoObject" type
+                       (:protection "public"
+                        :type "class")
+                        nil nil))                  
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [13190 13197])
+                    ("SubtitleInfoObject" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("SubtitleInfoObject" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [13202 13223])
+                    ("QQmlListProperty" variable (:type "int") (reparse-symbol classsubparts) [13305 13341])
+                    ("filesChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13411 13431])
+                    ("totalLengthChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13436 13462])
+                    ("currentNumberChanged" function
+                       (:prototype-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [13467 13495])
+                    ("private" label nil (reparse-symbol classsubparts) [13496 13504])
+                    ("PlayEngine" friend nil (reparse-symbol classsubparts) [13561 13584])
+                    ("m_files" variable (:type ("QVector" type
+                         (:template-specifier 
+                            ( ("AvTrackInfoObject" type (:pointer 1) nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [13590 13626])
+                    ("m_total" variable
+                       (:default-value "0"
+                        :type "int")
+                        (reparse-symbol classsubparts) [13631 13658])
+                    ("m_id" variable
+                       (:default-value "-1"
+                        :type "int")
+                        (reparse-symbol classsubparts) [13631 13658]))                  
+                :type "class")
+                nil [12877 13661]))          
+      :file "avinfoobject.hpp"
+      :pointmax 13690
+      :fsize 13689
+      :lastmodtime '(21681 29824 598735 192000)
+      :unmatched-syntax '((punctuation 13584 . 13585) (punctuation 13555 . 13556) (VOID 13551 . 13555) (punctuation 13549 . 13550) (punctuation 13548 . 13549) (semantic-list 13522 . 13547) (symbol 13514 . 13522) (symbol 13509 . 13513) (punctuation 13405 . 13406) (symbol 13398 . 13405) (semantic-list 13378 . 13397) (INT 13374 . 13377) (punctuation 13372 . 13373) (punctuation 13371 . 13372) (CONST 13365 . 13370) (semantic-list 13362 . 13364) (symbol 13351 . 13362) (symbol 13346 . 13350) (punctuation 13303 . 13304) (punctuation 13302 . 13303) (CONST 13296 . 13301) (semantic-list 13293 . 13295) (symbol 13288 . 13293) (symbol 13283 . 13287) (semantic-list 13262 . 13278) (INT 13258 . 13261) (punctuation 13256 . 13257) (punctuation 13255 . 13256) (CONST 13249 . 13254) (semantic-list 13246 . 13248) (symbol 13233 . 13246) (symbol 13228 . 13232) (semantic-list 13123 . 13189) (symbol 13113 . 13123) (semantic-list 13048 . 13108) (symbol 13038 . 13048) (semantic-list 12959 . 13033) (symbol 12949 . 12959) (symbol 12936 . 12944) (punctuation 12415 . 12416) (symbol 12408 . 12415) (semantic-list 12194 . 12272) (INT 12182 . 12185) (punctuation 12180 . 12181) (punctuation 12179 . 12180) (CONST 12173 . 12178) (semantic-list 12170 . 12172) (symbol 12159 . 12170) (symbol 12154 . 12158) (semantic-list 12128 . 12149) (INT 12124 . 12127) (punctuation 12122 . 12123) (punctuation 12121 . 12122) (CONST 12115 . 12120) (semantic-list 12112 . 12114) (symbol 12099 . 12112) (symbol 12094 . 12098) (semantic-list 12065 . 12089) (symbol 12059 . 12064) (punctuation 12057 . 12058) (punctuation 12056 . 12057) (CONST 12050 . 12055) (semantic-list 12047 . 12049) (symbol 12037 . 12047) (symbol 12032 . 12036) (semantic-list 12006 . 12027) (INT 12002 . 12005) (punctuation 12000 . 12001) (punctuation 11999 . 12000) (CONST 11993 . 11998) (semantic-list 11990 . 11992) (symbol 11977 . 11990) (symbol 11972 . 11976) (semantic-list 11907 . 11967) (VOID 11894 . 11898) (punctuation 11892 . 11893) (punctuation 11891 . 11892) (semantic-list 11879 . 11890) (symbol 11864 . 11879) (symbol 11859 . 11863) (semantic-list 11835 . 11854) (INT 11831 . 11834) (punctuation 11829 . 11830) (punctuation 11828 . 11829) (CONST 11822 . 11827) (semantic-list 11819 . 11821) (symbol 11807 . 11819) (symbol 11802 . 11806) (semantic-list 11777 . 11797) (punctuation 11775 . 11776) (symbol 11755 . 11775) (CONST 11749 . 11754) (punctuation 11747 . 11748) (punctuation 11746 . 11747) (CONST 11740 . 11745) (semantic-list 11737 . 11739) (symbol 11732 . 11737) (symbol 11727 . 11731) (semantic-list 11702 . 11722) (punctuation 11700 . 11701) (symbol 11680 . 11700) (punctuation 11678 . 11679) (punctuation 11677 . 11678) (semantic-list 11674 . 11676) (symbol 11669 . 11674) (symbol 11664 . 11668) (semantic-list 11638 . 11659) (punctuation 11636 . 11637) (symbol 11615 . 11636) (punctuation 11613 . 11614) (punctuation 11612 . 11613) (semantic-list 11609 . 11611) (symbol 11603 . 11609) (symbol 11598 . 11602) (semantic-list 11570 . 11593) (punctuation 11568 . 11569) (symbol 11547 . 11568) (punctuation 11545 . 11546) (punctuation 11544 . 11545) (semantic-list 11541 . 11543) (symbol 11533 . 11541) (symbol 11528 . 11532) (semantic-list 11503 . 11523) (punctuation 11501 . 11502) (symbol 11480 . 11501) (punctuation 11478 . 11479) (punctuation 11477 . 11478) (semantic-list 11474 . 11476) (symbol 11469 . 11474) (symbol 11464 . 11468) (semantic-list 11438 . 11459) (punctuation 11436 . 11437) (symbol 11415 . 11436) (CONST 11409 . 11414) (punctuation 11407 . 11408) (punctuation 11406 . 11407) (CONST 11400 . 11405) (semantic-list 11397 . 11399) (symbol 11391 . 11397) (symbol 11386 . 11390) (semantic-list 11358 . 11381) (punctuation 11356 . 11357) (symbol 11335 . 11356) (CONST 11329 . 11334) (punctuation 11327 . 11328) (punctuation 11326 . 11327) (CONST 11320 . 11325) (semantic-list 11317 . 11319) (symbol 11309 . 11317) (symbol 11304 . 11308) (semantic-list 11279 . 11299) (punctuation 11277 . 11278) (symbol 11256 . 11277) (CONST 11250 . 11255) (punctuation 11248 . 11249) (punctuation 11247 . 11248) (CONST 11241 . 11246) (semantic-list 11238 . 11240) (symbol 11233 . 11238) (symbol 11228 . 11232) (semantic-list 11133 . 11192) (symbol 11123 . 11133) (semantic-list 11058 . 11118) (symbol 11048 . 11058) (semantic-list 10977 . 11043) (symbol 10967 . 10977) (semantic-list 10896 . 10962) (symbol 10886 . 10896) (semantic-list 10818 . 10881) (symbol 10808 . 10818) (semantic-list 10748 . 10803) (symbol 10738 . 10748) (semantic-list 10671 . 10733) (symbol 10661 . 10671) (semantic-list 10598 . 10656) (symbol 10588 . 10598) (semantic-list 10527 . 10583) (symbol 10517 . 10527) (symbol 10504 . 10512) (punctuation 10424 . 10425) (symbol 10416 . 10423) (symbol 10405 . 10415) (punctuation 10381 . 10382) (symbol 10373 . 10380) (symbol 10362 . 10372) (semantic-list 10240 . 10291) (VOID 10227 . 10231) (punctuation 10225 . 10226) (punctuation 10224 . 10225) (semantic-list 10221 . 10223) (symbol 10208 . 10221) (symbol 10203 . 10207) (punctuation 10058 . 10059) (symbol 10051 . 10058) (semantic-list 9751 . 9942) (VOID 9742 . 9746) (punctuation 9740 . 9741) (punctuation 9739 . 9740) (semantic-list 9713 . 9738) (symbol 9703 . 9713) (symbol 9698 . 9702) (semantic-list 9646 . 9693) (VOID 9633 . 9637) (punctuation 9631 . 9632) (punctuation 9630 . 9631) (semantic-list 9613 . 9629) (symbol 9603 . 9613) (symbol 9598 . 9602) (semantic-list 9546 . 9593) (VOID 9533 . 9537) (punctuation 9531 . 9532) (punctuation 9530 . 9531) (semantic-list 9513 . 9529) (symbol 9506 . 9513) (symbol 9501 . 9505) (semantic-list 9470 . 9496) (VOID 9465 . 9469) (punctuation 9463 . 9464) (punctuation 9462 . 9463) (semantic-list 9454 . 9461) (symbol 9445 . 9454) (symbol 9440 . 9444) (semantic-list 9408 . 9435) (VOID 9403 . 9407) (punctuation 9401 . 9402) (punctuation 9400 . 9401) (semantic-list 9392 . 9399) (symbol 9384 . 9392) (symbol 9379 . 9383) (semantic-list 9347 . 9374) (INT 9343 . 9346) (punctuation 9341 . 9342) (punctuation 9340 . 9341) (CONST 9334 . 9339) (semantic-list 9331 . 9333) (symbol 9325 . 9331) (symbol 9320 . 9324) (semantic-list 9289 . 9315) (INT 9285 . 9288) (punctuation 9283 . 9284) (punctuation 9282 . 9283) (CONST 9276 . 9281) (semantic-list 9273 . 9275) (symbol 9268 . 9273) (symbol 9263 . 9267) (semantic-list 9240 . 9258) (symbol 9234 . 9239) (punctuation 9232 . 9233) (punctuation 9231 . 9232) (CONST 9225 . 9230) (semantic-list 9222 . 9224) (symbol 9218 . 9222) (symbol 9213 . 9217) (semantic-list 9155 . 9208) (VOID 9142 . 9146) (punctuation 9140 . 9141) (punctuation 9139 . 9140) (semantic-list 9120 . 9138) (symbol 9112 . 9120) (symbol 9107 . 9111) (semantic-list 9049 . 9102) (VOID 9036 . 9040) (punctuation 9034 . 9035) (punctuation 9033 . 9034) (semantic-list 9014 . 9032) (symbol 9006 . 9014) (symbol 9001 . 9005) (punctuation 8986 . 8987) (punctuation 8985 . 8986) (CONST 8979 . 8984) (semantic-list 8976 . 8978) (symbol 8967 . 8976) (symbol 8962 . 8966) (punctuation 8947 . 8948) (punctuation 8946 . 8947) (CONST 8940 . 8945) (semantic-list 8937 . 8939) (symbol 8928 . 8937) (symbol 8923 . 8927) (semantic-list 8899 . 8918) (symbol 8888 . 8898) (punctuation 8886 . 8887) (punctuation 8885 . 8886) (CONST 8879 . 8884) (semantic-list 8876 . 8878) (symbol 8871 . 8876) (symbol 8866 . 8870) (semantic-list 8842 . 8861) (symbol 8831 . 8841) (punctuation 8829 . 8830) (punctuation 8828 . 8829) (CONST 8822 . 8827) (semantic-list 8819 . 8821) (symbol 8814 . 8819) (symbol 8809 . 8813) (semantic-list 8787 . 8804) (symbol 8781 . 8786) (punctuation 8779 . 8780) (punctuation 8778 . 8779) (CONST 8772 . 8777) (semantic-list 8769 . 8771) (symbol 8766 . 8769) (symbol 8761 . 8765) (semantic-list 8739 . 8756) (INT 8735 . 8738) (punctuation 8733 . 8734) (punctuation 8732 . 8733) (CONST 8726 . 8731) (semantic-list 8723 . 8725) (symbol 8720 . 8723) (symbol 8715 . 8719) (semantic-list 8666 . 8702) (symbol 8656 . 8666) (semantic-list 8610 . 8651) (symbol 8600 . 8610) (semantic-list 8545 . 8595) (symbol 8535 . 8545) (semantic-list 8480 . 8530) (symbol 8470 . 8480) (semantic-list 8427 . 8465) (symbol 8417 . 8427) (symbol 8404 . 8412) (punctuation 8231 . 8232) (symbol 8224 . 8231) (semantic-list 8170 . 8223) (VOID 8161 . 8165) (punctuation 8159 . 8160) (punctuation 8158 . 8159) (semantic-list 8146 . 8157) (symbol 8138 . 8146) (symbol 8133 . 8137) (semantic-list 8062 . 8128) (VOID 8053 . 8057) (punctuation 8051 . 8052) (punctuation 8050 . 8051) (semantic-list 8026 . 8049) (symbol 8017 . 8026) (symbol 8012 . 8016) (semantic-list 7987 . 8007) (symbol 7979 . 7986) (punctuation 7977 . 7978) (punctuation 7976 . 7977) (CONST 7970 . 7975) (semantic-list 7967 . 7969) (symbol 7961 . 7967) (symbol 7956 . 7960) (semantic-list 7932 . 7951) (INT 7928 . 7931) (punctuation 7926 . 7927) (punctuation 7925 . 7926) (CONST 7919 . 7924) (semantic-list 7916 . 7918) (symbol 7911 . 7916) (symbol 7906 . 7910) (semantic-list 7844 . 7893) (symbol 7834 . 7844) (semantic-list 7787 . 7829) (symbol 7777 . 7787) (symbol 7764 . 7772) (punctuation 7420 . 7421) (symbol 7413 . 7420) (semantic-list 7282 . 7312) (symbol 7274 . 7281) (punctuation 7272 . 7273) (punctuation 7271 . 7272) (CONST 7265 . 7270) (semantic-list 7262 . 7264) (symbol 7256 . 7262) (symbol 7251 . 7255) (punctuation 7236 . 7237) (punctuation 7235 . 7236) (CONST 7229 . 7234) (semantic-list 7226 . 7228) (symbol 7220 . 7226) (symbol 7215 . 7219) (semantic-list 7154 . 7210) (VOID 7141 . 7145) (punctuation 7139 . 7140) (punctuation 7138 . 7139) (semantic-list 7124 . 7137) (symbol 7111 . 7124) (symbol 7106 . 7110) (semantic-list 7083 . 7101) (DOUBLE 7076 . 7082) (punctuation 7074 . 7075) (punctuation 7073 . 7074) (CONST 7067 . 7072) (semantic-list 7064 . 7066) (symbol 7054 . 7064) (symbol 7049 . 7053) (semantic-list 7021 . 7044) (punctuation 7019 . 7020) (symbol 6998 . 7019) (punctuation 6996 . 6997) (punctuation 6995 . 6996) (semantic-list 6992 . 6994) (symbol 6984 . 6992) (symbol 6979 . 6983) (semantic-list 6953 . 6974) (punctuation 6951 . 6952) (symbol 6930 . 6951) (punctuation 6928 . 6929) (punctuation 6927 . 6928) (semantic-list 6924 . 6926) (symbol 6918 . 6924) (symbol 6913 . 6917) (semantic-list 6888 . 6908) (punctuation 6886 . 6887) (symbol 6865 . 6886) (punctuation 6863 . 6864) (punctuation 6862 . 6863) (semantic-list 6859 . 6861) (symbol 6854 . 6859) (symbol 6849 . 6853) (semantic-list 6821 . 6844) (punctuation 6819 . 6820) (symbol 6798 . 6819) (CONST 6792 . 6797) (punctuation 6790 . 6791) (punctuation 6789 . 6790) (CONST 6783 . 6788) (semantic-list 6780 . 6782) (symbol 6772 . 6780) (symbol 6767 . 6771) (semantic-list 6741 . 6762) (punctuation 6739 . 6740) (symbol 6718 . 6739) (CONST 6712 . 6717) (punctuation 6710 . 6711) (punctuation 6709 . 6710) (CONST 6703 . 6708) (semantic-list 6700 . 6702) (symbol 6694 . 6700) (symbol 6689 . 6693) (semantic-list 6664 . 6684) (punctuation 6662 . 6663) (symbol 6641 . 6662) (CONST 6635 . 6640) (punctuation 6633 . 6634) (punctuation 6632 . 6633) (CONST 6626 . 6631) (semantic-list 6623 . 6625) (symbol 6618 . 6623) (symbol 6613 . 6617) (semantic-list 6551 . 6600) (symbol 6541 . 6551) (semantic-list 6487 . 6536) (symbol 6477 . 6487) (semantic-list 6412 . 6472) (symbol 6402 . 6412) (semantic-list 6335 . 6397) (symbol 6325 . 6335) (semantic-list 6262 . 6320) (symbol 6252 . 6262) (semantic-list 6191 . 6247) (symbol 6181 . 6191) (symbol 6168 . 6176) (punctuation 5989 . 5990) (symbol 5982 . 5989) (semantic-list 5911 . 5981) (VOID 5898 . 5902) (punctuation 5896 . 5897) (punctuation 5895 . 5896) (semantic-list 5868 . 5894) (symbol 5857 . 5868) (symbol 5852 . 5856) (semantic-list 5677 . 5847) (VOID 5668 . 5672) (punctuation 5666 . 5667) (punctuation 5665 . 5666) (semantic-list 5643 . 5664) (symbol 5630 . 5643) (symbol 5625 . 5629) (punctuation 5619 . 5620) (VOID 5615 . 5619) (punctuation 5613 . 5614) (punctuation 5612 . 5613) (semantic-list 5584 . 5611) (symbol 5575 . 5584) (symbol 5570 . 5574) (semantic-list 5549 . 5565) (symbol 5541 . 5548) (punctuation 5539 . 5540) (punctuation 5538 . 5539) (CONST 5532 . 5537) (semantic-list 5529 . 5531) (symbol 5521 . 5529) (symbol 5516 . 5520) (semantic-list 5492 . 5511) (INT 5488 . 5491) (punctuation 5486 . 5487) (punctuation 5485 . 5486) (CONST 5479 . 5484) (semantic-list 5476 . 5478) (symbol 5466 . 5476) (symbol 5461 . 5465) (semantic-list 5393 . 5448) (symbol 5383 . 5393) (semantic-list 5321 . 5378) (symbol 5311 . 5321) (symbol 5298 . 5306) (punctuation 5044 . 5045) (punctuation 5015 . 5016) (VOID 5011 . 5015) (punctuation 5009 . 5010) (punctuation 5008 . 5009) (semantic-list 4981 . 5007) (symbol 4972 . 4981) (symbol 4967 . 4971) (punctuation 4961 . 4962) (VOID 4957 . 4961) (punctuation 4955 . 4956) (punctuation 4954 . 4955) (semantic-list 4927 . 4953) (symbol 4919 . 4927) (symbol 4914 . 4918) (semantic-list 4880 . 4900) (punctuation 4878 . 4879) (punctuation 4877 . 4878) (punctuation 4876 . 4877) (symbol 4859 . 4876) (punctuation 4858 . 4859) (symbol 4851 . 4858) (CONST 4845 . 4850) (punctuation 4843 . 4844) (punctuation 4842 . 4843) (CONST 4836 . 4841) (semantic-list 4833 . 4835) (symbol 4824 . 4833) (symbol 4819 . 4823) (punctuation 4776 . 4777) (symbol 4769 . 4776) (semantic-list 4748 . 4768) (punctuation 4746 . 4747) (symbol 4731 . 4746) (punctuation 4729 . 4730) (punctuation 4728 . 4729) (semantic-list 4725 . 4727) (symbol 4720 . 4725) (symbol 4715 . 4719) (semantic-list 4690 . 4710) (punctuation 4688 . 4689) (symbol 4673 . 4688) (CONST 4667 . 4672) (punctuation 4665 . 4666) (punctuation 4664 . 4665) (CONST 4658 . 4663) (semantic-list 4655 . 4657) (symbol 4650 . 4655) (symbol 4645 . 4649) (semantic-list 4620 . 4640) (punctuation 4618 . 4619) (symbol 4601 . 4618) (punctuation 4599 . 4600) (punctuation 4598 . 4599) (semantic-list 4595 . 4597) (symbol 4590 . 4595) (symbol 4585 . 4589) (semantic-list 4560 . 4580) (punctuation 4558 . 4559) (symbol 4541 . 4558) (CONST 4535 . 4540) (punctuation 4533 . 4534) (punctuation 4532 . 4533) (CONST 4526 . 4531) (semantic-list 4523 . 4525) (symbol 4518 . 4523) (symbol 4513 . 4517) (punctuation 4470 . 4471) (punctuation 4469 . 4470) (CONST 4463 . 4468) (semantic-list 4460 . 4462) (symbol 4454 . 4460) (symbol 4449 . 4453) (semantic-list 4384 . 4436) (symbol 4374 . 4384) (semantic-list 4292 . 4369) (symbol 4282 . 4292) (semantic-list 4227 . 4277) (symbol 4217 . 4227) (symbol 4204 . 4212) (punctuation 4068 . 4069) (punctuation 4031 . 4032) (semantic-list 3948 . 4003) (VOID 3935 . 3939) (punctuation 3933 . 3934) (punctuation 3932 . 3933) (semantic-list 3923 . 3931) (symbol 3912 . 3923) (symbol 3907 . 3911) (semantic-list 3839 . 3902) (VOID 3826 . 3830) (punctuation 3824 . 3825) (punctuation 3823 . 3824) (semantic-list 3800 . 3822) (symbol 3792 . 3800) (symbol 3787 . 3791) (semantic-list 3728 . 3782) (VOID 3715 . 3719) (punctuation 3713 . 3714) (punctuation 3712 . 3713) (semantic-list 3690 . 3711) (symbol 3679 . 3690) (symbol 3674 . 3678) (semantic-list 3616 . 3669) (VOID 3603 . 3607) (punctuation 3601 . 3602) (punctuation 3600 . 3601) (semantic-list 3577 . 3599) (symbol 3569 . 3577) (symbol 3564 . 3568) (punctuation 3558 . 3559) (VOID 3554 . 3558) (punctuation 3552 . 3553) (punctuation 3551 . 3552) (semantic-list 3524 . 3550) (symbol 3521 . 3524) (symbol 3516 . 3520) (punctuation 3092 . 3093) (symbol 3085 . 3092) (punctuation 3083 . 3084) (VOID 3079 . 3083) (punctuation 3077 . 3078) (punctuation 3076 . 3077) (semantic-list 3043 . 3075) (symbol 3040 . 3043) (symbol 3035 . 3039) (semantic-list 3008 . 3030) (BOOL 3003 . 3007) (punctuation 3001 . 3002) (punctuation 3000 . 3001) (CONST 2994 . 2999) (semantic-list 2991 . 2993) (symbol 2981 . 2991) (symbol 2976 . 2980) (semantic-list 2952 . 2971) (symbol 2944 . 2951) (punctuation 2942 . 2943) (punctuation 2941 . 2942) (CONST 2935 . 2940) (semantic-list 2932 . 2934) (symbol 2927 . 2932) (symbol 2922 . 2926) (semantic-list 2897 . 2917) (BOOL 2892 . 2896) (punctuation 2890 . 2891) (punctuation 2889 . 2890) (CONST 2883 . 2888) (semantic-list 2880 . 2882) (symbol 2873 . 2880) (symbol 2868 . 2872) (semantic-list 2844 . 2863) (symbol 2836 . 2843) (punctuation 2834 . 2835) (punctuation 2833 . 2834) (CONST 2827 . 2832) (semantic-list 2824 . 2826) (symbol 2819 . 2824) (symbol 2814 . 2818) (semantic-list 2791 . 2809) (symbol 2783 . 2790) (punctuation 2781 . 2782) (punctuation 2780 . 2781) (CONST 2774 . 2779) (semantic-list 2771 . 2773) (symbol 2763 . 2771) (symbol 2758 . 2762) (semantic-list 2739 . 2753) (INT 2735 . 2738) (punctuation 2733 . 2734) (punctuation 2732 . 2733) (CONST 2726 . 2731) (semantic-list 2723 . 2725) (symbol 2721 . 2723) (symbol 2716 . 2720) (punctuation 2646 . 2647) (DEFAULT 2639 . 2646) (punctuation 2637 . 2638) (semantic-list 2634 . 2636) (symbol 2617 . 2634) (semantic-list 2558 . 2604) (symbol 2548 . 2558) (semantic-list 2489 . 2543) (symbol 2479 . 2489) (semantic-list 2429 . 2474) (symbol 2419 . 2429) (semantic-list 2359 . 2414) (symbol 2349 . 2359) (semantic-list 2298 . 2344) (symbol 2288 . 2298) (semantic-list 2250 . 2283) (symbol 2240 . 2250) (symbol 2227 . 2235) (punctuation 2033 . 2034) (symbol 2026 . 2033) (semantic-list 1972 . 2025) (VOID 1959 . 1963) (punctuation 1957 . 1958) (punctuation 1956 . 1957) (semantic-list 1944 . 1955) (symbol 1936 . 1944) (symbol 1931 . 1935) (semantic-list 1907 . 1926) (INT 1903 . 1906) (punctuation 1901 . 1902) (punctuation 1900 . 1901) (CONST 1894 . 1899) (semantic-list 1891 . 1893) (symbol 1886 . 1891) (symbol 1881 . 1885) (semantic-list 1821 . 1876) (VOID 1808 . 1812) (punctuation 1806 . 1807) (punctuation 1805 . 1806) (semantic-list 1795 . 1804) (symbol 1785 . 1795) (symbol 1780 . 1784) (semantic-list 1715 . 1775) (VOID 1702 . 1706) (punctuation 1700 . 1701) (punctuation 1699 . 1700) (semantic-list 1677 . 1698) (symbol 1670 . 1677) (symbol 1665 . 1669) (semantic-list 1639 . 1660) (INT 1635 . 1638) (punctuation 1633 . 1634) (punctuation 1632 . 1633) (CONST 1626 . 1631) (semantic-list 1623 . 1625) (symbol 1616 . 1623) (symbol 1611 . 1615) (semantic-list 1588 . 1606) (symbol 1580 . 1587) (punctuation 1578 . 1579) (punctuation 1577 . 1578) (CONST 1571 . 1576) (semantic-list 1568 . 1570) (symbol 1564 . 1568) (symbol 1559 . 1563) (semantic-list 1504 . 1546) (symbol 1494 . 1504) (semantic-list 1441 . 1489) (symbol 1431 . 1441) (semantic-list 1383 . 1426) (symbol 1373 . 1383) (symbol 1360 . 1368) (punctuation 1176 . 1177) (symbol 1169 . 1176) (semantic-list 1118 . 1168) (VOID 1105 . 1109) (punctuation 1103 . 1104) (punctuation 1102 . 1103) (semantic-list 1080 . 1101) (symbol 1073 . 1080) (symbol 1068 . 1072) (semantic-list 1007 . 1063) (VOID 994 . 998) (punctuation 992 . 993) (punctuation 991 . 992) (semantic-list 967 . 990) (symbol 958 . 967) (symbol 953 . 957) (semantic-list 930 . 948) (symbol 922 . 929) (punctuation 920 . 921) (punctuation 919 . 920) (CONST 913 . 918) (semantic-list 910 . 912) (symbol 899 . 910) (symbol 894 . 898) (semantic-list 871 . 889) (symbol 863 . 870) (punctuation 861 . 862) (punctuation 860 . 861) (CONST 854 . 859) (semantic-list 851 . 853) (symbol 847 . 851) (symbol 842 . 846) (semantic-list 807 . 837) (symbol 799 . 806) (punctuation 797 . 798) (punctuation 796 . 797) (CONST 790 . 795) (semantic-list 787 . 789) (symbol 781 . 787) (symbol 776 . 780) (punctuation 770 . 771) (VOID 766 . 770) (punctuation 764 . 765) (punctuation 763 . 764) (semantic-list 741 . 762) (symbol 736 . 741) (symbol 731 . 735) (semantic-list 654 . 718) (symbol 644 . 654) (semantic-list 596 . 639) (symbol 586 . 596) (semantic-list 532 . 581) (symbol 522 . 532) (symbol 509 . 517) (semantic-list 398 . 428) (BOOL 385 . 389) (punctuation 383 . 384) (punctuation 382 . 383) (CONST 376 . 381) (semantic-list 353 . 375) (punctuation 351 . 352) (punctuation 350 . 351) (OPERATOR 341 . 349) (symbol 336 . 340) (semantic-list 303 . 331) (BOOL 290 . 294) (punctuation 288 . 289) (punctuation 287 . 288) (CONST 281 . 286) (semantic-list 258 . 280) (punctuation 256 . 257) (punctuation 255 . 256) (OPERATOR 246 . 254) (symbol 241 . 245) (USING 174 . 179))
+      :lexical-table 
+        '(("AVINFOOBJECT_HPP")
+          )
+)
+    (semanticdb-table "app.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("app.hpp" include nil nil [1 19])
+            ("mrl.hpp" include nil nil [20 38])
+            ("mainwindow.hpp" include nil nil [39 64])
+            ("misc/localconnection.hpp" include nil nil [65 100])
+            ("misc/log.hpp" include nil nil [101 124])
+            ("misc/record.hpp" include nil nil [125 151])
+            ("misc/json.hpp" include nil nil [152 176])
+            ("misc/locale.hpp" include nil nil [177 203])
+            ("APP_GROUP" variable (:constant-flag t) nil [336 345])
+            ("Pch" type
+               (:members 
+                  ( ("QMap" variable (:type "int") (reparse-symbol namespacesubparts) [428 451]))                  
+                :type "namespace")
+                nil [389 523])
+            ("LineCmd" type (:type "class") nil [767 838])
+            ("Data" type
+               (:parent "App"
+                :members 
+                  ( ("Data" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("p" variable
+                               (:pointer 1
+                                :type ("App" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [868 875]))                          
+                        :type ("Data" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [863 884])
+                    ("p" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("App" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [889 906])
+                    ("gldebug" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [911 932])
+                    ("styleNames" variable (:type ("QStringList" type (:type "class") nil nil)) (reparse-symbol classsubparts) [937 960])
+                    ("pended" variable (:type ("Mrl" type (:type "class") nil nil)) (reparse-symbol classsubparts) [965 976])
+                    ("mb" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("QMenuBar" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1145 1168])
+                    ("main" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("MainWindow" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1180 1207])
+                    ("locale" variable (:type ("Locale" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1213 1227])
+                    ("dummy" variable (:type ("QCommandLineOption" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1232 1273])
+                    ("cmdParser" variable (:type ("QCommandLineParser" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1278 1318])
+                    ("msgParser" variable (:type ("QCommandLineParser" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1278 1318])
+                    ("options" variable (:type ("QMap" type
+                         (:template-specifier 
+                            ( ("LineCmd" type nil nil nil)
+                              ("QCommandLineOption" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [1323 1365])
+                    ("connection" variable
+                       (:default-value "{u\"net.xylosper.CMPlayer\"_q, nullptr}"
+                        :type ("LocalConnection" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1370 1437]))                  
+                :type "struct")
+                nil [840 4114])
+            ("App" function
+               (:constructor-flag t
+                :parent "App"
+                :arguments 
+                  ( ("argc" variable
+                       (:reference 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [4125 4135])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4136 4148]))                  
+                :type ("App" type (:type "class") nil nil))
+                nil [4116 6968])
+            ("App" function
+               (:destructor-flag t
+                :parent "App"
+                :type "void")
+                nil [6970 7309]))          
+      :file "app.cpp"
+      :pointmax 11953
+      :fsize 11952
+      :lastmodtime '(21681 29824 595401 913000)
+      :unmatched-syntax '((semantic-list 11916 . 11952) (BOOL 11911 . 11915) (punctuation 11909 . 11910) (punctuation 11908 . 11909) (semantic-list 11905 . 11907) (symbol 11897 . 11905) (punctuation 11896 . 11897) (punctuation 11895 . 11896) (symbol 11892 . 11895) (symbol 11887 . 11891) (semantic-list 11791 . 11867) (BOOL 11786 . 11790) (punctuation 11784 . 11785) (punctuation 11783 . 11784) (CONST 11777 . 11782) (semantic-list 11774 . 11776) (symbol 11766 . 11774) (punctuation 11765 . 11766) (punctuation 11764 . 11765) (symbol 11761 . 11764) (symbol 11756 . 11760) (semantic-list 11717 . 11754) (symbol 11709 . 11716) (punctuation 11707 . 11708) (punctuation 11706 . 11707) (CONST 11700 . 11705) (semantic-list 11697 . 11699) (symbol 11688 . 11697) (punctuation 11687 . 11688) (punctuation 11686 . 11687) (symbol 11683 . 11686) (symbol 11678 . 11682) (semantic-list 11617 . 11676) (VOID 11612 . 11616) (punctuation 11610 . 11611) (punctuation 11609 . 11610) (semantic-list 11595 . 11608) (symbol 11586 . 11595) (punctuation 11585 . 11586) (punctuation 11584 . 11585) (symbol 11581 . 11584) (symbol 11576 . 11580) (semantic-list 11344 . 11574) (VOID 11339 . 11343) (punctuation 11337 . 11338) (punctuation 11336 . 11337) (semantic-list 11314 . 11335) (symbol 11302 . 11314) (punctuation 11301 . 11302) (punctuation 11300 . 11301) (symbol 11297 . 11300) (symbol 11292 . 11296) (semantic-list 11261 . 11290) (symbol 11249 . 11260) (punctuation 11247 . 11248) (punctuation 11246 . 11247) (CONST 11240 . 11245) (semantic-list 11237 . 11239) (symbol 11218 . 11237) (punctuation 11217 . 11218) (punctuation 11216 . 11217) (symbol 11213 . 11216) (symbol 11208 . 11212) (semantic-list 11181 . 11206) (symbol 11174 . 11180) (punctuation 11172 . 11173) (punctuation 11171 . 11172) (CONST 11165 . 11170) (semantic-list 11162 . 11164) (symbol 11156 . 11162) (punctuation 11155 . 11156) (punctuation 11154 . 11155) (symbol 11151 . 11154) (symbol 11146 . 11150) (semantic-list 10990 . 11144) (VOID 10985 . 10989) (punctuation 10983 . 10984) (punctuation 10982 . 10983) (semantic-list 10959 . 10981) (symbol 10950 . 10959) (punctuation 10949 . 10950) (punctuation 10948 . 10949) (symbol 10945 . 10948) (symbol 10940 . 10944) (semantic-list 10879 . 10938) (BOOL 10874 . 10878) (punctuation 10872 . 10873) (punctuation 10871 . 10872) (semantic-list 10830 . 10870) (symbol 10819 . 10830) (punctuation 10818 . 10819) (punctuation 10817 . 10818) (symbol 10814 . 10817) (symbol 10809 . 10813) (semantic-list 10773 . 10807) (VOID 10768 . 10772) (punctuation 10766 . 10767) (punctuation 10765 . 10766) (semantic-list 10762 . 10764) (symbol 10751 . 10762) (punctuation 10750 . 10751) (punctuation 10749 . 10750) (symbol 10746 . 10749) (symbol 10741 . 10745) (semantic-list 10613 . 10648) (symbol 10601 . 10612) (punctuation 10599 . 10600) (punctuation 10598 . 10599) (CONST 10592 . 10597) (semantic-list 10589 . 10591) (symbol 10582 . 10589) (punctuation 10581 . 10582) (punctuation 10580 . 10581) (symbol 10577 . 10580) (symbol 10572 . 10576) (semantic-list 10196 . 10570) (BOOL 10191 . 10195) (punctuation 10189 . 10190) (punctuation 10188 . 10189) (semantic-list 10172 . 10187) (symbol 10167 . 10172) (punctuation 10166 . 10167) (punctuation 10165 . 10166) (symbol 10162 . 10165) (symbol 10157 . 10161) (semantic-list 10104 . 10155) (VOID 10099 . 10103) (punctuation 10097 . 10098) (punctuation 10096 . 10097) (semantic-list 10080 . 10095) (symbol 10058 . 10080) (punctuation 10057 . 10058) (punctuation 10056 . 10057) (symbol 10053 . 10056) (symbol 10048 . 10052) (semantic-list 9928 . 10046) (VOID 9923 . 9927) (punctuation 9921 . 9922) (punctuation 9920 . 9921) (semantic-list 9881 . 9919) (symbol 9869 . 9881) (punctuation 9868 . 9869) (punctuation 9867 . 9868) (symbol 9864 . 9867) (symbol 9859 . 9863) (semantic-list 9809 . 9857) (VOID 9804 . 9808) (punctuation 9802 . 9803) (punctuation 9801 . 9802) (semantic-list 9771 . 9800) (symbol 9757 . 9771) (punctuation 9756 . 9757) (punctuation 9755 . 9756) (symbol 9752 . 9755) (symbol 9747 . 9751) (semantic-list 9041 . 9745) (symbol 9035 . 9040) (punctuation 9033 . 9034) (punctuation 9032 . 9033) (semantic-list 9029 . 9031) (symbol 9018 . 9029) (punctuation 9017 . 9018) (punctuation 9016 . 9017) (symbol 9013 . 9016) (symbol 9008 . 9012) (semantic-list 8983 . 9006) (punctuation 8981 . 8982) (symbol 8971 . 8981) (punctuation 8969 . 8970) (punctuation 8968 . 8969) (CONST 8962 . 8967) (semantic-list 8959 . 8961) (symbol 8949 . 8959) (punctuation 8948 . 8949) (punctuation 8947 . 8948) (symbol 8944 . 8947) (symbol 8939 . 8943) (semantic-list 8734 . 8937) (VOID 8729 . 8733) (punctuation 8727 . 8728) (punctuation 8726 . 8727) (semantic-list 8709 . 8725) (symbol 8692 . 8709) (punctuation 8691 . 8692) (punctuation 8690 . 8691) (symbol 8687 . 8690) (symbol 8682 . 8686) (semantic-list 8363 . 8680) (VOID 8358 . 8362) (punctuation 8356 . 8357) (punctuation 8355 . 8356) (semantic-list 8315 . 8354) (symbol 8301 . 8315) (punctuation 8300 . 8301) (punctuation 8299 . 8300) (symbol 8296 . 8299) (symbol 8291 . 8295) (semantic-list 7966 . 8289) (VOID 7961 . 7965) (punctuation 7959 . 7960) (punctuation 7958 . 7959) (semantic-list 7941 . 7957) (symbol 7928 . 7941) (punctuation 7927 . 7928) (punctuation 7926 . 7927) (symbol 7923 . 7926) (symbol 7918 . 7922) (semantic-list 7890 . 7916) (BOOL 7885 . 7889) (punctuation 7883 . 7884) (punctuation 7882 . 7883) (CONST 7876 . 7881) (semantic-list 7873 . 7875) (symbol 7845 . 7873) (punctuation 7844 . 7845) (punctuation 7843 . 7844) (symbol 7840 . 7843) (symbol 7835 . 7839) (semantic-list 7370 . 7833) (VOID 7365 . 7369) (punctuation 7363 . 7364) (punctuation 7362 . 7363) (semantic-list 7334 . 7361) (symbol 7321 . 7334) (punctuation 7320 . 7321) (punctuation 7319 . 7320) (symbol 7316 . 7319) (symbol 7311 . 7315) (semantic-list 3781 . 4111) (punctuation 3775 . 3776) (symbol 3757 . 3775) (punctuation 3755 . 3756) (punctuation 3754 . 3755) (CONST 3744 . 3749) (semantic-list 3715 . 3743) (symbol 3699 . 3715) (symbol 3694 . 3698) (semantic-list 2454 . 3689) (VOID 2445 . 2449) (punctuation 2443 . 2444) (punctuation 2442 . 2443) (semantic-list 2407 . 2441) (symbol 2400 . 2407) (symbol 2395 . 2399) (semantic-list 2074 . 2390) (VOID 2065 . 2069) (punctuation 2063 . 2064) (punctuation 2062 . 2063) (semantic-list 1895 . 2061) (symbol 1886 . 1895) (symbol 1881 . 1885) (semantic-list 1818 . 1876) (VOID 1809 . 1813) (punctuation 1807 . 1808) (punctuation 1806 . 1807) (semantic-list 1644 . 1805) (symbol 1635 . 1644) (symbol 1630 . 1634) (semantic-list 1480 . 1625) (VOID 1471 . 1475) (punctuation 1469 . 1470) (punctuation 1468 . 1469) (semantic-list 1451 . 1467) (symbol 1447 . 1451) (symbol 1442 . 1446) (symbol 830 . 835) (punctuation 828 . 829) (symbol 817 . 828) (punctuation 815 . 816) (symbol 807 . 815) (punctuation 805 . 806) (symbol 799 . 805) (punctuation 797 . 798) (symbol 793 . 797) (punctuation 791 . 792) (symbol 787 . 791) (ENUM 762 . 766) (semantic-list 722 . 760) (VOID 717 . 721) (punctuation 715 . 716) (punctuation 714 . 715) (semantic-list 679 . 713) (symbol 663 . 679) (symbol 658 . 662) (punctuation 655 . 656) (BOOL 651 . 655) (punctuation 649 . 650) (punctuation 648 . 649) (semantic-list 625 . 647) (symbol 610 . 625) (symbol 605 . 609) (punctuation 603 . 604) (BOOL 599 . 603) (punctuation 597 . 598) (punctuation 596 . 597) (semantic-list 547 . 595) (symbol 530 . 547) (symbol 525 . 529) (punctuation 520 . 521) (VOID 516 . 520) (punctuation 514 . 515) (punctuation 513 . 514) (semantic-list 473 . 512) (symbol 457 . 473) (symbol 452 . 456) (punctuation 426 . 427) (punctuation 425 . 426) (semantic-list 422 . 424) (symbol 410 . 422) (symbol 405 . 409) (semantic-list 382 . 387) (symbol 363 . 382)))
+    (semanticdb-table "app.hpp"
+      :file "app.hpp"
+      :fsize 2304
+      :lastmodtime '(21681 29824 595401 913000))
+    (semanticdb-table "mrl.hpp"
+      :file "mrl.hpp"
+      :fsize 2322
+      :lastmodtime '(21681 29824 598735 192000))
+    (semanticdb-table "mainwindow.hpp"
+      :file "mainwindow.hpp"
+      :fsize 1665
+      :lastmodtime '(21681 29824 598735 192000))
+    (semanticdb-table "mainwindow_p.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("mainwindow_p.hpp" include nil nil [1 28])
+            ("app.hpp" include nil nil [29 47])
+            ("misc/trayicon.hpp" include nil nil [48 76])
+            ("misc/stepactionpair.hpp" include nil nil [77 111])
+            ("video/kernel3x3.hpp" include nil nil [112 142])
+            ("video/deintoption.hpp" include nil nil [143 175])
+            ("video/videoformat.hpp" include nil nil [176 208])
+            ("audio/audionormalizeroption.hpp" include nil nil [209 251])
+            ("subtitle/subtitleview.hpp" include nil nil [252 288])
+            ("subtitle/subtitlemodel.hpp" include nil nil [289 326])
+            ("subtitle/subtitle_parser.hpp" include nil nil [327 366])
+            ("dialog/mbox.hpp" include nil nil [367 393])
+            ("dialog/openmediafolderdialog.hpp" include nil nil [394 437])
+            ("dialog/subtitlefinddialog.hpp" include nil nil [438 478])
+            ("avinfoobject.hpp" include nil nil [479 506])
+            ("Data" function
+               (:constructor-flag t
+                :parent "MainWindow::Data"
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("MainWindow" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [531 545]))                  
+                :type ("Data" type (:type "class") nil nil))
+                nil [508 614])
+            ("showMessage" function
+               (:parent "MainWindow::Data"
+                :arguments 
+                  ( ("cmd" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QString" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27585 27604])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [27605 27615])
+                    ("unit" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QString" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27645 27665])
+                    ("sign" variable (:type "bool") (reparse-symbol arg-sub-list) [27666 27676]))                  
+                :type "void")
+                nil [27550 27730])
+            ("showMessage" function
+               (:parent "MainWindow::Data"
+                :arguments 
+                  ( ("cmd" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QString" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27767 27786])
+                    ("value" variable (:type "double") (reparse-symbol arg-sub-list) [27787 27800])
+                    ("unit" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QString" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [27830 27850])
+                    ("sign" variable (:type "bool") (reparse-symbol arg-sub-list) [27851 27861]))                  
+                :type "void")
+                nil [27732 27915]))          
+      :file "mainwindow_p.cpp"
+      :pointmax 37258
+      :fsize 37258
+      :lastmodtime '(21681 29824 598735 192000)
+      :unmatched-syntax '((semantic-list 36734 . 37257) (VOID 36729 . 36733) (punctuation 36727 . 36728) (punctuation 36726 . 36727) (semantic-list 36702 . 36725) (symbol 36686 . 36702) (punctuation 36685 . 36686) (punctuation 36684 . 36685) (symbol 36680 . 36684) (punctuation 36679 . 36680) (punctuation 36678 . 36679) (symbol 36668 . 36678) (symbol 36663 . 36667) (semantic-list 36103 . 36661) (VOID 36098 . 36102) (punctuation 36096 . 36097) (punctuation 36095 . 36096) (semantic-list 36080 . 36094) (symbol 36065 . 36080) (punctuation 36064 . 36065) (punctuation 36063 . 36064) (symbol 36059 . 36063) (punctuation 36058 . 36059) (punctuation 36057 . 36058) (symbol 36047 . 36057) (symbol 36042 . 36046) (semantic-list 35561 . 36040) (VOID 35556 . 35560) (punctuation 35554 . 35555) (punctuation 35553 . 35554) (semantic-list 35550 . 35552) (symbol 35539 . 35550) (punctuation 35538 . 35539) (punctuation 35537 . 35538) (symbol 35533 . 35537) (punctuation 35532 . 35533) (punctuation 35531 . 35532) (symbol 35521 . 35531) (symbol 35516 . 35520) (semantic-list 35316 . 35514) (VOID 35311 . 35315) (punctuation 35309 . 35310) (punctuation 35308 . 35309) (semantic-list 35291 . 35307) (symbol 35282 . 35291) (punctuation 35281 . 35282) (punctuation 35280 . 35281) (symbol 35276 . 35280) (punctuation 35275 . 35276) (punctuation 35274 . 35275) (symbol 35264 . 35274) (symbol 35259 . 35263) (semantic-list 34347 . 35257) (VOID 34342 . 34346) (punctuation 34340 . 34341) (punctuation 34339 . 34340) (semantic-list 34314 . 34338) (symbol 34295 . 34314) (punctuation 34294 . 34295) (punctuation 34293 . 34294) (symbol 34289 . 34293) (punctuation 34288 . 34289) (punctuation 34287 . 34288) (symbol 34277 . 34287) (symbol 34272 . 34276) (semantic-list 33656 . 34270) (VOID 33651 . 33655) (punctuation 33649 . 33650) (punctuation 33648 . 33649) (semantic-list 33645 . 33647) (symbol 33635 . 33645) (punctuation 33634 . 33635) (punctuation 33633 . 33634) (symbol 33629 . 33633) (punctuation 33628 . 33629) (punctuation 33627 . 33628) (symbol 33617 . 33627) (symbol 33612 . 33616) (semantic-list 33342 . 33610) (BOOL 33337 . 33341) (punctuation 33335 . 33336) (punctuation 33334 . 33335) (semantic-list 33246 . 33333) (symbol 33242 . 33246) (punctuation 33241 . 33242) (punctuation 33240 . 33241) (symbol 33236 . 33240) (punctuation 33235 . 33236) (punctuation 33234 . 33235) (symbol 33224 . 33234) (symbol 33219 . 33223) (semantic-list 32941 . 33217) (VOID 32936 . 32940) (punctuation 32934 . 32935) (punctuation 32933 . 32934) (semantic-list 32905 . 32932) (symbol 32901 . 32905) (punctuation 32900 . 32901) (punctuation 32899 . 32900) (symbol 32895 . 32899) (punctuation 32894 . 32895) (punctuation 32893 . 32894) (symbol 32883 . 32893) (symbol 32878 . 32882) (semantic-list 32409 . 32876) (VOID 32404 . 32408) (punctuation 32402 . 32403) (punctuation 32401 . 32402) (semantic-list 32387 . 32400) (symbol 32375 . 32387) (punctuation 32374 . 32375) (punctuation 32373 . 32374) (symbol 32369 . 32373) (punctuation 32368 . 32369) (punctuation 32367 . 32368) (symbol 32357 . 32367) (symbol 32352 . 32356) (semantic-list 31913 . 32350) (VOID 31908 . 31912) (punctuation 31906 . 31907) (punctuation 31905 . 31906) (semantic-list 31902 . 31904) (symbol 31886 . 31902) (punctuation 31885 . 31886) (punctuation 31884 . 31885) (symbol 31880 . 31884) (punctuation 31879 . 31880) (punctuation 31878 . 31879) (symbol 31868 . 31878) (symbol 31863 . 31867) (semantic-list 28715 . 31861) (VOID 28710 . 28714) (punctuation 28708 . 28709) (punctuation 28707 . 28708) (semantic-list 28704 . 28706) (symbol 28695 . 28704) (punctuation 28694 . 28695) (punctuation 28693 . 28694) (symbol 28689 . 28693) (punctuation 28688 . 28689) (punctuation 28687 . 28688) (symbol 28677 . 28687) (symbol 28672 . 28676) (semantic-list 28333 . 28670) (VOID 28328 . 28332) (punctuation 28326 . 28327) (punctuation 28325 . 28326) (semantic-list 28322 . 28324) (symbol 28304 . 28322) (punctuation 28303 . 28304) (punctuation 28302 . 28303) (symbol 28298 . 28302) (punctuation 28297 . 28298) (punctuation 28296 . 28297) (symbol 28286 . 28296) (symbol 28281 . 28285) (semantic-list 28061 . 28279) (VOID 28056 . 28060) (punctuation 28054 . 28055) (punctuation 28053 . 28054) (semantic-list 27954 . 28052) (symbol 27940 . 27954) (punctuation 27939 . 27940) (punctuation 27938 . 27939) (symbol 27934 . 27938) (punctuation 27933 . 27934) (punctuation 27932 . 27933) (symbol 27922 . 27932) (symbol 27917 . 27921) (semantic-list 27501 . 27548) (symbol 27489 . 27496) (punctuation 27487 . 27488) (punctuation 27486 . 27487) (semantic-list 27449 . 27485) (symbol 27443 . 27449) (symbol 27439 . 27442) (semantic-list 27396 . 27437) (symbol 27384 . 27391) (punctuation 27382 . 27383) (punctuation 27381 . 27382) (semantic-list 27358 . 27380) (symbol 27352 . 27358) (symbol 27348 . 27351) (semantic-list 27182 . 27346) (VOID 27177 . 27181) (punctuation 27175 . 27176) (punctuation 27174 . 27175) (semantic-list 27134 . 27173) (symbol 27123 . 27134) (punctuation 27122 . 27123) (punctuation 27121 . 27122) (symbol 27117 . 27121) (punctuation 27116 . 27117) (punctuation 27115 . 27116) (symbol 27105 . 27115) (symbol 27100 . 27104) (semantic-list 25364 . 27098) (symbol 25355 . 25363) (punctuation 25353 . 25354) (punctuation 25352 . 25353) (CONST 25346 . 25351) (semantic-list 25329 . 25345) (symbol 25313 . 25329) (punctuation 25312 . 25313) (punctuation 25311 . 25312) (symbol 25307 . 25311) (punctuation 25306 . 25307) (punctuation 25305 . 25306) (symbol 25295 . 25305) (symbol 25290 . 25294) (semantic-list 25003 . 25288) (VOID 24998 . 25002) (punctuation 24996 . 24997) (punctuation 24995 . 24996) (semantic-list 24978 . 24994) (symbol 24971 . 24978) (punctuation 24970 . 24971) (punctuation 24969 . 24970) (symbol 24965 . 24969) (punctuation 24964 . 24965) (punctuation 24963 . 24964) (symbol 24953 . 24963) (symbol 24948 . 24952) (semantic-list 24666 . 24946) (VOID 24661 . 24665) (punctuation 24659 . 24660) (punctuation 24658 . 24659) (semantic-list 24637 . 24657) (symbol 24630 . 24637) (punctuation 24629 . 24630) (punctuation 24628 . 24629) (symbol 24624 . 24628) (punctuation 24623 . 24624) (punctuation 24622 . 24623) (symbol 24612 . 24622) (symbol 24607 . 24611) (semantic-list 24334 . 24605) (VOID 24329 . 24333) (punctuation 24327 . 24328) (punctuation 24326 . 24327) (semantic-list 24323 . 24325) (symbol 24303 . 24323) (punctuation 24302 . 24303) (punctuation 24301 . 24302) (symbol 24297 . 24301) (punctuation 24296 . 24297) (punctuation 24295 . 24296) (symbol 24285 . 24295) (symbol 24280 . 24284) (semantic-list 24154 . 24278) (symbol 24148 . 24153) (punctuation 24146 . 24147) (punctuation 24145 . 24146) (CONST 24139 . 24144) (semantic-list 24136 . 24138) (symbol 24126 . 24136) (punctuation 24125 . 24126) (punctuation 24124 . 24125) (symbol 24120 . 24124) (punctuation 24119 . 24120) (punctuation 24118 . 24119) (symbol 24108 . 24118) (symbol 24103 . 24107) (semantic-list 23998 . 24101) (VOID 23993 . 23997) (punctuation 23991 . 23992) (punctuation 23990 . 23991) (semantic-list 23987 . 23989) (symbol 23966 . 23987) (punctuation 23965 . 23966) (punctuation 23964 . 23965) (symbol 23960 . 23964) (punctuation 23959 . 23960) (punctuation 23958 . 23959) (symbol 23948 . 23958) (symbol 23943 . 23947) (semantic-list 23846 . 23941) (VOID 23841 . 23845) (punctuation 23839 . 23840) (punctuation 23838 . 23839) (semantic-list 23816 . 23837) (symbol 23809 . 23816) (punctuation 23808 . 23809) (punctuation 23807 . 23808) (symbol 23803 . 23807) (punctuation 23802 . 23803) (punctuation 23801 . 23802) (symbol 23791 . 23801) (symbol 23786 . 23790) (semantic-list 23683 . 23785) (VOID 23678 . 23682) (punctuation 23676 . 23677) (punctuation 23675 . 23676) (semantic-list 23653 . 23674) (symbol 23639 . 23653) (punctuation 23638 . 23639) (punctuation 23637 . 23638) (symbol 23633 . 23637) (punctuation 23632 . 23633) (punctuation 23631 . 23632) (symbol 23621 . 23631) (symbol 23616 . 23620) (semantic-list 23509 . 23615) (VOID 23504 . 23508) (punctuation 23502 . 23503) (punctuation 23501 . 23502) (semantic-list 23498 . 23500) (symbol 23486 . 23498) (punctuation 23485 . 23486) (punctuation 23484 . 23485) (symbol 23480 . 23484) (punctuation 23479 . 23480) (punctuation 23478 . 23479) (symbol 23468 . 23478) (symbol 23463 . 23467) (semantic-list 22737 . 23461) (VOID 22732 . 22736) (punctuation 22730 . 22731) (punctuation 22729 . 22730) (semantic-list 22726 . 22728) (symbol 22716 . 22726) (punctuation 22715 . 22716) (punctuation 22714 . 22715) (symbol 22710 . 22714) (punctuation 22709 . 22710) (punctuation 22708 . 22709) (symbol 22698 . 22708) (symbol 22693 . 22697) (semantic-list 22497 . 22691) (VOID 22492 . 22496) (punctuation 22490 . 22491) (punctuation 22489 . 22490) (semantic-list 22486 . 22488) (symbol 22469 . 22486) (punctuation 22468 . 22469) (punctuation 22467 . 22468) (symbol 22463 . 22467) (punctuation 22462 . 22463) (punctuation 22461 . 22462) (symbol 22451 . 22461) (symbol 22446 . 22450) (semantic-list 22152 . 22444) (VOID 22147 . 22151) (punctuation 22145 . 22146) (punctuation 22144 . 22145) (semantic-list 22111 . 22143) (symbol 22095 . 22111) (punctuation 22094 . 22095) (punctuation 22093 . 22094) (symbol 22089 . 22093) (punctuation 22088 . 22089) (punctuation 22087 . 22088) (symbol 22077 . 22087) (symbol 22072 . 22076) (semantic-list 21827 . 22070) (symbol 21809 . 21826) (punctuation 21807 . 21808) (punctuation 21806 . 21807) (CONST 21800 . 21805) (semantic-list 21797 . 21799) (symbol 21784 . 21797) (punctuation 21783 . 21784) (punctuation 21782 . 21783) (symbol 21778 . 21782) (punctuation 21777 . 21778) (punctuation 21776 . 21777) (symbol 21766 . 21776) (symbol 21761 . 21765) (semantic-list 20951 . 21759) (VOID 20946 . 20950) (punctuation 20944 . 20945) (punctuation 20943 . 20944) (semantic-list 20940 . 20942) (symbol 20920 . 20940) (punctuation 20919 . 20920) (punctuation 20918 . 20919) (symbol 20914 . 20918) (punctuation 20913 . 20914) (punctuation 20912 . 20913) (symbol 20902 . 20912) (symbol 20897 . 20901) (semantic-list 20686 . 20895) (VOID 20681 . 20685) (punctuation 20679 . 20680) (punctuation 20678 . 20679) (semantic-list 20675 . 20677) (symbol 20650 . 20675) (punctuation 20649 . 20650) (punctuation 20648 . 20649) (symbol 20644 . 20648) (punctuation 20643 . 20644) (punctuation 20642 . 20643) (symbol 20632 . 20642) (symbol 20627 . 20631) (semantic-list 20185 . 20625) (INT 20181 . 20184) (punctuation 20179 . 20180) (punctuation 20178 . 20179) (CONST 20172 . 20177) (semantic-list 20169 . 20171) (symbol 20145 . 20169) (punctuation 20144 . 20145) (punctuation 20143 . 20144) (symbol 20139 . 20143) (punctuation 20138 . 20139) (punctuation 20137 . 20138) (symbol 20127 . 20137) (symbol 20122 . 20126) (semantic-list 19730 . 20120) (VOID 19725 . 19729) (punctuation 19723 . 19724) (punctuation 19722 . 19723) (semantic-list 19704 . 19721) (symbol 19697 . 19704) (punctuation 19696 . 19697) (punctuation 19695 . 19696) (symbol 19691 . 19695) (punctuation 19690 . 19691) (punctuation 19689 . 19690) (symbol 19679 . 19689) (symbol 19674 . 19678) (semantic-list 19569 . 19672) (VOID 19564 . 19568) (punctuation 19562 . 19563) (punctuation 19561 . 19562) (semantic-list 19558 . 19560) (symbol 19545 . 19558) (punctuation 19544 . 19545) (punctuation 19543 . 19544) (symbol 19539 . 19543) (punctuation 19538 . 19539) (punctuation 19537 . 19538) (symbol 19527 . 19537) (symbol 19522 . 19526) (semantic-list 19298 . 19520) (VOID 19293 . 19297) (punctuation 19291 . 19292) (punctuation 19290 . 19291) (semantic-list 19287 . 19289) (symbol 19278 . 19287) (punctuation 19277 . 19278) (punctuation 19276 . 19277) (symbol 19272 . 19276) (punctuation 19271 . 19272) (punctuation 19270 . 19271) (symbol 19260 . 19270) (symbol 19255 . 19259) (semantic-list 18569 . 19253) (VOID 18564 . 18568) (punctuation 18562 . 18563) (punctuation 18561 . 18562) (semantic-list 18540 . 18560) (symbol 18528 . 18540) (punctuation 18527 . 18528) (punctuation 18526 . 18527) (symbol 18522 . 18526) (punctuation 18521 . 18522) (punctuation 18520 . 18521) (symbol 18510 . 18520) (symbol 18505 . 18509) (semantic-list 17615 . 18503) (VOID 17610 . 17614) (punctuation 17608 . 17609) (punctuation 17607 . 17608) (semantic-list 17523 . 17606) (symbol 17515 . 17523) (punctuation 17514 . 17515) (punctuation 17513 . 17514) (symbol 17509 . 17513) (punctuation 17508 . 17509) (punctuation 17507 . 17508) (symbol 17497 . 17507) (symbol 17492 . 17496) (semantic-list 16628 . 17490) (VOID 16623 . 16627) (punctuation 16621 . 16622) (punctuation 16620 . 16621) (semantic-list 16617 . 16619) (symbol 16598 . 16617) (punctuation 16597 . 16598) (punctuation 16596 . 16597) (symbol 16592 . 16596) (punctuation 16591 . 16592) (punctuation 16590 . 16591) (symbol 16580 . 16590) (symbol 16575 . 16579) (semantic-list 15634 . 16573) (punctuation 15632 . 15633) (symbol 15625 . 15632) (punctuation 15624 . 15625) (symbol 15617 . 15624) (punctuation 15615 . 15616) (punctuation 15614 . 15615) (semantic-list 15543 . 15613) (symbol 15530 . 15543) (punctuation 15529 . 15530) (punctuation 15528 . 15529) (symbol 15524 . 15528) (punctuation 15523 . 15524) (punctuation 15522 . 15523) (symbol 15512 . 15522) (symbol 15507 . 15511) (semantic-list 13958 . 15505) (punctuation 13956 . 13957) (INT 13953 . 13956) (punctuation 13952 . 13953) (symbol 13945 . 13952) (punctuation 13943 . 13944) (punctuation 13942 . 13943) (semantic-list 13854 . 13941) (symbol 13839 . 13854) (punctuation 13838 . 13839) (punctuation 13837 . 13838) (symbol 13833 . 13837) (punctuation 13832 . 13833) (punctuation 13831 . 13832) (symbol 13821 . 13831) (symbol 13816 . 13820) (semantic-list 13467 . 13814) (INT 13463 . 13466) (punctuation 13461 . 13462) (punctuation 13460 . 13461) (semantic-list 13443 . 13459) (symbol 13438 . 13443) (punctuation 13437 . 13438) (punctuation 13436 . 13437) (symbol 13432 . 13436) (punctuation 13431 . 13432) (punctuation 13430 . 13431) (symbol 13420 . 13430) (symbol 13415 . 13419) (semantic-list 12246 . 13413) (INT 12242 . 12245) (punctuation 12240 . 12241) (punctuation 12239 . 12240) (semantic-list 12208 . 12238) (symbol 12202 . 12208) (punctuation 12201 . 12202) (punctuation 12200 . 12201) (symbol 12196 . 12200) (punctuation 12195 . 12196) (punctuation 12194 . 12195) (symbol 12184 . 12194) (symbol 12179 . 12183) (semantic-list 11738 . 12177) (VOID 11733 . 11737) (punctuation 11731 . 11732) (punctuation 11730 . 11731) (semantic-list 11727 . 11729) (symbol 11717 . 11727) (punctuation 11716 . 11717) (punctuation 11715 . 11716) (symbol 11711 . 11715) (punctuation 11710 . 11711) (punctuation 11709 . 11710) (symbol 11699 . 11709) (symbol 11694 . 11698) (semantic-list 10577 . 11692) (VOID 10572 . 10576) (punctuation 10570 . 10571) (punctuation 10569 . 10570) (semantic-list 10566 . 10568) (symbol 10557 . 10566) (punctuation 10556 . 10557) (punctuation 10555 . 10556) (symbol 10551 . 10555) (punctuation 10550 . 10551) (punctuation 10549 . 10550) (symbol 10539 . 10549) (symbol 10534 . 10538) (semantic-list 4363 . 10532) (VOID 4358 . 4362) (punctuation 4356 . 4357) (punctuation 4355 . 4356) (semantic-list 4352 . 4354) (symbol 4342 . 4352) (punctuation 4341 . 4342) (punctuation 4340 . 4341) (symbol 4336 . 4340) (punctuation 4335 . 4336) (punctuation 4334 . 4335) (symbol 4324 . 4334) (symbol 4319 . 4323) (semantic-list 2454 . 4317) (VOID 2449 . 2453) (punctuation 2447 . 2448) (punctuation 2446 . 2447) (semantic-list 2443 . 2445) (symbol 2433 . 2443) (punctuation 2432 . 2433) (punctuation 2431 . 2432) (symbol 2427 . 2431) (punctuation 2426 . 2427) (punctuation 2425 . 2426) (symbol 2415 . 2425) (symbol 2410 . 2414) (semantic-list 1344 . 2408) (VOID 1339 . 1343) (punctuation 1337 . 1338) (punctuation 1336 . 1337) (semantic-list 1333 . 1335) (symbol 1318 . 1333) (punctuation 1317 . 1318) (punctuation 1316 . 1317) (symbol 1312 . 1316) (punctuation 1311 . 1312) (punctuation 1310 . 1311) (symbol 1300 . 1310) (symbol 1295 . 1299) (semantic-list 786 . 1293) (VOID 781 . 785) (punctuation 779 . 780) (punctuation 778 . 779) (semantic-list 674 . 777) (symbol 660 . 674) (punctuation 659 . 660) (punctuation 658 . 659) (symbol 654 . 658) (punctuation 653 . 654) (punctuation 652 . 653) (symbol 642 . 652) (symbol 637 . 641) (punctuation 635 . 636) (symbol 631 . 635) (CLASS 625 . 630) (punctuation 624 . 625) (TEMPLATE 616 . 624)))
+    (semanticdb-table "mainwindow_p.hpp"
+      :file "mainwindow_p.hpp"
+      :fsize 8625
+      :lastmodtime '(21681 29824 598735 192000))
+    (semanticdb-table "playengine_p.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("playengine_p.hpp" include nil nil [1 28])
+            ("OptionList" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1102 1109])
+                    ("OptionList" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("join" variable
+                               (:default-value "','"
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [1125 1140]))                          
+                        :type ("OptionList" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1114 1168])
+                    ("private" label nil (reparse-symbol classsubparts) [2088 2096])
+                    ("m_data" variable (:type ("QByteArray" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2101 2119])
+                    ("m_join" variable (:type "char") (reparse-symbol classsubparts) [2124 2136]))                  
+                :type "class")
+                nil [1083 2139])
+            ("Data" function
+               (:constructor-flag t
+                :parent "PlayEngine::Data"
+                :arguments 
+                  ( ("engine" variable
+                       (:pointer 1
+                        :type ("PlayEngine" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2164 2183]))                  
+                :type ("Data" type (:type "class") nil nil))
+                nil [2141 2203]))          
+      :file "playengine_p.cpp"
+      :pointmax 26570
+      :fsize 26569
+      :lastmodtime '(21681 35070 408933 907000)
+      :unmatched-syntax '((semantic-list 26139 . 26569) (VOID 26134 . 26138) (punctuation 26132 . 26133) (punctuation 26131 . 26132) (semantic-list 26100 . 26130) (symbol 26084 . 26100) (punctuation 26083 . 26084) (punctuation 26082 . 26083) (symbol 26078 . 26082) (punctuation 26077 . 26078) (punctuation 26076 . 26077) (symbol 26066 . 26076) (symbol 26061 . 26065) (semantic-list 25161 . 26059) (VOID 25156 . 25160) (punctuation 25154 . 25155) (punctuation 25153 . 25154) (semantic-list 25150 . 25152) (symbol 25138 . 25150) (punctuation 25137 . 25138) (punctuation 25136 . 25137) (symbol 25132 . 25136) (punctuation 25131 . 25132) (punctuation 25130 . 25131) (symbol 25120 . 25130) (symbol 25115 . 25119) (semantic-list 24722 . 25113) (VOID 24717 . 24721) (punctuation 24715 . 24716) (punctuation 24714 . 24715) (semantic-list 24636 . 24713) (symbol 24633 . 24636) (punctuation 24632 . 24633) (punctuation 24631 . 24632) (symbol 24627 . 24631) (punctuation 24626 . 24627) (punctuation 24625 . 24626) (symbol 24615 . 24625) (symbol 24610 . 24614) (semantic-list 22388 . 24608) (VOID 22383 . 22387) (punctuation 22381 . 22382) (punctuation 22380 . 22381) (semantic-list 22364 . 22379) (symbol 22357 . 22364) (punctuation 22356 . 22357) (punctuation 22355 . 22356) (symbol 22351 . 22355) (punctuation 22350 . 22351) (punctuation 22349 . 22350) (symbol 22339 . 22349) (symbol 22334 . 22338) (semantic-list 18896 . 22332) (VOID 18891 . 18895) (punctuation 18889 . 18890) (punctuation 18888 . 18889) (semantic-list 18869 . 18887) (symbol 18861 . 18869) (punctuation 18860 . 18861) (punctuation 18859 . 18860) (symbol 18855 . 18859) (punctuation 18854 . 18855) (punctuation 18853 . 18854) (symbol 18843 . 18853) (symbol 18838 . 18842) (semantic-list 11840 . 18836) (VOID 11835 . 11839) (punctuation 11833 . 11834) (punctuation 11832 . 11833) (semantic-list 11829 . 11831) (symbol 11822 . 11829) (punctuation 11821 . 11822) (punctuation 11820 . 11821) (symbol 11816 . 11820) (punctuation 11815 . 11816) (punctuation 11814 . 11815) (symbol 11804 . 11814) (symbol 11799 . 11803) (semantic-list 11280 . 11797) (VOID 11275 . 11279) (punctuation 11273 . 11274) (punctuation 11272 . 11273) (semantic-list 11269 . 11271) (symbol 11265 . 11269) (punctuation 11264 . 11265) (punctuation 11263 . 11264) (symbol 11259 . 11263) (punctuation 11258 . 11259) (punctuation 11257 . 11258) (symbol 11247 . 11257) (symbol 11242 . 11246) (semantic-list 10875 . 11240) (VOID 10870 . 10874) (punctuation 10868 . 10869) (punctuation 10867 . 10868) (semantic-list 10864 . 10866) (symbol 10840 . 10864) (punctuation 10839 . 10840) (punctuation 10838 . 10839) (symbol 10834 . 10838) (punctuation 10833 . 10834) (punctuation 10832 . 10833) (symbol 10822 . 10832) (symbol 10817 . 10821) (semantic-list 9847 . 10815) (BOOL 9842 . 9846) (punctuation 9840 . 9841) (punctuation 9839 . 9840) (semantic-list 9802 . 9838) (symbol 9789 . 9802) (punctuation 9832 . 9833) (punctuation 9788 . 9789) (punctuation 9787 . 9788) (symbol 9783 . 9787) (punctuation 9832 . 9833) (punctuation 9782 . 9783) (punctuation 9781 . 9782) (symbol 9771 . 9781) (punctuation 9832 . 9833) (symbol 9766 . 9770) (punctuation 9832 . 9833) (semantic-list 9355 . 9764) (VOID 9350 . 9354) (punctuation 9348 . 9349) (punctuation 9347 . 9348) (semantic-list 9325 . 9346) (symbol 9310 . 9325) (punctuation 9309 . 9310) (punctuation 9308 . 9309) (symbol 9304 . 9308) (punctuation 9303 . 9304) (punctuation 9302 . 9303) (symbol 9292 . 9302) (symbol 9287 . 9291) (semantic-list 9176 . 9285) (VOID 9171 . 9175) (punctuation 9169 . 9170) (punctuation 9168 . 9169) (semantic-list 9155 . 9167) (symbol 9147 . 9155) (punctuation 9146 . 9147) (punctuation 9145 . 9146) (symbol 9141 . 9145) (punctuation 9140 . 9141) (punctuation 9139 . 9140) (symbol 9129 . 9139) (symbol 9124 . 9128) (semantic-list 9017 . 9122) (VOID 9012 . 9016) (punctuation 9010 . 9011) (punctuation 9009 . 9010) (semantic-list 9006 . 9008) (symbol 8997 . 9006) (punctuation 8996 . 8997) (punctuation 8995 . 8996) (symbol 8991 . 8995) (punctuation 8990 . 8991) (punctuation 8989 . 8990) (symbol 8979 . 8989) (symbol 8974 . 8978) (semantic-list 5895 . 8972) (VOID 5890 . 5894) (punctuation 5888 . 5889) (punctuation 5887 . 5888) (semantic-list 5802 . 5886) (symbol 5794 . 5802) (punctuation 5793 . 5794) (punctuation 5792 . 5793) (symbol 5788 . 5792) (punctuation 5787 . 5788) (punctuation 5786 . 5787) (symbol 5776 . 5786) (symbol 5771 . 5775) (semantic-list 5502 . 5769) (VOID 5497 . 5501) (punctuation 5495 . 5496) (punctuation 5494 . 5495) (semantic-list 5415 . 5493) (symbol 5408 . 5415) (punctuation 5487 . 5488) (punctuation 5407 . 5408) (punctuation 5406 . 5407) (symbol 5402 . 5406) (punctuation 5487 . 5488) (punctuation 5401 . 5402) (punctuation 5400 . 5401) (symbol 5390 . 5400) (punctuation 5487 . 5488) (symbol 5385 . 5389) (punctuation 5487 . 5488) (semantic-list 5107 . 5383) (VOID 5102 . 5106) (punctuation 5100 . 5101) (punctuation 5099 . 5100) (semantic-list 5014 . 5098) (symbol 5001 . 5014) (punctuation 5092 . 5093) (punctuation 5000 . 5001) (punctuation 4999 . 5000) (symbol 4995 . 4999) (punctuation 5092 . 5093) (punctuation 4994 . 4995) (punctuation 4993 . 4994) (symbol 4983 . 4993) (punctuation 5092 . 5093) (symbol 4978 . 4982) (punctuation 5092 . 5093) (semantic-list 4855 . 4976) (VOID 4850 . 4854) (punctuation 4848 . 4849) (punctuation 4847 . 4848) (semantic-list 4823 . 4846) (symbol 4816 . 4823) (punctuation 4815 . 4816) (punctuation 4814 . 4815) (symbol 4810 . 4814) (punctuation 4809 . 4810) (punctuation 4808 . 4809) (symbol 4798 . 4808) (symbol 4793 . 4797) (semantic-list 4736 . 4791) (VOID 4731 . 4735) (punctuation 4729 . 4730) (punctuation 4728 . 4729) (semantic-list 4725 . 4727) (symbol 4704 . 4725) (punctuation 4703 . 4704) (punctuation 4702 . 4703) (symbol 4698 . 4702) (punctuation 4697 . 4698) (punctuation 4696 . 4697) (symbol 4686 . 4696) (symbol 4681 . 4685) (semantic-list 3988 . 4679) (VOID 3983 . 3987) (punctuation 3981 . 3982) (punctuation 3980 . 3981) (semantic-list 3977 . 3979) (symbol 3960 . 3977) (punctuation 3959 . 3960) (punctuation 3958 . 3959) (symbol 3954 . 3958) (punctuation 3953 . 3954) (punctuation 3952 . 3953) (symbol 3942 . 3952) (symbol 3937 . 3941) (semantic-list 2863 . 3935) (symbol 2852 . 2862) (punctuation 2850 . 2851) (punctuation 2849 . 2850) (CONST 2843 . 2848) (semantic-list 2840 . 2842) (symbol 2825 . 2840) (punctuation 2824 . 2825) (punctuation 2823 . 2824) (symbol 2819 . 2823) (punctuation 2818 . 2819) (punctuation 2817 . 2818) (symbol 2807 . 2817) (symbol 2802 . 2806) (semantic-list 2740 . 2800) (symbol 2729 . 2739) (punctuation 2727 . 2728) (punctuation 2726 . 2727) (CONST 2720 . 2725) (semantic-list 2717 . 2719) (symbol 2715 . 2717) (punctuation 2714 . 2715) (punctuation 2713 . 2714) (symbol 2709 . 2713) (punctuation 2708 . 2709) (punctuation 2707 . 2708) (symbol 2697 . 2707) (symbol 2692 . 2696) (semantic-list 2472 . 2690) (symbol 2461 . 2471) (punctuation 2459 . 2460) (punctuation 2458 . 2459) (CONST 2452 . 2457) (semantic-list 2449 . 2451) (symbol 2447 . 2449) (punctuation 2446 . 2447) (punctuation 2445 . 2446) (symbol 2441 . 2445) (punctuation 2440 . 2441) (punctuation 2439 . 2440) (symbol 2429 . 2439) (symbol 2424 . 2428) (semantic-list 2253 . 2422) (symbol 2242 . 2252) (punctuation 2240 . 2241) (punctuation 2239 . 2240) (CONST 2233 . 2238) (semantic-list 2230 . 2232) (symbol 2228 . 2230) (punctuation 2227 . 2228) (punctuation 2226 . 2227) (symbol 2222 . 2226) (punctuation 2221 . 2222) (punctuation 2220 . 2221) (symbol 2210 . 2220) (symbol 2205 . 2209) (semantic-list 2062 . 2087) (punctuation 2060 . 2061) (CHAR 2056 . 2060) (CONST 2050 . 2055) (punctuation 2048 . 2049) (punctuation 2047 . 2048) (CONST 2041 . 2046) (semantic-list 2038 . 2040) (symbol 2034 . 2038) (symbol 2029 . 2033) (semantic-list 2006 . 2024) (punctuation 2004 . 2005) (symbol 1994 . 2004) (CONST 1988 . 1993) (punctuation 1986 . 1987) (punctuation 1985 . 1986) (CONST 1979 . 1984) (semantic-list 1976 . 1978) (symbol 1973 . 1976) (symbol 1968 . 1972) (semantic-list 1924 . 1963) (VOID 1911 . 1915) (punctuation 1909 . 1910) (punctuation 1908 . 1909) (semantic-list 1872 . 1907) (symbol 1869 . 1872) (symbol 1864 . 1868) (semantic-list 1819 . 1859) (VOID 1806 . 1810) (punctuation 1804 . 1805) (punctuation 1803 . 1804) (semantic-list 1768 . 1802) (symbol 1765 . 1768) (symbol 1760 . 1764) (semantic-list 1715 . 1755) (VOID 1702 . 1706) (punctuation 1700 . 1701) (punctuation 1699 . 1700) (semantic-list 1661 . 1698) (symbol 1658 . 1661) (symbol 1653 . 1657) (semantic-list 1602 . 1648) (VOID 1589 . 1593) (punctuation 1587 . 1588) (punctuation 1586 . 1587) (semantic-list 1549 . 1585) (symbol 1546 . 1549) (symbol 1541 . 1545) (semantic-list 1275 . 1536) (VOID 1266 . 1270) (punctuation 1264 . 1265) (punctuation 1263 . 1264) (semantic-list 1181 . 1262) (symbol 1178 . 1181) (symbol 1173 . 1177) (semantic-list 303 . 1081) (VOID 298 . 302) (punctuation 296 . 297) (punctuation 295 . 296) (semantic-list 292 . 294) (symbol 277 . 292) (symbol 272 . 276) (semantic-list 86 . 270) (symbol 84 . 85) (punctuation 82 . 83) (punctuation 81 . 82) (semantic-list 60 . 80) (symbol 52 . 60) (symbol 48 . 51) (punctuation 46 . 47) (symbol 45 . 46) (CLASS 39 . 44) (punctuation 38 . 39) (TEMPLATE 30 . 38)))
+    (semanticdb-table "playengine_p.hpp"
+      :file "playengine_p.hpp"
+      :fsize 18754
+      :lastmodtime '(21681 35070 408933 907000))
+    (semanticdb-table "pref_helper.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("PREF_HELPER_HPP" variable (:constant-flag t) nil [33 48])
+            ("misc/json.hpp" include nil nil [50 74])
+            ("player/mrlstate.hpp" include nil nil [75 105])
+            ("video/hwacc.hpp" include nil nil [106 132])
+            ("PrefEditorProperty" type
+               (:template 
+                  ( ("T" type (:type "class") nil nil))                  
+                :type "struct"
+                :members 
+                  ( ("name" variable
+                       (:constant-flag t
+                        :default-value "\"value\""
+                        :type ("auto" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [201 227]))                  )
+                nil [134 230])
+            ("DEC_SP" variable (:constant-flag t) nil [240 246])
+            ("PrefEditorProperty" type
+               (:type "struct"
+                :members 
+                  ( ("name" variable
+                       (:constant-flag t
+                        :default-value "n"
+                        :type ("auto" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) nil))                  
+                :template-specifier 
+                  ( ("bool" type nil nil nil))                  )
+                nil [342 365])
+            ("PrefEditorProperty" type
+               (:type "struct"
+                :members 
+                  ( ("name" variable
+                       (:constant-flag t
+                        :default-value "n"
+                        :type ("auto" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) nil))                  
+                :template-specifier 
+                  ( ("QString" type nil nil nil))                  )
+                nil [366 389])
+            ("PrefEditorProperty" type
+               (:type "struct"
+                :members 
+                  ( ("name" variable
+                       (:constant-flag t
+                        :default-value "n"
+                        :type ("auto" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) nil))                  
+                :template-specifier 
+                  ( ("QColor" type nil nil nil))                  )
+                nil [390 413])
+            ("PrefFieldIO" type
+               (:template 
+                  ( ("T" type (:type "class") nil nil))                  
+                :type "struct")
+                nil [415 844])
+            ("JsonIO" type
+               (:type "struct"
+                :members 
+                  ( ("QJsonValue::String" variable (:type "int") (reparse-symbol classsubparts) [1316 1335]))                  
+                :template-specifier 
+                  ( ("QMetaProperty" type nil nil nil))                  )
+                nil [846 1338])
+            ("PrefFieldInfo" type
+               (:members 
+                  ( ("editorName" function (:type ("auto" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1501 1545])
+                    ("propertyName" function (:type ("auto" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1550 1602])
+                    ("editorPropertyName" function (:type ("auto" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1607 1667])
+                    ("QJsonValue" variable (:type "int") (reparse-symbol classsubparts) [1784 1795])
+                    ("private" label nil (reparse-symbol classsubparts) [1935 1943])
+                    ("" function
+                       (:prototype-flag t
+                        :operator-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("QVariant" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1978 1994]))                          
+                        :type ("QJsonValue" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1963 1995])
+                    ("" function
+                       (:prototype-flag t
+                        :operator-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable
+                               (:reference 1
+                                :type ("QVariant" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2029 2039])
+                            ("" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("QJsonValue" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2040 2058]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [2020 2059])
+                    ("Pref" friend nil (reparse-symbol classsubparts) [2064 2081])
+                    ("PrefFieldInfo" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("p" variable
+                               (:pointer 1
+                                :type ("QObject" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2101 2112])
+                            ("toJson" variable (:type ("ToJson" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2113 2127])
+                            ("setFromJson" variable (:type ("SetFromJson" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2128 2152])
+                            ("property" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2171 2192])
+                            ("editorProperty" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2193 2220]))                          
+                        :type ("PrefFieldInfo" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [2087 2221])
+                    ("PrefFieldInfo" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("p" variable
+                               (:pointer 1
+                                :type ("QObject" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [2240 2251])
+                            ("toJson" variable (:type ("ToJson" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2252 2266])
+                            ("setFromJson" variable (:type ("SetFromJson" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2267 2291])
+                            ("property" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2310 2331])
+                            ("editor" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2332 2351])
+                            ("editorProperty" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [2352 2379]))                          
+                        :type ("PrefFieldInfo" type (:type "struct") nil nil))
+                        (reparse-symbol classsubparts) [2226 2380])
+                    ("m_property" variable (:type ("QMetaProperty" type (:type "class") nil nil)) (reparse-symbol classsubparts) [2385 2410])
+                    ("m_propertyName" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :default-value "nullptr"
+                        :type "char")
+                        (reparse-symbol classsubparts) [2415 2458])
+                    ("m_editor" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :default-value "nullptr"
+                        :type "char")
+                        (reparse-symbol classsubparts) [2463 2500])
+                    ("m_editorProperty" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :default-value "nullptr"
+                        :type "char")
+                        (reparse-symbol classsubparts) [2505 2550])
+                    ("m_toJson" variable
+                       (:default-value "nullptr"
+                        :type ("ToJson" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2555 2581])
+                    ("m_setFromJson" variable
+                       (:default-value "nullptr"
+                        :type ("SetFromJson" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2586 2622]))                  
+                :type "struct")
+                nil [1340 2625]))          
+      :file "pref_helper.hpp"
+      :pointmax 2695
+      :fsize 2694
+      :lastmodtime '(21681 29824 602068 472000)
+      :unmatched-syntax '((semantic-list 2645 . 2667) (symbol 2627 . 2645) (punctuation 2081 . 2082) (punctuation 2018 . 2019) (symbol 2006 . 2017) (USING 2000 . 2005) (punctuation 1961 . 1962) (symbol 1954 . 1960) (USING 1948 . 1953) (punctuation 1933 . 1934) (punctuation 1932 . 1933) (punctuation 1931 . 1932) (punctuation 1930 . 1931) (symbol 1917 . 1930) (CONST 1911 . 1916) (punctuation 1910 . 1911) (symbol 1903 . 1910) (CONST 1897 . 1902) (punctuation 1895 . 1896) (punctuation 1894 . 1895) (semantic-list 1891 . 1893) (symbol 1884 . 1891) (symbol 1879 . 1883) (STATIC 1872 . 1878) (punctuation 1866 . 1867) (BOOL 1862 . 1866) (punctuation 1860 . 1861) (punctuation 1859 . 1860) (CONST 1853 . 1858) (semantic-list 1816 . 1852) (symbol 1805 . 1816) (symbol 1800 . 1804) (punctuation 1782 . 1783) (punctuation 1781 . 1782) (CONST 1775 . 1780) (semantic-list 1756 . 1774) (symbol 1750 . 1756) (symbol 1745 . 1749) (semantic-list 1718 . 1740) (punctuation 1716 . 1717) (symbol 1703 . 1716) (CONST 1697 . 1702) (punctuation 1695 . 1696) (punctuation 1694 . 1695) (CONST 1688 . 1693) (semantic-list 1685 . 1687) (symbol 1677 . 1685) (symbol 1672 . 1676) (punctuation 1495 . 1496) (VOID 1491 . 1495) (punctuation 1489 . 1490) (punctuation 1488 . 1489) (CONST 1482 . 1487) (semantic-list 1451 . 1481) (symbol 1440 . 1451) (symbol 1435 . 1439) (punctuation 1429 . 1430) (VOID 1425 . 1429) (punctuation 1423 . 1424) (punctuation 1422 . 1423) (CONST 1416 . 1421) (semantic-list 1385 . 1415) (symbol 1372 . 1385) (symbol 1367 . 1371) (punctuation 1314 . 1315) (symbol 1306 . 1313) (symbol 1302 . 1305) (semantic-list 1064 . 1297) (BOOL 1055 . 1059) (punctuation 1053 . 1054) (punctuation 1052 . 1053) (CONST 1046 . 1051) (semantic-list 1000 . 1045) (symbol 992 . 1000) (symbol 987 . 991) (semantic-list 955 . 982) (symbol 940 . 950) (punctuation 938 . 939) (punctuation 937 . 938) (CONST 931 . 936) (semantic-list 903 . 930) (symbol 897 . 903) (symbol 892 . 896) (semantic-list 695 . 841) (BOOL 686 . 690) (punctuation 684 . 685) (punctuation 683 . 684) (semantic-list 643 . 682) (symbol 635 . 643) (symbol 630 . 634) (STATIC 623 . 629) (semantic-list 514 . 618) (symbol 499 . 509) (punctuation 497 . 498) (punctuation 496 . 497) (semantic-list 476 . 495) (symbol 470 . 476) (symbol 465 . 469) (STATIC 458 . 464) (symbol 191 . 200) (STATIC 184 . 190))
+      :lexical-table 
+        '(("DEC_SP" (spp-arg-list ("t" "n") 246 . 252) . 
+              ((TEMPLATE "template" 253 . 261) (punctuation "<" 261 . 262) (punctuation ">" 262 . 263) (STRUCT "struct" 264 . 270) (symbol "PrefEditorProperty" 271 . 289) (punctuation "<" 289 . 290) (symbol "t" 290 . 291) (punctuation ">" 291 . 292) (semantic-list "{ static constexpr const auto name = n; }" 299 . 340) (punctuation ";" 340 . 341)))
+          ("PREF_HELPER_HPP")
+          )
+)
+    (semanticdb-table "mrlstate.hpp"
+      :file "mrlstate.hpp"
+      :fsize 6143
+      :lastmodtime '(21681 29824 598735 192000))
+    (semanticdb-table "mrlstate_old.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("mrlstate_old.hpp" include nil nil [1 28])
+            ("BitHelper" type
+               (:members 
+                  ( ("B_MSec" variable
+                       (:constant-flag t
+                        :default-value (60 62)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [51 62])
+                    ("B_Sec" variable
+                       (:constant-flag t
+                        :default-value (76 77)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [68 77])
+                    ("B_Min" variable
+                       (:constant-flag t
+                        :default-value (91 92)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [83 92])
+                    ("B_Hour" variable
+                       (:constant-flag t
+                        :default-value (107 108)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [98 108])
+                    ("B_Day" variable
+                       (:constant-flag t
+                        :default-value (122 123)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [114 123])
+                    ("B_Month" variable
+                       (:constant-flag t
+                        :default-value (139 140)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [129 140])
+                    ("B_Year" variable
+                       (:constant-flag t
+                        :default-value (155 157)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [146 157]))                  
+                :type "enum")
+                nil [30 160])
+            ("ShiftHelper" type
+               (:members 
+                  ( ("S_MSec" variable
+                       (:constant-flag t
+                        :default-value (194 195)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [185 195])
+                    ("S_Sec" variable
+                       (:constant-flag t
+                        :default-value (209 224)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [201 224])
+                    ("S_Min" variable
+                       (:constant-flag t
+                        :default-value (238 251)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [230 251])
+                    ("S_Hour" variable
+                       (:constant-flag t
+                        :default-value (266 279)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [257 279])
+                    ("S_Day" variable
+                       (:constant-flag t
+                        :default-value (293 308)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [285 308])
+                    ("S_Month" variable
+                       (:constant-flag t
+                        :default-value (324 337)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [314 337])
+                    ("S_Year" variable
+                       (:constant-flag t
+                        :default-value (352 369)
+                        :type "int")
+                        (reparse-symbol enumsubparts) [343 369]))                  
+                :type "enum")
+                nil [162 372])
+            ("_Is" function
+               (:template 
+                  ( ("T" type (:type "class") nil nil))                  
+                :type "bool"
+                :arguments 
+                  ( ("type" variable (:type "int") (reparse-symbol arg-sub-list) [6118 6127]))                  
+                :typemodifiers ("static" "inline"))
+                nil [6077 6164]))          
+      :file "mrlstate_old.cpp"
+      :pointmax 9753
+      :fsize 9752
+      :lastmodtime '(21681 29824 598735 192000)
+      :unmatched-syntax '((semantic-list 6211 . 9752) (punctuation 6209 . 6210) (symbol 6199 . 6209) (punctuation 6198 . 6199) (symbol 6193 . 6198) (punctuation 6191 . 6192) (punctuation 6190 . 6191) (semantic-list 6187 . 6189) (symbol 6183 . 6187) (punctuation 6182 . 6183) (punctuation 6181 . 6182) (symbol 6171 . 6181) (symbol 6166 . 6170) (semantic-list 2030 . 6075) (punctuation 2028 . 2029) (symbol 2018 . 2028) (punctuation 2017 . 2018) (symbol 2012 . 2017) (punctuation 2010 . 2011) (punctuation 2009 . 2010) (semantic-list 2006 . 2008) (symbol 2002 . 2006) (punctuation 2001 . 2002) (punctuation 2000 . 2001) (symbol 1990 . 2000) (symbol 1985 . 1989) (semantic-list 1751 . 1983) (symbol 1744 . 1750) (punctuation 1742 . 1743) (punctuation 1741 . 1742) (semantic-list 1701 . 1740) (symbol 1688 . 1701) (symbol 1684 . 1687) (semantic-list 1643 . 1682) (symbol 1635 . 1642) (punctuation 1633 . 1634) (punctuation 1632 . 1633) (semantic-list 1606 . 1631) (symbol 1600 . 1606) (symbol 1596 . 1599) (semantic-list 1505 . 1594) (symbol 1497 . 1504) (punctuation 1495 . 1496) (punctuation 1494 . 1495) (semantic-list 1476 . 1493) (symbol 1470 . 1476) (symbol 1466 . 1469) (semantic-list 1428 . 1464) (symbol 1420 . 1427) (punctuation 1418 . 1419) (punctuation 1417 . 1418) (semantic-list 1400 . 1416) (symbol 1394 . 1400) (symbol 1390 . 1393) (semantic-list 1353 . 1389) (symbol 1345 . 1352) (punctuation 1343 . 1344) (punctuation 1342 . 1343) (semantic-list 1325 . 1341) (symbol 1319 . 1325) (symbol 1315 . 1318) (semantic-list 991 . 1313) (symbol 983 . 990) (punctuation 981 . 982) (punctuation 980 . 981) (semantic-list 968 . 979) (symbol 952 . 968) (symbol 948 . 951) (semantic-list 534 . 946) (symbol 526 . 533) (punctuation 524 . 525) (punctuation 523 . 524) (semantic-list 501 . 522) (symbol 495 . 501) (symbol 491 . 494) (semantic-list 417 . 488) (symbol 409 . 416) (punctuation 407 . 408) (punctuation 406 . 407) (semantic-list 384 . 405) (symbol 378 . 384) (symbol 374 . 377)))
+    (semanticdb-table "mrlstate_old.hpp"
+      :file "mrlstate_old.hpp"
+      :fsize 7835
+      :lastmodtime '(21681 29824 598735 192000))
+    (semanticdb-table "playlist.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("playlist.hpp" include nil nil [1 24])
+            ("Playlist" function
+               (:constructor-flag t
+                :parent "Playlist"
+                :type ("Playlist" type (:type "class") nil nil))
+                nil [26 64])
+            ("Playlist" function
+               (:constructor-flag t
+                :parent "Playlist"
+                :arguments 
+                  ( ("rhs" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Playlist" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [85 105]))                  
+                :type ("Playlist" type (:type "class") nil nil))
+                nil [66 126])
+            ("Playlist" function
+               (:constructor-flag t
+                :parent "Playlist"
+                :arguments 
+                  ( ("mrl" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Mrl" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [147 162]))                  
+                :type ("Playlist" type (:type "class") nil nil))
+                nil [128 200])
+            ("Playlist" function
+               (:constructor-flag t
+                :parent "Playlist"
+                :arguments 
+                  ( ("mrl" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Mrl" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [221 236])
+                    ("enc" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QString" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [237 256]))                  
+                :type ("Playlist" type (:type "class") nil nil))
+                nil [202 280])
+            ("Playlist" function
+               (:constructor-flag t
+                :parent "Playlist"
+                :arguments 
+                  ( ("rhs" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QList" type
+                             (:template-specifier 
+                                ( ("Mrl" type nil nil nil))                                
+                              :type "class")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [301 323]))                  
+                :type ("Playlist" type (:type "class") nil nil))
+                nil [282 344]))          
+      :file "playlist.cpp"
+      :pointmax 5494
+      :fsize 5493
+      :lastmodtime '(21681 29824 602068 472000)
+      :unmatched-syntax '((semantic-list 5170 . 5493) (VOID 5165 . 5169) (punctuation 5163 . 5164) (punctuation 5162 . 5163) (semantic-list 5124 . 5161) (symbol 5120 . 5124) (punctuation 5119 . 5120) (punctuation 5118 . 5119) (symbol 5110 . 5118) (symbol 5105 . 5109) (semantic-list 4868 . 5103) (VOID 4863 . 4867) (punctuation 4861 . 4862) (punctuation 4860 . 4861) (CONST 4854 . 4859) (semantic-list 4816 . 4853) (symbol 4812 . 4816) (punctuation 4811 . 4812) (punctuation 4810 . 4811) (symbol 4802 . 4810) (symbol 4797 . 4801) (semantic-list 4458 . 4795) (symbol 4450 . 4457) (punctuation 4448 . 4449) (punctuation 4447 . 4448) (semantic-list 4404 . 4446) (symbol 4397 . 4404) (punctuation 4396 . 4397) (punctuation 4395 . 4396) (symbol 4387 . 4395) (symbol 4382 . 4386) (semantic-list 3400 . 4380) (BOOL 3395 . 3399) (punctuation 3393 . 3394) (punctuation 3392 . 3393) (semantic-list 3357 . 3391) (symbol 3350 . 3357) (punctuation 3349 . 3350) (punctuation 3348 . 3349) (symbol 3340 . 3348) (symbol 3335 . 3339) (semantic-list 2928 . 3333) (BOOL 2923 . 2927) (punctuation 2921 . 2922) (punctuation 2920 . 2921) (semantic-list 2885 . 2919) (symbol 2878 . 2885) (punctuation 2877 . 2878) (punctuation 2876 . 2877) (symbol 2868 . 2876) (symbol 2863 . 2867) (semantic-list 2652 . 2860) (BOOL 2647 . 2651) (punctuation 2645 . 2646) (punctuation 2644 . 2645) (CONST 2638 . 2643) (semantic-list 2619 . 2637) (symbol 2612 . 2619) (punctuation 2611 . 2612) (punctuation 2610 . 2611) (symbol 2602 . 2610) (symbol 2597 . 2601) (semantic-list 2272 . 2595) (BOOL 2267 . 2271) (punctuation 2265 . 2266) (punctuation 2264 . 2265) (CONST 2258 . 2263) (semantic-list 2239 . 2257) (symbol 2232 . 2239) (punctuation 2231 . 2232) (punctuation 2230 . 2231) (symbol 2222 . 2230) (symbol 2217 . 2221) (semantic-list 1962 . 2215) (symbol 1957 . 1961) (punctuation 1956 . 1957) (punctuation 1955 . 1956) (symbol 1947 . 1955) (punctuation 1945 . 1946) (punctuation 1944 . 1945) (semantic-list 1918 . 1943) (symbol 1909 . 1918) (punctuation 1908 . 1909) (punctuation 1907 . 1908) (symbol 1899 . 1907) (symbol 1894 . 1898) (semantic-list 1793 . 1892) (BOOL 1788 . 1792) (punctuation 1786 . 1787) (punctuation 1785 . 1786) (semantic-list 1737 . 1784) (symbol 1733 . 1737) (punctuation 1732 . 1733) (punctuation 1731 . 1732) (symbol 1723 . 1731) (symbol 1718 . 1722) (semantic-list 1508 . 1716) (BOOL 1503 . 1507) (punctuation 1501 . 1502) (punctuation 1500 . 1501) (semantic-list 1443 . 1499) (symbol 1439 . 1443) (punctuation 1438 . 1439) (punctuation 1437 . 1438) (symbol 1429 . 1437) (symbol 1424 . 1428) (semantic-list 1356 . 1422) (BOOL 1351 . 1355) (punctuation 1349 . 1350) (punctuation 1348 . 1349) (semantic-list 1261 . 1347) (symbol 1257 . 1261) (punctuation 1256 . 1257) (punctuation 1255 . 1256) (symbol 1247 . 1255) (symbol 1242 . 1246) (semantic-list 916 . 1240) (BOOL 911 . 915) (punctuation 909 . 910) (punctuation 908 . 909) (semantic-list 829 . 907) (symbol 825 . 829) (punctuation 824 . 825) (punctuation 823 . 824) (symbol 815 . 823) (symbol 810 . 814) (semantic-list 416 . 808) (BOOL 411 . 415) (punctuation 409 . 410) (punctuation 408 . 409) (CONST 402 . 407) (semantic-list 365 . 401) (symbol 361 . 365) (punctuation 360 . 361) (punctuation 359 . 360) (symbol 351 . 359) (symbol 346 . 350)))
+    (semanticdb-table "playlist.hpp"
+      :file "playlist.hpp"
+      :fsize 1337
+      :lastmodtime '(21681 29824 602068 472000))
+    (semanticdb-table "mrlstate.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("mrlstate.hpp" include nil nil [1 24])
+            ("mrlstate_old.hpp" include nil nil [25 52])
+            ("misc/json.hpp" include nil nil [53 77])
+            ("JsonIO" type
+               (:type "struct"
+                :superclasses 
+                  ( ("JsonQStringType" type
+                       (:protection "unspecified"
+                        :type "class")
+                        nil nil))                  
+                :template-specifier 
+                  ( ("Mrl" type nil nil nil))                  )
+                nil [79 415])
+            ("JsonIO" type
+               (:type "struct"
+                :members 
+                  ( ("QJsonValue::Double" variable (:type "int") (reparse-symbol classsubparts) [805 824]))                  
+                :template-specifier 
+                  ( ("QDateTime" type nil nil nil))                  )
+                nil [417 827])
+            ("JSON_CLASS" variable (:constant-flag t) nil [837 847])
+            ("jio" variable
+               (:typemodifiers ("static")
+                :constant-flag t
+                :default-value "JIO(
+    JE(mrl),
+    JE(device),
+    JE(last_played_date_time),
+    JE(resume_position),
+    JE(play_speed),
+    JE(edition),
+    JE(video_aspect_ratio),
+    JE(video_crop_ratio),
+    JE(video_deinterlacing),
+    JE(video_interpolator),
+    JE(video_chroma_upscaler),
+    JE(video_dithering),
+    JE(video_offset),
+    JE(video_vertical_alignment),
+    JE(video_horizontal_alignment),
+    JE(video_color),
+    JE(video_space),
+    JE(video_range),
+    JE(video_effects),
+    JE(audio_amplifier),
+    JE(audio_volume),
+    JE(audio_sync),
+    JE(audio_muted),
+    JE(audio_volume_normalizer),
+    JE(audio_tempo_scaler),
+    JE(audio_channel_layout),
+    JE(audio_track),
+    JE(sub_position),
+    JE(sub_sync),
+    JE(sub_display),
+    JE(sub_alignment),
+    JE(sub_track)
+)"
+                :type ("auto" type (:type "class") nil nil))
+                nil [857 1657]))          
+      :file "mrlstate.cpp"
+      :pointmax 6981
+      :fsize 6980
+      :lastmodtime '(21681 29824 598735 192000)
+      :unmatched-syntax '((semantic-list 5050 . 6980) (punctuation 5048 . 5049) (punctuation 5047 . 5048) (symbol 5039 . 5047) (punctuation 5038 . 5039) (symbol 5031 . 5038) (punctuation 5029 . 5030) (punctuation 5028 . 5029) (semantic-list 4997 . 5027) (symbol 4981 . 4997) (symbol 4976 . 4980) (semantic-list 4735 . 4974) (VOID 4730 . 4734) (punctuation 4728 . 4729) (punctuation 4727 . 4728) (semantic-list 4637 . 4726) (symbol 4614 . 4637) (symbol 4609 . 4613) (punctuation 4607 . 4608) (symbol 4606 . 4607) (CLASS 4600 . 4605) (punctuation 4598 . 4599) (symbol 4590 . 4598) (punctuation 4588 . 4589) (symbol 4586 . 4587) (CLASS 4580 . 4585) (punctuation 4579 . 4580) (TEMPLATE 4571 . 4579) (semantic-list 4426 . 4569) (symbol 4418 . 4425) (punctuation 4416 . 4417) (punctuation 4415 . 4416) (semantic-list 4392 . 4414) (symbol 4367 . 4392) (symbol 4362 . 4366) (STATIC 4355 . 4361) (punctuation 4353 . 4354) (symbol 4352 . 4353) (CLASS 4346 . 4351) (punctuation 4345 . 4346) (TEMPLATE 4337 . 4345) (semantic-list 1905 . 4335) (punctuation 1903 . 1904) (symbol 1891 . 1903) (punctuation 1890 . 1891) (symbol 1883 . 1890) (punctuation 1881 . 1882) (punctuation 1880 . 1881) (semantic-list 1877 . 1879) (symbol 1857 . 1877) (punctuation 1856 . 1857) (punctuation 1855 . 1856) (symbol 1847 . 1855) (symbol 1842 . 1846) (semantic-list 1799 . 1840) (BOOL 1794 . 1798) (punctuation 1792 . 1793) (punctuation 1791 . 1792) (semantic-list 1765 . 1790) (symbol 1754 . 1765) (punctuation 1753 . 1754) (punctuation 1752 . 1753) (symbol 1744 . 1752) (symbol 1739 . 1743) (semantic-list 1704 . 1737) (symbol 1692 . 1703) (punctuation 1690 . 1691) (punctuation 1689 . 1690) (CONST 1683 . 1688) (semantic-list 1680 . 1682) (symbol 1674 . 1680) (punctuation 1673 . 1674) (punctuation 1672 . 1673) (symbol 1664 . 1672) (symbol 1659 . 1663) (punctuation 803 . 804) (symbol 795 . 802) (symbol 791 . 794) (semantic-list 640 . 786) (BOOL 631 . 635) (punctuation 629 . 630) (punctuation 628 . 629) (semantic-list 588 . 627) (symbol 580 . 588) (symbol 575 . 579) (STATIC 568 . 574) (semantic-list 521 . 563) (symbol 502 . 512) (punctuation 500 . 501) (punctuation 499 . 500) (semantic-list 477 . 498) (symbol 471 . 477) (symbol 466 . 470) (STATIC 459 . 465) (semantic-list 280 . 412) (BOOL 271 . 275) (punctuation 269 . 270) (punctuation 268 . 269) (semantic-list 233 . 267) (symbol 225 . 233) (symbol 220 . 224) (STATIC 213 . 219) (semantic-list 182 . 208) (symbol 171 . 181) (punctuation 169 . 170) (punctuation 168 . 169) (semantic-list 151 . 167) (symbol 145 . 151) (symbol 140 . 144) (STATIC 133 . 139))
+      :lexical-table 
+        '(("JSON_CLASS" . ((symbol "MrlState" 848 . 856)))
+          ("ADD" (spp-arg-list ("n" "i") 2273 . 2279) . ((symbol "add" 2280 . 2283) (semantic-list "(#n, i)" 2283 . 2290)))
+          )
+))
+  :file "!home!ultimanium!coding!cmplayer!src!cmplayer!player!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

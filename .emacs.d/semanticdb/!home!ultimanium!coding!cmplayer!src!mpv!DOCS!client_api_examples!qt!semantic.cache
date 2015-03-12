@@ -1,0 +1,98 @@
+;; Object qt/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "qt/"
+  :tables
+  (list
+    (semanticdb-table "qtexample.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("clocale" include (:system-flag t) nil [51 69])
+            ("sstream" include (:system-flag t) nil [70 88])
+            ("stdexcept" include (:system-flag t) nil [89 109])
+            ("QtGlobal" include (:system-flag t) nil [111 130])
+            ("QFileDialog" include (:system-flag t) nil [131 153])
+            ("QStatusBar" include (:system-flag t) nil [154 175])
+            ("QMenuBar" include (:system-flag t) nil [176 195])
+            ("QMenu" include (:system-flag t) nil [196 212])
+            ("QGridLayout" include (:system-flag t) nil [213 235])
+            ("QApplication" include (:system-flag t) nil [236 259])
+            ("QTextEdit" include (:system-flag t) nil [260 280])
+            ("mpv/qthelper.hpp" include (:system-flag t) nil [342 369])
+            ("qtexample.h" include nil nil [371 393])
+            ("wakeup" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [414 424]))                  
+                :type "void")
+                nil [395 790])
+            ("MainWindow" function
+               (:constructor-flag t
+                :parent "MainWindow"
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [815 831]))                  
+                :type ("MainWindow" type (:type "class") nil nil))
+                nil [792 3606])
+            ("handle_mpv_event" function
+               (:parent "MainWindow"
+                :arguments 
+                  ( ("event" variable
+                       (:pointer 1
+                        :type ("mpv_event" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3642 3659]))                  
+                :type "void")
+                nil [3608 6285])
+            ("on_mpv_events" function
+               (:parent "MainWindow"
+                :type "void")
+                nil [6356 6625])
+            ("on_file_open" function
+               (:parent "MainWindow"
+                :type "void")
+                nil [6627 6921])
+            ("on_new_window" function
+               (:parent "MainWindow"
+                :type "void")
+                nil [6923 6991])
+            ("append_log" function
+               (:parent "MainWindow"
+                :arguments 
+                  ( ("text" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("QString" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7021 7041]))                  
+                :type "void")
+                nil [6993 7193])
+            ("MainWindow" function
+               (:destructor-flag t
+                :parent "MainWindow"
+                :type "void")
+                nil [7195 7273])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7284 7293])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7294 7307]))                  
+                :type "int")
+                nil [7275 7583]))          
+      :file "qtexample.cpp"
+      :pointmax 7584
+      :fsize 7583
+      :lastmodtime '(21681 30008 799006 417000)
+      :unmatched-syntax nil)
+    (semanticdb-table "qtexample.h"
+      :file "qtexample.h"
+      :fsize 581
+      :lastmodtime '(21681 30008 799006 417000)))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!DOCS!client_api_examples!qt!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

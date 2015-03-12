@@ -1,0 +1,186 @@
+;; Object basics/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "basics/"
+  :tables
+  (list
+    (semanticdb-table "simple_color.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [1 21])
+            ("print_in_middle" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [44 56])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [57 68])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [69 80])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [81 91])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [92 105]))                  
+                :type "void")
+                nil [23 106])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [116 125])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [126 139]))                  
+                :type "int")
+                nil [107 510])
+            ("print_in_middle" function
+               (:arguments 
+                  ( ("win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [532 544])
+                    ("starty" variable (:type "int") (reparse-symbol arg-sub-list) [545 556])
+                    ("startx" variable (:type "int") (reparse-symbol arg-sub-list) [557 568])
+                    ("width" variable (:type "int") (reparse-symbol arg-sub-list) [569 579])
+                    ("string" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [580 593]))                  
+                :type "void")
+                nil [511 903]))          
+      :file "simple_color.c"
+      :pointmax 905
+      :fsize 944
+      :lastmodtime '(17074 62340 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "temp_leave.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [1 21])
+            ("main" function (:type "int") nil [23 686]))          
+      :file "temp_leave.c"
+      :pointmax 687
+      :fsize 706
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "acs_vars.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [1 21])
+            ("main" function (:type "int") nil [23 2614]))          
+      :file "acs_vars.c"
+      :pointmax 2615
+      :fsize 2658
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "init_func_example.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [1 21])
+            ("main" function (:type "int") nil [23 873]))          
+      :file "init_func_example.c"
+      :pointmax 874
+      :fsize 904
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "simple_key.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("ncurses.h" include (:system-flag t) nil [20 40])
+            ("WIDTH" variable (:constant-flag t) nil [50 55])
+            ("HEIGHT" variable (:constant-flag t) nil [67 73])
+            ("startx" variable
+               (:default-value "0"
+                :type "int")
+                nil [79 94])
+            ("starty" variable
+               (:default-value "0"
+                :type "int")
+                nil [95 110])
+            ("choices" variable
+               (:pointer 1
+                :dereference 1
+                :default-value "{ 
+			\"Choice 1\",
+			\"Choice 2\",
+			\"Choice 3\",
+			\"Choice 4\",
+			\"Exit\",
+		  }"
+                :type "char")
+                nil [112 210])
+            ("print_menu" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("menu_win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [277 294])
+                    ("highlight" variable (:type "int") (reparse-symbol arg-sub-list) [295 309]))                  
+                :type "void")
+                nil [261 310])
+            ("main" function (:type "int") nil [312 1455])
+            ("print_menu" function
+               (:arguments 
+                  ( ("menu_win" variable
+                       (:pointer 1
+                        :type ("WINDOW" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1474 1491])
+                    ("highlight" variable (:type "int") (reparse-symbol arg-sub-list) [1492 1506]))                  
+                :type "void")
+                nil [1458 1865]))          
+      :file "simple_key.c"
+      :pointmax 1867
+      :fsize 1958
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax '((punctuation 259 . 260) (semantic-list 251 . 259) (SIZEOF 245 . 251) (punctuation 243 . 244) (semantic-list 233 . 242) (SIZEOF 227 . 233) (punctuation 225 . 226) (symbol 215 . 224) (INT 211 . 214))
+      :lexical-table 
+        '(("HEIGHT" . ((number "10" 74 . 76)))
+          ("WIDTH" . ((number "30" 56 . 58)))
+          )
+)
+    (semanticdb-table "key_code.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [1 21])
+            ("main" function (:type "int") nil [23 170]))          
+      :file "key_code.c"
+      :pointmax 171
+      :fsize 184
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "simple_attr.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [73 93])
+            ("stdlib.h" include (:system-flag t) nil [94 113])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [124 133])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [134 147]))                  
+                :type "int")
+                nil [115 1600]))          
+      :file "simple_attr.c"
+      :pointmax 1601
+      :fsize 1600
+      :lastmodtime '(17074 62160 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "printw_example.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("ncurses.h" include (:system-flag t) nil [1 21])
+            ("string.h" include (:system-flag t) nil [59 78])
+            ("main" function (:type "int") nil [82 714]))          
+      :file "printw_example.c"
+      :pointmax 715
+      :fsize 734
+      :lastmodtime '(17074 58062 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!GNoob!Ncurses!ncurses_programs!basics!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

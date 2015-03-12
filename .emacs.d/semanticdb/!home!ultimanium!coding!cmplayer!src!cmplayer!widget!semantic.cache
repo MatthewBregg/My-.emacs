@@ -1,0 +1,182 @@
+;; Object widget/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "widget/"
+  :tables
+  (list
+    (semanticdb-table "channelmanipulationwidget.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("channelmanipulationwidget.hpp" include nil nil [1 41])
+            ("enumcombobox.hpp" include nil nil [42 69])
+            ("verticallabel.hpp" include nil nil [70 98])
+            ("misc/record.hpp" include nil nil [99 125])
+            ("audio/channellayoutmap.hpp" include nil nil [126 163])
+            ("audio/channelmanipulation.hpp" include nil nil [164 204])
+            ("Data" type
+               (:parent "ChannelManipulationWidget"
+                :members 
+                  ( ("output" variable
+                       (:pointer 1
+                        :type ("ChannelComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [251 283])
+                    ("input" variable
+                       (:pointer 1
+                        :type ("ChannelComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [251 283])
+                    ("table" variable
+                       (:pointer 1
+                        :type ("QTableWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [288 308])
+                    ("map" variable
+                       (:default-value "ChannelLayoutMap::default_()"
+                        :type ("ChannelLayoutMap" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [313 365])
+                    ("ChannelLayout::Mono" variable (:type "int") (reparse-symbol classsubparts) [400 420])
+                    ("ChannelLayout::Mono" variable (:type "int") (reparse-symbol classsubparts) [455 475])
+                    ("makeTable" function (:type "void") (reparse-symbol classsubparts) [481 2621])
+                    ("fillMap" function (:type "void") (reparse-symbol classsubparts) [2626 3526]))                  
+                :type "struct")
+                nil [206 3529])
+            ("ChannelManipulationWidget" function
+               (:constructor-flag t
+                :parent "ChannelManipulationWidget"
+                :arguments 
+                  ( ("parent" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3584 3600]))                  
+                :type ("ChannelManipulationWidget" type (:type "class") nil nil))
+                nil [3531 5381])
+            ("ChannelManipulationWidget" function
+               (:destructor-flag t
+                :parent "ChannelManipulationWidget"
+                :type "void")
+                nil [5383 5590]))          
+      :file "channelmanipulationwidget.cpp"
+      :pointmax 6041
+      :fsize 6042
+      :lastmodtime '(21681 29824 628734 709000)
+      :unmatched-syntax '((semantic-list 6000 . 6040) (symbol 5983 . 5999) (punctuation 5981 . 5982) (punctuation 5980 . 5981) (CONST 5974 . 5979) (semantic-list 5971 . 5973) (symbol 5968 . 5971) (punctuation 5967 . 5968) (punctuation 5966 . 5967) (symbol 5941 . 5966) (symbol 5936 . 5940) (semantic-list 5893 . 5934) (VOID 5888 . 5892) (punctuation 5886 . 5887) (punctuation 5885 . 5886) (semantic-list 5855 . 5884) (symbol 5849 . 5855) (punctuation 5848 . 5849) (punctuation 5847 . 5848) (symbol 5822 . 5847) (symbol 5817 . 5821) (semantic-list 5738 . 5815) (VOID 5733 . 5737) (punctuation 5731 . 5732) (punctuation 5730 . 5731) (semantic-list 5641 . 5729) (symbol 5624 . 5641) (punctuation 5623 . 5624) (punctuation 5622 . 5623) (symbol 5597 . 5622) (symbol 5592 . 5596) (punctuation 453 . 454) (symbol 439 . 452) (symbol 425 . 438) (punctuation 398 . 399) (symbol 385 . 397) (symbol 371 . 384)))
+    (semanticdb-table "channelmanipulationwidget.hpp"
+      :file "channelmanipulationwidget.hpp"
+      :fsize 645
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "enumcombobox.hpp"
+      :file "enumcombobox.hpp"
+      :fsize 2047
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "verticallabel.hpp"
+      :file "verticallabel.hpp"
+      :fsize 816
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "deintwidget.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("deintwidget.hpp" include nil nil [1 27])
+            ("datacombobox.hpp" include nil nil [28 55])
+            ("misc/record.hpp" include nil nil [56 82])
+            ("video/deintcaps.hpp" include nil nil [83 113])
+            ("DeintDevice::GPU" variable (:type "int") nil [143 160])
+            ("DeintDevice::CPU" variable (:type "int") nil [189 206])
+            ("DeintDevice::OpenGL" variable (:type "int") nil [238 258])
+            ("Data" type
+               (:parent "DeintWidget"
+                :members 
+                  ( ("updating" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [291 328])
+                    ("hwdec" variable
+                       (:default-value "false"
+                        :type "bool")
+                        (reparse-symbol classsubparts) [291 328])
+                    ("combo" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("DataComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [333 363])
+                    ("gl" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [368 428])
+                    ("doubler" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [368 428])
+                    ("gpu" variable
+                       (:pointer 1
+                        :default-value "nullptr"
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [368 428])
+                    ("caps" variable (:type ("QMap" type
+                         (:template-specifier 
+                            ( ("DeintMethod" type nil nil nil)
+                              ("DeintCaps" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [433 467])
+                    ("defaults" variable (:type ("QList" type
+                         (:template-specifier 
+                            ( ("DeintCaps" type nil nil nil))                            
+                          :type "class")
+                          nil nil)) (reparse-symbol classsubparts) [472 498])
+                    ("decoder" variable (:type ("DecoderDevice" type (:type "class") nil nil)) (reparse-symbol classsubparts) [503 525]))                  
+                :type "struct")
+                nil [260 629])
+            ("DeintWidget" function
+               (:constructor-flag t
+                :parent "DeintWidget"
+                :arguments 
+                  ( ("decoder" variable (:type ("DecoderDevice" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [656 678])
+                    ("parent" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [679 695]))                  
+                :type ("DeintWidget" type (:type "class") nil nil))
+                nil [631 3562])
+            ("DeintWidget" function
+               (:destructor-flag t
+                :parent "DeintWidget"
+                :type "void")
+                nil [3564 3827]))          
+      :file "deintwidget.cpp"
+      :pointmax 5680
+      :fsize 5679
+      :lastmodtime '(21681 29824 628734 709000)
+      :unmatched-syntax '((semantic-list 4115 . 5679) (symbol 4107 . 4114) (punctuation 4105 . 4106) (punctuation 4104 . 4105) (semantic-list 4101 . 4103) (symbol 4089 . 4101) (punctuation 4088 . 4089) (punctuation 4087 . 4088) (symbol 4076 . 4087) (symbol 4071 . 4075) (semantic-list 4041 . 4069) (symbol 4031 . 4040) (punctuation 4029 . 4030) (punctuation 4028 . 4029) (CONST 4022 . 4027) (semantic-list 4019 . 4021) (symbol 4016 . 4019) (punctuation 4015 . 4016) (punctuation 4014 . 4015) (symbol 4003 . 4014) (symbol 3998 . 4002) (semantic-list 3882 . 3996) (VOID 3877 . 3881) (punctuation 3875 . 3876) (punctuation 3874 . 3875) (semantic-list 3850 . 3873) (symbol 3847 . 3850) (punctuation 3846 . 3847) (punctuation 3845 . 3846) (symbol 3834 . 3845) (symbol 3829 . 3833) (semantic-list 567 . 626) (punctuation 557 . 558) (symbol 548 . 557) (punctuation 546 . 547) (punctuation 545 . 546) (semantic-list 542 . 544) (symbol 535 . 542) (symbol 530 . 534) (punctuation 236 . 237) (symbol 229 . 235) (symbol 224 . 228) (symbol 214 . 223) (STATIC 207 . 213) (punctuation 187 . 188) (symbol 183 . 186) (symbol 178 . 182) (symbol 168 . 177) (STATIC 161 . 167) (punctuation 141 . 142) (symbol 137 . 140) (symbol 132 . 136) (symbol 122 . 131) (STATIC 115 . 121)))
+    (semanticdb-table "deintwidget.hpp"
+      :file "deintwidget.hpp"
+      :fsize 496
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "datacombobox.hpp"
+      :file "datacombobox.hpp"
+      :fsize 1308
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "colorselectwidget.hpp"
+      :file "colorselectwidget.hpp"
+      :fsize 492
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "encodingcombobox.hpp"
+      :file "encodingcombobox.hpp"
+      :fsize 360
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "localecombobox.hpp"
+      :file "localecombobox.hpp"
+      :fsize 449
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "openmediabehaviorgroupbox.hpp"
+      :file "openmediabehaviorgroupbox.hpp"
+      :fsize 530
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "prefwidgets.hpp"
+      :file "prefwidgets.hpp"
+      :fsize 2435
+      :lastmodtime '(21681 29824 628734 709000))
+    (semanticdb-table "simplelistwidget.hpp"
+      :file "simplelistwidget.hpp"
+      :fsize 3489
+      :lastmodtime '(21681 29824 628734 709000)))
+  :file "!home!ultimanium!coding!cmplayer!src!cmplayer!widget!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

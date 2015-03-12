@@ -1,0 +1,1706 @@
+;; Object cmplayer/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cmplayer/"
+  :tables
+  (list
+    (semanticdb-table "ui_prefdialog.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("UI_PREFDIALOG_H" variable (:constant-flag t) nil [396 411])
+            ("QtCore/QVariant" include (:system-flag t) nil [413 439])
+            ("QtWidgets/QAction" include (:system-flag t) nil [440 468])
+            ("QtWidgets/QApplication" include (:system-flag t) nil [469 502])
+            ("QtWidgets/QButtonGroup" include (:system-flag t) nil [503 536])
+            ("QtWidgets/QCheckBox" include (:system-flag t) nil [537 567])
+            ("QtWidgets/QComboBox" include (:system-flag t) nil [568 598])
+            ("QtWidgets/QDialog" include (:system-flag t) nil [599 627])
+            ("QtWidgets/QDoubleSpinBox" include (:system-flag t) nil [628 663])
+            ("QtWidgets/QFormLayout" include (:system-flag t) nil [664 696])
+            ("QtWidgets/QFrame" include (:system-flag t) nil [697 724])
+            ("QtWidgets/QGridLayout" include (:system-flag t) nil [725 757])
+            ("QtWidgets/QGroupBox" include (:system-flag t) nil [758 788])
+            ("QtWidgets/QHBoxLayout" include (:system-flag t) nil [789 821])
+            ("QtWidgets/QHeaderView" include (:system-flag t) nil [822 854])
+            ("QtWidgets/QLabel" include (:system-flag t) nil [855 882])
+            ("QtWidgets/QLineEdit" include (:system-flag t) nil [883 913])
+            ("QtWidgets/QPushButton" include (:system-flag t) nil [914 946])
+            ("QtWidgets/QRadioButton" include (:system-flag t) nil [947 980])
+            ("QtWidgets/QSpacerItem" include (:system-flag t) nil [981 1013])
+            ("QtWidgets/QSpinBox" include (:system-flag t) nil [1014 1043])
+            ("QtWidgets/QStackedWidget" include (:system-flag t) nil [1044 1079])
+            ("QtWidgets/QTabWidget" include (:system-flag t) nil [1080 1111])
+            ("QtWidgets/QTreeView" include (:system-flag t) nil [1112 1142])
+            ("QtWidgets/QTreeWidget" include (:system-flag t) nil [1143 1175])
+            ("QtWidgets/QVBoxLayout" include (:system-flag t) nil [1176 1208])
+            ("QtWidgets/QWidget" include (:system-flag t) nil [1209 1237])
+            ("audio/audionormalizeroption.hpp" include nil nil [1238 1280])
+            ("dialog/bbox.hpp" include nil nil [1281 1307])
+            ("dialog/prefdialog_p.hpp" include nil nil [1308 1342])
+            ("misc/osdtheme.hpp" include nil nil [1343 1371])
+            ("quick/playlistthemeobject.hpp" include nil nil [1372 1412])
+            ("widget/channelmanipulationwidget.hpp" include nil nil [1413 1460])
+            ("widget/colorselectwidget.hpp" include nil nil [1461 1500])
+            ("widget/datacombobox.hpp" include nil nil [1501 1535])
+            ("widget/encodingcombobox.hpp" include nil nil [1536 1574])
+            ("widget/enumcombobox.hpp" include nil nil [1575 1609])
+            ("widget/localecombobox.hpp" include nil nil [1610 1646])
+            ("widget/openmediabehaviorgroupbox.hpp" include nil nil [1647 1694])
+            ("widget/prefwidgets.hpp" include nil nil [1695 1728])
+            ("widget/simplelistwidget.hpp" include nil nil [1729 1767])
+            ("Ui_PrefDialog" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [1811 1818])
+                    ("horizontalLayout_14" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1823 1856])
+                    ("tree" variable
+                       (:pointer 1
+                        :type ("QTreeWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1861 1879])
+                    ("verticalLayout_4" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1884 1914])
+                    ("page_name" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1919 1937])
+                    ("line_6" variable
+                       (:pointer 1
+                        :type ("QFrame" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1942 1957])
+                    ("stack" variable
+                       (:pointer 1
+                        :type ("QStackedWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1962 1984])
+                    ("open_media" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1989 2009])
+                    ("verticalLayout" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2014 2042])
+                    ("groupBox_3" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2047 2069])
+                    ("verticalLayout_21" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2074 2105])
+                    ("enable_generate_playlist" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2110 2146])
+                    ("generate_playlist" variable
+                       (:pointer 1
+                        :type ("GeneratePlaylistComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2151 2195])
+                    ("open_media_from_file_manager" variable
+                       (:pointer 1
+                        :type ("OpenMediaBehaviorGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2200 2256])
+                    ("open_media_by_drag_and_drop" variable
+                       (:pointer 1
+                        :type ("OpenMediaBehaviorGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2261 2316])
+                    ("exclude_images" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2321 2347])
+                    ("verticalSpacer_9" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2352 2382])
+                    ("misc" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2387 2401])
+                    ("verticalLayout_25" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2406 2437])
+                    ("groupBox_30" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2442 2465])
+                    ("verticalLayout_26" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2470 2501])
+                    ("horizontalLayout" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2506 2536])
+                    ("hide_cursor" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2541 2564])
+                    ("hide_cursor_delay_sec" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2569 2601])
+                    ("horizontalSpacer" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2606 2636])
+                    ("hide_cursor_fs_only" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2641 2672])
+                    ("groupBox_14" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2677 2700])
+                    ("verticalLayout_16" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2705 2736])
+                    ("horizontalLayout_29" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2741 2774])
+                    ("label_23" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2779 2796])
+                    ("quick_snapshot_format" variable
+                       (:pointer 1
+                        :type ("QComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2801 2834])
+                    ("label_38" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2839 2856])
+                    ("quick_snapshot_quality" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2861 2894])
+                    ("horizontalSpacer_15" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2899 2932])
+                    ("line" variable
+                       (:pointer 1
+                        :type ("QFrame" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2937 2950])
+                    ("horizontalLayout_16" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2955 2988])
+                    ("save_quick_snapshot_folder" variable
+                       (:pointer 1
+                        :type ("QRadioButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2993 3034])
+                    ("quick_snapshot_folder" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3039 3072])
+                    ("quick_snapshot_folder_browse" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3077 3119])
+                    ("save_quick_snapshot_current" variable
+                       (:pointer 1
+                        :type ("QRadioButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3124 3166])
+                    ("save_quick_snapshot_ask" variable
+                       (:pointer 1
+                        :type ("QRadioButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3171 3209])
+                    ("groupBox_34" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3214 3237])
+                    ("formLayout_21" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3242 3269])
+                    ("label_25" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3274 3291])
+                    ("yt_program" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3296 3318])
+                    ("label_59" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3323 3340])
+                    ("yt_user_agent" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3345 3370])
+                    ("verticalSpacer_11" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3375 3406])
+                    ("playback" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3411 3429])
+                    ("verticalLayout_8" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3434 3464])
+                    ("groupBox_2" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3469 3491])
+                    ("verticalLayout_6" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3496 3526])
+                    ("remember_stopped" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3531 3559])
+                    ("ask_record_found" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3564 3592])
+                    ("groupBox" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3597 3617])
+                    ("verticalLayout_5" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3622 3652])
+                    ("pause_minimized" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3657 3684])
+                    ("pause_video_only" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3689 3717])
+                    ("remember_image" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3722 3748])
+                    ("label_51" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3753 3770])
+                    ("restore_properties_view" variable
+                       (:pointer 1
+                        :type ("QTreeView" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3775 3810])
+                    ("advanced" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3815 3833])
+                    ("verticalLayout_19" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3838 3869])
+                    ("audio_sound" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3874 3895])
+                    ("verticalLayout_37" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3900 3931])
+                    ("groupBox_31" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3936 3959])
+                    ("verticalLayout_14" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3964 3995])
+                    ("horizontalLayout_21" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4000 4033])
+                    ("label_43" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4038 4055])
+                    ("audio_device" variable
+                       (:pointer 1
+                        :type ("DataComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4060 4087])
+                    ("audio_device_desc" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4092 4118])
+                    ("groupBox_7" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4123 4145])
+                    ("formLayout_15" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4150 4177])
+                    ("label_50" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4182 4199])
+                    ("clipping_method" variable
+                       (:pointer 1
+                        :type ("ClippingMethodComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4204 4244])
+                    ("audio_channel_group" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4249 4280])
+                    ("verticalLayout_7" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4285 4315])
+                    ("channel_manipulation" variable
+                       (:pointer 1
+                        :type ("ChannelManipulationWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4320 4368])
+                    ("cache" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4373 4388])
+                    ("verticalLayout_36" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4393 4424])
+                    ("groupBox_24" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4429 4452])
+                    ("horizontalLayout_22" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4457 4490])
+                    ("formLayout_9" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4495 4521])
+                    ("label_45" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4526 4543])
+                    ("cache_local" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4548 4570])
+                    ("label_47" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4575 4592])
+                    ("cache_network" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4597 4621])
+                    ("formLayout_11" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4626 4653])
+                    ("cache_" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4658 4673])
+                    ("cache_disc" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4678 4699])
+                    ("groupBox_25" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4704 4727])
+                    ("horizontalLayout_23" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4732 4765])
+                    ("formLayout_16" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4770 4797])
+                    ("label_53" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4802 4819])
+                    ("cache_min_playback" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4824 4853])
+                    ("formLayout_17" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4858 4885])
+                    ("label_54" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4890 4907])
+                    ("cache_min_seeking" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4912 4940])
+                    ("groupBox_26" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4945 4968])
+                    ("verticalLayout_9" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4973 5003])
+                    ("label_49" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5008 5025])
+                    ("network_folders" variable
+                       (:pointer 1
+                        :type ("StringListWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5030 5064])
+                    ("sub_load" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5069 5087])
+                    ("verticalLayout_18" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5092 5123])
+                    ("groupBox_8" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5128 5150])
+                    ("verticalLayout_11" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5155 5186])
+                    ("sub_enable_autoload" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5191 5222])
+                    ("sub_autoload" variable
+                       (:pointer 1
+                        :type ("SubtitleAutoloadComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5227 5266])
+                    ("line_2" variable
+                       (:pointer 1
+                        :type ("QFrame" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5271 5286])
+                    ("horizontalLayout_30" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5291 5324])
+                    ("label_4" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5329 5345])
+                    ("sub_search_path_edit" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5350 5382])
+                    ("sub_search_path_add" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5387 5420])
+                    ("sub_search_path_browse" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5425 5461])
+                    ("sub_search_path_remove" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5466 5502])
+                    ("horizontalLayout_33" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5507 5540])
+                    ("sub_search_regex" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5545 5573])
+                    ("sub_search_case_sensitive" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5578 5615])
+                    ("sub_search_paths" variable
+                       (:pointer 1
+                        :type ("QTreeView" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5620 5648])
+                    ("groupBox_9" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5653 5675])
+                    ("verticalLayout_12" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5680 5711])
+                    ("sub_enable_autoselect" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5716 5749])
+                    ("horizontalLayout_4" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5754 5786])
+                    ("sub_autoselect" variable
+                       (:pointer 1
+                        :type ("SubtitleAutoselectComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5791 5834])
+                    ("sub_ext_label" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5839 5861])
+                    ("sub_ext" variable
+                       (:pointer 1
+                        :type ("DataComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5866 5888])
+                    ("groupBox_10" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5893 5916])
+                    ("verticalLayout_13" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5921 5952])
+                    ("sub_enc" variable
+                       (:pointer 1
+                        :type ("EncodingComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5957 5983])
+                    ("horizontalLayout_5" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [5988 6020])
+                    ("sub_enc_autodetection" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6025 6058])
+                    ("sub_enc_accuracy" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6063 6090])
+                    ("horizontalSpacer_6" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6095 6127])
+                    ("groupBox_13" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6132 6155])
+                    ("horizontalLayout_11" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6160 6193])
+                    ("aLabel_6" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6198 6215])
+                    ("ms_per_char" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6220 6242])
+                    ("horizontalSpacer_12" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6247 6280])
+                    ("video_filter" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6285 6307])
+                    ("verticalLayout_38" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6312 6343])
+                    ("groupBox_5" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6348 6370])
+                    ("horizontalLayout_2" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6375 6407])
+                    ("horizontalSpacer_3" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6412 6444])
+                    ("formLayout_5" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6449 6475])
+                    ("label_31" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6480 6497])
+                    ("blur_kern_c" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6502 6524])
+                    ("label_32" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6529 6546])
+                    ("blur_kern_n" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6551 6573])
+                    ("label_33" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6578 6595])
+                    ("blur_kern_d" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6600 6622])
+                    ("gridLayout" variable
+                       (:pointer 1
+                        :type ("QGridLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6627 6651])
+                    ("lineEdit" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6656 6676])
+                    ("lineEdit_2" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6681 6703])
+                    ("lineEdit_3" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6708 6730])
+                    ("lineEdit_4" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6735 6757])
+                    ("lineEdit_5" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6762 6784])
+                    ("lineEdit_6" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6789 6811])
+                    ("label_41" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6816 6833])
+                    ("blur_sum" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6838 6855])
+                    ("lineEdit_9" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6860 6882])
+                    ("lineEdit_7" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6887 6909])
+                    ("lineEdit_8" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6914 6936])
+                    ("horizontalSpacer_4" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6941 6973])
+                    ("groupBox_6" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [6978 7000])
+                    ("horizontalLayout_3" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7005 7037])
+                    ("horizontalSpacer_2" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7042 7074])
+                    ("formLayout_6" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7079 7105])
+                    ("label_35" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7110 7127])
+                    ("sharpen_kern_c" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7132 7157])
+                    ("label_36" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7162 7179])
+                    ("sharpen_kern_n" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7184 7209])
+                    ("label_37" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7214 7231])
+                    ("sharpen_kern_d" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7236 7261])
+                    ("gridLayout_2" variable
+                       (:pointer 1
+                        :type ("QGridLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7266 7292])
+                    ("lineEdit_10" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7297 7320])
+                    ("lineEdit_11" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7325 7348])
+                    ("lineEdit_12" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7353 7376])
+                    ("lineEdit_13" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7381 7404])
+                    ("lineEdit_14" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7409 7432])
+                    ("lineEdit_15" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7437 7460])
+                    ("label_44" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7465 7482])
+                    ("sharpen_sum" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7487 7507])
+                    ("lineEdit_16" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7512 7535])
+                    ("lineEdit_17" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7540 7563])
+                    ("lineEdit_18" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7568 7591])
+                    ("horizontalSpacer_5" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7596 7628])
+                    ("verticalSpacer_5" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7633 7663])
+                    ("video_deint" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7668 7689])
+                    ("verticalLayout_32" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7694 7725])
+                    ("deint_tabs" variable
+                       (:pointer 1
+                        :type ("QTabWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7730 7753])
+                    ("deint_desc" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7758 7777])
+                    ("verticalSpacer_7" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7782 7812])
+                    ("audio_filter" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7817 7839])
+                    ("verticalLayout_35" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7844 7875])
+                    ("normalizer" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7880 7902])
+                    ("verticalLayout_27" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7907 7938])
+                    ("audio_normalizer" variable
+                       (:pointer 1
+                        :type ("AudioNormalizerOptionWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7943 7989])
+                    ("verticalSpacer_8" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [7994 8024])
+                    ("video_hwacc" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8029 8050])
+                    ("verticalLayout_29" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8055 8086])
+                    ("enable_hwaccel" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8091 8117])
+                    ("hwaccel_codecs" variable
+                       (:pointer 1
+                        :type ("HwAccCodecBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8122 8152])
+                    ("verticalSpacer_12" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8157 8188])
+                    ("sub_appearance" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8193 8217])
+                    ("verticalLayout_17" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8222 8253])
+                    ("sub_style" variable
+                       (:pointer 1
+                        :type ("OsdThemeWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8258 8284])
+                    ("verticalSpacer_4" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8289 8319])
+                    ("ui_shortcut" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8324 8345])
+                    ("verticalLayout_3" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8350 8380])
+                    ("horizontalLayout_17" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8385 8418])
+                    ("label_40" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8423 8440])
+                    ("shortcut_preset" variable
+                       (:pointer 1
+                        :type ("QComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8445 8472])
+                    ("load_preset" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8477 8502])
+                    ("shortcuts" variable
+                       (:pointer 1
+                        :type ("PrefMenuTreeWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8507 8537])
+                    ("_3" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8542 8558])
+                    ("shortcut1" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8563 8586])
+                    ("shortcut2" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8591 8614])
+                    ("shortcut3" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8619 8642])
+                    ("shortcut4" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8647 8670])
+                    ("gen_behaviours" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8675 8699])
+                    ("verticalLayout_33" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8704 8735])
+                    ("system_tray_group" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8740 8769])
+                    ("verticalLayout_2" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8774 8804])
+                    ("enable_system_tray" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8809 8839])
+                    ("hide_rather_close" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8844 8873])
+                    ("groupBox_27" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8878 8901])
+                    ("verticalLayout_28" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8906 8937])
+                    ("disable_screensaver" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8942 8973])
+                    ("use_heartbeat" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [8978 9003])
+                    ("heartbeat_widget" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9008 9034])
+                    ("horizontalLayout_26" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9039 9072])
+                    ("horizontalSpacer_23" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9077 9110])
+                    ("heartbeat_command" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9115 9144])
+                    ("label_52" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9149 9166])
+                    ("heartbeat_interval" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9171 9200])
+                    ("single_app" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9205 9227])
+                    ("fit_to_video" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9232 9256])
+                    ("lion_style_fullscreen" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9261 9294])
+                    ("use_mpris2" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9299 9321])
+                    ("verticalSpacer_10" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9326 9357])
+                    ("page" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9362 9376])
+                    ("osd" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9381 9394])
+                    ("verticalLayout_39" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9399 9430])
+                    ("osd_style" variable
+                       (:pointer 1
+                        :type ("OsdThemeWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9435 9461])
+                    ("groupBox_29" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9466 9489])
+                    ("verticalLayout_34" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9494 9525])
+                    ("show_osd_on_action" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9530 9560])
+                    ("show_osd_on_resized" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9565 9596])
+                    ("show_osd_timeline" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9601 9630])
+                    ("verticalSpacer" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9635 9663])
+                    ("skin_style" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9668 9688])
+                    ("verticalLayout_40" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9693 9724])
+                    ("groupBox_4" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9729 9751])
+                    ("verticalLayout_31" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9756 9787])
+                    ("horizontalLayout_7" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9792 9824])
+                    ("skin_name" variable
+                       (:pointer 1
+                        :type ("DataComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9829 9853])
+                    ("skin_path" variable
+                       (:pointer 1
+                        :type ("QLineEdit" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9858 9879])
+                    ("playlist_theme" variable
+                       (:pointer 1
+                        :type ("PlaylistThemeWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9884 9920])
+                    ("groupBox_22" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9925 9948])
+                    ("verticalLayout_30" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9953 9984])
+                    ("show_logo" variable
+                       (:pointer 1
+                        :type ("QRadioButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [9989 10013])
+                    ("horizontalLayout_18" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10018 10051])
+                    ("fill_bg_color" variable
+                       (:pointer 1
+                        :type ("QRadioButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10056 10084])
+                    ("bg_color" variable
+                       (:pointer 1
+                        :type ("ColorSelectWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10089 10117])
+                    ("horizontalSpacer_16" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10122 10155])
+                    ("groupBox_16" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10160 10183])
+                    ("verticalLayout_20" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10188 10219])
+                    ("window_style" variable
+                       (:pointer 1
+                        :type ("DataComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10224 10251])
+                    ("label_27" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10256 10273])
+                    ("verticalSpacer_13" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10278 10309])
+                    ("ui_mouse" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10314 10332])
+                    ("verticalLayout_41" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10337 10368])
+                    ("mouse_action_map" variable
+                       (:pointer 1
+                        :type ("PrefMouseActionTree" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10373 10411])
+                    ("invert_wheel" variable
+                       (:pointer 1
+                        :type ("QCheckBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10416 10440])
+                    ("verticalSpacer_2" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10445 10475])
+                    ("language" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10480 10498])
+                    ("verticalLayout_10" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10503 10534])
+                    ("groupBox_15" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10539 10562])
+                    ("verticalLayout_15" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10567 10598])
+                    ("locale" variable
+                       (:pointer 1
+                        :type ("LocaleComboBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10603 10626])
+                    ("label_26" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10631 10648])
+                    ("groupBox_33" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10653 10676])
+                    ("horizontalLayout_32" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10681 10714])
+                    ("audio_priority" variable
+                       (:pointer 1
+                        :type ("StringListWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10719 10752])
+                    ("groupBox_32" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10757 10780])
+                    ("horizontalLayout_31" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10785 10818])
+                    ("sub_priority" variable
+                       (:pointer 1
+                        :type ("StringListWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10823 10854])
+                    ("label_7" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10859 10875])
+                    ("ui_step" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10880 10897])
+                    ("verticalLayout_24" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10902 10933])
+                    ("horizontalLayout_6" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10938 10970])
+                    ("verticalLayout_22" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [10975 11006])
+                    ("groupBox_17" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11011 11034])
+                    ("formLayout" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11039 11063])
+                    ("aLabel_7" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11068 11085])
+                    ("seek_step1_sec" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11090 11115])
+                    ("aLabel_8" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11120 11137])
+                    ("seek_step2_sec" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11142 11167])
+                    ("aLabel_9" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11172 11189])
+                    ("seek_step3_sec" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11194 11219])
+                    ("groupBox_19" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11224 11247])
+                    ("formLayout_12" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11252 11279])
+                    ("label_9" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11284 11300])
+                    ("speed_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11305 11326])
+                    ("groupBox_21" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11331 11354])
+                    ("formLayout_10" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11359 11386])
+                    ("label_10" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11391 11408])
+                    ("sub_pos_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11413 11436])
+                    ("label_11" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11441 11458])
+                    ("sub_sync_step_sec" variable
+                       (:pointer 1
+                        :type ("QDoubleSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11463 11497])
+                    ("verticalLayout_23" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11502 11533])
+                    ("groupBox_20" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11538 11561])
+                    ("formLayout_7" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11566 11592])
+                    ("label_18" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11597 11614])
+                    ("volume_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11619 11641])
+                    ("label_19" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11646 11663])
+                    ("amp_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11668 11687])
+                    ("label_39" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11692 11709])
+                    ("audio_sync_step_sec" variable
+                       (:pointer 1
+                        :type ("QDoubleSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11714 11750])
+                    ("groupBox_18" variable
+                       (:pointer 1
+                        :type ("QGroupBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11755 11778])
+                    ("formLayout_4" variable
+                       (:pointer 1
+                        :type ("QFormLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11783 11809])
+                    ("label_12" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11814 11831])
+                    ("brightness_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11836 11862])
+                    ("label_14" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11867 11884])
+                    ("contrast_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11889 11913])
+                    ("label_13" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11918 11935])
+                    ("saturation_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11940 11966])
+                    ("label_20" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11971 11988])
+                    ("hue_step" variable
+                       (:pointer 1
+                        :type ("QSpinBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [11993 12012])
+                    ("verticalSpacer_6" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12017 12047])
+                    ("line_7" variable
+                       (:pointer 1
+                        :type ("QFrame" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12052 12067])
+                    ("dbb" variable
+                       (:pointer 1
+                        :type ("BBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [12072 12082])
+                    ("setupUi" function
+                       (:arguments 
+                          ( ("PrefDialog" variable
+                               (:pointer 1
+                                :type ("QDialog" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [12101 12121]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [12088 86577])
+                    ("retranslateUi" function
+                       (:arguments 
+                          ( ("PrefDialog" variable
+                               (:pointer 1
+                                :type ("QDialog" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [86613 86633]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [86594 100458]))                  
+                :type "class")
+                nil [1789 100479])
+            ("Ui" type
+               (:members 
+                  ( ("PrefDialog" type
+                       (:superclasses 
+                          ( ("Ui_PrefDialog" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [100500 100542]))                  
+                :type "namespace")
+                nil [100481 100544]))          
+      :file "ui_prefdialog.h"
+      :pointmax 100606
+      :fsize 100605
+      :lastmodtime '(21681 30084 607754 468000)
+      :unmatched-syntax '((symbol 100562 . 100578) (symbol 1769 . 1787))
+      :lexical-table 
+        '(("UI_PREFDIALOG_H")
+          )
+)
+    (semanticdb-table "stdafx.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("STDAFX_HPP" variable (:constant-flag t) nil [28 38])
+            ("QtCore" include (:system-flag t) nil [145 162])
+            ("QtGui" include (:system-flag t) nil [163 179])
+            ("QtWidgets" include (:system-flag t) nil [180 200])
+            ("QtQuick" include (:system-flag t) nil [201 219])
+            ("QtSql" include (:system-flag t) nil [220 236])
+            ("QtXml" include (:system-flag t) nil [237 253])
+            ("set" include (:system-flag t) nil [254 268])
+            ("sys/time.h" include (:system-flag t) nil [269 290])
+            ("qmath.h" include (:system-flag t) nil [291 309])
+            ("type_traits" include (:system-flag t) nil [310 332])
+            ("array" include (:system-flag t) nil [333 349])
+            ("iterator" include (:system-flag t) nil [350 369])
+            ("tuple" include (:system-flag t) nil [370 386])
+            ("cmath" include (:system-flag t) nil [387 403])
+            ("cstdint" include (:system-flag t) nil [404 422])
+            ("deque" include (:system-flag t) nil [423 439])
+            ("algorithm" include (:system-flag t) nil [440 460])
+            ("SIA" variable (:constant-flag t) nil [696 699])
+            ("SCA" variable (:constant-flag t) nil [727 730])
+            ("SCIA" variable (:constant-flag t) nil [761 765])
+            ("CIA" variable (:constant-flag t) nil [803 806])
+            ("Qt::CaseSensitive" variable (:type "int") nil [840 858])
+            ("Qt::CaseInsensitive" variable (:type "int") nil [869 889])
+            ("QRegularExpression" variable (:type "int") nil [906 925])
+            ("QRegularExpressionMatch" variable (:type "int") nil [946 970])
+            ("QRegularExpressionMatchIterator" variable (:type "int") nil [999 1031])
+            ("Pch" type
+               (:members 
+                  ( ("_R" variable (:constant-flag t) (reparse-symbol namespacesubparts) [1811 1813])
+                    ("ExtType" type
+                       (:members 
+                          ( ("AllExt" variable
+                               (:constant-flag t
+                                :default-value (3851 3852)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3837 3852])
+                            ("AudioExt" variable
+                               (:constant-flag t
+                                :default-value (3872 3873)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3858 3873])
+                            ("VideoExt" variable
+                               (:constant-flag t
+                                :default-value (3898 3899)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3884 3899])
+                            ("SubtitleExt" variable
+                               (:constant-flag t
+                                :default-value (3924 3925)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3910 3925])
+                            ("ImageExt" variable
+                               (:constant-flag t
+                                :default-value (3950 3951)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3936 3951])
+                            ("DiscExt" variable
+                               (:constant-flag t
+                                :default-value (3976 3977)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3962 3977])
+                            ("PlaylistExt" variable
+                               (:constant-flag t
+                                :default-value (4002 4003)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [3988 4003])
+                            ("WritableImageExt" variable
+                               (:constant-flag t
+                                :default-value (4033 4034)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [4014 4034])
+                            ("MediaExt" variable
+                               (:constant-flag t
+                                :default-value (4060 4079)
+                                :type "int")
+                                (reparse-symbol enumsubparts) [4046 4079])
+                            ("ImageExt" variable
+                               (:constant-flag t
+                                :type "int")
+                                (reparse-symbol enumsubparts) [4082 4092]))                          
+                        :type "enum")
+                        (reparse-symbol namespacesubparts) [3818 4093])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [4215 4223])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [4272 4280])
+                    ("QStringList" variable (:type "int") (reparse-symbol namespacesubparts) [4318 4330])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [4364 4372])
+                    ("QStringList" variable (:type "int") (reparse-symbol namespacesubparts) [4465 4477])
+                    ("QStringList" variable (:type "int") (reparse-symbol namespacesubparts) [4610 4622])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [4753 4761])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [4939 4947])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [5057 5065])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [5204 5212])
+                    ("QByteArray" variable (:type "int") (reparse-symbol namespacesubparts) [6163 6174])
+                    ("Location" type (:type "class") (reparse-symbol namespacesubparts) [6499 7223])
+                    ("QString" variable (:type "int") (reparse-symbol namespacesubparts) [7278 7286]))                  
+                :type "namespace")
+                nil [1033 7471])
+            ("Pch" using (:type ("Pch" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [7473 7493]))          
+      :file "stdafx.hpp"
+      :pointmax 7524
+      :fsize 7524
+      :lastmodtime '(21681 35070 408933 907000)
+      :unmatched-syntax '((semantic-list 7434 . 7468) (symbol 7423 . 7433) (punctuation 7421 . 7422) (punctuation 7420 . 7421) (semantic-list 7414 . 7419) (symbol 7402 . 7414) (symbol "auto" 7398 . 7401) (INLINE "inline" 7398 . 7401) (STATIC "static" 7398 . 7401) (punctuation 7396 . 7397) (symbol 7395 . 7396) (CLASS 7389 . 7394) (punctuation 7388 . 7389) (TEMPLATE 7380 . 7388) (semantic-list 7339 . 7379) (symbol 7329 . 7338) (punctuation 7327 . 7328) (punctuation 7326 . 7327) (semantic-list 7302 . 7325) (symbol 7292 . 7302) (symbol "auto" 7288 . 7291) (INLINE "inline" 7288 . 7291) (STATIC "static" 7288 . 7291) (punctuation 7276 . 7277) (punctuation 7275 . 7276) (semantic-list 7243 . 7274) (symbol 7230 . 7243) (punctuation 7268 . 7269) (punctuation 7267 . 7268) (symbol 7225 . 7229) (punctuation 7268 . 7269) (punctuation 7267 . 7268) (symbol 7204 . 7220) (punctuation 7203 . 7204) (punctuation 7202 . 7203) (symbol 7188 . 7202) (punctuation 7186 . 7187) (symbol 7174 . 7182) (punctuation 7168 . 7169) (symbol 7154 . 7168) (punctuation 7153 . 7154) (punctuation 7152 . 7153) (symbol 7138 . 7152) (punctuation 7136 . 7137) (symbol 7124 . 7130) (punctuation 7118 . 7119) (symbol 7103 . 7118) (punctuation 7102 . 7103) (punctuation 7101 . 7102) (symbol 7087 . 7101) (punctuation 7085 . 7086) (symbol 7073 . 7080) (punctuation 7067 . 7068) (symbol 7054 . 7067) (punctuation 7053 . 7054) (punctuation 7052 . 7053) (symbol 7038 . 7052) (punctuation 7036 . 7037) (symbol 7024 . 7029) (punctuation 7018 . 7019) (symbol 7006 . 7018) (punctuation 7005 . 7006) (punctuation 7004 . 7005) (symbol 6990 . 7004) (punctuation 6988 . 6989) (symbol 6976 . 6980) (punctuation 6970 . 6971) (symbol 6958 . 6970) (punctuation 6957 . 6958) (punctuation 6956 . 6957) (symbol 6942 . 6956) (punctuation 6940 . 6941) (symbol 6928 . 6932) (punctuation 6922 . 6923) (symbol 6910 . 6922) (punctuation 6909 . 6910) (punctuation 6908 . 6909) (symbol 6894 . 6908) (punctuation 6892 . 6893) (symbol 6880 . 6884) (punctuation 6874 . 6875) (symbol 6858 . 6874) (punctuation 6857 . 6858) (punctuation 6856 . 6857) (symbol 6842 . 6856) (punctuation 6840 . 6841) (symbol 6828 . 6836) (punctuation 6822 . 6823) (symbol 6808 . 6822) (punctuation 6807 . 6808) (punctuation 6806 . 6807) (symbol 6792 . 6806) (punctuation 6790 . 6791) (symbol 6778 . 6784) (punctuation 6772 . 6773) (symbol 6759 . 6772) (punctuation 6758 . 6759) (punctuation 6757 . 6758) (symbol 6743 . 6757) (punctuation 6741 . 6742) (symbol 6729 . 6734) (punctuation 6723 . 6724) (symbol 6703 . 6723) (punctuation 6702 . 6703) (punctuation 6701 . 6702) (symbol 6687 . 6701) (punctuation 6685 . 6686) (symbol 6673 . 6685) (punctuation 6667 . 6668) (symbol 6654 . 6667) (punctuation 6653 . 6654) (punctuation 6652 . 6653) (symbol 6638 . 6652) (punctuation 6636 . 6637) (symbol 6624 . 6629) (punctuation 6618 . 6619) (symbol 6601 . 6618) (punctuation 6600 . 6601) (punctuation 6599 . 6600) (symbol 6585 . 6599) (punctuation 6583 . 6584) (symbol 6571 . 6580) (punctuation 6565 . 6566) (symbol 6550 . 6565) (punctuation 6549 . 6550) (punctuation 6548 . 6549) (symbol 6534 . 6548) (punctuation 6532 . 6533) (symbol 6520 . 6527) (ENUM 6494 . 6498) (semantic-list 6434 . 6492) (symbol 6418 . 6429) (punctuation 6416 . 6417) (punctuation 6415 . 6416) (semantic-list 6394 . 6414) (symbol 6379 . 6394) (symbol "auto" 6375 . 6378) (INLINE "inline" 6375 . 6378) (STATIC "static" 6375 . 6378) (semantic-list 6308 . 6373) (symbol 6300 . 6307) (punctuation 6298 . 6299) (punctuation 6297 . 6298) (semantic-list 6193 . 6296) (symbol 6180 . 6193) (punctuation 6287 . 6288) (punctuation 6286 . 6287) (symbol "auto" 6176 . 6179) (punctuation 6287 . 6288) (punctuation 6286 . 6287) (INLINE "inline" 6176 . 6179) (punctuation 6287 . 6288) (punctuation 6286 . 6287) (STATIC "static" 6176 . 6179) (punctuation 6287 . 6288) (punctuation 6286 . 6287) (punctuation 6161 . 6162) (punctuation 6160 . 6161) (semantic-list 6135 . 6159) (symbol 6124 . 6135) (symbol 6119 . 6123) (semantic-list 6012 . 6117) (BOOL 6007 . 6011) (punctuation 6005 . 6006) (punctuation 6004 . 6005) (semantic-list 5967 . 6003) (symbol 5960 . 5967) (symbol "auto" 5956 . 5959) (INLINE "inline" 5956 . 5959) (STATIC "static" 5956 . 5959) (punctuation 5954 . 5955) (symbol 5953 . 5954) (CLASS 5947 . 5952) (punctuation 5946 . 5947) (TEMPLATE 5938 . 5946) (semantic-list 5856 . 5936) (symbol 5848 . 5855) (punctuation 5846 . 5847) (punctuation 5845 . 5846) (semantic-list 5842 . 5844) (symbol 5831 . 5842) (symbol "auto" 5827 . 5830) (INLINE "inline" 5827 . 5830) (STATIC "static" 5827 . 5830) (semantic-list 5788 . 5825) (VOID 5783 . 5787) (punctuation 5781 . 5782) (punctuation 5780 . 5781) (semantic-list 5772 . 5779) (symbol 5765 . 5772) (punctuation 5776 . 5777) (symbol "auto" 5761 . 5764) (punctuation 5776 . 5777) (INLINE "inline" 5761 . 5764) (punctuation 5776 . 5777) (STATIC "static" 5761 . 5764) (punctuation 5776 . 5777) (punctuation 5759 . 5760) (symbol 5758 . 5759) (CLASS 5752 . 5757) (punctuation 5751 . 5752) (TEMPLATE 5743 . 5751) (punctuation 5776 . 5777) (semantic-list 5700 . 5741) (punctuation 5698 . 5699) (symbol 5697 . 5698) (punctuation 5695 . 5696) (punctuation 5694 . 5695) (semantic-list 5672 . 5693) (symbol 5666 . 5672) (punctuation 5686 . 5687) (punctuation 5685 . 5686) (punctuation 5684 . 5685) (punctuation 5676 . 5677) (symbol "auto" 5662 . 5665) (punctuation 5686 . 5687) (punctuation 5685 . 5686) (punctuation 5684 . 5685) (punctuation 5676 . 5677) (INLINE "inline" 5662 . 5665) (punctuation 5686 . 5687) (punctuation 5685 . 5686) (punctuation 5684 . 5685) (punctuation 5676 . 5677) (STATIC "static" 5662 . 5665) (punctuation 5686 . 5687) (punctuation 5685 . 5686) (punctuation 5684 . 5685) (punctuation 5676 . 5677) (punctuation 5660 . 5661) (symbol 5656 . 5660) (punctuation 5654 . 5655) (punctuation 5653 . 5654) (punctuation 5652 . 5653) (TYPENAME 5644 . 5652) (punctuation 5642 . 5643) (symbol 5641 . 5642) (CLASS 5635 . 5640) (punctuation 5634 . 5635) (TEMPLATE 5626 . 5634) (semantic-list 5592 . 5624) (punctuation 5590 . 5591) (symbol 5589 . 5590) (punctuation 5587 . 5588) (punctuation 5586 . 5587) (semantic-list 5564 . 5585) (symbol 5560 . 5564) (punctuation 5578 . 5579) (punctuation 5577 . 5578) (punctuation 5576 . 5577) (punctuation 5568 . 5569) (symbol "auto" 5556 . 5559) (punctuation 5578 . 5579) (punctuation 5577 . 5578) (punctuation 5576 . 5577) (punctuation 5568 . 5569) (INLINE "inline" 5556 . 5559) (punctuation 5578 . 5579) (punctuation 5577 . 5578) (punctuation 5576 . 5577) (punctuation 5568 . 5569) (STATIC "static" 5556 . 5559) (punctuation 5578 . 5579) (punctuation 5577 . 5578) (punctuation 5576 . 5577) (punctuation 5568 . 5569) (punctuation 5554 . 5555) (symbol 5550 . 5554) (punctuation 5548 . 5549) (punctuation 5547 . 5548) (punctuation 5546 . 5547) (TYPENAME 5538 . 5546) (punctuation 5536 . 5537) (symbol 5535 . 5536) (CLASS 5529 . 5534) (punctuation 5528 . 5529) (TEMPLATE 5520 . 5528) (semantic-list 5474 . 5518) (symbol 5472 . 5473) (punctuation 5470 . 5471) (punctuation 5469 . 5470) (semantic-list 5466 . 5468) (symbol 5462 . 5466) (symbol "auto" 5458 . 5461) (INLINE "inline" 5458 . 5461) (STATIC "static" 5458 . 5461) (symbol 5448 . 5457) (punctuation 5446 . 5447) (symbol 5445 . 5446) (punctuation 5443 . 5444) (symbol 5441 . 5442) (TYPENAME 5432 . 5440) (punctuation 5430 . 5431) (symbol 5429 . 5430) (CLASS 5423 . 5428) (punctuation 5422 . 5423) (TEMPLATE 5414 . 5422) (semantic-list 5368 . 5412) (symbol 5366 . 5367) (punctuation 5364 . 5365) (punctuation 5363 . 5364) (semantic-list 5360 . 5362) (symbol 5356 . 5360) (symbol "auto" 5352 . 5355) (INLINE "inline" 5352 . 5355) (STATIC "static" 5352 . 5355) (symbol 5342 . 5351) (punctuation 5340 . 5341) (symbol 5339 . 5340) (punctuation 5337 . 5338) (symbol 5335 . 5336) (TYPENAME 5326 . 5334) (punctuation 5324 . 5325) (symbol 5323 . 5324) (CLASS 5317 . 5322) (punctuation 5316 . 5317) (TEMPLATE 5308 . 5316) (semantic-list 5289 . 5306) (punctuation 5287 . 5288) (symbol 5280 . 5287) (punctuation 5278 . 5279) (punctuation 5277 . 5278) (semantic-list 5249 . 5276) (symbol 5236 . 5249) (symbol "auto" 5232 . 5235) (INLINE "inline" 5232 . 5235) (STATIC "static" 5232 . 5235) (punctuation 5230 . 5231) (symbol 5229 . 5230) (CLASS 5223 . 5228) (punctuation 5222 . 5223) (TEMPLATE 5214 . 5222) (punctuation 5202 . 5203) (punctuation 5201 . 5202) (semantic-list 5168 . 5200) (symbol 5155 . 5168) (symbol 5150 . 5154) (punctuation 5147 . 5148) (VOID 5143 . 5147) (punctuation 5141 . 5142) (punctuation 5140 . 5141) (semantic-list 5088 . 5139) (symbol 5072 . 5088) (symbol 5067 . 5071) (punctuation 5055 . 5056) (punctuation 5054 . 5055) (semantic-list 4965 . 5053) (symbol 4954 . 4965) (symbol 4949 . 4953) (punctuation 4937 . 4938) (punctuation 4936 . 4937) (semantic-list 4780 . 4935) (symbol 4768 . 4780) (symbol 4763 . 4767) (punctuation 4751 . 4752) (punctuation 4750 . 4751) (semantic-list 4641 . 4749) (symbol 4629 . 4641) (symbol 4624 . 4628) (punctuation 4608 . 4609) (punctuation 4607 . 4608) (semantic-list 4497 . 4606) (symbol 4484 . 4497) (symbol 4479 . 4483) (punctuation 4463 . 4464) (punctuation 4462 . 4463) (semantic-list 4448 . 4461) (symbol 4440 . 4448) (symbol 4435 . 4439) (punctuation 4433 . 4434) (BOOL 4429 . 4433) (punctuation 4427 . 4428) (punctuation 4426 . 4427) (semantic-list 4389 . 4425) (symbol 4378 . 4389) (symbol 4373 . 4377) (punctuation 4362 . 4363) (punctuation 4361 . 4362) (semantic-list 4345 . 4360) (symbol 4336 . 4345) (symbol 4331 . 4335) (punctuation 4316 . 4317) (punctuation 4315 . 4316) (semantic-list 4299 . 4314) (symbol 4286 . 4299) (symbol 4281 . 4285) (punctuation 4270 . 4271) (punctuation 4269 . 4270) (semantic-list 4243 . 4268) (symbol 4229 . 4243) (symbol 4224 . 4228) (punctuation 4213 . 4214) (punctuation 4212 . 4213) (semantic-list 4186 . 4211) (symbol 4176 . 4186) (symbol 4171 . 4175) (semantic-list 4159 . 4169) (symbol 4130 . 4159) (semantic-list 4110 . 4129) (symbol 4095 . 4110) (punctuation 4080 . 4081) (number 4038 . 4039) (punctuation 4036 . 4037) (punctuation 4035 . 4036) (number 4007 . 4008) (punctuation 4005 . 4006) (punctuation 4004 . 4005) (number 3981 . 3982) (punctuation 3979 . 3980) (punctuation 3978 . 3979) (number 3955 . 3956) (punctuation 3953 . 3954) (punctuation 3952 . 3953) (number 3929 . 3930) (punctuation 3927 . 3928) (punctuation 3926 . 3927) (number 3903 . 3904) (punctuation 3901 . 3902) (punctuation 3900 . 3901) (number 3877 . 3878) (punctuation 3875 . 3876) (punctuation 3874 . 3875) (semantic-list 3775 . 3816) (symbol 3767 . 3774) (punctuation 3765 . 3766) (punctuation 3764 . 3765) (semantic-list 3719 . 3763) (symbol 3706 . 3719) (string 3750 . 3760) (symbol "auto" 3702 . 3705) (string 3750 . 3760) (INLINE "inline" 3702 . 3705) (string 3750 . 3760) (STATIC "static" 3702 . 3705) (string 3750 . 3760) (semantic-list 3653 . 3700) (symbol 3647 . 3652) (punctuation 3645 . 3646) (punctuation 3644 . 3645) (semantic-list 3635 . 3643) (symbol 3624 . 3635) (symbol "auto" 3620 . 3623) (INLINE "inline" 3620 . 3623) (STATIC "static" 3620 . 3623) (semantic-list 3605 . 3618) (punctuation 3603 . 3604) (symbol 3602 . 3603) (CONST 3596 . 3601) (punctuation 3594 . 3595) (punctuation 3593 . 3594) (semantic-list 3586 . 3592) (symbol 3584 . 3586) (symbol "auto" 3580 . 3583) (INLINE "inline" 3580 . 3583) (STATIC "static" 3580 . 3583) (punctuation 3578 . 3579) (symbol 3577 . 3578) (CLASS 3571 . 3576) (punctuation 3570 . 3571) (TEMPLATE 3562 . 3570) (semantic-list 3501 . 3560) (BOOL 3496 . 3500) (punctuation 3494 . 3495) (punctuation 3493 . 3494) (semantic-list 3470 . 3492) (symbol 3463 . 3470) (symbol "auto" 3459 . 3462) (INLINE "inline" 3459 . 3462) (STATIC "static" 3459 . 3462) (punctuation 3457 . 3458) (symbol 3456 . 3457) (CLASS 3450 . 3455) (punctuation 3449 . 3450) (TEMPLATE 3440 . 3448) (semantic-list 3393 . 3438) (BOOL 3388 . 3392) (punctuation 3386 . 3387) (punctuation 3385 . 3386) (semantic-list 3327 . 3384) (symbol 3319 . 3327) (punctuation 3377 . 3378) (punctuation 3376 . 3377) (punctuation 3375 . 3376) (symbol "auto" 3314 . 3318) (punctuation 3377 . 3378) (punctuation 3376 . 3377) (punctuation 3375 . 3376) (INLINE "inline" 3314 . 3318) (punctuation 3377 . 3378) (punctuation 3376 . 3377) (punctuation 3375 . 3376) (symbol "constexpr" 3314 . 3318) (STATIC "static" 3314 . 3318) (punctuation 3312 . 3313) (symbol 3308 . 3312) (punctuation 3306 . 3307) (punctuation 3305 . 3306) (punctuation 3304 . 3305) (CLASS 3299 . 3304) (punctuation 3297 . 3298) (symbol 3296 . 3297) (CLASS 3290 . 3295) (punctuation 3288 . 3289) (symbol 3287 . 3288) (CLASS 3281 . 3286) (punctuation 3279 . 3280) (symbol 3278 . 3279) (CLASS 3272 . 3277) (punctuation 3271 . 3272) (TEMPLATE 3263 . 3271) (semantic-list 3243 . 3261) (BOOL 3238 . 3242) (punctuation 3236 . 3237) (punctuation 3235 . 3236) (semantic-list 3210 . 3234) (symbol 3202 . 3210) (symbol "auto" 3197 . 3201) (INLINE "inline" 3197 . 3201) (symbol "constexpr" 3197 . 3201) (STATIC "static" 3197 . 3201) (punctuation 3195 . 3196) (symbol 3194 . 3195) (CLASS 3188 . 3193) (punctuation 3186 . 3187) (symbol 3185 . 3186) (CLASS 3179 . 3184) (punctuation 3178 . 3179) (TEMPLATE 3170 . 3178) (semantic-list 3132 . 3168) (BOOL 3127 . 3131) (punctuation 3125 . 3126) (punctuation 3124 . 3125) (semantic-list 3095 . 3123) (symbol 3086 . 3095) (symbol "auto" 3081 . 3085) (INLINE "inline" 3081 . 3085) (symbol "constexpr" 3081 . 3085) (STATIC "static" 3081 . 3085) (punctuation 3079 . 3080) (symbol 3078 . 3079) (CLASS 3072 . 3077) (punctuation 3071 . 3072) (TEMPLATE 3063 . 3071) (semantic-list 3025 . 3061) (BOOL 3020 . 3024) (punctuation 3018 . 3019) (punctuation 3017 . 3018) (semantic-list 2974 . 3016) (symbol 2966 . 2974) (symbol "auto" 2961 . 2965) (INLINE "inline" 2961 . 2965) (symbol "constexpr" 2961 . 2965) (STATIC "static" 2961 . 2965) (punctuation 2959 . 2960) (symbol 2958 . 2959) (CLASS 2952 . 2957) (punctuation 2951 . 2952) (TEMPLATE 2943 . 2951) (semantic-list 2896 . 2941) (symbol 2888 . 2895) (punctuation 2886 . 2887) (punctuation 2885 . 2886) (semantic-list 2861 . 2884) (symbol 2858 . 2861) (symbol "auto" 2854 . 2857) (INLINE "inline" 2854 . 2857) (STATIC "static" 2854 . 2857) (semantic-list 2812 . 2852) (symbol 2804 . 2811) (punctuation 2802 . 2803) (punctuation 2801 . 2802) (semantic-list 2793 . 2800) (symbol 2790 . 2793) (symbol "auto" 2786 . 2789) (INLINE "inline" 2786 . 2789) (STATIC "static" 2786 . 2789) (semantic-list 2734 . 2784) (symbol 2728 . 2733) (punctuation 2726 . 2727) (punctuation 2725 . 2726) (semantic-list 2719 . 2724) (symbol 2708 . 2719) (symbol "auto" 2704 . 2707) (INLINE "inline" 2704 . 2707) (STATIC "static" 2704 . 2707) (punctuation 2702 . 2703) (symbol 2701 . 2702) (CLASS 2695 . 2700) (punctuation 2694 . 2695) (TEMPLATE 2686 . 2694) (semantic-list 2590 . 2664) (symbol 2578 . 2589) (punctuation 2576 . 2577) (punctuation 2575 . 2576) (semantic-list 2546 . 2574) (symbol 2533 . 2546) (symbol "auto" 2529 . 2532) (INLINE "inline" 2529 . 2532) (STATIC "static" 2529 . 2532) (punctuation 2527 . 2528) (symbol 2518 . 2527) (CLASS 2512 . 2517) (punctuation 2510 . 2511) (symbol 2506 . 2510) (CLASS 2500 . 2505) (punctuation 2499 . 2500) (TEMPLATE 2491 . 2499) (semantic-list 2443 . 2489) (symbol 2435 . 2442) (punctuation 2433 . 2434) (punctuation 2432 . 2433) (semantic-list 2342 . 2431) (symbol 2340 . 2342) (symbol "auto" 2336 . 2339) (INLINE "inline" 2336 . 2339) (STATIC "static" 2336 . 2339) (semantic-list 2294 . 2334) (symbol 2286 . 2293) (punctuation 2284 . 2285) (punctuation 2283 . 2284) (semantic-list 2259 . 2282) (symbol 2257 . 2259) (symbol "auto" 2253 . 2256) (INLINE "inline" 2253 . 2256) (STATIC "static" 2253 . 2256) (semantic-list 2215 . 2251) (symbol 2207 . 2214) (punctuation 2205 . 2206) (punctuation 2204 . 2205) (semantic-list 2177 . 2203) (symbol 2175 . 2177) (symbol "auto" 2171 . 2174) (INLINE "inline" 2171 . 2174) (STATIC "static" 2171 . 2174) (semantic-list 2133 . 2169) (symbol 2125 . 2132) (punctuation 2123 . 2124) (punctuation 2122 . 2123) (semantic-list 2095 . 2121) (symbol 2093 . 2095) (symbol "auto" 2089 . 2092) (INLINE "inline" 2089 . 2092) (STATIC "static" 2089 . 2092) (semantic-list 2051 . 2087) (symbol 2043 . 2050) (punctuation 2041 . 2042) (punctuation 2040 . 2041) (semantic-list 2017 . 2039) (symbol 2015 . 2017) (symbol "auto" 2011 . 2014) (INLINE "inline" 2011 . 2014) (STATIC "static" 2011 . 2014) (semantic-list 1967 . 2009) (symbol 1959 . 1966) (punctuation 1957 . 1958) (punctuation 1956 . 1957) (semantic-list 1903 . 1955) (symbol 1901 . 1903) (symbol "auto" 1897 . 1900) (INLINE "inline" 1897 . 1900) (STATIC "static" 1897 . 1900) (semantic-list 1865 . 1895) (symbol 1851 . 1864) (punctuation 1849 . 1850) (punctuation 1848 . 1849) (semantic-list 1830 . 1847) (symbol 1828 . 1830) (symbol "auto" 1824 . 1827) (INLINE "inline" 1824 . 1827) (STATIC "static" 1824 . 1827) (semantic-list 1761 . 1801) (punctuation 1759 . 1760) (punctuation 1758 . 1759) (punctuation 1757 . 1758) (punctuation 1756 . 1757) (symbol 1752 . 1756) (punctuation 1751 . 1752) (symbol 1750 . 1751) (punctuation 1748 . 1749) (punctuation 1747 . 1748) (semantic-list 1725 . 1746) (symbol 1723 . 1725) (punctuation 1739 . 1740) (punctuation 1738 . 1739) (punctuation 1737 . 1738) (symbol "auto" 1718 . 1722) (punctuation 1739 . 1740) (punctuation 1738 . 1739) (punctuation 1737 . 1738) (INLINE "inline" 1718 . 1722) (punctuation 1739 . 1740) (punctuation 1738 . 1739) (punctuation 1737 . 1738) (symbol "constexpr" 1718 . 1722) (STATIC "static" 1718 . 1722) (punctuation 1716 . 1717) (symbol 1712 . 1716) (punctuation 1710 . 1711) (punctuation 1709 . 1710) (punctuation 1708 . 1709) (CLASS 1703 . 1708) (punctuation 1702 . 1703) (TEMPLATE 1694 . 1702) (punctuation 1691 . 1692) (punctuation 1690 . 1691) (punctuation 1689 . 1690) (punctuation 1688 . 1689) (punctuation 1687 . 1688) (symbol 1683 . 1687) (punctuation 1682 . 1683) (symbol 1677 . 1682) (punctuation 1676 . 1677) (punctuation 1675 . 1676) (symbol 1672 . 1675) (punctuation 1670 . 1671) (symbol 1668 . 1669) (USING 1662 . 1667) (punctuation 1660 . 1661) (symbol 1656 . 1660) (punctuation 1654 . 1655) (punctuation 1653 . 1654) (punctuation 1652 . 1653) (CLASS 1647 . 1652) (punctuation 1646 . 1647) (TEMPLATE 1638 . 1646) (semantic-list 1608 . 1636) (symbol 1602 . 1607) (punctuation 1600 . 1601) (punctuation 1599 . 1600) (semantic-list 1590 . 1598) (symbol 1588 . 1590) (string 1585 . 1587) (OPERATOR 1576 . 1584) (symbol "auto" 1571 . 1575) (INLINE "inline" 1571 . 1575) (symbol "constexpr" 1571 . 1575) (STATIC "static" 1571 . 1575) (semantic-list 1541 . 1569) (symbol 1535 . 1540) (punctuation 1533 . 1534) (punctuation 1532 . 1533) (semantic-list 1519 . 1531) (symbol 1517 . 1519) (string 1514 . 1516) (OPERATOR 1505 . 1513) (symbol "auto" 1500 . 1504) (INLINE "inline" 1500 . 1504) (symbol "constexpr" 1500 . 1504) (STATIC "static" 1500 . 1504) (semantic-list 1459 . 1498) (symbol 1451 . 1458) (punctuation 1449 . 1450) (punctuation 1448 . 1449) (semantic-list 1418 . 1447) (symbol 1416 . 1418) (string 1413 . 1415) (OPERATOR 1404 . 1412) (symbol "auto" 1400 . 1403) (INLINE "inline" 1400 . 1403) (STATIC "static" 1400 . 1403) (semantic-list 1353 . 1398) (symbol 1342 . 1352) (punctuation 1340 . 1341) (punctuation 1339 . 1340) (semantic-list 1309 . 1338) (symbol 1307 . 1309) (string 1304 . 1306) (OPERATOR 1295 . 1303) (symbol "auto" 1291 . 1294) (INLINE "inline" 1291 . 1294) (STATIC "static" 1291 . 1294) (semantic-list 1254 . 1289) (symbol 1240 . 1253) (punctuation 1238 . 1239) (punctuation 1237 . 1238) (semantic-list 1207 . 1236) (symbol 1205 . 1207) (string 1202 . 1204) (OPERATOR 1193 . 1201) (symbol "auto" 1189 . 1192) (INLINE "inline" 1189 . 1192) (STATIC "static" 1189 . 1192) (semantic-list 1113 . 1187) (symbol 1105 . 1112) (punctuation 1103 . 1104) (punctuation 1102 . 1103) (semantic-list 1068 . 1101) (symbol 1066 . 1068) (string 1063 . 1065) (OPERATOR 1054 . 1062) (symbol "auto" 1050 . 1053) (INLINE "inline" 1050 . 1053) (STATIC "static" 1050 . 1053) (USING 971 . 976) (USING 926 . 931) (USING 891 . 896) (punctuation 867 . 868) (symbol 863 . 866) (symbol "auto" 859 . 862) (symbol "constexpr" 859 . 862) (STATIC "static" 859 . 862) (punctuation 838 . 839) (symbol 834 . 837) (symbol "auto" 830 . 833) (symbol "constexpr" 830 . 833) (STATIC "static" 830 . 833) (punctuation 685 . 686) (semantic-list 676 . 685) (semantic-list 666 . 676) (VOID 662 . 666) (USING 647 . 652) (punctuation 645 . 646) (symbol 641 . 645) (punctuation 639 . 640) (punctuation 638 . 639) (punctuation 637 . 638) (CLASS 632 . 637) (punctuation 630 . 631) (symbol 625 . 630) (CLASS 619 . 624) (punctuation 618 . 619) (TEMPLATE 610 . 618))
+      :lexical-table 
+        '(("CIA" . 
+              ((symbol "constexpr" 807 . 816) (INLINE "inline" 817 . 823) (symbol "auto" 824 . 828)))
+          ("_R" . 
+              ((symbol "std" 1814 . 1817) (punctuation ":" 1817 . 1818) (punctuation ":" 1818 . 1819) (symbol "tie" 1819 . 1822)))
+          ("SIA" . 
+              ((STATIC "static" 700 . 706) (INLINE "inline" 707 . 713) (symbol "auto" 714 . 718)))
+          ("SCIA" . 
+              ((STATIC "static" 766 . 772) (symbol "constexpr" 773 . 782) (INLINE "inline" 783 . 789) (symbol "auto" 790 . 794)))
+          ("STDAFX_HPP")
+          ("SCA" . 
+              ((STATIC "static" 731 . 737) (symbol "constexpr" 738 . 747) (symbol "auto" 748 . 752)))
+          )
+)
+    (semanticdb-table "ui_aboutdialog.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("UI_ABOUTDIALOG_H" variable (:constant-flag t) nil [398 414])
+            ("QtCore/QVariant" include (:system-flag t) nil [416 442])
+            ("QtWidgets/QAction" include (:system-flag t) nil [443 471])
+            ("QtWidgets/QApplication" include (:system-flag t) nil [472 505])
+            ("QtWidgets/QButtonGroup" include (:system-flag t) nil [506 539])
+            ("QtWidgets/QDialog" include (:system-flag t) nil [540 568])
+            ("QtWidgets/QHBoxLayout" include (:system-flag t) nil [569 601])
+            ("QtWidgets/QHeaderView" include (:system-flag t) nil [602 634])
+            ("QtWidgets/QLabel" include (:system-flag t) nil [635 662])
+            ("QtWidgets/QPushButton" include (:system-flag t) nil [663 695])
+            ("QtWidgets/QSpacerItem" include (:system-flag t) nil [696 728])
+            ("QtWidgets/QTabWidget" include (:system-flag t) nil [729 760])
+            ("QtWidgets/QVBoxLayout" include (:system-flag t) nil [761 793])
+            ("QtWidgets/QWidget" include (:system-flag t) nil [794 822])
+            ("dialog/bbox.hpp" include nil nil [823 849])
+            ("Ui_AboutDialog" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [894 901])
+                    ("verticalLayout_4" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [906 936])
+                    ("tab" variable
+                       (:pointer 1
+                        :type ("QTabWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [941 957])
+                    ("tab1" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [962 976])
+                    ("horizontalLayout_2" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [981 1013])
+                    ("verticalLayout" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1018 1046])
+                    ("label_3" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1051 1067])
+                    ("verticalSpacer" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1072 1100])
+                    ("verticalLayout_2" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1105 1135])
+                    ("label_4" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1140 1156])
+                    ("version" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1161 1177])
+                    ("copyright" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1182 1200])
+                    ("verticalSpacer_2" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1205 1235])
+                    ("label_6" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1240 1256])
+                    ("contacts" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1261 1278])
+                    ("verticalSpacer_3" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1283 1313])
+                    ("tab_2" variable
+                       (:pointer 1
+                        :type ("QWidget" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1318 1333])
+                    ("verticalLayout_5" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1338 1368])
+                    ("license" variable
+                       (:pointer 1
+                        :type ("QLabel" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1373 1389])
+                    ("horizontalLayout" variable
+                       (:pointer 1
+                        :type ("QHBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1394 1424])
+                    ("horizontalSpacer_2" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1429 1461])
+                    ("verticalLayout_3" variable
+                       (:pointer 1
+                        :type ("QVBoxLayout" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1466 1496])
+                    ("view_gpl" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1501 1523])
+                    ("view_mpl" variable
+                       (:pointer 1
+                        :type ("QPushButton" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1528 1550])
+                    ("horizontalSpacer_3" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1555 1587])
+                    ("verticalSpacer_5" variable
+                       (:pointer 1
+                        :type ("QSpacerItem" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1592 1622])
+                    ("buttonBox" variable
+                       (:pointer 1
+                        :type ("BBox" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1627 1643])
+                    ("setupUi" function
+                       (:arguments 
+                          ( ("AboutDialog" variable
+                               (:pointer 1
+                                :type ("QDialog" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [1662 1683]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [1649 8129])
+                    ("retranslateUi" function
+                       (:arguments 
+                          ( ("AboutDialog" variable
+                               (:pointer 1
+                                :type ("QDialog" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [8165 8186]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [8146 9484]))                  
+                :type "class")
+                nil [871 9505])
+            ("Ui" type
+               (:members 
+                  ( ("AboutDialog" type
+                       (:superclasses 
+                          ( ("Ui_AboutDialog" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [9526 9570]))                  
+                :type "namespace")
+                nil [9507 9572]))          
+      :file "ui_aboutdialog.h"
+      :pointmax 9635
+      :fsize 9634
+      :lastmodtime '(21681 30084 577754 963000)
+      :unmatched-syntax '((symbol 9590 . 9606) (symbol 851 . 869))
+      :lexical-table 
+        '(("UI_ABOUTDIALOG_H")
+          )
+))
+  :file "!home!ultimanium!coding!cmplayer!src!cmplayer!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

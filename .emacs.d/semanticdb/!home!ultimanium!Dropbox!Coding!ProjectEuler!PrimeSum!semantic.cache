@@ -1,0 +1,119 @@
+;; Object PrimeSum/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "PrimeSum/"
+  :tables
+  (list
+    (semanticdb-table "Sieve.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("__Seive_H_INCLUDED__" variable (:constant-flag t) nil [78 98])
+            ("iostream" include (:system-flag t) nil [162 180])
+            ("string" include (:system-flag t) nil [181 197])
+            ("math.h" include (:system-flag t) nil [198 215])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [217 237])
+            ("Sieve" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [252 259])
+                    ("isprime" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [274 286]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [261 287])
+                    ("Sieve" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [295 307]))                          
+                        :type ("Sieve" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [289 308])
+                    ("getPrimeTotal" function
+                       (:prototype-flag t
+                        :type "long long")
+                        (reparse-symbol classsubparts) [310 336])
+                    ("getLargestPrime" function
+                       (:prototype-flag t
+                        :type "long long")
+                        (reparse-symbol classsubparts) [338 366])
+                    ("getPrime" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("i" variable (:type "long long") (reparse-symbol arg-sub-list) [387 399]))                          
+                        :type "long long")
+                        (reparse-symbol classsubparts) [368 400])
+                    ("private" label nil (reparse-symbol classsubparts) [401 409])
+                    ("length" variable (:type "long long") (reparse-symbol classsubparts) [411 428])
+                    ("primes" variable
+                       (:pointer 1
+                        :type "long long")
+                        (reparse-symbol classsubparts) [430 448])
+                    ("nums" variable
+                       (:pointer 1
+                        :type "bool")
+                        (reparse-symbol classsubparts) [450 461])
+                    ("primecheckinorder" function
+                       (:prototype-flag t
+                        :arguments 
+                          ( ("a" variable (:type "long long") (reparse-symbol arg-sub-list) [486 498]))                          
+                        :type "bool")
+                        (reparse-symbol classsubparts) [463 499])
+                    ("primetotal" variable (:type "long long") (reparse-symbol classsubparts) [501 522]))                  
+                :type "class")
+                nil [238 526]))          
+      :file "Sieve.h"
+      :pointmax 534
+      :fsize 533
+      :lastmodtime '(21245 19854 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("__Seive_H_INCLUDED__")
+          )
+)
+    (semanticdb-table "Sieve.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("Sieve.h" include nil nil [1 19])
+            ("primecheckinorder" function
+               (:parent "Sieve"
+                :arguments 
+                  ( ("a" variable (:type "long long") (reparse-symbol arg-sub-list) [51 63]))                  
+                :type "bool")
+                nil [21 334])
+            ("Sieve" function
+               (:constructor-flag t
+                :parent "Sieve"
+                :arguments 
+                  ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [348 360]))                  
+                :type ("Sieve" type (:type "class") nil nil))
+                nil [335 878])
+            ("isprime" function
+               (:parent "Sieve"
+                :arguments 
+                  ( ("p" variable (:type "long long") (reparse-symbol arg-sub-list) [899 911]))                  
+                :type "bool")
+                nil [879 934])
+            ("getPrime" function
+               (:parent "Sieve"
+                :arguments 
+                  ( ("i" variable (:type "long long") (reparse-symbol arg-sub-list) [962 974]))                  
+                :type "long long")
+                nil [936 999])
+            ("getPrimeTotal" function
+               (:parent "Sieve"
+                :type "long long")
+                nil [1000 1056])
+            ("getLargestPrime" function
+               (:parent "Sieve"
+                :type "long long")
+                nil [1057 1125]))          
+      :file "Sieve.cpp"
+      :pointmax 1126
+      :fsize 1125
+      :lastmodtime '(21245 29988 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!ProjectEuler!PrimeSum!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

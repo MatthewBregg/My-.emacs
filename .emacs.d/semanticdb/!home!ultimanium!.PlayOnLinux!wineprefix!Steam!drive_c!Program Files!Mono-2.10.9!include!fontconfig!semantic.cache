@@ -1,0 +1,256 @@
+;; Object fontconfig/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "fontconfig/"
+  :tables
+  (list
+    (semanticdb-table "fontconfig.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_FONTCONFIG_H_" variable (:constant-flag t) nil [1233 1247])
+            ("sys/types.h" include (:system-flag t) nil [1249 1271])
+            ("sys/stat.h" include (:system-flag t) nil [1272 1293])
+            ("unistd.h" include (:system-flag t) nil [1294 1313])
+            ("stdarg.h" include (:system-flag t) nil [1314 1333])
+            ("FC_ATTRIBUTE_SENTINEL" variable (:constant-flag t) nil [1384 1405])
+            ("FcPublic" variable (:constant-flag t) nil [1514 1522])
+            ("FcChar8" type
+               (:typedef ("unsigned char")
+                :type "typedef")
+                nil [1531 1561])
+            ("FcChar16" type
+               (:typedef ("unsigned short")
+                :type "typedef")
+                nil [1562 1594])
+            ("FcChar32" type
+               (:typedef ("unsigned int")
+                :type "typedef")
+                nil [1595 1625])
+            ("FcBool" type
+               (:typedef ("int")
+                :type "typedef")
+                nil [1626 1646])
+            ("FC_MAJOR" variable (:constant-flag t) nil [1834 1842])
+            ("FC_MINOR" variable (:constant-flag t) nil [1853 1861])
+            ("FC_REVISION" variable (:constant-flag t) nil [1872 1883])
+            ("FC_VERSION" variable (:constant-flag t) nil [1895 1905])
+            ("FC_CACHE_VERSION" variable (:constant-flag t) nil [2317 2333])
+            ("FcTrue" variable (:constant-flag t) nil [2350 2356])
+            ("FcFalse" variable (:constant-flag t) nil [2368 2375])
+            ("FC_FAMILY" variable (:constant-flag t) nil [2388 2397])
+            ("FC_STYLE" variable (:constant-flag t) nil [2433 2441])
+            ("FC_SLANT" variable (:constant-flag t) nil [2476 2484])
+            ("FC_WEIGHT" variable (:constant-flag t) nil [2516 2525])
+            ("FC_SIZE" variable (:constant-flag t) nil [2558 2565])
+            ("FC_ASPECT" variable (:constant-flag t) nil [2600 2609])
+            ("FC_PIXEL_SIZE" variable (:constant-flag t) nil [2645 2658])
+            ("FC_SPACING" variable (:constant-flag t) nil [2697 2707])
+            ("FC_FOUNDRY" variable (:constant-flag t) nil [2741 2751])
+            ("FC_ANTIALIAS" variable (:constant-flag t) nil [2788 2800])
+            ("FC_HINTING" variable (:constant-flag t) nil [2847 2857])
+            ("FC_HINT_STYLE" variable (:constant-flag t) nil [2899 2912])
+            ("FC_VERTICAL_LAYOUT" variable (:constant-flag t) nil [2948 2966])
+            ("FC_AUTOHINT" variable (:constant-flag t) nil [3012 3023])
+            ("FC_GLOBAL_ADVANCE" variable (:constant-flag t) nil [3067 3084])
+            ("FC_WIDTH" variable (:constant-flag t) nil [3129 3137])
+            ("FC_FILE" variable (:constant-flag t) nil [3169 3176])
+            ("FC_INDEX" variable (:constant-flag t) nil [3211 3219])
+            ("FC_FT_FACE" variable (:constant-flag t) nil [3251 3261])
+            ("FC_RASTERIZER" variable (:constant-flag t) nil [3298 3311])
+            ("FC_OUTLINE" variable (:constant-flag t) nil [3350 3360])
+            ("FC_SCALABLE" variable (:constant-flag t) nil [3395 3406])
+            ("FC_SCALE" variable (:constant-flag t) nil [3442 3450])
+            ("FC_DPI" variable (:constant-flag t) nil [3485 3491])
+            ("FC_RGBA" variable (:constant-flag t) nil [3525 3532])
+            ("FC_MINSPACE" variable (:constant-flag t) nil [3564 3575])
+            ("FC_SOURCE" variable (:constant-flag t) nil [3636 3645])
+            ("FC_CHARSET" variable (:constant-flag t) nil [3694 3704])
+            ("FC_LANG" variable (:constant-flag t) nil [3742 3749])
+            ("FC_FONTVERSION" variable (:constant-flag t) nil [3799 3813])
+            ("FC_FULLNAME" variable (:constant-flag t) nil [3868 3879])
+            ("FC_FAMILYLANG" variable (:constant-flag t) nil [3917 3930])
+            ("FC_STYLELANG" variable (:constant-flag t) nil [3984 3996])
+            ("FC_FULLNAMELANG" variable (:constant-flag t) nil [4050 4065])
+            ("FC_CAPABILITY" variable (:constant-flag t) nil [4121 4134])
+            ("FC_FONTFORMAT" variable (:constant-flag t) nil [4175 4188])
+            ("FC_EMBOLDEN" variable (:constant-flag t) nil [4227 4238])
+            ("FC_EMBEDDED_BITMAP" variable (:constant-flag t) nil [4302 4320])
+            ("FC_DECORATIVE" variable (:constant-flag t) nil [4392 4405])
+            ("FC_LCD_FILTER" variable (:constant-flag t) nil [4482 4495])
+            ("FC_CACHE_SUFFIX" variable (:constant-flag t) nil [4532 4547])
+            ("FC_DIR_CACHE_FILE" variable (:constant-flag t) nil [4587 4604])
+            ("FC_USER_CACHE_FILE" variable (:constant-flag t) nil [4648 4666])
+            ("FC_CHAR_WIDTH" variable (:constant-flag t) nil [4744 4757])
+            ("FC_CHAR_HEIGHT" variable (:constant-flag t) nil [4792 4806]))          
+      :file "fontconfig.h"
+      :pointmax 23426
+      :fsize 23426
+      :lastmodtime '(19308 34180 0 0)
+      :unmatched-syntax '((string 8353 . 23426) (symbol 8352 . 8353) (string 4862 . 8352) (symbol 4856 . 4862) (string 4822 . 4856))
+      :lexical-table 
+        '(("FC_MINOR" . ((number "8" 1862 . 1863)))
+          ("FC_ANTIALIAS" . ((string "\"antialias\"" 2805 . 2816)))
+          ("FC_SOURCE" . ((string "\"source\"" 3650 . 3658)))
+          ("FC_LANG" . ((string "\"lang\"" 3755 . 3761)))
+          ("FC_FULLNAME" . ((string "\"fullname\"" 3884 . 3894)))
+          ("FC_FONTFORMAT" . ((string "\"fontformat\"" 4193 . 4205)))
+          ("FC_HINT_STYLE" . ((string "\"hintstyle\"" 2917 . 2928)))
+          ("FC_GLOBAL_ADVANCE" . ((string "\"globaladvance\"" 3087 . 3102)))
+          ("FC_VERSION" . ((semantic-list "((FC_MAJOR * 10000) + (FC_MINOR * 100) + (FC_REVISION))" 1906 . 1961)))
+          ("FC_STYLE" . ((string "\"style\"" 2446 . 2453)))
+          ("FC_FONTVERSION" . ((string "\"fontversion\"" 3818 . 3831)))
+          ("FC_DECORATIVE" . ((string "\"decorative\"" 4410 . 4422)))
+          ("FC_WEIGHT" . ((string "\"weight\"" 2530 . 2538)))
+          ("FC_ASPECT" . ((string "\"aspect\"" 2614 . 2622)))
+          ("FC_FOUNDRY" . ((string "\"foundry\"" 2756 . 2765)))
+          ("FC_HINTING" . ((string "\"hinting\"" 2862 . 2871)))
+          ("FC_SCALE" . ((string "\"scale\"" 3455 . 3462)))
+          ("FC_EMBEDDED_BITMAP" . ((string "\"embeddedbitmap\"" 4322 . 4338)))
+          ("FcPublic")
+          ("FC_FT_FACE" . ((string "\"ftface\"" 3266 . 3274)))
+          ("FC_FULLNAMELANG" . ((string "\"fullnamelang\"" 4070 . 4084)))
+          ("FC_DIR_CACHE_FILE" . ((string "\"fonts.cache-\"" 4609 . 4623) (symbol "FC_CACHE_VERSION" 4623 . 4639)))
+          ("FC_USER_CACHE_FILE" . ((string "\".fonts.cache-\"" 4671 . 4686) (symbol "FC_CACHE_VERSION" 4686 . 4702)))
+          ("FC_CACHE_VERSION" . ((string "\"3\"" 2337 . 2340)))
+          ("FC_DPI" . ((string "\"dpi\"" 3497 . 3502)))
+          ("FC_RGBA" . ((string "\"rgba\"" 3538 . 3544)))
+          ("FC_CACHE_SUFFIX" . ((string "\".cache-\"" 4553 . 4562) (symbol "FC_CACHE_VERSION" 4562 . 4578)))
+          ("FC_ATTRIBUTE_SENTINEL" (spp-arg-list ("x") 1405 . 1408) . ((symbol "__attribute__" 1409 . 1422) (semantic-list "((__sentinel__(0)))" 1422 . 1441)))
+          ("FcTrue" . ((number "1" 2358 . 2359)))
+          ("FC_FILE" . ((string "\"file\"" 3182 . 3188)))
+          ("FC_RASTERIZER" . ((string "\"rasterizer\"" 3316 . 3328)))
+          ("FC_SCALABLE" . ((string "\"scalable\"" 3411 . 3421)))
+          ("FC_CAPABILITY" . ((string "\"capability\"" 4141 . 4153)))
+          ("FC_LCD_FILTER" . ((string "\"lcdfilter\"" 4500 . 4511)))
+          ("FC_CHAR_WIDTH" . ((string "\"charwidth\"" 4762 . 4773)))
+          ("_FONTCONFIG_H_")
+          ("FC_FAMILY" . ((string "\"family\"" 2402 . 2410)))
+          ("FC_SLANT" . ((string "\"slant\"" 2489 . 2496)))
+          ("FC_PIXEL_SIZE" . ((string "\"pixelsize\"" 2663 . 2674)))
+          ("FC_AUTOHINT" . ((string "\"autohint\"" 3028 . 3038)))
+          ("FC_MINSPACE" . ((string "\"minspace\"" 3580 . 3590)))
+          ("FC_MAJOR" . ((number "2" 1843 . 1844)))
+          ("FcFalse" . ((number "0" 2377 . 2378)))
+          ("FC_SPACING" . ((string "\"spacing\"" 2712 . 2721)))
+          ("FC_SIZE" . ((string "\"size\"" 2571 . 2577)))
+          ("FC_VERTICAL_LAYOUT" . ((string "\"verticallayout\"" 2968 . 2984)))
+          ("FC_INDEX" . ((string "\"index\"" 3224 . 3231)))
+          ("FC_OUTLINE" . ((string "\"outline\"" 3365 . 3374)))
+          ("FC_EMBOLDEN" . ((string "\"embolden\"" 4243 . 4253)))
+          ("FC_WIDTH" . ((string "\"width\"" 3142 . 3149)))
+          ("FC_STYLELANG" . ((string "\"stylelang\"" 4001 . 4012)))
+          ("FC_REVISION" . ((number "0" 1884 . 1885)))
+          ("FC_CHARSET" . ((string "\"charset\"" 3709 . 3718)))
+          ("FC_FAMILYLANG" . ((string "\"familylang\"" 3935 . 3947)))
+          ("FC_CHAR_HEIGHT" . ((string "\"charheight" 4811 . 4822)))
+          )
+)
+    (semanticdb-table "fcfreetype.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_FCFREETYPE_H_" variable (:constant-flag t) nil [1233 1247])
+            ("ft2build.h" include (:system-flag t) nil [1248 1269])
+            ("FcPublic" variable (:constant-flag t) nil [1319 1327])
+            ("FcFreeTypeCharIndex" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("face" variable (:type ("FT_Face" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1393 1406])
+                    ("ucs4" variable (:type ("FcChar32" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1407 1421]))                  
+                :type ("FT_UInt" type (:type "class") nil nil))
+                nil [1364 1422])
+            ("FcFreeTypeCharSetAndSpacing" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("face" variable (:type ("FT_Face" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1474 1487])
+                    ("blanks" variable
+                       (:pointer 1
+                        :type ("FcBlanks" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1488 1505])
+                    ("spacing" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1506 1519]))                  
+                :type ("FcCharSet" type (:type "class") nil nil))
+                nil [1433 1520])
+            ("FcFreeTypeCharSet" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("face" variable (:type ("FT_Face" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1566 1579])
+                    ("blanks" variable
+                       (:pointer 1
+                        :type ("FcBlanks" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1580 1597]))                  
+                :type ("FcCharSet" type (:type "class") nil nil))
+                nil [1535 1598])
+            ("FcPatternGetFTFace" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("FcPattern" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1638 1657])
+                    ("object" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1658 1677])
+                    ("n" variable (:type "int") (reparse-symbol arg-sub-list) [1678 1684])
+                    ("f" variable
+                       (:pointer 1
+                        :type ("FT_Face" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1685 1696]))                  
+                :type ("FcResult" type (:type "class") nil nil))
+                nil [1609 1697])
+            ("FcPatternAddFTFace" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("FcPattern" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1735 1748])
+                    ("object" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1749 1768])
+                    ("f" variable
+                       (:constant-flag t
+                        :type ("FT_Face" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1769 1785]))                  
+                :type ("FcBool" type (:type "class") nil nil))
+                nil [1708 1786])
+            ("FcFreeTypeQueryFace" function
+               (:prototype-flag t
+                :pointer 1
+                :arguments 
+                  ( ("face" variable
+                       (:constant-flag t
+                        :type ("FT_Face" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1830 1850])
+                    ("file" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("FcChar8" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1858 1879])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [1887 1898])
+                    ("blanks" variable
+                       (:pointer 1
+                        :type ("FcBlanks" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1906 1927]))                  
+                :type ("FcPattern" type (:type "class") nil nil))
+                nil [1797 1928]))          
+      :file "fcfreetype.h"
+      :pointmax 1954
+      :fsize 1954
+      :lastmodtime '(19308 34180 0 0)
+      :unmatched-syntax '((symbol 1930 . 1945) (symbol 1336 . 1353) (symbol 1279 . 1292) (symbol 1271 . 1278) (punctuation 1270 . 1271))
+      :lexical-table 
+        '(("FcPublic")
+          ("_FCFREETYPE_H_")
+          )
+))
+  :file "!home!ultimanium!.PlayOnLinux!wineprefix!Steam!drive_c!Program Files!Mono-2.10.9!include!fontconfig!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

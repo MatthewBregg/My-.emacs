@@ -1,0 +1,455 @@
+;; Object include/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "include/"
+  :tables
+  (list
+    (semanticdb-table "packetstream.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("_PACKETSTREAM_H" variable (:constant-flag t) nil [1275 1290])
+            ("__PS_PUBLIC" variable (:constant-flag t) nil [1364 1375])
+            ("stddef.h" include (:system-flag t) nil [1425 1444])
+            ("stdio.h" include (:system-flag t) nil [1445 1463])
+            ("sys/ipc.h" include (:system-flag t) nil [1507 1528])
+            ("__PS_SHM" variable (:constant-flag t) nil [1538 1546])
+            ("__PS_STATS" variable (:constant-flag t) nil [1556 1566])
+            ("ps_stats_text" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("stats" variable
+                       (:pointer 1
+                        :type ("ps_stats_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13601 13619])
+                    ("stream" variable
+                       (:pointer 1
+                        :type ("FILE" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13620 13633]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [13583 13634])
+            ("ps_packet_dma" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13308 13328])
+                    ("mem" variable
+                       (:pointer 2
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [13329 13340])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13341 13353])
+                    ("flags" variable (:type ("ps_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [13354 13371]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [13290 13372])
+            ("ps_packet_write" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12457 12477])
+                    ("src" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12478 12488])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12489 12501]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [12437 12502])
+            ("ps_packet_read" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [12106 12126])
+                    ("dest" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [12127 12138])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [12139 12151]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [12087 12152])
+            ("ps_packet_setsize" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11761 11781])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11782 11794]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [11739 11795])
+            ("ps_packet_getsize" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11228 11248])
+                    ("size" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11249 11262]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [11206 11263])
+            ("ps_packet_seek" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [11025 11045])
+                    ("pos" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [11046 11057]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [11006 11058])
+            ("ps_packet_tell" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10674 10694])
+                    ("pos" variable
+                       (:pointer 1
+                        :type ("size_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10695 10707]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [10655 10708])
+            ("ps_packet_cancel" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10456 10476]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [10435 10477])
+            ("ps_packet_close" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [10112 10132]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [10092 10133])
+            ("ps_packet_open" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9928 9948])
+                    ("flags" variable (:type ("ps_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [9949 9966]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [9909 9967])
+            ("ps_packet_destroy" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9426 9446]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [9404 9447])
+            ("ps_packet_init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("packet" variable
+                       (:pointer 1
+                        :type ("ps_packet_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9233 9253])
+                    ("buffer" variable
+                       (:pointer 1
+                        :type ("ps_buffer_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [9254 9274]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [9214 9275])
+            ("ps_buffer_getshmid" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ps_buffer_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8944 8964])
+                    ("shmid" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [8965 8976]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [8921 8977])
+            ("ps_buffer_stats" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ps_buffer_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8639 8659])
+                    ("stats" variable
+                       (:pointer 1
+                        :type ("ps_stats_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8660 8678]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [8619 8679])
+            ("ps_buffer_cancel" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ps_buffer_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8222 8242]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [8201 8243])
+            ("ps_buffer_destroy" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ps_buffer_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7824 7844]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [7802 7845])
+            ("ps_buffer_init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("buffer" variable
+                       (:pointer 1
+                        :type ("ps_buffer_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7629 7649])
+                    ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7650 7672]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [7610 7673])
+            ("ps_bufferattr_setshmmode" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7341 7363])
+                    ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [7364 7373]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [7312 7374])
+            ("ps_bufferattr_setshmid" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7073 7095])
+                    ("id" variable (:type "int") (reparse-symbol arg-sub-list) [7096 7103]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [7046 7104])
+            ("ps_bufferattr_setflags" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6794 6816])
+                    ("flags" variable (:type ("ps_flags_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6817 6834]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [6767 6835])
+            ("ps_bufferattr_setsize" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6501 6523])
+                    ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6524 6536]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [6475 6537])
+            ("ps_bufferattr_destroy" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6268 6290]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [6242 6291])
+            ("ps_bufferattr_init" function
+               (:typemodifiers ("extern" "\"C\"")
+                :type "int"
+                :arguments 
+                  ( ("attr" variable
+                       (:pointer 1
+                        :type ("ps_bufferattr_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6056 6078]))                  
+                :prototype-flag t)
+                (reparse-symbol extern-c-contents) [6033 6079])
+            ("ps_packet_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("flags" variable (:type ("ps_flags_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5445 5462])
+                          ("buffer" variable
+                             (:pointer 1
+                              :type ("ps_buffer_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [5519 5539])
+                          ("buffer_pos" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5568 5586])
+                          ("pos" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5644 5655])
+                          ("reserved" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [5689 5705])
+                          ("header" variable
+                             (:pointer 1
+                              :type "void")
+                              (reparse-symbol classsubparts) [5740 5753])
+                          ("fake_dma" variable
+                             (:pointer 1
+                              :type "void")
+                              (reparse-symbol classsubparts) [5791 5806]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [5413 5821])
+            ("ps_buffer_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("state" variable
+                             (:pointer 1
+                              :type "void")
+                              (reparse-symbol classsubparts) [4947 4959])
+                          ("buffer" variable
+                             (:pointer 1
+                              :type "unsigned char")
+                              (reparse-symbol classsubparts) [4997 5019])
+                          ("stats" variable
+                             (:pointer 1
+                              :type ("ps_stats_t" type (:type "class") nil nil))
+                              (reparse-symbol classsubparts) [5084 5102])
+                          ("shmid" variable (:type "int") (reparse-symbol classsubparts) [5129 5139])
+                          ("read_wait_start" variable (:type "unsigned long") (reparse-symbol classsubparts) [5215 5245])
+                          ("write_wait_start" variable (:type "unsigned long") (reparse-symbol classsubparts) [5321 5352]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [4875 5367])
+            ("ps_bufferattr_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("flags" variable (:type ("ps_flags_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4661 4678])
+                          ("size" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4709 4721])
+                          ("shmid" variable (:type "int") (reparse-symbol classsubparts) [4748 4758])
+                          ("shmmode" variable (:type "int") (reparse-symbol classsubparts) [4798 4810]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [4629 4829])
+            ("ps_stats_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("" type
+                     (:members 
+                        ( ("read_packets" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4106 4126])
+                          ("written_packets" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4162 4185])
+                          ("read_bytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4215 4233])
+                          ("written_bytes" variable (:type ("size_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4266 4287])
+                          ("read_wait_usec" variable (:type "unsigned long") (reparse-symbol classsubparts) [4353 4382])
+                          ("write_wait_usec" variable (:type "unsigned long") (reparse-symbol classsubparts) [4448 4478])
+                          ("utime" variable (:type "unsigned long") (reparse-symbol classsubparts) [4534 4554]))                        
+                      :type "struct")
+                      nil nil))
+                (reparse-symbol extern-c-contents) [4057 4568])
+            ("ps_flags_t" type
+               (:typemodifiers ("extern" "\"C\"")
+                :type "typedef"
+                :typedef ("int"))
+                (reparse-symbol extern-c-contents) [3978 4001])
+            ("PS_SHM_CREATE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3938 3951])
+            ("PS_DEFAULT_SIZE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3838 3853])
+            ("PS_ACCEPT_FAKE_DMA" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3721 3739])
+            ("PS_PACKET_TRY" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3662 3675])
+            ("PS_PACKET_SIZE_SET" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3586 3604])
+            ("PS_PACKET_WRITE" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3515 3530])
+            ("PS_PACKET_READ" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3462 3476])
+            ("PS_BUFFER_CANCELLED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3359 3378])
+            ("PS_BUFFER_STATS" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3288 3303])
+            ("PS_BUFFER_PSHARED" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3227 3244])
+            ("PS_BUFFER_READY" variable
+               (:typemodifiers ("extern" "\"C\"")
+                :constant-flag t)
+                (reparse-symbol extern-c-contents) [3151 3166]))          
+      :file "packetstream.h"
+      :pointmax 13684
+      :fsize 13683
+      :lastmodtime '(21668 10790 24480 700000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PS_BUFFER_CANCELLED" . ((number "8" 3384 . 3385)))
+          ("PS_PACKET_SIZE_SET" . ((number "4" 3611 . 3612)))
+          ("__PS_SHM")
+          ("__PS_STATS")
+          ("PS_BUFFER_PSHARED" . ((number "2" 3252 . 3253)))
+          ("PS_PACKET_WRITE" . ((number "2" 3540 . 3541)))
+          ("PS_SHM_CREATE" . ((symbol "IPC_PRIVATE" 3953 . 3964)))
+          ("PS_PACKET_TRY" . ((number "8" 3687 . 3688)))
+          ("PS_BUFFER_STATS" . ((number "4" 3313 . 3314)))
+          ("_PACKETSTREAM_H")
+          ("PS_PACKET_READ" . ((number "1" 3487 . 3488)))
+          ("PS_ACCEPT_FAKE_DMA" . ((number "1" 3746 . 3747)))
+          ("__PS_PUBLIC" . ((symbol "__attribute__" 1376 . 1389) (semantic-list "((visibility (\"default\")))" 1390 . 1416)))
+          ("PS_BUFFER_READY" . ((number "1" 3176 . 3177)))
+          ("PS_DEFAULT_SIZE" . ((number "1048576" 3857 . 3864)))
+          )
+))
+  :file "!home!ultimanium!.PlayOnLinux!plugins!Capture!software!usr!include!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

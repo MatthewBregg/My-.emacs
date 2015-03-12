@@ -1,0 +1,646 @@
+;; Object osdep/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "osdep/"
+  :tables
+  (list
+    (semanticdb-table "subprocess-posix.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("spawn.h" include (:system-flag t) nil [660 678])
+            ("poll.h" include (:system-flag t) nil [679 696])
+            ("unistd.h" include (:system-flag t) nil [697 716])
+            ("sys/types.h" include (:system-flag t) nil [717 739])
+            ("sys/wait.h" include (:system-flag t) nil [740 761])
+            ("errno.h" include (:system-flag t) nil [762 780])
+            ("signal.h" include (:system-flag t) nil [781 800])
+            ("osdep/subprocess.h" include nil nil [802 831])
+            ("osdep/io.h" include nil nil [833 854])
+            ("common/common.h" include nil nil [855 881])
+            ("stream/stream.h" include nil nil [882 908])
+            ("sparse_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("fds" variable
+                       (:pointer 1
+                        :type ("pollfd" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1115 1134])
+                    ("num_fds" variable (:type "int") (reparse-symbol arg-sub-list) [1135 1147])
+                    ("timeout" variable (:type "int") (reparse-symbol arg-sub-list) [1148 1160]))                  
+                :type "int")
+                nil [1092 1647])
+            ("mp_subprocess" function
+               (:arguments 
+                  ( ("args" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1667 1679])
+                    ("cancel" variable
+                       (:pointer 1
+                        :type ("mp_cancel" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1680 1705])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [1706 1716])
+                    ("on_stdout" variable (:type ("subprocess_read_cb" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1735 1764])
+                    ("on_stderr" variable (:type ("subprocess_read_cb" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1765 1794])
+                    ("error" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1813 1826]))                  
+                :type "int")
+                nil [1649 4519]))          
+      :file "subprocess-posix.c"
+      :pointmax 4520
+      :fsize 4519
+      :lastmodtime '(21681 30008 829005 920000)
+      :unmatched-syntax nil)
+    (semanticdb-table "subprocess.h"
+      :file "subprocess.h"
+      :fsize 1080
+      :lastmodtime '(21681 30008 829005 920000))
+    (semanticdb-table "io.h"
+      :file "io.h"
+      :fsize 4250
+      :lastmodtime '(21681 30008 829005 920000))
+    (semanticdb-table "terminal-unix.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("config.h" include nil nil [873 892])
+            ("stdlib.h" include (:system-flag t) nil [894 913])
+            ("stdint.h" include (:system-flag t) nil [914 933])
+            ("string.h" include (:system-flag t) nil [934 953])
+            ("signal.h" include (:system-flag t) nil [954 973])
+            ("errno.h" include (:system-flag t) nil [974 992])
+            ("sys/ioctl.h" include (:system-flag t) nil [993 1015])
+            ("pthread.h" include (:system-flag t) nil [1016 1036])
+            ("assert.h" include (:system-flag t) nil [1037 1056])
+            ("unistd.h" include (:system-flag t) nil [1185 1204])
+            ("poll.h" include (:system-flag t) nil [1205 1222])
+            ("osdep/io.h" include nil nil [1224 1245])
+            ("osdep/threads.h" include nil nil [1246 1272])
+            ("common/common.h" include nil nil [1274 1300])
+            ("misc/bstr.h" include nil nil [1301 1323])
+            ("input/input.h" include nil nil [1324 1348])
+            ("input/keycodes.h" include nil nil [1349 1376])
+            ("misc/ctype.h" include nil nil [1377 1400])
+            ("terminal.h" include nil nil [1401 1422])
+            ("key_entry" type
+               (:members 
+                  ( ("seq" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1547 1563])
+                    ("mpkey" variable (:type "int") (reparse-symbol classsubparts) [1568 1578])
+                    ("replace" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol classsubparts) [1796 1816]))                  
+                :type "struct")
+                nil [1524 1819])
+            ("keys" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    {\"\\010\", MP_KEY_BS},
+    {\"\\011\", MP_KEY_TAB},
+    {\"\\012\", MP_KEY_ENTER},
+    {\"\\177\", MP_KEY_BS},
+
+    {\"\\033[1~\", MP_KEY_HOME},
+    {\"\\033[2~\", MP_KEY_INS},
+    {\"\\033[3~\", MP_KEY_DEL},
+    {\"\\033[4~\", MP_KEY_END},
+    {\"\\033[5~\", MP_KEY_PGUP},
+    {\"\\033[6~\", MP_KEY_PGDWN},
+    {\"\\033[7~\", MP_KEY_HOME},
+    {\"\\033[8~\", MP_KEY_END},
+
+    {\"\\033[11~\", MP_KEY_F+1},
+    {\"\\033[12~\", MP_KEY_F+2},
+    {\"\\033[13~\", MP_KEY_F+3},
+    {\"\\033[14~\", MP_KEY_F+4},
+    {\"\\033[15~\", MP_KEY_F+5},
+    {\"\\033[17~\", MP_KEY_F+6},
+    {\"\\033[18~\", MP_KEY_F+7},
+    {\"\\033[19~\", MP_KEY_F+8},
+    {\"\\033[20~\", MP_KEY_F+9},
+    {\"\\033[21~\", MP_KEY_F+10},
+    {\"\\033[23~\", MP_KEY_F+11},
+    {\"\\033[24~\", MP_KEY_F+12},
+
+    {\"\\033[A\", MP_KEY_UP},
+    {\"\\033[B\", MP_KEY_DOWN},
+    {\"\\033[C\", MP_KEY_RIGHT},
+    {\"\\033[D\", MP_KEY_LEFT},
+    {\"\\033[E\", MP_KEY_KP5},
+    {\"\\033[F\", MP_KEY_END},
+    {\"\\033[H\", MP_KEY_HOME},
+
+    {\"\\033[[A\", MP_KEY_F+1},
+    {\"\\033[[B\", MP_KEY_F+2},
+    {\"\\033[[C\", MP_KEY_F+3},
+    {\"\\033[[D\", MP_KEY_F+4},
+    {\"\\033[[E\", MP_KEY_F+5},
+
+    {\"\\033OE\", MP_KEY_KP5}, // mintty?
+    {\"\\033OM\", MP_KEY_KPENTER},
+    {\"\\033OP\", MP_KEY_F+1},
+    {\"\\033OQ\", MP_KEY_F+2},
+    {\"\\033OR\", MP_KEY_F+3},
+    {\"\\033OS\", MP_KEY_F+4},
+
+    {\"\\033Oa\", MP_KEY_UP | MP_KEY_MODIFIER_CTRL}, // urxvt
+    {\"\\033Ob\", MP_KEY_DOWN | MP_KEY_MODIFIER_CTRL},
+    {\"\\033Oc\", MP_KEY_RIGHT | MP_KEY_MODIFIER_CTRL},
+    {\"\\033Od\", MP_KEY_LEFT | MP_KEY_MODIFIER_CTRL},
+    {\"\\033Oj\", '*'}, // also keypad, but we don't have separate codes for them
+    {\"\\033Ok\", '+'},
+    {\"\\033Om\", '-'},
+    {\"\\033On\", MP_KEY_KPDEC},
+    {\"\\033Oo\", '/'},
+    {\"\\033Op\", MP_KEY_KP0},
+    {\"\\033Oq\", MP_KEY_KP1},
+    {\"\\033Or\", MP_KEY_KP2},
+    {\"\\033Os\", MP_KEY_KP3},
+    {\"\\033Ot\", MP_KEY_KP4},
+    {\"\\033Ou\", MP_KEY_KP5},
+    {\"\\033Ov\", MP_KEY_KP6},
+    {\"\\033Ow\", MP_KEY_KP7},
+    {\"\\033Ox\", MP_KEY_KP8},
+    {\"\\033Oy\", MP_KEY_KP9},
+
+    {\"\\033[a\", MP_KEY_UP | MP_KEY_MODIFIER_SHIFT}, // urxvt
+    {\"\\033[b\", MP_KEY_DOWN | MP_KEY_MODIFIER_SHIFT},
+    {\"\\033[c\", MP_KEY_RIGHT | MP_KEY_MODIFIER_SHIFT},
+    {\"\\033[d\", MP_KEY_LEFT | MP_KEY_MODIFIER_SHIFT},
+    {\"\\033[2^\", MP_KEY_INS | MP_KEY_MODIFIER_CTRL},
+    {\"\\033[3^\", MP_KEY_DEL | MP_KEY_MODIFIER_CTRL},
+    {\"\\033[5^\", MP_KEY_PGUP | MP_KEY_MODIFIER_CTRL},
+    {\"\\033[6^\", MP_KEY_PGDWN | MP_KEY_MODIFIER_CTRL},
+    {\"\\033[7^\", MP_KEY_HOME | MP_KEY_MODIFIER_CTRL},
+    {\"\\033[8^\", MP_KEY_END | MP_KEY_MODIFIER_CTRL},
+
+    {\"\\033[1;2\", MP_KEY_MODIFIER_SHIFT, .replace = \"\\033[\"}, // xterm
+    {\"\\033[1;3\", MP_KEY_MODIFIER_ALT, .replace = \"\\033[\"},
+    {\"\\033[1;5\", MP_KEY_MODIFIER_CTRL, .replace = \"\\033[\"},
+    {\"\\033[1;4\", MP_KEY_MODIFIER_ALT | MP_KEY_MODIFIER_SHIFT, .replace = \"\\033[\"},
+    {\"\\033[1;6\", MP_KEY_MODIFIER_CTRL | MP_KEY_MODIFIER_SHIFT, .replace = \"\\033[\"},
+    {\"\\033[1;7\", MP_KEY_MODIFIER_CTRL | MP_KEY_MODIFIER_ALT, .replace = \"\\033[\"},
+    {\"\\033[1;8\",
+     MP_KEY_MODIFIER_CTRL | MP_KEY_MODIFIER_ALT | MP_KEY_MODIFIER_SHIFT,
+     .replace = \"\\033[\"},
+
+    {\"\\033[29~\", MP_KEY_MENU},
+    {\"\\033[Z\", MP_KEY_TAB | MP_KEY_MODIFIER_SHIFT},
+
+    {0}
+}"
+                :type ("key_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1821 4955])
+            ("BUF_LEN" variable (:constant-flag t) nil [4965 4972])
+            ("termbuf" type
+               (:members 
+                  ( ("b" variable
+                       (:dereference 1
+                        :type "unsigned char")
+                        (reparse-symbol classsubparts) [4999 5024])
+                    ("len" variable (:type "int") (reparse-symbol classsubparts) [5029 5037])
+                    ("mods" variable (:type "int") (reparse-symbol classsubparts) [5042 5051]))                  
+                :type "struct")
+                nil [4978 5054])
+            ("skip_buf" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("b" variable
+                       (:pointer 1
+                        :type ("termbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5077 5095])
+                    ("count" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [5096 5115]))                  
+                :type "void")
+                nil [5056 5240])
+            ("buf" variable
+               (:typemodifiers ("static")
+                :type ("termbuf" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5242 5268])
+            ("getch2" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("input_ctx" variable
+                       (:pointer 1
+                        :type ("input_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5289 5317]))                  
+                :type "bool")
+                nil [5270 8055])
+            ("getch2_active" variable
+               (:typemodifiers ("static" "volatile")
+                :default-value "0"
+                :type "int")
+                nil [8057 8096])
+            ("getch2_enabled" variable
+               (:typemodifiers ("static" "volatile")
+                :default-value "0"
+                :type "int")
+                nil [8097 8136])
+            ("read_terminal" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [8137 8163])
+            ("enable_kx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("enable" variable (:type "bool") (reparse-symbol arg-sub-list) [8187 8199]))                  
+                :type "void")
+                nil [8165 8691])
+            ("do_activate_getch2" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [8724 8729]))                  
+                :type "void")
+                nil [8693 9163])
+            ("do_deactivate_getch2" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9198 9203]))                  
+                :type "void")
+                nil [9165 9509])
+            ("setsigaction" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("signo" variable (:type "int") (reparse-symbol arg-sub-list) [9556 9566])
+                    ("handler" function
+                       (:function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [9584 9588]))                          
+                        :type "void")
+                        nil nil)
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [9614 9624])
+                    ("do_mask" variable (:type "bool") (reparse-symbol arg-sub-list) [9625 9638]))                  
+                :type "int")
+                nil [9532 9868])
+            ("getch2_poll" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [9894 9899]))                  
+                :type "void")
+                nil [9870 10200])
+            ("stop_sighandler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("signum" variable (:type "int") (reparse-symbol arg-sub-list) [10230 10241]))                  
+                :type "void")
+                nil [10202 10415])
+            ("continue_sighandler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("signum" variable (:type "int") (reparse-symbol arg-sub-list) [10449 10460]))                  
+                :type "void")
+                nil [10417 10618])
+            ("input_thread" variable
+               (:typemodifiers ("static")
+                :type ("pthread_t" type (:type "class") nil nil))
+                nil [10620 10650])
+            ("input_ctx" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("input_ctx" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10651 10686])
+            ("death_pipe" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :type "int")
+                nil [10687 10712])
+            ("quit_request_sighandler" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("signum" variable (:type "int") (reparse-symbol arg-sub-list) [10750 10761]))                  
+                :type "void")
+                nil [10714 10835])
+            ("terminal_thread" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [10866 10876]))                  
+                :type "void")
+                nil [10837 11635])
+            ("terminal_setup_getch" function
+               (:arguments 
+                  ( ("ictx" variable
+                       (:pointer 1
+                        :type ("input_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11663 11686]))                  
+                :type "void")
+                nil [11637 12454])
+            ("terminal_uninit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [12477 12482]))                  
+                :type "void")
+                nil [12456 13155])
+            ("terminal_in_background" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13185 13190]))                  
+                :type "bool")
+                nil [13157 13261])
+            ("terminal_get_size" function
+               (:arguments 
+                  ( ("w" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [13286 13293])
+                    ("h" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [13294 13301]))                  
+                :type "void")
+                nil [13263 13452])
+            ("terminal_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [13472 13477]))                  
+                :type "int")
+                nil [13454 13929]))          
+      :file "terminal-unix.c"
+      :pointmax 13930
+      :fsize 13929
+      :lastmodtime '(21681 30008 829005 920000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("BUF_LEN" . ((number "256" 4973 . 4976)))
+          )
+)
+    (semanticdb-table "threads.h"
+      :file "threads.h"
+      :fsize 704
+      :lastmodtime '(21681 30008 829005 920000))
+    (semanticdb-table "terminal.h"
+      :file "terminal.h"
+      :fsize 1523
+      :lastmodtime '(21681 30008 829005 920000))
+    (semanticdb-table "terminal-win.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("config.h" include nil nil [977 996])
+            ("fcntl.h" include (:system-flag t) nil [997 1015])
+            ("stdio.h" include (:system-flag t) nil [1016 1034])
+            ("stdint.h" include (:system-flag t) nil [1035 1054])
+            ("string.h" include (:system-flag t) nil [1055 1074])
+            ("windows.h" include (:system-flag t) nil [1075 1095])
+            ("io.h" include (:system-flag t) nil [1096 1111])
+            ("pthread.h" include (:system-flag t) nil [1112 1132])
+            ("assert.h" include (:system-flag t) nil [1133 1152])
+            ("common/common.h" include nil nil [1153 1179])
+            ("input/keycodes.h" include nil nil [1180 1207])
+            ("input/input.h" include nil nil [1208 1232])
+            ("terminal.h" include nil nil [1233 1254])
+            ("osdep/io.h" include nil nil [1255 1276])
+            ("osdep/threads.h" include nil nil [1277 1303])
+            ("osdep/w32_keyboard.h" include nil nil [1304 1335])
+            ("hSTDOUT" variable (:constant-flag t) nil [1345 1352])
+            ("hSTDERR" variable (:constant-flag t) nil [1393 1400])
+            ("FOREGROUND_ALL" variable (:constant-flag t) nil [1441 1455])
+            ("stdoutAttrs" variable
+               (:typemodifiers ("static")
+                :default-value "0"
+                :type "short")
+                nil [1511 1540])
+            ("ansi2win32" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    0,
+    FOREGROUND_RED,
+    FOREGROUND_GREEN,
+    FOREGROUND_GREEN | FOREGROUND_RED,
+    FOREGROUND_BLUE,
+    FOREGROUND_BLUE  | FOREGROUND_RED,
+    FOREGROUND_BLUE  | FOREGROUND_GREEN,
+    FOREGROUND_BLUE  | FOREGROUND_GREEN | FOREGROUND_RED,
+}"
+                :type "unsigned char")
+                nil [1541 1835])
+            ("running" variable
+               (:typemodifiers ("static")
+                :type "bool")
+                nil [1837 1857])
+            ("death" variable
+               (:typemodifiers ("static")
+                :type ("HANDLE" type (:type "class") nil nil))
+                nil [1858 1878])
+            ("input_thread" variable
+               (:typemodifiers ("static")
+                :type ("pthread_t" type (:type "class") nil nil))
+                nil [1879 1909])
+            ("input_ctx" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :type ("input_ctx" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1910 1945])
+            ("terminal_get_size" function
+               (:arguments 
+                  ( ("w" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1970 1977])
+                    ("h" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1978 1985]))                  
+                :type "void")
+                nil [1947 2200])
+            ("read_input" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2225 2230]))                  
+                :type "void")
+                nil [2202 3642])
+            ("input_thread_fn" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [3673 3683]))                  
+                :type "void")
+                nil [3644 3986])
+            ("terminal_setup_getch" function
+               (:arguments 
+                  ( ("ictx" variable
+                       (:pointer 1
+                        :type ("input_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4014 4037]))                  
+                :type "void")
+                nil [3988 4456])
+            ("terminal_uninit" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4479 4484]))                  
+                :type "void")
+                nil [4458 4631])
+            ("terminal_in_background" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4661 4666]))                  
+                :type "bool")
+                nil [4633 4688])
+            ("write_console_text" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("wstream" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4721 4736])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4737 4747]))                  
+                :type "void")
+                nil [4690 4905])
+            ("mp_write_console_ansi" function
+               (:arguments 
+                  ( ("wstream" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4991 5006])
+                    ("buf" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5007 5017]))                  
+                :type "void")
+                nil [4964 7540])
+            ("terminal_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [7560 7565]))                  
+                :type "int")
+                nil [7542 8490]))          
+      :file "terminal-win.c"
+      :pointmax 8491
+      :fsize 8490
+      :lastmodtime '(21681 30008 829005 920000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("hSTDERR" . ((symbol "GetStdHandle" 1401 . 1413) (semantic-list "(STD_ERROR_HANDLE)" 1413 . 1431)))
+          ("FOREGROUND_ALL" . ((semantic-list "(FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE)" 1456 . 1509)))
+          ("hSTDOUT" . ((symbol "GetStdHandle" 1353 . 1365) (semantic-list "(STD_OUTPUT_HANDLE)" 1365 . 1384)))
+          )
+)
+    (semanticdb-table "w32_keyboard.h"
+      :file "w32_keyboard.h"
+      :fsize 845
+      :lastmodtime '(21681 30008 829005 920000))
+    (semanticdb-table "timer.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdlib.h" include (:system-flag t) nil [660 679])
+            ("pthread.h" include (:system-flag t) nil [680 700])
+            ("time.h" include (:system-flag t) nil [701 718])
+            ("unistd.h" include (:system-flag t) nil [719 738])
+            ("sys/time.h" include (:system-flag t) nil [739 760])
+            ("limits.h" include (:system-flag t) nil [761 780])
+            ("assert.h" include (:system-flag t) nil [781 800])
+            ("common/common.h" include nil nil [802 828])
+            ("common/msg.h" include nil nil [829 852])
+            ("timer.h" include nil nil [853 871])
+            ("raw_time_offset" variable
+               (:typemodifiers ("static")
+                :type ("uint64_t" type (:type "class") nil nil))
+                nil [873 905])
+            ("timer_init_once" variable
+               (:default-value "PTHREAD_ONCE_INIT"
+                :type ("pthread_once_t" type (:type "class") nil nil))
+                nil [906 957])
+            ("do_timer_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [985 990]))                  
+                :type "void")
+                nil [959 1322])
+            ("mp_time_init" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1342 1347]))                  
+                :type "void")
+                nil [1324 1402])
+            ("mp_time_us" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1423 1428]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [1404 1479])
+            ("mp_time_sec" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1500 1505]))                  
+                :type "double")
+                nil [1481 1558])
+            ("mp_time_relative_us" function
+               (:arguments 
+                  ( ("t" variable
+                       (:pointer 1
+                        :type ("int64_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1588 1599]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [1560 1716])
+            ("mp_add_timeout" function
+               (:arguments 
+                  ( ("time_us" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1741 1757])
+                    ("timeout_sec" variable (:type "double") (reparse-symbol arg-sub-list) [1758 1777]))                  
+                :type ("int64_t" type (:type "class") nil nil))
+                nil [1718 2107])
+            ("get_realtime" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("out_ts" variable
+                       (:pointer 1
+                        :type ("timespec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2134 2158]))                  
+                :type "void")
+                nil [2109 2404])
+            ("mp_time_us_to_timespec" function
+               (:arguments 
+                  ( ("time_us" variable (:type ("int64_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2445 2461]))                  
+                :type ("timespec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2406 3244]))          
+      :file "timer.c"
+      :pointmax 3971
+      :fsize 3970
+      :lastmodtime '(21681 30008 829005 920000)
+      :unmatched-syntax nil)
+    (semanticdb-table "timer.h"
+      :file "timer.h"
+      :fsize 2032
+      :lastmodtime '(21681 30008 829005 920000)))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!osdep!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

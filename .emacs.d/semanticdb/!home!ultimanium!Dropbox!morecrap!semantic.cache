@@ -1,0 +1,51 @@
+;; Object morecrap/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "morecrap/"
+  :tables
+  (list
+    (semanticdb-table "GSS1.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [21 37])
+            ("array" variable (:type ("std::vector" type
+                 (:template-specifier 
+                    ( ("int" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [38 61])
+            ("tree" variable (:type ("std::vector" type
+                 (:template-specifier 
+                    ( ("int" type nil nil nil))                    
+                  :type "class")
+                  nil nil)) nil [62 84])
+            ("getParentI" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [100 106]))                  
+                :type "int")
+                nil [85 119])
+            ("getLeftI" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [133 139]))                  
+                :type "int")
+                nil [120 152])
+            ("getRightI" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [167 173]))                  
+                :type "int")
+                nil [153 188])
+            ("buildTree" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [203 209])
+                    ("j" variable (:type "int") (reparse-symbol arg-sub-list) [210 216])
+                    ("index" variable (:type "int") (reparse-symbol arg-sub-list) [217 227]))                  
+                :type "int")
+                nil [189 383])
+            ("main" function (:type "int") nil [384 572]))          
+      :file "GSS1.cpp"
+      :pointmax 573
+      :fsize 572
+      :lastmodtime '(21609 14486 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!morecrap!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,41 @@
+;; Object Codeforces/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "Codeforces/"
+  :tables
+  (list
+    (semanticdb-table "main.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("vector" include (:system-flag t) nil [21 38])
+            ("string" include (:system-flag t) nil [39 56])
+            ("sstream" include (:system-flag t) nil [57 75])
+            ("nodes" variable (:type "int") nil [117 127])
+            ("dij" function
+               (:arguments 
+                  ( ("map" variable
+                       (:pointer 2
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [136 146])
+                    ("nodevisited" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [147 164])
+                    ("nodedistance" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [165 183])
+                    ("start" variable (:type "int") (reparse-symbol arg-sub-list) [184 194])
+                    ("dest" variable (:type "int") (reparse-symbol arg-sub-list) [195 204]))                  
+                :type "int")
+                nil [128 1148])
+            ("solver" function (:type "int") nil [1149 2171])
+            ("main" function (:type "int") nil [2174 2531]))          
+      :file "main.cpp"
+      :pointmax 2532
+      :fsize 2531
+      :lastmodtime '(21291 35556 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!Programmingclub!Dijskra!Codeforces!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

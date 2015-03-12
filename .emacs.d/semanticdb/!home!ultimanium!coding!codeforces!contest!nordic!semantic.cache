@@ -1,0 +1,80 @@
+;; Object nordic/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "nordic/"
+  :tables
+  (list
+    (semanticdb-table "clock.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("size" variable
+               (:constant-flag t
+                :default-value "360000"
+                :type "int")
+                nil [37 60])
+            ("clockA" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [85 90]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("int" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [61 95])
+            ("clockB" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("size" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [120 125]))                  
+                :type ("std::vector" type
+                     (:template-specifier 
+                        ( ("int" type nil nil nil))                        
+                      :type "class")
+                      nil nil))
+                nil [96 130])
+            ("main" function (:type "int") nil [132 801]))          
+      :file "clock.cpp"
+      :pointmax 802
+      :fsize 801
+      :lastmodtime '(21710 33649 149543 909000)
+      :unmatched-syntax '((number 127 . 128) (number 125 . 126) (punctuation 124 . 125) (number 92 . 93) (number 90 . 91) (punctuation 89 . 90)))
+    (semanticdb-table "square.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [37 57])
+            ("factorial" function
+               (:arguments 
+                  ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [80 92]))                  
+                :type "long long")
+                nil [60 150])
+            ("combination" function
+               (:arguments 
+                  ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [173 185])
+                    ("r" variable (:type "long long") (reparse-symbol arg-sub-list) [185 197]))                  
+                :type "long long")
+                nil [151 319])
+            ("catalan" function
+               (:arguments 
+                  ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [338 350]))                  
+                :type "long long")
+                nil [320 421])
+            ("catsquared" function
+               (:arguments 
+                  ( ("n" variable (:type "long long") (reparse-symbol arg-sub-list) [443 455]))                  
+                :type "long long")
+                nil [422 573])
+            ("main" function (:type "int") nil [574 668]))          
+      :file "square.cpp"
+      :pointmax 669
+      :fsize 668
+      :lastmodtime '(21710 27202 821802 512000)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!coding!codeforces!contest!nordic!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

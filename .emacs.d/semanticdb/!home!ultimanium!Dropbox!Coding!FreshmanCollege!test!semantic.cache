@@ -1,0 +1,21 @@
+;; Object test/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "test/"
+  :tables
+  (list
+    (semanticdb-table "valgrindtest.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("main" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [10 15]))                  
+                :type "int")
+                nil [1 321]))          
+      :file "valgrindtest.c"
+      :pointmax 323
+      :fsize 322
+      :lastmodtime '(21214 58253 0 0)
+      :unmatched-syntax nil))
+  :file "!home!ultimanium!Dropbox!Coding!FreshmanCollege!test!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

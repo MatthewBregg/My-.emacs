@@ -1,0 +1,69 @@
+;; Object linkedlist/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "linkedlist/"
+  :tables
+  (list
+    (semanticdb-table "linkedlist.cpp"
+      :major-mode 'c++-mode
+      :tags nil
+      :file "linkedlist.cpp"
+      :pointmax 209
+      :fsize 208
+      :lastmodtime '(21491 33566 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "linkedlist.hpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("memory" include (:system-flag t) nil [21 38])
+            ("_LINKEDLIST_H_" variable (:constant-flag t) nil [70 84])
+            ("linkedlist" type
+               (:template 
+                  ( ("t" type (:type "class") nil nil))                  
+                :type "class"
+                :members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [123 130])
+                    ("linkedlist" function
+                       (:constructor-flag t
+                        :type ("linkedlist" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [133 162])
+                    ("linkedlist" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("v" variable (:type ("t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [177 181]))                          
+                        :type ("linkedlist" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [166 198])
+                    ("linkedlist" function
+                       (:constructor-flag t
+                        :arguments 
+                          ( ("v" variable (:type ("t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [213 217])
+                            ("n" variable
+                               (:pointer 1
+                                :type ("linkedlist" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [218 232]))                          
+                        :type ("linkedlist" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [202 249])
+                    ("getVal" function (:type ("t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [253 277])
+                    ("getPointer" function
+                       (:pointer 1
+                        :type ("linkedlist" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [281 322])
+                    ("private" label nil (reparse-symbol classsubparts) [324 332])
+                    ("next" variable
+                       (:pointer 1
+                        :type ("linkedlist" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [336 353])
+                    ("val" variable (:type ("t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [356 362]))                  )
+                nil [85 366]))          
+      :file "linkedlist.hpp"
+      :pointmax 397
+      :fsize 396
+      :lastmodtime '(21491 34550 0 0)
+      :unmatched-syntax '((punctuation 322 . 323) (punctuation 277 . 278) (punctuation 249 . 250) (punctuation 198 . 199) (punctuation 162 . 163))
+      :lexical-table 
+        '(("_LINKEDLIST_H_")
+          )
+))
+  :file "!home!ultimanium!Dropbox!Coding!linkedlist!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

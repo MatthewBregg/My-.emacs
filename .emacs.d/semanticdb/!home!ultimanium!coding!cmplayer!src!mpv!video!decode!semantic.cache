@@ -1,0 +1,2193 @@
+;; Object decode/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "decode/"
+  :tables
+  (list
+    (semanticdb-table "vd_lavc.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [747 765])
+            ("stdlib.h" include (:system-flag t) nil [766 785])
+            ("assert.h" include (:system-flag t) nil [786 805])
+            ("time.h" include (:system-flag t) nil [806 823])
+            ("stdbool.h" include (:system-flag t) nil [824 844])
+            ("sys/types.h" include (:system-flag t) nil [845 867])
+            ("libavutil/common.h" include (:system-flag t) nil [869 898])
+            ("libavutil/opt.h" include (:system-flag t) nil [899 925])
+            ("libavutil/intreadwrite.h" include (:system-flag t) nil [926 961])
+            ("libavutil/pixdesc.h" include (:system-flag t) nil [962 992])
+            ("talloc.h" include nil nil [994 1013])
+            ("config.h" include nil nil [1014 1033])
+            ("common/msg.h" include nil nil [1034 1057])
+            ("options/options.h" include nil nil [1058 1086])
+            ("misc/bstr.h" include nil nil [1087 1109])
+            ("common/av_common.h" include nil nil [1110 1139])
+            ("common/codecs.h" include nil nil [1140 1166])
+            ("video/fmt-conversion.h" include nil nil [1168 1201])
+            ("vd.h" include nil nil [1203 1218])
+            ("video/img_format.h" include nil nil [1219 1248])
+            ("video/filter/vf.h" include nil nil [1249 1277])
+            ("video/decode/dec_video.h" include nil nil [1278 1313])
+            ("demux/stheader.h" include nil nil [1314 1341])
+            ("demux/packet.h" include nil nil [1342 1367])
+            ("video/csputils.h" include nil nil [1368 1395])
+            ("lavc.h" include nil nil [1397 1414])
+            ("options/m_option.h" include nil nil [1527 1556])
+            ("init_avctx" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1581 1602])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1603 1623])
+                    ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1647 1675]))                  
+                :type "void")
+                nil [1558 1676])
+            ("uninit_avctx" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1702 1723]))                  
+                :type "void")
+                nil [1677 1724])
+            ("get_buffer2_hwdec" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("avctx" variable
+                       (:pointer 1
+                        :type ("AVCodecContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1755 1777])
+                    ("pic" variable
+                       (:pointer 1
+                        :type ("AVFrame" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1778 1791])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [1792 1802]))                  
+                :type "int")
+                nil [1726 1803])
+            ("get_format_hwdec" function
+               (:prototype-flag t
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("avctx" variable
+                       (:pointer 1
+                        :type ("AVCodecContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1847 1876])
+                    ("pix_fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("AVPixelFormat" type (:type "enum") nil nil))
+                        (reparse-symbol arg-sub-list) [1920 1954]))                  
+                :type ("AVPixelFormat" type (:type "enum") nil nil))
+                nil [1804 1955])
+            ("OPT_BASE_STRUCT" variable (:constant-flag t) nil [1965 1980])
+            ("vd_lavc_params" type
+               (:members 
+                  ( ("fast" variable (:type "int") (reparse-symbol classsubparts) [2032 2041])
+                    ("show_all" variable (:type "int") (reparse-symbol classsubparts) [2046 2059])
+                    ("skip_loop_filter" variable (:type "int") (reparse-symbol classsubparts) [2064 2085])
+                    ("skip_idct" variable (:type "int") (reparse-symbol classsubparts) [2090 2104])
+                    ("skip_frame" variable (:type "int") (reparse-symbol classsubparts) [2109 2124])
+                    ("framedrop" variable (:type "int") (reparse-symbol classsubparts) [2129 2143])
+                    ("threads" variable (:type "int") (reparse-symbol classsubparts) [2148 2160])
+                    ("bitexact" variable (:type "int") (reparse-symbol classsubparts) [2165 2178])
+                    ("check_hw_profile" variable (:type "int") (reparse-symbol classsubparts) [2183 2204])
+                    ("avopts" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol classsubparts) [2209 2223]))                  
+                :type "struct")
+                nil [2004 2226])
+            ("discard_names" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    {\"none\",        AVDISCARD_NONE},
+    {\"default\",     AVDISCARD_DEFAULT},
+    {\"nonref\",      AVDISCARD_NONREF},
+    {\"bidir\",       AVDISCARD_BIDIR},
+    {\"nonkey\",      AVDISCARD_NONKEY},
+    {\"all\",         AVDISCARD_ALL},
+    {0}
+}"
+                :type ("m_opt_choice_alternatives" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2228 2533])
+            ("OPT_DISCARD" variable (:constant-flag t) nil [2542 2553])
+            ("vd_lavc_conf" variable
+               (:constant-flag t
+                :default-value "{
+    .opts = (const m_option_t[]){
+        OPT_FLAG(\"fast\", fast, 0),
+        OPT_FLAG(\"show-all\", show_all, 0),
+        OPT_DISCARD(\"skiploopfilter\", skip_loop_filter, 0),
+        OPT_DISCARD(\"skipidct\", skip_idct, 0),
+        OPT_DISCARD(\"skipframe\", skip_frame, 0),
+        OPT_DISCARD(\"framedrop\", framedrop, 0),
+        OPT_INTRANGE(\"threads\", threads, 0, 0, 16),
+        OPT_FLAG(\"bitexact\", bitexact, 0),
+        OPT_FLAG(\"check-hw-profile\", check_hw_profile, 0),
+        OPT_KEYVALUELIST(\"o\", avopts, 0),
+        {0}
+    },
+    .size = sizeof(struct vd_lavc_params),
+    .defaults = &(const struct vd_lavc_params){
+        .show_all = 0,
+        .check_hw_profile = 1,
+        .skip_loop_filter = AVDISCARD_DEFAULT,
+        .skip_idct = AVDISCARD_DEFAULT,
+        .skip_frame = AVDISCARD_DEFAULT,
+        .framedrop = AVDISCARD_NONREF,
+    },
+}"
+                :type ("m_sub_options" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2693 3589])
+            ("mp_vd_lavc_vdpau" variable
+               (:constant-flag t
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3591 3635])
+            ("mp_vd_lavc_vda" variable
+               (:constant-flag t
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3636 3678])
+            ("mp_vd_lavc_vaapi" variable
+               (:constant-flag t
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3679 3723])
+            ("mp_vd_lavc_vaapi_copy" variable
+               (:constant-flag t
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3724 3773])
+            ("mp_vd_lavc_dxva2_copy" variable
+               (:constant-flag t
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3774 3823])
+            ("hwdec_list" variable
+               (:pointer 1
+                :dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+#if HAVE_VDPAU_HWACCEL
+    &mp_vd_lavc_vdpau,
+#endif
+#if HAVE_VDA_HWACCEL
+    &mp_vd_lavc_vda,
+#endif
+#if HAVE_VAAPI_HWACCEL
+    &mp_vd_lavc_vaapi,
+    &mp_vd_lavc_vaapi_copy,
+#endif
+#if HAVE_DXVA2_HWACCEL
+    &mp_vd_lavc_dxva2_copy,
+#endif
+    NULL
+}"
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3825 4135])
+            ("find_hwcodec" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("api" variable (:type ("hwdec_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [4179 4199]))                  
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4137 4366])
+            ("hwdec_codec_allowed" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4400 4421])
+                    ("codec" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4422 4440]))                  
+                :type "bool")
+                nil [4368 4687])
+            ("hwdec_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4712 4733]))                  
+                :type "void")
+                nil [4689 4808])
+            ("hwdec_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4834 4855]))                  
+                :type "void")
+                nil [4809 4934])
+            ("hwdec_find_profile" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5128 5149])
+                    ("table" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hwdec_profile_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5150 5190]))                  
+                :type ("hwdec_profile_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5070 5956])
+            ("hwdec_check_codec_support" function
+               (:arguments 
+                  ( ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6043 6063])
+                    ("table" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("hwdec_profile_entry" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6095 6135]))                  
+                :type "bool")
+                nil [6012 6335])
+            ("hwdec_get_max_refs" function
+               (:arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6360 6381]))                  
+                :type "int")
+                nil [6337 6447])
+            ("hwdec_request_api" function
+               (:arguments 
+                  ( ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6472 6499])
+                    ("api_name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6500 6521]))                  
+                :type "void")
+                nil [6449 6597])
+            ("hwdec_probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6622 6650])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6651 6678])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [6702 6722]))                  
+                :type "int")
+                nil [6599 6825])
+            ("probe_hwdec" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6868 6889])
+                    ("autoprobe" variable (:type "bool") (reparse-symbol arg-sub-list) [6890 6905])
+                    ("api" variable (:type ("hwdec_type" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [6947 6967])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7009 7029]))                  
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6827 7809])
+            ("uninit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7830 7851]))                  
+                :type "void")
+                nil [7811 7904])
+            ("init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7922 7943])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7944 7964]))                  
+                :type "int")
+                nil [7906 10081])
+            ("init_avctx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10106 10127])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [10128 10148])
+                    ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10172 10200]))                  
+                :type "void")
+                nil [10083 13139])
+            ("uninit_avctx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13166 13187]))                  
+                :type "void")
+                nil [13141 13689])
+            ("update_image_params" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13723 13744])
+                    ("frame" variable
+                       (:pointer 1
+                        :type ("AVFrame" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [13745 13760])
+                    ("out_params" variable
+                       (:pointer 1
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13793 13828]))                  
+                :type "void")
+                nil [13691 15209])
+            ("get_format_hwdec" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("avctx" variable
+                       (:pointer 1
+                        :type ("AVCodecContext" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15254 15283])
+                    ("fmt" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("AVPixelFormat" type (:type "enum") nil nil))
+                        (reparse-symbol arg-sub-list) [15327 15357]))                  
+                :type ("AVPixelFormat" type (:type "enum") nil nil))
+                nil [15211 16882])
+            ("get_surface_hwdec" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [16926 16947])
+                    ("pic" variable
+                       (:pointer 1
+                        :type ("AVFrame" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [16948 16961]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [16884 18466])
+            ("free_mpi" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("opaque" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [18489 18502])
+                    ("data" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18503 18517]))                  
+                :type "void")
+                nil [18468 18578])
+            ("get_buffer2_hwdec" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("avctx" variable
+                       (:pointer 1
+                        :type ("AVCodecContext" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18609 18631])
+                    ("pic" variable
+                       (:pointer 1
+                        :type ("AVFrame" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [18632 18645])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [18646 18656]))                  
+                :type "int")
+                nil [18580 18870])
+            ("decode" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18890 18911])
+                    ("packet" variable
+                       (:pointer 1
+                        :type ("demux_packet" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18912 18940])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [18959 18969])
+                    ("out_image" variable
+                       (:pointer 2
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [18970 18998]))                  
+                :type "int")
+                nil [18872 20384])
+            ("force_fallback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20412 20433]))                  
+                :type "int")
+                nil [20386 20886])
+            ("decode_with_fallback" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20933 20954])
+                    ("packet" variable
+                       (:pointer 1
+                        :type ("demux_packet" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20987 21015])
+                    ("flags" variable (:type "int") (reparse-symbol arg-sub-list) [21016 21026]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20888 21381])
+            ("control" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("vd" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [21402 21423])
+                    ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [21424 21432])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [21433 21443]))                  
+                :type "int")
+                nil [21383 22208])
+            ("add_decoders" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("list" variable
+                       (:pointer 1
+                        :type ("mp_decoder_list" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [22235 22264]))                  
+                :type "void")
+                nil [22210 22416])
+            ("mpcodecs_vd_ffmpeg" variable
+               (:constant-flag t
+                :default-value "{
+    .name = \"lavc\",
+    .add_decoders = add_decoders,
+    .init = init,
+    .uninit = uninit,
+    .control = control,
+    .decode = decode_with_fallback,
+}"
+                :type ("vd_functions" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [22418 22623]))          
+      :file "vd_lavc.c"
+      :pointmax 22624
+      :fsize 22623
+      :lastmodtime '(21681 30008 842339 33000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("OPT_BASE_STRUCT" . ((STRUCT "struct" 1981 . 1987) (symbol "vd_lavc_params" 1988 . 2002)))
+          ("OPT_DISCARD" (spp-arg-list ("name" "field" "flags") 2553 . 2573) . ((symbol "OPT_GENERAL" 2580 . 2591) (semantic-list "(int, name, field, flags, .type = CONF_TYPE_CHOICE, \\
+                .priv = (void *)discard_names)" 2591 . 2691)))
+          )
+)
+    (semanticdb-table "vd.h"
+      :file "vd.h"
+      :fsize 1717
+      :lastmodtime '(21681 30008 842339 33000))
+    (semanticdb-table "dec_video.h"
+      :file "dec_video.h"
+      :fsize 3419
+      :lastmodtime '(21681 30008 842339 33000))
+    (semanticdb-table "lavc.h"
+      :file "lavc.h"
+      :fsize 2478
+      :lastmodtime '(21681 30008 842339 33000))
+    (semanticdb-table "dec_video.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("config.h" include nil nil [747 766])
+            ("options/options.h" include nil nil [767 795])
+            ("stdio.h" include (:system-flag t) nil [797 815])
+            ("stdlib.h" include (:system-flag t) nil [816 835])
+            ("stdbool.h" include (:system-flag t) nil [836 856])
+            ("assert.h" include (:system-flag t) nil [857 876])
+            ("common/msg.h" include nil nil [878 901])
+            ("osdep/timer.h" include nil nil [903 927])
+            ("stream/stream.h" include nil nil [929 955])
+            ("demux/packet.h" include nil nil [956 981])
+            ("common/codecs.h" include nil nil [983 1009])
+            ("video/out/vo.h" include nil nil [1011 1036])
+            ("video/csputils.h" include nil nil [1037 1064])
+            ("demux/stheader.h" include nil nil [1066 1093])
+            ("video/decode/vd.h" include nil nil [1094 1122])
+            ("video/filter/vf.h" include nil nil [1123 1151])
+            ("video/decode/dec_video.h" include nil nil [1153 1188])
+            ("mpcodecs_vd_ffmpeg" variable
+               (:typemodifiers ("extern")
+                :constant-flag t
+                :type ("vd_functions_t" type (:type "class") nil nil))
+                nil [1190 1237])
+            ("mpcodecs_vd_drivers" variable
+               (:pointer 1
+                :dereference 1
+                :constant-flag t
+                :default-value "{
+    &mpcodecs_vd_ffmpeg,
+    /* Please do not add any new decoders here. If you want to implement a new
+     * decoder, add it to libavcodec, except for wrappers around external
+     * libraries and decoders requiring binary support. */
+    NULL
+}"
+                :type ("vd_functions_t" type (:type "class") nil nil))
+                nil [1440 1743])
+            ("video_reset_decoding" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1771 1797]))                  
+                :type "void")
+                nil [1745 2343])
+            ("video_vd_control" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2366 2392])
+                    ("cmd" variable (:type "int") (reparse-symbol arg-sub-list) [2393 2401])
+                    ("arg" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [2402 2412]))                  
+                :type "int")
+                nil [2345 2559])
+            ("video_set_colors" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2582 2608])
+                    ("item" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2609 2626])
+                    ("value" variable (:type "int") (reparse-symbol arg-sub-list) [2627 2637]))                  
+                :type "int")
+                nil [2561 3066])
+            ("video_get_colors" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3089 3115])
+                    ("item" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3116 3133])
+                    ("value" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3134 3145]))                  
+                :type "int")
+                nil [3068 3480])
+            ("video_uninit" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3500 3526]))                  
+                :type "void")
+                nil [3482 3771])
+            ("init_video_codec" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3801 3827])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3828 3848]))                  
+                :type "int")
+                nil [3773 4006])
+            ("video_decoder_list" function
+               (:pointer 1
+                :arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [4051 4056]))                  
+                :type ("mp_decoder_list" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4008 4264])
+            ("mp_select_video_decoders" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("codec" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4322 4340])
+                    ("selection" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4397 4413]))                  
+                :type ("mp_decoder_list" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4266 4591])
+            ("find_driver" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("name" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4639 4656]))                  
+                :type ("vd_functions" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [4593 4846])
+            ("video_init_best_codec" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4875 4901])
+                    ("video_decoders" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [4902 4923]))                  
+                :type "bool")
+                nil [4848 6441])
+            ("add_pts_to_sort" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6471 6497])
+                    ("pts" variable (:type "double") (reparse-symbol arg-sub-list) [6498 6509]))                  
+                :type "void")
+                nil [6443 7316])
+            ("PTS_IS_ORDERED" variable (:constant-flag t) nil [7473 7487])
+            ("retrieve_sorted_pts" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7619 7645])
+                    ("codec_pts" variable (:type "double") (reparse-symbol arg-sub-list) [7646 7663]))                  
+                :type "double")
+                nil [7585 9347])
+            ("video_decode" function
+               (:pointer 1
+                :arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9379 9405])
+                    ("packet" variable
+                       (:pointer 1
+                        :type ("demux_packet" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9436 9464])
+                    ("drop_frame" variable (:type "int") (reparse-symbol arg-sub-list) [9495 9510]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9349 12498])
+            ("video_reconfig_filters" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12527 12553])
+                    ("params" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("mp_image_params" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12581 12618]))                  
+                :type "int")
+                nil [12500 14840])
+            ("video_vf_vo_control" function
+               (:arguments 
+                  ( ("d_video" variable
+                       (:pointer 1
+                        :type ("dec_video" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14947 14973])
+                    ("vf_cmd" variable (:type "int") (reparse-symbol arg-sub-list) [14974 14985])
+                    ("data" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [14986 14997]))                  
+                :type "int")
+                nil [14923 16206]))          
+      :file "dec_video.c"
+      :pointmax 16207
+      :fsize 16206
+      :lastmodtime '(21681 30008 842339 33000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PTS_IS_ORDERED" (spp-arg-list ("pts1" "pts2") 7487 . 7499) . ((semantic-list "((pts2) != MP_NOPTS_VALUE && ((pts1) == MP_NOPTS_VALUE || ((pts1) < (pts2))))" 7506 . 7583)))
+          )
+)
+    (semanticdb-table "vdpau.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stddef.h" include (:system-flag t) nil [660 679])
+            ("assert.h" include (:system-flag t) nil [680 699])
+            ("libavcodec/avcodec.h" include (:system-flag t) nil [701 732])
+            ("libavcodec/vdpau.h" include (:system-flag t) nil [733 762])
+            ("libavutil/common.h" include (:system-flag t) nil [763 792])
+            ("config.h" include nil nil [794 813])
+            ("lavc.h" include nil nil [814 831])
+            ("common/common.h" include nil nil [832 858])
+            ("common/av_common.h" include nil nil [859 888])
+            ("video/fmt-conversion.h" include nil nil [889 922])
+            ("video/vdpau.h" include nil nil [923 947])
+            ("video/hwdec.h" include nil nil [948 972])
+            ("priv" type
+               (:members 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [992 1024])
+                    ("mpvdp" variable
+                       (:pointer 1
+                        :type ("mp_vdpau_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1029 1063])
+                    ("vdp" variable
+                       (:pointer 1
+                        :type ("vdp_functions" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1068 1100])
+                    ("preemption_counter" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1105 1152])
+                    ("fmt" variable (:type "int") (reparse-symbol classsubparts) [1157 1195])
+                    ("w" variable (:type "int") (reparse-symbol classsubparts) [1157 1195])
+                    ("h" variable (:type "int") (reparse-symbol classsubparts) [1157 1195])
+                    ("context" variable
+                       (:pointer 1
+                        :type ("AVVDPAUContext" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [1201 1237]))                  
+                :type "struct")
+                nil [974 1240])
+            ("PE" variable (:constant-flag t) nil [1250 1252])
+            ("profiles" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    PE(MPEG1VIDEO,  UNKNOWN,            MPEG1),
+    PE(MPEG2VIDEO,  MPEG2_MAIN,         MPEG2_MAIN),
+    PE(MPEG2VIDEO,  MPEG2_SIMPLE,       MPEG2_SIMPLE),
+    PE(MPEG4,       MPEG4_ADVANCED_SIMPLE, MPEG4_PART2_ASP),
+    PE(MPEG4,       MPEG4_SIMPLE,       MPEG4_PART2_SP),
+    PE(H264,        H264_HIGH,          H264_HIGH),
+    PE(H264,        H264_MAIN,          H264_MAIN),
+    PE(H264,        H264_BASELINE,      H264_BASELINE),
+    PE(VC1,         VC1_ADVANCED,       VC1_ADVANCED),
+    PE(VC1,         VC1_MAIN,           VC1_MAIN),
+    PE(VC1,         VC1_SIMPLE,         VC1_SIMPLE),
+    PE(WMV3,        VC1_ADVANCED,       VC1_ADVANCED),
+    PE(WMV3,        VC1_MAIN,           VC1_MAIN),
+    PE(WMV3,        VC1_SIMPLE,         VC1_SIMPLE),
+    {0}
+}"
+                :type ("hwdec_profile_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1417 2234])
+            ("init_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2260 2281])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [2282 2290])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [2291 2297])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [2298 2304]))                  
+                :type "int")
+                nil [2236 3936])
+            ("allocate_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [3977 3998])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [3999 4007])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [4047 4053])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [4054 4060]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [3938 4411])
+            ("uninit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4432 4453]))                  
+                :type "void")
+                nil [4413 4719])
+            ("init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4737 4758]))                  
+                :type "int")
+                nil [4721 5469])
+            ("probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5488 5516])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5517 5544])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [5562 5582]))                  
+                :type "int")
+                nil [5471 5884])
+            ("mp_vd_lavc_vdpau" variable
+               (:constant-flag t
+                :default-value "{
+    .type = HWDEC_VDPAU,
+    .image_format = IMGFMT_VDPAU,
+    .probe = probe,
+    .init = init,
+    .uninit = uninit,
+    .init_decoder = init_decoder,
+    .allocate_image = allocate_image,
+}"
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [5886 6127]))          
+      :file "vdpau.c"
+      :pointmax 6128
+      :fsize 6127
+      :lastmodtime '(21681 30008 842339 33000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("PE" (spp-arg-list ("av_codec_id" "ff_profile" "vdp_profile") 1252 . 1290) . ((semantic-list "{AV_CODEC_ID_ ## av_codec_id, FF_PROFILE_ ## ff_profile,    \\
+     VDP_DECODER_PROFILE_ ## vdp_profile}" 1312 . 1415)))
+          )
+)
+    (semanticdb-table "vaapi.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stddef.h" include (:system-flag t) nil [770 789])
+            ("assert.h" include (:system-flag t) nil [790 809])
+            ("libavcodec/avcodec.h" include (:system-flag t) nil [811 842])
+            ("libavcodec/vaapi.h" include (:system-flag t) nil [843 872])
+            ("libavutil/common.h" include (:system-flag t) nil [873 902])
+            ("X11/Xlib.h" include (:system-flag t) nil [904 925])
+            ("lavc.h" include nil nil [927 944])
+            ("common/common.h" include nil nil [945 971])
+            ("common/av_common.h" include nil nil [972 1001])
+            ("video/fmt-conversion.h" include nil nil [1002 1035])
+            ("video/vaapi.h" include nil nil [1036 1060])
+            ("video/mp_image_pool.h" include nil nil [1061 1093])
+            ("video/hwdec.h" include nil nil [1094 1118])
+            ("video/filter/vf.h" include nil nil [1119 1147])
+            ("ADDTIONAL_SURFACES" variable (:constant-flag t) nil [1747 1765])
+            ("MAX_DECODER_SURFACES" variable (:constant-flag t) nil [1834 1854])
+            ("MAX_SURFACES" variable (:constant-flag t) nil [1867 1879])
+            ("priv" type
+               (:members 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1943 1962])
+                    ("ctx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [1967 1992])
+                    ("display" variable (:type ("VADisplay" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1997 2015])
+                    ("x11_display" variable
+                       (:pointer 1
+                        :type ("Display" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2020 2041])
+                    ("va_context" variable
+                       (:pointer 1
+                        :type ("vaapi_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2079 2112])
+                    ("va_context_storage" variable (:type ("vaapi_context" type
+                         (:prototype t
+                          :type "struct")
+                          nil nil)) (reparse-symbol classsubparts) [2117 2157])
+                    ("pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2163 2190])
+                    ("rt_format" variable (:type "int") (reparse-symbol classsubparts) [2195 2209])
+                    ("sw_pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [2215 2245])
+                    ("printed_readback_warning" variable (:type "bool") (reparse-symbol classsubparts) [2250 2280]))                  
+                :type "struct")
+                nil [1925 2283])
+            ("PE" variable (:constant-flag t) nil [2293 2295])
+            ("profiles" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    PE(MPEG2VIDEO,  MPEG2_MAIN,         MPEG2Main),
+    PE(MPEG2VIDEO,  MPEG2_SIMPLE,       MPEG2Simple),
+    PE(MPEG4,       MPEG4_ADVANCED_SIMPLE, MPEG4AdvancedSimple),
+    PE(MPEG4,       MPEG4_MAIN,         MPEG4Main),
+    PE(MPEG4,       MPEG4_SIMPLE,       MPEG4Simple),
+    PE(H264,        H264_HIGH,          H264High),
+    PE(H264,        H264_MAIN,          H264Main),
+    PE(H264,        H264_BASELINE,      H264Baseline),
+    PE(VC1,         VC1_ADVANCED,       VC1Advanced),
+    PE(VC1,         VC1_MAIN,           VC1Main),
+    PE(VC1,         VC1_SIMPLE,         VC1Simple),
+    PE(WMV3,        VC1_ADVANCED,       VC1Advanced),
+    PE(WMV3,        VC1_MAIN,           VC1Main),
+    PE(WMV3,        VC1_SIMPLE,         VC1Simple),
+    {0}
+}"
+                :type ("hwdec_profile_entry" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2449 3260])
+            ("str_va_profile" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :arguments 
+                  ( ("profile" variable (:type ("VAProfile" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [3296 3314]))                  
+                :type "char")
+                nil [3262 3797])
+            ("find_entrypoint" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("format" variable (:type "int") (reparse-symbol arg-sub-list) [3826 3837])
+                    ("ep" variable
+                       (:pointer 1
+                        :type ("VAEntrypoint" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [3838 3855])
+                    ("num_ep" variable (:type "int") (reparse-symbol arg-sub-list) [3856 3867]))                  
+                :type "int")
+                nil [3799 4124])
+            ("is_direct_mapping" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("display" variable (:type ("VADisplay" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [4155 4173]))                  
+                :type "int")
+                nil [4126 5133])
+            ("preallocate_surfaces" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5437 5458])
+                    ("num" variable (:type "int") (reparse-symbol arg-sub-list) [5459 5467])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [5468 5474])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [5475 5481])
+                    ("out_surfaces" variable
+                       (:dereference 1
+                        :type ("VASurfaceID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5515 5554]))                  
+                :type "bool")
+                nil [5404 6107])
+            ("destroy_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6137 6158]))                  
+                :type "void")
+                nil [6109 6631])
+            ("has_profile" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("va_profiles" variable
+                       (:pointer 1
+                        :type ("VAProfile" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6657 6680])
+                    ("num_profiles" variable (:type "int") (reparse-symbol arg-sub-list) [6681 6698])
+                    ("p" variable (:type ("VAProfile" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [6699 6711]))                  
+                :type "bool")
+                nil [6633 6842])
+            ("init_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6868 6889])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [6890 6898])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [6899 6905])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [6906 6912]))                  
+                :type "int")
+                nil [6844 10064])
+            ("allocate_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10105 10126])
+                    ("format" variable (:type "int") (reparse-symbol arg-sub-list) [10127 10138])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [10178 10184])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [10185 10191]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [10066 10413])
+            ("destroy_va_dummy_ctx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("priv" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10448 10463]))                  
+                :type "void")
+                nil [10415 10623])
+            ("create_va_dummy_ctx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("priv" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10867 10882]))                  
+                :type "bool")
+                nil [10835 11280])
+            ("uninit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11301 11322]))                  
+                :type "void")
+                nil [11282 11574])
+            ("init_with_vactx" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11603 11624])
+                    ("vactx" variable
+                       (:pointer 1
+                        :type ("mp_vaapi_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [11625 11652]))                  
+                :type "int")
+                nil [11576 12449])
+            ("init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12467 12488]))                  
+                :type "int")
+                nil [12451 12609])
+            ("probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12628 12656])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [12657 12684])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [12702 12722]))                  
+                :type "int")
+                nil [12611 13018])
+            ("probe_copy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13042 13070])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13071 13098])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [13121 13141]))                  
+                :type "int")
+                nil [13020 13499])
+            ("init_copy" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13522 13543]))                  
+                :type "int")
+                nil [13501 13586])
+            ("copy_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13623 13644])
+                    ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13645 13666]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [13588 14040])
+            ("intel_shit_lock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14070 14091]))                  
+                :type "void")
+                nil [14042 14154])
+            ("intel_crap_unlock" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [14186 14207]))                  
+                :type "void")
+                nil [14156 14272])
+            ("mp_vd_lavc_vaapi" variable
+               (:constant-flag t
+                :default-value "{
+    .type = HWDEC_VAAPI,
+    .image_format = IMGFMT_VAAPI,
+    .probe = probe,
+    .init = init,
+    .uninit = uninit,
+    .init_decoder = init_decoder,
+    .allocate_image = allocate_image,
+    .lock = intel_shit_lock,
+    .unlock = intel_crap_unlock,
+}"
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [14274 14577])
+            ("mp_vd_lavc_vaapi_copy" variable
+               (:constant-flag t
+                :default-value "{
+    .type = HWDEC_VAAPI_COPY,
+    .image_format = IMGFMT_VAAPI,
+    .probe = probe_copy,
+    .init = init_copy,
+    .uninit = uninit,
+    .init_decoder = init_decoder,
+    .allocate_image = allocate_image,
+    .process_image = copy_image,
+}"
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [14579 14873]))          
+      :file "vaapi.c"
+      :pointmax 14874
+      :fsize 14873
+      :lastmodtime '(21681 30008 842339 33000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_SURFACES" . ((semantic-list "(MAX_DECODER_SURFACES + ADDTIONAL_SURFACES)" 1880 . 1923)))
+          ("PE" (spp-arg-list ("av_codec_id" "ff_profile" "vdp_profile") 2295 . 2333) . ((semantic-list "{AV_CODEC_ID_ ## av_codec_id, FF_PROFILE_ ## ff_profile,    \\
+     VAProfile ## vdp_profile}" 2355 . 2447)))
+          ("ADDTIONAL_SURFACES" . ((number "5" 1766 . 1767)))
+          ("MAX_DECODER_SURFACES" . ((number "21" 1855 . 1857)))
+          )
+)
+    (semanticdb-table "vda.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("libavcodec/version.h" include (:system-flag t) nil [729 760])
+            ("libavcodec/vda.h" include (:system-flag t) nil [761 788])
+            ("common/av_common.h" include nil nil [790 819])
+            ("common/msg.h" include nil nil [820 843])
+            ("video/mp_image.h" include nil nil [844 871])
+            ("video/decode/lavc.h" include nil nil [872 902])
+            ("config.h" include nil nil [903 922])
+            ("probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [942 970])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [971 998])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1016 1036]))                  
+                :type "int")
+                nil [925 1188])
+            ("init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1206 1227]))                  
+                :type "int")
+                nil [1190 1245])
+            ("vda_error" type
+               (:members 
+                  ( ("code" variable (:type "int") (reparse-symbol classsubparts) [1270 1280])
+                    ("reason" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol classsubparts) [1285 1298]))                  
+                :type "struct")
+                nil [1247 1301])
+            ("vda_errors" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    { AVERROR(ENOSYS),
+        \"Hardware doesn't support accelerated decoding for this stream\" },
+    { AVERROR(EINVAL),
+        \"Invalid configuration provided to VDADecoderCreate\" },
+    { AVERROR_INVALIDDATA,
+        \"Generic error returned by the decoder layer. The cause can range from\"
+        \" VDADecoder finding errors in the bitstream to another application\"
+        \" using VDA at the moment. Only one application can use VDA at a\"
+        \" givent time.\" },
+    { 0, NULL },
+}"
+                :type ("vda_error" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [1303 1839])
+            ("print_vda_error" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1869 1888])
+                    ("lev" variable (:type "int") (reparse-symbol arg-sub-list) [1889 1897])
+                    ("message" variable
+                       (:pointer 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1898 1912])
+                    ("error_code" variable (:type "int") (reparse-symbol arg-sub-list) [1941 1956]))                  
+                :type "void")
+                nil [1841 2252])
+            ("init_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2278 2299])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [2300 2308])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [2309 2315])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [2316 2322]))                  
+                :type "int")
+                nil [2254 2548])
+            ("uninit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [2569 2590]))                  
+                :type "void")
+                nil [2550 2655])
+            ("mp_vd_lavc_vda" variable
+               (:constant-flag t
+                :default-value "{
+    .type = HWDEC_VDA,
+    .image_format = IMGFMT_VDA,
+    .probe = probe,
+    .init = init,
+    .uninit = uninit,
+    .init_decoder = init_decoder,
+}"
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [2657 2854]))          
+      :file "vda.c"
+      :pointmax 2855
+      :fsize 2854
+      :lastmodtime '(21681 30008 842339 33000)
+      :unmatched-syntax nil)
+    (semanticdb-table "dxva2.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("windows.h" include (:system-flag t) nil [887 907])
+            ("DXVA2API_USE_BITFIELDS" variable (:constant-flag t) nil [917 939])
+            ("stdint.h" include (:system-flag t) nil [941 960])
+            ("d3d9.h" include (:system-flag t) nil [962 979])
+            ("dxva2api.h" include (:system-flag t) nil [980 1001])
+            ("libavcodec/dxva2.h" include (:system-flag t) nil [1003 1032])
+            ("lavc.h" include nil nil [1034 1051])
+            ("common/common.h" include nil nil [1052 1078])
+            ("common/av_common.h" include nil nil [1079 1108])
+            ("video/fmt-conversion.h" include nil nil [1109 1142])
+            ("video/mp_image_pool.h" include nil nil [1143 1175])
+            ("video/hwdec.h" include nil nil [1176 1200])
+            ("gpu_memcpy_sse4.h" include nil nil [1201 1229])
+            ("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO" variable (:constant-flag t) nil [1301 1337])
+            ("initguid.h" include (:system-flag t) nil [1497 1518])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("IID_IDirectXVideoDecoderService" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1531 1563]))                  
+                :type "int")
+                nil [1519 1630])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_ModeMPEG2_VLD" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1644 1664]))                  
+                :type "int")
+                nil [1632 1737])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_ModeMPEG2and1_VLD" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1750 1774]))                  
+                :type "int")
+                nil [1738 1843])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_ModeH264_E" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1856 1873]))                  
+                :type "int")
+                nil [1844 1949])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_ModeH264_F" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1962 1979]))                  
+                :type "int")
+                nil [1950 2055])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVADDI_Intel_ModeH264_E" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2068 2093]))                  
+                :type "int")
+                nil [2056 2161])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_ModeVC1_D" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2174 2190]))                  
+                :type "int")
+                nil [2162 2267])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_ModeVC1_D2010" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2280 2300]))                  
+                :type "int")
+                nil [2268 2373])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("DXVA2_NoEncrypt" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2386 2402]))                  
+                :type "int")
+                nil [2374 2479])
+            ("DEFINE_GUID" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("GUID_NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2492 2502]))                  
+                :type "int")
+                nil [2480 2585])
+            ("pDirect3DCreate9" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable (:type ("UINT" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [2631 2636]))                  
+                :type ((((1) "WINAPI")) type (:superclasses ("IDirect3D9" type (:type "class") nil nil) :type "typedef") nil nil))
+                nil [2587 2637])
+            ("pCreateDeviceManager9" function
+               (:prototype-flag t
+                :arguments 
+                  ( ("" variable
+                       (:pointer 1
+                        :type ("UINT" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2683 2690])
+                    ("" variable
+                       (:pointer 2
+                        :type ("IDirect3DDeviceManager9" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [2691 2718]))                  
+                :type ((((0) "WINAPI")) type (:superclasses ("HRESULT" type (:type "class") nil nil) :type "typedef") nil nil))
+                nil [2638 2719])
+            ("dxva2_mode" type
+               (:members 
+                  ( ("guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("GUID" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [2751 2772])
+                    ("codec" variable (:type ("AVCodecID" type (:type "enum") nil nil)) (reparse-symbol classsubparts) [2775 2796]))                  
+                :type "struct")
+                nil [2721 2810])
+            ("dxva2_mode" type
+               (:typedef ("dxva2_mode" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [2721 2810])
+            ("dxva2_modes" variable
+               (:dereference 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :default-value "{
+    /* MPEG-2 */
+    { &DXVA2_ModeMPEG2_VLD,      AV_CODEC_ID_MPEG2VIDEO },
+    { &DXVA2_ModeMPEG2and1_VLD,  AV_CODEC_ID_MPEG2VIDEO },
+
+    /* H.264 */
+    { &DXVA2_ModeH264_F,         AV_CODEC_ID_H264 },
+    { &DXVA2_ModeH264_E,         AV_CODEC_ID_H264 },
+    /* Intel specific H.264 mode */
+    { &DXVADDI_Intel_ModeH264_E, AV_CODEC_ID_H264 },
+
+    /* VC-1 / WMV3 */
+    { &DXVA2_ModeVC1_D2010,      AV_CODEC_ID_VC1  },
+    { &DXVA2_ModeVC1_D2010,      AV_CODEC_ID_WMV3 },
+    { &DXVA2_ModeVC1_D,          AV_CODEC_ID_VC1  },
+    { &DXVA2_ModeVC1_D,          AV_CODEC_ID_WMV3 },
+
+    { NULL,                      0 },
+}"
+                :type ("dxva2_mode" type (:type "class") nil nil))
+                nil [2812 3477])
+            ("surface_info" type
+               (:members 
+                  ( ("used" variable (:type "int") (reparse-symbol classsubparts) [3513 3522])
+                    ("age" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3527 3540]))                  
+                :type "struct")
+                nil [3479 3556])
+            ("surface_info" type
+               (:typedef ("surface_info" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3479 3556])
+            ("DXVA2Context" type
+               (:members 
+                  ( ("log" variable
+                       (:pointer 1
+                        :type ("mp_log" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [3592 3611])
+                    ("copy_nv12" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("dest" variable
+                               (:pointer 1
+                                :type ("mp_image" type
+                                     (:prototype t
+                                      :type "struct")
+                                      nil nil))
+                                (reparse-symbol arg-sub-list) [3635 3657])
+                            ("src_bits" variable
+                               (:pointer 1
+                                :type ("uint8_t" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [3658 3676])
+                            ("src_pitch" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3699 3718])
+                            ("surf_height" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [3719 3740]))                          
+                        :type "void")
+                        (reparse-symbol classsubparts) [3617 3741])
+                    ("d3dlib" variable (:type ("HMODULE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3747 3762])
+                    ("dxva2lib" variable (:type ("HMODULE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3767 3784])
+                    ("deviceHandle" variable (:type ("HANDLE" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3790 3811])
+                    ("d3d9" variable
+                       (:pointer 1
+                        :type ("IDirect3D9" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3817 3851])
+                    ("d3d9device" variable
+                       (:pointer 1
+                        :type ("IDirect3DDevice9" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3856 3896])
+                    ("d3d9devmgr" variable
+                       (:pointer 1
+                        :type ("IDirect3DDeviceManager9" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3901 3941])
+                    ("decoder_service" variable
+                       (:pointer 1
+                        :type ("IDirectXVideoDecoderService" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3946 3991])
+                    ("decoder" variable
+                       (:pointer 1
+                        :type ("IDirectXVideoDecoder" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [3996 4033])
+                    ("decoder_guid" variable (:type ("GUID" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4039 4080])
+                    ("decoder_config" variable (:type ("DXVA2_ConfigPictureDecode" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4085 4128])
+                    ("surfaces" variable
+                       (:pointer 1
+                        :type ("LPDIRECT3DSURFACE9" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4134 4172])
+                    ("surface_infos" variable
+                       (:pointer 1
+                        :type ("surface_info" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4177 4220])
+                    ("num_surfaces" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4225 4266])
+                    ("surface_age" variable (:type ("uint64_t" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4271 4311])
+                    ("sw_pool" variable
+                       (:pointer 1
+                        :type ("mp_image_pool" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4317 4353])
+                    ("av_dxva_ctx" variable
+                       (:pointer 1
+                        :type ("dxva_context" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol classsubparts) [4359 4400]))                  
+                :type "struct")
+                nil [3558 4416])
+            ("DXVA2Context" type
+               (:typedef ("DXVA2Context" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [3558 4416])
+            ("DXVA2SurfaceWrapper" type
+               (:members 
+                  ( ("ctx" variable
+                       (:pointer 1
+                        :type ("DXVA2Context" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4459 4485])
+                    ("surface" variable (:type ("LPDIRECT3DSURFACE9" type (:type "class") nil nil)) (reparse-symbol classsubparts) [4490 4519])
+                    ("decoder" variable
+                       (:pointer 1
+                        :type ("IDirectXVideoDecoder" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [4524 4554]))                  
+                :type "struct")
+                nil [4418 4577])
+            ("DXVA2SurfaceWrapper" type
+               (:typedef ("DXVA2SurfaceWrapper" type (:type "struct") nil nil)
+                :type "typedef")
+                nil [4418 4577])
+            ("dxva2_destroy_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [4613 4632]))                  
+                :type "void")
+                nil [4579 5104])
+            ("dxva2_uninit" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [5131 5150]))                  
+                :type "void")
+                nil [5106 5963])
+            ("dxva2_release_img" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("ptr" variable
+                       (:pointer 1
+                        :type "void")
+                        (reparse-symbol arg-sub-list) [5995 6005]))                  
+                :type "void")
+                nil [5965 6372])
+            ("dxva2_allocate_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [6419 6438])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [6439 6447])
+                    ("img_w" variable (:type "int") (reparse-symbol arg-sub-list) [6493 6503])
+                    ("img_h" variable (:type "int") (reparse-symbol arg-sub-list) [6504 6514]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [6374 7566])
+            ("copy_nv12_fallback" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7599 7621])
+                    ("src_bits" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7622 7640])
+                    ("src_pitch" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7672 7691])
+                    ("surf_height" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [7692 7713]))                  
+                :type "void")
+                nil [7568 8015])
+            ("copy_nv12_gpu_sse4" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("dest" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [8048 8070])
+                    ("src_bits" variable
+                       (:pointer 1
+                        :type ("uint8_t" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [8071 8089])
+                    ("src_pitch" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8121 8140])
+                    ("surf_height" variable (:type "unsigned int") (reparse-symbol arg-sub-list) [8141 8162]))                  
+                :type "void")
+                nil [8017 9283])
+            ("dxva2_retrieve_image" function
+               (:pointer 1
+                :typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9330 9349])
+                    ("img" variable
+                       (:pointer 1
+                        :type ("mp_image" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [9395 9416]))                  
+                :type ("mp_image" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [9285 10256])
+            ("dxva2_init" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [10280 10299]))                  
+                :type "int")
+                nil [10258 13909])
+            ("dxva2_get_decoder_configuration" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [13954 13973])
+                    ("codec_id" variable (:type ("AVCodecID" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [14017 14041])
+                    ("device_guid" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("GUID" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14085 14109])
+                    ("desc" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type ("DXVA2_VideoDesc" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14153 14181])
+                    ("config" variable
+                       (:pointer 1
+                        :type ("DXVA2_ConfigPictureDecode" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [14225 14259]))                  
+                :type "int")
+                nil [13911 15441])
+            ("dxva2_create_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [15475 15494])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [15495 15501])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [15502 15508])
+                    ("codec_id" variable (:type ("AVCodecID" type (:type "enum") nil nil)) (reparse-symbol arg-sub-list) [15541 15565])
+                    ("profile" variable (:type "int") (reparse-symbol arg-sub-list) [15566 15578]))                  
+                :type "int")
+                nil [15443 19849])
+            ("dxva2_init_decoder" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :type ("lavc_ctx" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [19881 19900])
+                    ("fmt" variable (:type "int") (reparse-symbol arg-sub-list) [19901 19909])
+                    ("w" variable (:type "int") (reparse-symbol arg-sub-list) [19910 19916])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [19917 19923]))                  
+                :type "int")
+                nil [19851 20493])
+            ("probe" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("hwdec" variable
+                       (:pointer 1
+                        :type ("vd_lavc_hwdec" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20512 20540])
+                    ("info" variable
+                       (:pointer 1
+                        :type ("mp_hwdec_info" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [20541 20568])
+                    ("decoder" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [20586 20606]))                  
+                :type "int")
+                nil [20495 20828])
+            ("mp_vd_lavc_dxva2_copy" variable
+               (:constant-flag t
+                :default-value "{
+    .type = HWDEC_DXVA2_COPY,
+    .image_format = IMGFMT_DXVA2,
+    .probe = probe,
+    .init = dxva2_init,
+    .uninit = dxva2_uninit,
+    .init_decoder = dxva2_init_decoder,
+    .allocate_image = dxva2_allocate_image,
+    .process_image = dxva2_retrieve_image,
+}"
+                :type ("vd_lavc_hwdec" type
+                     (:prototype t
+                      :type "struct")
+                      nil nil))
+                nil [20830 21148]))          
+      :file "dxva2.c"
+      :pointmax 21149
+      :fsize 21148
+      :lastmodtime '(21681 30008 842339 33000)
+      :unmatched-syntax '((number 2579 . 2583) (number 2574 . 2578) (number 2569 . 2573) (number 2564 . 2568) (number 2559 . 2563) (number 2554 . 2558) (number 2549 . 2553) (number 2544 . 2548) (number 2537 . 2543) (number 2530 . 2536) (number 2518 . 2528) (number 2473 . 2477) (number 2468 . 2472) (number 2463 . 2467) (number 2458 . 2462) (number 2453 . 2457) (number 2448 . 2452) (number 2443 . 2447) (number 2438 . 2442) (number 2431 . 2437) (number 2424 . 2430) (number 2412 . 2422) (number 2367 . 2371) (number 2362 . 2366) (number 2357 . 2361) (number 2352 . 2356) (number 2347 . 2351) (number 2342 . 2346) (number 2337 . 2341) (number 2332 . 2336) (number 2325 . 2331) (number 2318 . 2324) (number 2306 . 2316) (number 2261 . 2265) (number 2256 . 2260) (number 2251 . 2255) (number 2246 . 2250) (number 2241 . 2245) (number 2236 . 2240) (number 2231 . 2235) (number 2226 . 2230) (number 2219 . 2225) (number 2212 . 2218) (number 2200 . 2210) (number 2155 . 2159) (number 2150 . 2154) (number 2145 . 2149) (number 2140 . 2144) (number 2135 . 2139) (number 2130 . 2134) (number 2125 . 2129) (number 2120 . 2124) (number 2113 . 2119) (number 2106 . 2112) (number 2094 . 2104) (number 2049 . 2053) (number 2044 . 2048) (number 2039 . 2043) (number 2034 . 2038) (number 2029 . 2033) (number 2024 . 2028) (number 2019 . 2023) (number 2014 . 2018) (number 2007 . 2013) (number 2000 . 2006) (number 1988 . 1998) (number 1943 . 1947) (number 1938 . 1942) (number 1933 . 1937) (number 1928 . 1932) (number 1923 . 1927) (number 1918 . 1922) (number 1913 . 1917) (number 1908 . 1912) (number 1901 . 1907) (number 1894 . 1900) (number 1882 . 1892) (number 1837 . 1841) (number 1832 . 1836) (number 1827 . 1831) (number 1822 . 1826) (number 1817 . 1821) (number 1812 . 1816) (number 1807 . 1811) (number 1802 . 1806) (number 1795 . 1801) (number 1788 . 1794) (number 1776 . 1786) (number 1731 . 1735) (number 1726 . 1730) (number 1721 . 1725) (number 1716 . 1720) (number 1711 . 1715) (number 1706 . 1710) (number 1701 . 1705) (number 1696 . 1700) (number 1689 . 1695) (number 1682 . 1688) (number 1670 . 1680) (number 1624 . 1628) (number 1619 . 1623) (number 1614 . 1618) (number 1609 . 1613) (number 1604 . 1608) (number 1599 . 1603) (number 1594 . 1598) (number 1589 . 1593) (number 1582 . 1588) (number 1575 . 1581) (number 1564 . 1574))
+      :lexical-table 
+        '(("FF_DXVA2_WORKAROUND_INTEL_CLEARVIDEO" . ((number "2" 1341 . 1342)))
+          ("DXVA2API_USE_BITFIELDS")
+          )
+)
+    (semanticdb-table "gpu_memcpy_sse4.h"
+      :file "gpu_memcpy_sse4.h"
+      :fsize 4655
+      :lastmodtime '(21681 30008 842339 33000)))
+  :file "!home!ultimanium!coding!cmplayer!src!mpv!video!decode!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
