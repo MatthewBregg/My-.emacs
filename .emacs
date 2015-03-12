@@ -155,11 +155,23 @@ This command does not push erased text to kill-ring."
 ;;Key Chord bindings
  (setq key-chord-two-keys-delay 0.4)
  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+ (key-chord-define evil-normal-state-map "sf" 'imenu)
+ (key-chord-define evil-normal-state-map "zz" 'narrow-or-widen-dwim)
 ;;Visual and Normal mode
  (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
 (define-key evil-normal-state-map  (kbd "gl") 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
-(define-key evil-normal-state-map (kbd "gd") 'find-tag)
+(define-key evil-normal-state-map (kbd "gd") 'ggtags-find-tag-evil)
+  (defun ggtags-find-tag-evil()
+    (interactive)
+    (call-interactively 'ggtags-find-tag-dwim)
+  )
+(defun ggtags-create-and-update()
+  (interactive)
+  (call-interactively 'ggtags-create-tags)
+  (call-interactively 'ggtags-update-tags))
+
+                                            
 (define-key evil-normal-state-map (kbd "gb") 'pop-tag-mark)
 (key-chord-define evil-visual-state-map "gp" 'evilmi-jump-items)
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
@@ -214,7 +226,7 @@ This command does not push erased text to kill-ring."
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 ;;Indenting
-(define-key evil-visual-state-map (kbd "<tab>") 'c-indent-line-or-region)
+(define-key evil-visual-state-map (kbd "<tab>") 'indent-region)
 ;;Wind move bindings
 (define-key evil-normal-state-map (kbd "J") 'windmove-down)
 (define-key evil-normal-state-map (kbd "H") 'windmove-left)
@@ -318,6 +330,21 @@ This command does not push erased text to kill-ring."
 
 (define-key c++-mode-map (kbd "C-c C-c") 'smart-compile)
 
+(require 'srefactor)
+
+(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
+;;Semantic function def
+
+(semantic-mode 1)
+;(add-to-list 'semantic-default-submodes 'global-semantic-idle-completions-mode)
+(setq-default semantic-symref-tool 'global)
+(semanticdb-enable-gnu-global-databases 'c-mode t)
+(semanticdb-enable-gnu-global-databases 'c++-mode t)
+;;(when (cedet-gnu-global-version-check t) ;Do stuff if gnu global is available
+
+(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
 ;; (setq-default c-basic-offset 4 c-default-style "linux")
 ;; (setq-default tab-width 4 indent-tabs-mode t)
 ;;C indenting
@@ -390,6 +417,11 @@ This command does not push erased text to kill-ring."
 ;;Add above two lines to make file to enable flycheck
 (require 'member-function)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
+(add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
+(require 'flycheck-pos-tip)
+(eval-after-load 'flycheck
+  '(custom-set-variables
+    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 (setq mf--source-file-extension "cpp")
 ;; CPP std add
 ;;Gcc sense
@@ -598,32 +630,10 @@ This command does not push erased text to kill-ring."
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 (global-set-key (kbd "C-x p") 'ace-window)
 ;;Emacs tags for code navigation
-;http://www.coverfire.com/archives/2004/06/24/emacs-source-code-navigation/
-  (defun create-tags (dir-name)
-    "Create tags file."
-    (interactive "DDirectory: ")
-    (shell-command
-     (format "ctags -f %s -e -R %s" path-to-ctags (directory-file-name dir-name)))
-  )
-  (defadvice find-tag (around refresh-etags activate)
-   "Rerun etags and reload tags if tag not found and redo find-tag.
-   If buffer is modified, ask about save before running etags."
-  (let ((extension (file-name-extension (buffer-file-name))))
-    (condition-case err
-    ad-do-it
-      (error (and (buffer-modified-p)
-          (not (ding))
-          (y-or-n-p "Buffer is modified, save it? ")
-          (save-buffer))
-         (er-refresh-etags extension)
-         ad-do-it))))
-
-  (defun er-refresh-etags (&optional extension)
-  "Run etags on all peer files in current dir and reload them silently."
-  (interactive)
-  (shell-command (format "etags *.%s" (or extension "el")))
-  (let ((tags-revert-without-query t))  ; don't query, revert silently
-    (visit-tags-table default-directory nil)))
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+              (ggtags-mode 1))))
 ;;Tramp
  (setq tramp-default-method "ssh")
 ;;Rename current buffer
@@ -659,6 +669,52 @@ This command does not push erased text to kill-ring."
 
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
 
+(defun create-gtags-in-current-dir()
+;(start-process "tagging" "*Messages*" "gtags" default-directory)
+(shell-command  "gtags" default-directory)
+  )
+;;Load tags in, and rename all functions
+(defun semantic-rename-symbol (name)
+  (interactive (list (read-string "Enter new name: ")) )
+  (create-gtags-in-current-dir)
+  (semantic-symref)
+  (semantic-symref-list-expand-all)
+  (semantic-symref-list-rename-open-hits name)
+  (kill-buffer)
+  )
+(defun refactor-simple-rename (name)
+  (interactive (list (read-string "Enter new name: ")) )
+  (narrow-to-defun)
+  (let ((old (thing-at-point 'symbol)))
+  (beginning-of-buffer)
+  (replace-string  old name)
+  (widen)
+  ))
+
+
+;;Narrower
+(defun narrow-or-widen-dwim (p)
+  "If the buffer is narrowed, it widens. Otherwise, it narrows intelligently.
+Intelligently means: region, subtree, or defun, whichever applies
+first.
+
+With prefix P, don't widen, just narrow even if buffer is already
+narrowed."
+  (interactive "P")
+  (declare (interactive-only))
+  (cond ((and (buffer-narrowed-p) (not p)) (widen))
+        ((region-active-p)
+         (narrow-to-region (region-beginning) (region-end)))
+        ((derived-mode-p 'org-mode) (org-narrow-to-subtree))
+        (t (narrow-to-defun))))
+
+
+;;Whitespace managers
+(setq dtrt-indent-verbosity 0)
+(add-hook 'c-mode-common-hook 'ws-butler-mode)
+(add-hook 'java-mode-common-hook 'ws-butler-mode)
+(add-hook 'c++-mode-common-hook 'ws-butler-mode)
+(dtrt-indent-mode 1)
 ;;Git fringe
 ;; (require 'git-gutter-fringe)
 ;; (setq git-gutter-fr:side 'right-fringe)
@@ -752,6 +808,7 @@ This command does not push erased text to kill-ring."
      (output-pdf "Evince")
      (output-html "xdg-open"))))
  '(eclimd-wait-for-process nil)
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(global-flycheck-mode t nil (flycheck))
  '(org-babel-load-languages
    (quote
@@ -764,6 +821,7 @@ This command does not push erased text to kill-ring."
    (quote
     ("scheme58" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mzscheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
  '(scheme-program-name "scheme48")
+ '(semantic-idle-scheduler-idle-time 5.3)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(user-full-name "Matthew Bregg"))
 (custom-set-faces

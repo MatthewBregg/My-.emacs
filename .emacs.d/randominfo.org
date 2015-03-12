@@ -26,3 +26,6 @@ wA to save, which then triggers a stage.
 
  #+LATEX_HEADER:\usepackage[margin=1.5cm]{geometry}
 
+
+Code Navigation: speedbar/imenu
+helm-imenu is cool too

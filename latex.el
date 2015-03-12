@@ -54,9 +54,6 @@
      ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
-;Auctex stuff
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
 (require 'tex-site)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)

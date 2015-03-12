@@ -5,7 +5,21 @@
   (list
     (semanticdb-table "compliance.cpp"
       :major-mode 'c++-mode
-      :tags nil
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("map" include (:system-flag t) nil [37 50])
+            ("func1" function
+               (:arguments 
+                  ( ("a" variable (:type "int") (reparse-symbol arg-sub-list) [61 67]))                  
+                :type "int")
+                nil [51 78])
+            ("func1" function
+               (:arguments 
+                  ( ("s" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [89 103]))                  
+                :type "int")
+                nil [79 114])
+            ("main" function (:type "int") nil [118 716]))          
       :file "compliance.cpp"
       :pointmax 716
       :fsize 715
