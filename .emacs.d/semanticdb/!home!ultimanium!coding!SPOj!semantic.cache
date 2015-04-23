@@ -203,6 +203,17 @@
       :pointmax 573
       :fsize 572
       :lastmodtime '(21609 1799 245003 839000)
+      :unmatched-syntax nil)
+    (semanticdb-table "problem.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 19])
+            ("vector" include (:system-flag t) nil [20 36])
+            ("main" function (:type "int") nil [37 414]))          
+      :file "problem.cpp"
+      :pointmax 415
+      :fsize 414
+      :lastmodtime '(21799 3260 833635 385000)
       :unmatched-syntax nil))
   :file "!home!ultimanium!coding!SPOj!semantic.cache"
   :semantic-tag-version "2.0"

@@ -29,3 +29,16 @@ wA to save, which then triggers a stage.
 
 Code Navigation: speedbar/imenu
 helm-imenu is cool too
+
+* SSH with x forwarding into matlab
+How to mat lab
+-X for xforwarding, C adds compression, may or may not be good
+-c blowfish-cbc,arcfour maybe?
+-Y some private x resource thing that makes it all work...
+
+
+ssh -XCY thunder.cise.ufl.edu -l mbregg
+
+ssh -XCY lin115-01 -l mbregg
+
+matlab

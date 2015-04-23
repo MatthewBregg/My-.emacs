@@ -12,20 +12,89 @@
             ("cstdlib" include (:system-flag t) nil [53 70])
             ("getString" function
                (:arguments 
-                  ( ("j" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [93 107]))                  
+                  ( ("rjj" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [93 109]))                  
                 :type ("std::string" type (:type "class") nil nil))
-                nil [71 207])
+                nil [71 209])
+            ("factorial" function
+               (:arguments 
+                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [224 230]))                  
+                :type "int")
+                nil [210 288])
             ("getString" function
                (:arguments 
-                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [230 236]))                  
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [311 317]))                  
                 :type ("std::string" type (:type "class") nil nil))
-                nil [208 248])
-            ("main" function (:type "int") nil [249 519]))          
+                nil [289 329])
+            ("main" function (:type "int") nil [330 600]))          
       :file "test.cpp"
-      :pointmax 520
-      :fsize 519
-      :lastmodtime '(21760 58485 452642 230000)
-      :unmatched-syntax '((string 346 . 349) (string 346 . 349))))
+      :pointmax 601
+      :fsize 160
+      :lastmodtime '(21760 25029 159469 509000)
+      :unmatched-syntax nil)
+    (semanticdb-table "orgtest.html"
+      :major-mode 'html-mode
+      :tags 
+        '( ("orgtest" section nil nil [225 3101])
+            ("/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = \"code-highlighted\";
+     elem.className   = \"code-highlighted\";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->" section nil nil [3101 4720])
+            ("orgtest" section (:members 
+              ( ("orgtest" section (:members 
+                  ( ("Table of Contents" section (:members 
+                      ( ("1. Test 1" anchor nil nil [4876 4879])
+                        ("2. Test 2" anchor nil nil [4916 4919]))                      ) nil [4806 5025])
+                    ("1" section nil nil [5025 5152])
+                    ("2" section (:members 
+                      ( ("Emacs" anchor nil nil [5569 5572])
+                        ("Org" anchor nil nil [5632 5635])
+                        ("Validate" anchor nil nil [5708 5711]))                      ) nil [5152 5800]))                  ) nil [4746 5800]))              ) nil [4720 5800]))          
+      :file "orgtest.html"
+      :pointmax 5800
+      :fsize 7354
+      :lastmodtime '(21791 8493 827283 307000)
+      :unmatched-syntax nil)
+)
   :file "!home!ultimanium!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

@@ -3641,6 +3641,216 @@
       :lexical-table 
         '(("_GLIBCXX_CSTDLIB" . ((number "1" 1649 . 1650)))
           )
+)
+    (semanticdb-table "stdexcept"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("_GLIBCXX_STDEXCEPT" variable (:constant-flag t) nil [1238 1256])
+            ("exception" include (:system-flag t) nil [1287 1307])
+            ("string" include (:system-flag t) nil [1308 1325])
+            ("std" type
+               (:members 
+                  ( ("logic_error" type
+                       (:superclasses 
+                          ( ("exception" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("_M_msg" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [1762 1776])
+                            ("public" label nil (reparse-symbol classsubparts) [1780 1787])
+                            ("logic_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [1877 1897]))                                  
+                                :type ("logic_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [1865 1898]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [1716 2163])
+                    ("domain_error" type
+                       (:superclasses 
+                          ( ("logic_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2324 2331])
+                            ("domain_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2358 2378]))                                  
+                                :type ("domain_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2345 2379]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2277 2435])
+                    ("invalid_argument" type
+                       (:superclasses 
+                          ( ("logic_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2549 2556])
+                            ("invalid_argument" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2587 2607]))                                  
+                                :type ("invalid_argument" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2570 2608]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2498 2668])
+                    ("length_error" type
+                       (:superclasses 
+                          ( ("logic_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [2850 2857])
+                            ("length_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [2884 2904]))                                  
+                                :type ("length_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [2871 2905]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [2803 2961])
+                    ("out_of_range" type
+                       (:superclasses 
+                          ( ("logic_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [3142 3149])
+                            ("out_of_range" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3176 3196]))                                  
+                                :type ("out_of_range" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3163 3197]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3095 3253])
+                    ("runtime_error" type
+                       (:superclasses 
+                          ( ("exception" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("_M_msg" variable (:type ("string" type (:type "class") nil nil)) (reparse-symbol classsubparts) [3534 3548])
+                            ("public" label nil (reparse-symbol classsubparts) [3552 3559])
+                            ("runtime_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [3651 3671]))                                  
+                                :type ("runtime_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [3637 3672]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [3486 3939])
+                    ("range_error" type
+                       (:superclasses 
+                          ( ("runtime_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4059 4066])
+                            ("range_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4092 4112]))                                  
+                                :type ("range_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4080 4113]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4011 4168])
+                    ("overflow_error" type
+                       (:superclasses 
+                          ( ("runtime_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4273 4280])
+                            ("overflow_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4309 4329]))                                  
+                                :type ("overflow_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4294 4330]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4222 4388])
+                    ("underflow_error" type
+                       (:superclasses 
+                          ( ("runtime_error" type
+                               (:protection "public"
+                                :type "class")
+                                nil nil))                          
+                        :members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [4495 4502])
+                            ("underflow_error" function
+                               (:prototype-flag t
+                                :constructor-flag t
+                                :arguments 
+                                  ( ("__arg" variable
+                                       (:reference 1
+                                        :constant-flag t
+                                        :type ("string" type (:type "class") nil nil))
+                                        (reparse-symbol arg-sub-list) [4532 4552]))                                  
+                                :type ("underflow_error" type (:type "class") nil nil))
+                                (reparse-symbol classsubparts) [4516 4553]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [4443 4612]))                  
+                :type "namespace")
+                nil [1327 4672]))          
+      :file "stdexcept"
+      :pointmax 4719
+      :fsize 4718
+      :lastmodtime '(21311 57399 0 0)
+      :unmatched-syntax '((symbol 4662 . 4670) (punctuation 4606 . 4607) (semantic-list "()" 4585 . 4606) (THROW "throw" 4585 . 4606) (semantic-list 4582 . 4584) (symbol 4567 . 4582) (punctuation 4566 . 4567) (VIRTUAL 4558 . 4565) (EXPLICIT 4507 . 4515) (punctuation 4382 . 4383) (semantic-list "()" 4361 . 4382) (THROW "throw" 4361 . 4382) (semantic-list 4358 . 4360) (symbol 4344 . 4358) (punctuation 4343 . 4344) (VIRTUAL 4335 . 4342) (EXPLICIT 4285 . 4293) (punctuation 4162 . 4163) (semantic-list "()" 4141 . 4162) (THROW "throw" 4141 . 4162) (semantic-list 4138 . 4140) (symbol 4127 . 4138) (punctuation 4126 . 4127) (VIRTUAL 4118 . 4125) (EXPLICIT 4071 . 4079) (punctuation 3933 . 3934) (semantic-list "()" 3912 . 3933) (THROW "throw" 3912 . 3933) (CONST 3906 . 3911) (semantic-list 3903 . 3905) (symbol 3899 . 3903) (punctuation 3892 . 3893) (CHAR 3888 . 3892) (CONST 3882 . 3887) (VIRTUAL 3874 . 3881) (punctuation 3724 . 3725) (semantic-list "()" 3703 . 3724) (THROW "throw" 3703 . 3724) (semantic-list 3700 . 3702) (symbol 3687 . 3700) (punctuation 3686 . 3687) (VIRTUAL 3678 . 3685) (EXPLICIT 3623 . 3631) (punctuation 3247 . 3248) (semantic-list "()" 3226 . 3247) (THROW "throw" 3226 . 3247) (semantic-list 3223 . 3225) (symbol 3211 . 3223) (punctuation 3210 . 3211) (VIRTUAL 3202 . 3209) (EXPLICIT 3154 . 3162) (punctuation 2955 . 2956) (semantic-list "()" 2934 . 2955) (THROW "throw" 2934 . 2955) (semantic-list 2931 . 2933) (symbol 2919 . 2931) (punctuation 2918 . 2919) (VIRTUAL 2910 . 2917) (EXPLICIT 2862 . 2870) (punctuation 2662 . 2663) (semantic-list "()" 2641 . 2662) (THROW "throw" 2641 . 2662) (semantic-list 2638 . 2640) (symbol 2622 . 2638) (punctuation 2621 . 2622) (VIRTUAL 2613 . 2620) (EXPLICIT 2561 . 2569) (punctuation 2429 . 2430) (semantic-list "()" 2408 . 2429) (THROW "throw" 2408 . 2429) (semantic-list 2405 . 2407) (symbol 2393 . 2405) (punctuation 2392 . 2393) (VIRTUAL 2384 . 2391) (EXPLICIT 2336 . 2344) (punctuation 2157 . 2158) (semantic-list "()" 2136 . 2157) (THROW "throw" 2136 . 2157) (CONST 2130 . 2135) (semantic-list 2127 . 2129) (symbol 2123 . 2127) (punctuation 2116 . 2117) (CHAR 2112 . 2116) (CONST 2106 . 2111) (VIRTUAL 2098 . 2105) (punctuation 1948 . 1949) (semantic-list "()" 1927 . 1948) (THROW "throw" 1927 . 1948) (semantic-list 1924 . 1926) (symbol 1913 . 1924) (punctuation 1912 . 1913) (VIRTUAL 1904 . 1911) (EXPLICIT 1851 . 1859) (symbol 1272 . 1285) (symbol 1268 . 1271) (symbol 1261 . 1267) (punctuation 1260 . 1261))
+      :lexical-table 
+        '(("_GLIBCXX_STDEXCEPT" . ((number "1" 1257 . 1258)))
+          )
 ))
   :file "!usr!include!c++!4.8!semantic.cache"
   :semantic-tag-version "2.0"

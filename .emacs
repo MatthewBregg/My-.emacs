@@ -58,16 +58,17 @@
 ;; ;Smartparens
 ;; (require 'smartparens-config)
 ;; (smartparens-global-mode t)
-;;Facebook chat
-(require 'jabber-autoloads)
-(setq jabber-account-list '(
-                            ("matthew.bregg.1@chat.facebook.com"
-                             (:network-server . "chat.facebook.com")
-                             (:connection-type . starttls)
-                             (:port . 5222)
 
-                             )
-                            ))
+;;Facebook chat ;;Jabber.el was broken
+;;(require 'jabber-autoloads)
+;; (setq jabber-account-list '(
+;;                             ("matthew.bregg.1@chat.facebook.com"
+;;                              (:network-server . "chat.facebook.com")
+;;                              (:connection-type . starttls)
+;;                              (:port . 5222)
+
+;;                              )
+;;                             ))
 
 
 ;; Disable jabber.el presence notifications
@@ -207,6 +208,8 @@ This command does not push erased text to kill-ring."
 
 ;;Magit Stuff
   (key-chord-define evil-normal-state-map "-[" 'magit-status)
+  (setq magit-last-seen-setup-instructions "1.4.0")
+
 ;;;MAgit keybindings
 (add-hook 'magit-mode-hook
 (lambda ()
@@ -329,8 +332,21 @@ This command does not push erased text to kill-ring."
 (require 'cc-mode)
 
 (define-key c++-mode-map (kbd "C-c C-c") 'smart-compile)
-
+;;Semantic Stuff
 (require 'srefactor)
+(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+;;Load tags in, and rename all functions
+(defun semantic-rename-symbol (name)
+  (interactive (list (read-string "Enter new name: ")) )
+  (create-gtags-in-current-dir)
+  (semantic-symref)
+  (semantic-symref-list-expand-all)
+  (semantic-symref-list-rename-open-hits name)
+  (kill-buffer)
+  )
+
+
 
 (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
@@ -343,10 +359,6 @@ This command does not push erased text to kill-ring."
 (semanticdb-enable-gnu-global-databases 'c++-mode t)
 ;;(when (cedet-gnu-global-version-check t) ;Do stuff if gnu global is available
 
-(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
-(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
-;; (setq-default c-basic-offset 4 c-default-style "linux")
-;; (setq-default tab-width 4 indent-tabs-mode t)
 ;;C indenting
 (defun c-lineup-arglist-tabs-only (ignored)
   "Line up argument lists by tabs, not spaces"
@@ -672,15 +684,6 @@ This command does not push erased text to kill-ring."
 (defun create-gtags-in-current-dir()
 ;(start-process "tagging" "*Messages*" "gtags" default-directory)
 (shell-command  "gtags" default-directory)
-  )
-;;Load tags in, and rename all functions
-(defun semantic-rename-symbol (name)
-  (interactive (list (read-string "Enter new name: ")) )
-  (create-gtags-in-current-dir)
-  (semantic-symref)
-  (semantic-symref-list-expand-all)
-  (semantic-symref-list-rename-open-hits name)
-  (kill-buffer)
   )
 (defun refactor-simple-rename (name)
   (interactive (list (read-string "Enter new name: ")) )

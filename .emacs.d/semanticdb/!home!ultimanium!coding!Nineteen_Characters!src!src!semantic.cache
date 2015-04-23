@@ -10,7 +10,7 @@
       :file "Function.java"
       :pointmax 332
       :fsize 330
-      :lastmodtime '(21752 57658 366876 169000)
+      :lastmodtime '(21751 51864 438533 619000)
       :unmatched-syntax '((BRACE_BLOCK 303 . 330) (GT 301 . 302) (IDENTIFIER 300 . 301) (COMMA 298 . 299) (IDENTIFIER 297 . 298) (PUBLIC 271 . 277) (LT 296 . 297)))
     (semanticdb-table "Effect.java"
       :major-mode 'java-mode
@@ -19,7 +19,7 @@
       :file "Effect.java"
       :pointmax 278
       :fsize 277
-      :lastmodtime '(21752 57658 366876 169000)
+      :lastmodtime '(21748 39469 298026 422000)
       :unmatched-syntax '((BRACE_BLOCK 246 . 277) (IDENTIFIER 239 . 245) (PUBLIC 227 . 233) (IDENTIFIER 234 . 238)))
     (semanticdb-table "Repeatable.java"
       :major-mode 'java-mode
@@ -48,110 +48,134 @@
       :file "Repeatable.java"
       :pointmax 586
       :fsize 563
-      :lastmodtime '(21752 57658 366876 169000)
+      :lastmodtime '(21741 63014 690612 99000)
       :unmatched-syntax '(($EOI 586 . 586) (VOID 524 . 528) ($EOI 586 . 586) (RBRACE 585 . 586) (SEMICOLON 583 . 584) (PAREN_BLOCK 569 . 583) (VOID 556 . 560) (ABSTRACT 547 . 555)))
     (semanticdb-table "IO_Bundle.java"
       :major-mode 'java-mode
       :tags 
         '( ("src" package nil nil [186 198])
             ("java.awt.Color" include nil nil [200 222])
-            ("java.util.ArrayList" include nil nil [223 250])
-            ("src.model.map.constructs.EntityStatsPack" include nil nil [252 300])
-            ("src.model.map.constructs.Occupation" include nil nil [301 344])
-            ("src.model.map.constructs.PickupableItem" include nil nil [345 392])
-            ("src.model.map.constructs.PrimaryHandHoldable" include nil nil [393 445])
-            ("src.model.map.constructs.SecondaryHandHoldable" include nil nil [446 500])
+            ("java.io.Serializable" include nil nil [223 251])
+            ("java.util.ArrayList" include nil nil [252 279])
+            ("src.model.constructs.EntityStatsPack" include nil nil [281 325])
+            ("src.model.constructs.Occupation" include nil nil [326 365])
+            ("src.model.constructs.items.PickupableItem" include nil nil [366 415])
+            ("src.model.constructs.items.PrimaryHandHoldable" include nil nil [416 470])
+            ("src.model.constructs.items.SecondaryHandHoldable" include nil nil [471 527])
             ("IO_Bundle" type
                (:typemodifiers ("public")
+                :interfaces ("Serializable")
                 :members 
                   ( ("IO_Bundle" function
                        (:constructor-flag t
                         :typemodifiers ("public")
                         :arguments 
-                          ( ("v" variable
+                          ( ("observation_string" variable (:type "String") (reparse-symbol formal_parameters) [680 705])
+                            ("v" variable
                                (:dereference 2
                                 :type "char")
-                                (reparse-symbol formal_parameters) [628 638])
+                                (reparse-symbol formal_parameters) [719 729])
                             ("c" variable
                                (:dereference 2
-                                :type "Color")
-                                (reparse-symbol formal_parameters) [640 651])
-                            ("" variable (:type "i") (reparse-symbol formal_parameters) [679 680])
-                            ("s" variable (:type "EntityStatsPack") (reparse-symbol formal_parameters) [694 711])
-                            ("o" variable (:type "Occupation") (reparse-symbol formal_parameters) [713 725])
-                            ("n" variable (:type "int") (reparse-symbol formal_parameters) [727 732])
-                            ("bi" variable (:type "int") (reparse-symbol formal_parameters) [734 740])
-                            ("ba" variable (:type "int") (reparse-symbol formal_parameters) [742 748])
-                            ("ob" variable (:type "int") (reparse-symbol formal_parameters) [750 756])
-                            ("pri" variable (:type "PrimaryHandHoldable") (reparse-symbol formal_parameters) [770 793])
-                            ("sec" variable (:type "SecondaryHandHoldable") (reparse-symbol formal_parameters) [795 820])
-                            ("" variable (:type "sfc") (reparse-symbol formal_parameters) [852 855])
-                            ("num_coins" variable (:type "int") (reparse-symbol formal_parameters) [857 870]))                          )
-                        (reparse-symbol class_member_declaration) [611 1256])
+                                :type "int")
+                                (reparse-symbol formal_parameters) [731 740])
+                            ("" variable (:type "i") (reparse-symbol formal_parameters) [768 769])
+                            ("s" variable (:type "EntityStatsPack") (reparse-symbol formal_parameters) [783 800])
+                            ("o" variable (:type "Occupation") (reparse-symbol formal_parameters) [802 814])
+                            ("n" variable (:type "int") (reparse-symbol formal_parameters) [816 821])
+                            ("bi" variable (:type "int") (reparse-symbol formal_parameters) [823 829])
+                            ("ba" variable (:type "int") (reparse-symbol formal_parameters) [831 837])
+                            ("ob" variable (:type "int") (reparse-symbol formal_parameters) [839 845])
+                            ("pri" variable (:type "PrimaryHandHoldable") (reparse-symbol formal_parameters) [859 882])
+                            ("sec" variable (:type "SecondaryHandHoldable") (reparse-symbol formal_parameters) [884 909])
+                            ("" variable (:type "sfc") (reparse-symbol formal_parameters) [941 944])
+                            ("num_coins" variable (:type "int") (reparse-symbol formal_parameters) [946 959])
+                            ("is_alive" variable (:type "boolean") (reparse-symbol formal_parameters) [961 977]))                          )
+                        (reparse-symbol class_member_declaration) [662 2096])
+                    ("convertArrayListOfCharToArray" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("" variable (:type "c") (reparse-symbol formal_parameters) [2174 2175]))                          
+                        :type "char[]")
+                        (reparse-symbol class_member_declaration) [2102 2331])
+                    ("convertArrayListOfShortToArray" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("" variable (:type "c") (reparse-symbol formal_parameters) [2407 2408]))                          
+                        :type "short[]")
+                        (reparse-symbol class_member_declaration) [2337 2566])
+                    ("observation_string_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [2613 2653])
                     ("view_for_display_" variable
                        (:dereference 2
-                        :typemodifiers ("public" "final")
+                        :typemodifiers ("public")
                         :type "char")
-                        (reparse-symbol class_member_declaration) [1261 1301])
+                        (reparse-symbol class_member_declaration) [2658 2692])
                     ("color_for_display_" variable
                        (:dereference 2
-                        :typemodifiers ("public" "final")
-                        :type "Color")
-                        (reparse-symbol class_member_declaration) [1306 1348])
+                        :typemodifiers ("public")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [2697 2731])
                     ("primary_" variable
                        (:typemodifiers ("public" "final")
                         :type "PrimaryHandHoldable")
-                        (reparse-symbol class_member_declaration) [1353 1395])
+                        (reparse-symbol class_member_declaration) [2736 2778])
                     ("second_" variable
                        (:typemodifiers ("public" "final")
                         :type "SecondaryHandHoldable")
-                        (reparse-symbol class_member_declaration) [1400 1443])
+                        (reparse-symbol class_member_declaration) [2783 2826])
                     ("stats_for_display_" variable
                        (:typemodifiers ("public" "final")
                         :type "EntityStatsPack")
-                        (reparse-symbol class_member_declaration) [1503 1551])
+                        (reparse-symbol class_member_declaration) [2886 2934])
                     ("occupation_" variable
                        (:typemodifiers ("public" "final")
                         :type "Occupation")
-                        (reparse-symbol class_member_declaration) [1556 1592])
+                        (reparse-symbol class_member_declaration) [2939 2975])
                     ("num_skillpoints_" variable
                        (:typemodifiers ("public" "final")
                         :type "int")
-                        (reparse-symbol class_member_declaration) [1597 1631])
+                        (reparse-symbol class_member_declaration) [2980 3014])
                     ("bind_wounds_" variable
                        (:typemodifiers ("public" "final")
                         :type "int")
-                        (reparse-symbol class_member_declaration) [1636 1666])
+                        (reparse-symbol class_member_declaration) [3019 3049])
                     ("bargain_" variable
                        (:typemodifiers ("public" "final")
                         :type "int")
-                        (reparse-symbol class_member_declaration) [1671 1697])
+                        (reparse-symbol class_member_declaration) [3054 3080])
                     ("observation_" variable
                        (:typemodifiers ("public" "final")
                         :type "int")
-                        (reparse-symbol class_member_declaration) [1702 1732])
+                        (reparse-symbol class_member_declaration) [3085 3115])
                     ("num_coins_" variable
                        (:typemodifiers ("public" "final")
                         :type "int")
-                        (reparse-symbol class_member_declaration) [1800 1828])
+                        (reparse-symbol class_member_declaration) [3183 3211])
+                    ("is_alive_" variable
+                       (:typemodifiers ("public" "final")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [3216 3247])
                     ("getStatsPack" function
                        (:typemodifiers ("public")
                         :type "EntityStatsPack")
-                        (reparse-symbol class_member_declaration) [1834 1914])
+                        (reparse-symbol class_member_declaration) [3253 3333])
                     ("getOccupation" function
                        (:typemodifiers ("public")
                         :type "Occupation")
-                        (reparse-symbol class_member_declaration) [1920 1989])
-                    ("getInventory" function (:constructor-flag t) (reparse-symbol class_member_declaration) [2027 2072])
-                    ("getSkillNames" function (:constructor-flag t) (reparse-symbol class_member_declaration) [2102 2538])
-                    ("getSkillLevels" function (:constructor-flag t) (reparse-symbol class_member_declaration) [2569 2960]))                  
+                        (reparse-symbol class_member_declaration) [3339 3408])
+                    ("getInventory" function (:constructor-flag t) (reparse-symbol class_member_declaration) [3447 3496])
+                    ("getSkillNames" function (:constructor-flag t) (reparse-symbol class_member_declaration) [3527 4229])
+                    ("getSkillLevels" function (:constructor-flag t) (reparse-symbol class_member_declaration) [4261 4852]))                  
                 :type "class")
-                nil [581 2962]))          
+                nil [608 4854]))          
       :file "IO_Bundle.java"
-      :pointmax 2962
-      :fsize 2961
-      :lastmodtime '(21757 23379 699619 989000)
-      :unmatched-syntax '((GT 2567 . 2568) (PUBLIC 2543 . 2549) (LT 2559 . 2560) (GT 2100 . 2101) (PUBLIC 2077 . 2083) (LT 2093 . 2094) (GT 2025 . 2026) (PUBLIC 1994 . 2000) (LT 2010 . 2011) (SEMICOLON 1794 . 1795) (GT 1766 . 1767) (PUBLIC 1737 . 1743) (LT 1759 . 1760) (SEMICOLON 1497 . 1498) (GT 1485 . 1486) (PUBLIC 1448 . 1454) (LT 1470 . 1471) (GT 850 . 851) (IDENTIFIER 834 . 843) (LT 843 . 844) (GT 677 . 678) (IDENTIFIER 653 . 662) (LT 662 . 663)))
+      :pointmax 4855
+      :fsize 4854
+      :lastmodtime '(21776 21546 630424 698000)
+      :unmatched-syntax '((GT 4259 . 4260) (PUBLIC 4235 . 4241) (LT 4251 . 4252) (GT 3525 . 3526) (PUBLIC 3502 . 3508) (LT 3518 . 3519) (GT 3445 . 3446) (PUBLIC 3414 . 3420) (LT 3430 . 3431) (SEMICOLON 3177 . 3178) (GT 3149 . 3150) (PUBLIC 3120 . 3126) (LT 3142 . 3143) (SEMICOLON 2880 . 2881) (GT 2868 . 2869) (PUBLIC 2831 . 2837) (LT 2853 . 2854) (GT 2405 . 2406) (IDENTIFIER 2390 . 2399) (LT 2399 . 2400) (GT 2172 . 2173) (IDENTIFIER 2153 . 2162) (LT 2162 . 2163) (GT 939 . 940) (IDENTIFIER 923 . 932) (LT 932 . 933) (GT 766 . 767) (IDENTIFIER 742 . 751) (LT 751 . 752)))
     (semanticdb-table "HardCodedStrings.java"
       :major-mode 'java-mode
       :tags 
@@ -271,8 +295,389 @@
                 nil [234 3699]))          
       :file "HardCodedStrings.java"
       :pointmax 3700
-      :fsize 3699
-      :lastmodtime '(21759 27584 10552 13000)
+      :fsize 5305
+      :lastmodtime '(21776 21539 907193 450000)
+      :unmatched-syntax nil)
+    (semanticdb-table "RunGame.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [1 13])
+            ("src.Not_part_of_iteration_2_requirements.Music" include nil nil [15 69])
+            ("java.awt.Color" include nil nil [70 92])
+            ("java.io.FileNotFoundException" include nil nil [93 130])
+            ("java.io.PrintStream" include nil nil [131 158])
+            ("java.text.SimpleDateFormat" include nil nil [159 193])
+            ("java.util.Date" include nil nil [194 216])
+            ("src.Not_part_of_iteration_2_requirements.BONUS.MapEditor.MapAddable" include nil nil [218 293])
+            ("src.Not_part_of_iteration_2_requirements.BONUS.MapEditor.MapAddableFactory" include nil nil [294 376])
+            ("src.io.controller.Controller" include nil nil [377 413])
+            ("src.io.controller.GameController" include nil nil [414 454])
+            ("src.io.controller.MapEditorController" include nil nil [455 500])
+            ("src.model.Map" include nil nil [501 522])
+            ("src.model.constructs.Avatar" include nil nil [523 558])
+            ("src.model.constructs.DrawableThingStatsPack" include nil nil [559 610])
+            ("src.model.constructs.Merchant" include nil nil [611 648])
+            ("src.model.constructs.Monster" include nil nil [649 685])
+            ("src.model.constructs.Terrain" include nil nil [686 722])
+            ("src.model.constructs.Villager" include nil nil [723 760])
+            ("src.model.constructs.items.Bow" include nil nil [761 799])
+            ("src.model.constructs.items.Item" include nil nil [800 839])
+            ("src.model.constructs.items.KnightsSerum" include nil nil [840 887])
+            ("src.model.constructs.items.InvisibilitySerum" include nil nil [888 940])
+            ("src.model.constructs.items.ObstacleRemovingItem" include nil nil [941 996])
+            ("src.model.constructs.items.OneHandedSword" include nil nil [997 1046])
+            ("src.model.constructs.items.OneShotAreaEffectItem" include nil nil [1047 1103])
+            ("src.model.constructs.items.OneWayTeleportItem" include nil nil [1104 1157])
+            ("src.model.constructs.items.PermanentObstacleItem" include nil nil [1158 1214])
+            ("src.model.constructs.items.Shield" include nil nil [1215 1256])
+            ("src.model.constructs.items.SpreadingCircleAreaEffectItem" include nil nil [1257 1321])
+            ("src.model.constructs.items.SpreadingConeAreaEffectItem" include nil nil [1322 1384])
+            ("src.model.constructs.items.SpreadingLineAreaEffectItem" include nil nil [1385 1447])
+            ("src.model.constructs.items.Staff" include nil nil [1448 1488])
+            ("src.model.constructs.items.TemporaryObstacleItem" include nil nil [1489 1545])
+            ("src.model.constructs.items.Trap" include nil nil [1546 1585])
+            ("src.model.constructs.items.TwoHandedSword" include nil nil [1586 1635])
+            ("RunGame" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("pOpts_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "ProgramOpts")
+                        (reparse-symbol class_member_declaration) [1748 1789])
+                    ("avatar_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "Avatar")
+                        (reparse-symbol class_member_declaration) [1794 1824])
+                    ("avatar_name" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [1829 1880])
+                    ("map_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "Map")
+                        (reparse-symbol class_member_declaration) [1885 1909])
+                    ("uc_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "Controller")
+                        (reparse-symbol class_member_declaration) [1914 1944])
+                    ("mapHeight_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1949 1984])
+                    ("mapWidth_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [1989 2023])
+                    ("map_editor_mode_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [2028 2076])
+                    ("newUserName_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "StringBuilder")
+                        (reparse-symbol class_member_declaration) [2081 2145])
+                    ("setNewMap" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("map" variable (:type "Map") (reparse-symbol formal_parameters) [2335 2342]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2306 2657])
+                    ("grusomelyKillTheMap" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2663 2967])
+                    ("grusomelyKillTheController" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2973 3271])
+                    ("closeGame" function
+                       (:typemodifiers ("public" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3277 3384])
+                    ("getAvatarName" function
+                       (:typemodifiers ("public" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [3390 3464])
+                    ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [3494 3507]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [3470 3787])
+                    ("startNewGame" function
+                       (:typemodifiers ("private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [3793 4171])
+                    ("startMapEditor" function
+                       (:typemodifiers ("private" "static")
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [4177 4420])
+                    ("coverMapInGrass" function
+                       (:typemodifiers ("private" "static")
+                        :arguments 
+                          ( ("map_2" variable (:type "Map") (reparse-symbol formal_parameters) [4462 4471]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4426 4805])
+                    ("loadGame" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("file_path" variable (:type "String") (reparse-symbol formal_parameters) [4839 4855]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [4811 5084])
+                    ("exitGame" function
+                       (:typemodifiers ("private" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5156 5195])
+                    ("initialize" function
+                       (:typemodifiers ("private" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5201 5310])
+                    ("populateMap" function
+                       (:typemodifiers ("private" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [5316 12723])
+                    ("startGame" function
+                       (:typemodifiers ("private" "static")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [12729 13113])
+                    ("saveGameToDisk" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("filepath" variable (:type "String") (reparse-symbol formal_parameters) [13153 13168]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [13119 13267])
+                    ("errDateFormat_" variable
+                       (:typemodifiers ("private" "static")
+                        :type "SimpleDateFormat")
+                        (reparse-symbol class_member_declaration) [13415 13509])
+                    ("ProgramOpts" type
+                       (:typemodifiers ("private" "static")
+                        :members 
+                          ( ("dbg_match" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [14318 14357])
+                            ("dbg_flag" variable (:type "boolean") (reparse-symbol class_member_declaration) [14366 14391])
+                            ("dbg_level" variable (:type "int") (reparse-symbol class_member_declaration) [14400 14418])
+                            ("editor_match" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [14428 14471])
+                            ("editor_flag" variable (:type "boolean") (reparse-symbol class_member_declaration) [14480 14508])
+                            ("lsg_match" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [14545 14583])
+                            ("lsg_flag" variable (:type "boolean") (reparse-symbol class_member_declaration) [14620 14645])
+                            ("lsg_path" variable (:type "int") (reparse-symbol class_member_declaration) [14689 14707])
+                            ("err_match" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol class_member_declaration) [14786 14823])
+                            ("err_flag" variable (:type "boolean") (reparse-symbol class_member_declaration) [14832 14857])
+                            ("err_path" variable (:type "int") (reparse-symbol class_member_declaration) [14866 14884]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [14252 14890])
+                    ("dbgOut" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("s" variable (:type "String") (reparse-symbol formal_parameters) [15072 15080]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [15046 15227])
+                    ("dbgOut" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("s" variable (:type "String") (reparse-symbol formal_parameters) [15724 15732])
+                            ("dLevel" variable (:type "int") (reparse-symbol formal_parameters) [15734 15744]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [15698 15975])
+                    ("errOut" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("e" variable (:type "Exception") (reparse-symbol formal_parameters) [16315 16326]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [16289 16361])
+                    ("errOut" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("e" variable (:type "Exception") (reparse-symbol formal_parameters) [16660 16671])
+                            ("printTrace" variable (:type "boolean") (reparse-symbol formal_parameters) [16673 16691]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [16634 17009])
+                    ("errOut" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("s" variable (:type "String") (reparse-symbol formal_parameters) [17162 17170]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [17136 17318])
+                    ("handleArgs" function
+                       (:typemodifiers ("protected" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [17564 17577]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [17531 18596])
+                    ("parseArgs" function
+                       (:typemodifiers ("protected" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [18860 18873]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [18828 20256]))                  
+                :type "class")
+                nil [1720 20280]))          
+      :file "RunGame.java"
+      :pointmax 20297
+      :fsize 20338
+      :lastmodtime '(21776 21546 630424 698000)
+      :unmatched-syntax nil)
+    (semanticdb-table "QueueCommandInterface.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [1 13]))          
+      :file "QueueCommandInterface.java"
+      :pointmax 174
+      :fsize 143
+      :lastmodtime '(21772 44748 591380 437000)
+      :unmatched-syntax '((BRACE_BLOCK 104 . 173) (GT 102 . 103) (IDENTIFIER 101 . 102) (PUBLIC 62 . 68) (LT 100 . 101)))
+    (semanticdb-table "ControllerInternet.java"
+      :major-mode 'java-mode
+      :tags 
+        '( ("src" package nil nil [1 13])
+            ("java.io.ByteArrayInputStream" include nil nil [15 51])
+            ("java.io.ByteArrayOutputStream" include nil nil [52 89])
+            ("java.io.EOFException" include nil nil [90 118])
+            ("java.io.IOException" include nil nil [119 146])
+            ("java.io.ObjectInput" include nil nil [147 174])
+            ("java.io.ObjectInputStream" include nil nil [175 208])
+            ("java.io.ObjectOutput" include nil nil [209 237])
+            ("java.io.ObjectOutputStream" include nil nil [238 272])
+            ("java.net.DatagramPacket" include nil nil [273 304])
+            ("java.net.DatagramSocket" include nil nil [305 336])
+            ("java.net.InetAddress" include nil nil [337 365])
+            ("java.net.InetSocketAddress" include nil nil [366 400])
+            ("java.net.NetworkInterface" include nil nil [401 434])
+            ("java.net.Socket" include nil nil [435 458])
+            ("java.util.Enumeration" include nil nil [459 488])
+            ("java.util.Random" include nil nil [489 513])
+            ("src.model.Map" include nil nil [515 536])
+            ("src.model.MapInternet" include nil nil [537 566])
+            ("ControllerInternet" type
+               (:typemodifiers ("public" "final")
+                :members 
+                  ( ("address" variable
+                       (:typemodifiers ("private" "static")
+                        :type "InetAddress")
+                        (reparse-symbol class_member_declaration) [739 781])
+                    ("udp_socket_for_incoming_signals" variable
+                       (:typemodifiers ("private" "static")
+                        :type "DatagramSocket")
+                        (reparse-symbol class_member_declaration) [787 856])
+                    ("rand" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "Random")
+                        (reparse-symbol class_member_declaration) [861 909])
+                    ("unique_id_string" variable
+                       (:typemodifiers ("private" "static" "final")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [914 996])
+                    ("isConnected" variable
+                       (:typemodifiers ("private" "static")
+                        :type "boolean")
+                        (reparse-symbol class_member_declaration) [1001 1044])
+                    ("sender_thread" variable
+                       (:typemodifiers ("private" "final")
+                        :type "UDP_Sender_Thread")
+                        (reparse-symbol class_member_declaration) [1105 1151])
+                    ("ControllerInternet" function
+                       (:constructor-flag t
+                        :typemodifiers ("public"))
+                        (reparse-symbol class_member_declaration) [1157 1493])
+                    ("UDP_Sender_Thread" type
+                       (:typemodifiers ("private")
+                        :superclasses "Thread"
+                        :members 
+                          ( ("udp_socket_for_outgoing_signals" variable
+                               (:typemodifiers ("private")
+                                :type "DatagramSocket")
+                                (reparse-symbol class_member_declaration) [1557 1612])
+                            ("packet_to_send" variable
+                               (:typemodifiers ("private")
+                                :type "DatagramPacket")
+                                (reparse-symbol class_member_declaration) [1621 1666])
+                            ("setPacketAndNotify" function
+                               (:typemodifiers ("public" "synchronized")
+                                :arguments 
+                                  ( ("s" variable (:type "DatagramPacket") (reparse-symbol formal_parameters) [1777 1793]))                                  
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [1733 1895])
+                            ("UDP_Sender_Thread" function
+                               (:constructor-flag t
+                                :typemodifiers ("public"))
+                                (reparse-symbol class_member_declaration) [1905 2191])
+                            ("run" function
+                               (:typemodifiers ("public" "synchronized")
+                                :type "void")
+                                (reparse-symbol class_member_declaration) [2201 2828]))                          
+                        :type "class")
+                        (reparse-symbol class_member_declaration) [1499 2834])
+                    ("terminate" function
+                       (:typemodifiers ("public")
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [2840 3159])
+                    ("sendStuffToMap" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("avatar_name" variable (:type "String") (reparse-symbol formal_parameters) [3812 3830])
+                            ("key_command" variable (:type "Enum") (reparse-symbol formal_parameters) [3832 3848])
+                            ("width" variable (:type "int") (reparse-symbol formal_parameters) [3850 3859])
+                            ("height" variable (:type "int") (reparse-symbol formal_parameters) [3861 3871])
+                            ("optional_text" variable (:type "String") (reparse-symbol formal_parameters) [3873 3893]))                          
+                        :type "IO_Bundle")
+                        (reparse-symbol class_member_declaration) [3780 5927])
+                    ("getBundleFromBufferOfSize" function
+                       (:typemodifiers ("private")
+                        :arguments 
+                          ( ("buffer_size" variable (:type "int") (reparse-symbol formal_parameters) [5977 5992]))                          
+                        :type "IO_Bundle")
+                        (reparse-symbol class_member_declaration) [5933 6827])
+                    ("makeConnectionUsingIP_Address" function
+                       (:typemodifiers ("public")
+                        :arguments 
+                          ( ("ip_address" variable (:type "String") (reparse-symbol formal_parameters) [7225 7242]))                          
+                        :type "int")
+                        (reparse-symbol class_member_declaration) [7184 7564])
+                    ("bundleToBytes" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("io_bundle" variable (:type "IO_Bundle") (reparse-symbol formal_parameters) [7605 7624]))                          
+                        :type "byte[]")
+                        (reparse-symbol class_member_declaration) [7570 8317])
+                    ("bytesToBundle" function
+                       (:throws ("IOException")
+                        :typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("data" variable
+                               (:dereference 1
+                                :type "byte")
+                                (reparse-symbol formal_parameters) [8547 8558]))                          
+                        :type "IO_Bundle")
+                        (reparse-symbol class_member_declaration) [8509 9078])
+                    ("getMacAddress" function
+                       (:typemodifiers ("private" "static")
+                        :type "String")
+                        (reparse-symbol class_member_declaration) [9084 10357]))                  
+                :type "class")
+                nil [694 10359]))          
+      :file "ControllerInternet.java"
+      :pointmax 10360
       :unmatched-syntax nil))
   :file "!home!ultimanium!coding!Nineteen_Characters!src!src!semantic.cache"
   :semantic-tag-version "2.0"
