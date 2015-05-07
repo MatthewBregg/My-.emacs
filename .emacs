@@ -1,7 +1,5 @@
 ;Load path
 (add-to-list 'load-path "~/.emacs.d/lisp")
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
-(add-to-list 'load-path "~/.emacs.d/nlinum-1.2")
 
 ;Background
 (set-background-color "white")
@@ -47,6 +45,11 @@
 ;; add the emacs-eclim source
 (require 'ac-emacs-eclim-source)
 (ac-emacs-eclim-config)
+
+;;Handle font scale
+(require 'auto-resize)
+;;Keep the powerbar from getting fucked up scaling
+(powerline-reset)
 
 ;Org mode stuff
 (require 'org-install)
