@@ -48,8 +48,7 @@
 
 ;;Handle font scale
 (require 'auto-resize)
-;;Keep the powerbar from getting fucked up scaling
-(powerline-reset)
+
 
 ;Org mode stuff
 (require 'org-install)
