@@ -6,30 +6,17 @@
     (semanticdb-table "test.cpp"
       :major-mode 'c++-mode
       :tags 
-        '( ("iostream" include (:system-flag t) nil [1 19])
-            ("math.h" include (:system-flag t) nil [20 36])
-            ("cmath" include (:system-flag t) nil [37 52])
-            ("cstdlib" include (:system-flag t) nil [53 70])
-            ("getString" function
-               (:arguments 
-                  ( ("rjj" variable (:type ("std::string" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [93 109]))                  
-                :type ("std::string" type (:type "class") nil nil))
-                nil [71 209])
+        '( ("iostream" include (:system-flag t) nil [1 20])
             ("factorial" function
                (:arguments 
-                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [224 230]))                  
+                  ( ("n" variable (:type "int") (reparse-symbol arg-sub-list) [37 43]))                  
                 :type "int")
-                nil [210 288])
-            ("getString" function
-               (:arguments 
-                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [311 317]))                  
-                :type ("std::string" type (:type "class") nil nil))
-                nil [289 329])
-            ("main" function (:type "int") nil [330 600]))          
+                nil [23 101])
+            ("main" function (:type "int") nil [102 160]))          
       :file "test.cpp"
-      :pointmax 601
-      :fsize 160
-      :lastmodtime '(21760 25029 159469 509000)
+      :pointmax 161
+      :fsize 174
+      :lastmodtime '(21844 14014 897233 922000)
       :unmatched-syntax nil)
     (semanticdb-table "orgtest.html"
       :major-mode 'html-mode
@@ -93,8 +80,7 @@ for the JavaScript code in this tag.
       :pointmax 5800
       :fsize 7354
       :lastmodtime '(21791 8493 827283 307000)
-      :unmatched-syntax nil)
-)
+      :unmatched-syntax nil))
   :file "!home!ultimanium!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

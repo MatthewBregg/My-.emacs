@@ -47,7 +47,11 @@
 (ac-emacs-eclim-config)
 
 ;;Handle font scale
-(require 'auto-resize)
+
+(when (not (string= system-name "ulti-thinkpad"))
+  (require 'auto-resize))
+;;(setq auto-resize--ppi-turning-point 20000))
+;;Turn off auto-resize plugin when on laptop
 
 
 ;Org mode stuff
@@ -288,6 +292,7 @@ This command does not push erased text to kill-ring."
 
 
 (require 'ido)
+
 (ido-mode t)
 ;Ido ubiq stuff
 
