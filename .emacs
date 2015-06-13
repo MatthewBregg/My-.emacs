@@ -476,18 +476,25 @@ This command does not push erased text to kill-ring."
 ;; enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;;Load theme stuff
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-material-theme")
+(load-theme 'material-light t)
+
 ;; Toggles between a dark theme and a light theme.
 (defun toggle-bg ()
   "Toggles from dark to light background (and vice-versa)"
   (interactive)
   (if (eq (frame-parameter (next-frame) 'background-mode) 'dark)
       (progn
-        (set-background-color "white")
-        (set-foreground-color "black"))
-        ;;(disable-theme 'zenburn)
+        ;; (set-background-color "white")
+        ;; (set-foreground-color "black"))
+	(load-theme 'material-light t))
+    (load-theme 'material t)))
+        ;; ;;(disable-theme 'zenburn)
         ;;(load-theme 'solarized-light t))
-    (set-background-color "black")
-    (set-foreground-color "grey90")))
+    ;; (set-background-color "black")
+    ;; (set-foreground-color "grey90")))
 ;;    (disable-theme 'solarized-light)
 ;;    (load-theme 'zenburn t)))
 

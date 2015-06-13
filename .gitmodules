@@ -1,0 +1,6 @@
+[submodule ".emacs.d/emacs-material-theme"]
+	path = .emacs.d/emacs-material-theme
+	url = https://github.com/cpaulik/emacs-material-theme.git
+[submodule ".emacs.d/themes/emacs-material-theme"]
+	path = .emacs.d/themes/emacs-material-theme
+	url = https://github.com/cpaulik/emacs-material-theme.git
