@@ -487,16 +487,8 @@ This command does not push erased text to kill-ring."
   (interactive)
   (if (eq (frame-parameter (next-frame) 'background-mode) 'dark)
       (progn
-        ;; (set-background-color "white")
-        ;; (set-foreground-color "black"))
 	(load-theme 'material-light t))
     (load-theme 'material t)))
-        ;; ;;(disable-theme 'zenburn)
-        ;;(load-theme 'solarized-light t))
-    ;; (set-background-color "black")
-    ;; (set-foreground-color "grey90")))
-;;    (disable-theme 'solarized-light)
-;;    (load-theme 'zenburn t)))
 
 ;; Bind it to F5
 (global-set-key (kbd "<f5>") 'toggle-bg)
