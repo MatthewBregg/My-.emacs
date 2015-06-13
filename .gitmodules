@@ -4,3 +4,6 @@
 [submodule ".emacs.d/themes/emacs-material-theme"]
 	path = .emacs.d/themes/emacs-material-theme
 	url = https://github.com/cpaulik/emacs-material-theme.git
+[submodule ".emacs.d/powerline"]
+	path = .emacs.d/powerline
+	url = https://github.com/Dewdrops/powerline

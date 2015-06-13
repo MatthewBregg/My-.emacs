@@ -48,11 +48,10 @@
 
 ;;Handle font scale
 
+;;Turn off auto-resize plugin when on laptop
 (when (not (string= system-name "ulti-thinkpad"))
   (require 'auto-resize))
-;;;;Run this to avoid powerline fucking up. Override function in source here.
-;;(setq auto-resize--ppi-turning-point 20000))
-;;Turn off auto-resize plugin when on laptop
+
 
 
 ;Org mode stuff
@@ -600,17 +599,6 @@ This command does not push erased text to kill-ring."
 (yas-global-mode 1)
 
 
-;;Power Line
- (add-to-list 'load-path "~/.emacs.d/powerline/")
- (require 'powerline)
-(powerline-evil-theme)
-
-;;(powerline-reset)
-(defun auto-resize--set-font-height (size)
-  (set-face-attribute 'default 
-                      (selected-frame)
-                      :height size)
-  (powerline-reset))
  
 ;;Magit Stuff
 (require 'magit)
@@ -826,6 +814,9 @@ narrowed."
      (output-dvi "xdvi")
      (output-pdf "Evince")
      (output-html "xdg-open"))))
+ '(custom-safe-themes
+   (quote
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "26614652a4b3515b4bbbb9828d71e206cc249b67c9142c06239ed3418eff95e2" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
  '(eclimd-wait-for-process nil)
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(global-flycheck-mode t nil (flycheck))
@@ -854,3 +845,21 @@ narrowed."
 
 (fset 'stdifier
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([98 105 115 116 100 58 58 escape 119 119] 0 "%d")) arg)))
+
+
+
+(require 'evil-anzu)
+;;Power Line
+(add-to-list 'load-path "~/.emacs.d/powerline/")
+(require 'powerline)
+(powerline-evil-theme)
+
+
+
+
+;;(powerline-reset)
+(defun auto-resize--set-font-height (size)
+  (set-face-attribute 'default 
+                      (selected-frame)
+                      :height size)
+  (powerline-reset))
