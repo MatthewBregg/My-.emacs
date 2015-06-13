@@ -50,6 +50,7 @@
 
 (when (not (string= system-name "ulti-thinkpad"))
   (require 'auto-resize))
+;;;;Run this to avoid powerline fucking up. Override function in source here.
 ;;(setq auto-resize--ppi-turning-point 20000))
 ;;Turn off auto-resize plugin when on laptop
 
@@ -184,6 +185,7 @@ This command does not push erased text to kill-ring."
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
 (define-key evil-visual-state-map (kbd "esc") 'electric-buffer-list)
 (global-set-key (kbd "<M-backspace>") 'my-backward-delete-word)
+(define-key evil-normal-state-map (kbd "<C-tab>") 'ff-find-other-file)
 ;(global-set-key (kbd "C-S-k") 'my-delete-line-backward) ;; `C-c u'
 ;; Alternative for `M-x'
 (key-chord-define evil-normal-state-map ";'"   'smex)
@@ -603,6 +605,13 @@ This command does not push erased text to kill-ring."
  (require 'powerline)
 (powerline-evil-theme)
 
+;;(powerline-reset)
+(defun auto-resize--set-font-height (size)
+  (set-face-attribute 'default 
+                      (selected-frame)
+                      :height size)
+  (powerline-reset))
+ 
 ;;Magit Stuff
 (require 'magit)
 
