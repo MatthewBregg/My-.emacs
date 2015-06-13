@@ -481,6 +481,7 @@ This command does not push erased text to kill-ring."
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-material-theme")
 (load-theme 'material-light t)
 
+
 ;; Toggles between a dark theme and a light theme.
 (defun toggle-bg ()
   "Toggles from dark to light background (and vice-versa)"
