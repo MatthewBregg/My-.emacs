@@ -1,8 +1,6 @@
 ;Load path
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-;Background
-(set-background-color "white")
 ; Disable the splash screen
 (setq inhibit-splash-screen t)
 ;; Set window title to be full file path
@@ -849,6 +847,7 @@ narrowed."
 
 
 (require 'evil-anzu)
+(global-anzu-mode)
 ;;Power Line
 (add-to-list 'load-path "~/.emacs.d/powerline/")
 (require 'powerline)
