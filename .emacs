@@ -176,7 +176,22 @@ This command does not push erased text to kill-ring."
   (call-interactively 'ggtags-create-tags)
   (call-interactively 'ggtags-update-tags))
 
-                                            
+
+;;Paren-completer stuff
+(require 'paren-completer)
+(key-chord-define evil-normal-state-map (kbd "mP")
+		  '(lambda ()
+		     (interactive)
+		     (paren-completer--process-and-add-all-delimiters)
+		     (forward-char)))
+(key-chord-define evil-normal-state-map (kbd "mp")
+		  '(lambda ()
+		     (interactive)
+		     (paren-completer--process-and-add-single-delimiter)
+		     (forward-char)))
+		     
+
+(global-set-key (kbd "C-x <SPC>") 'ido-switch-buffer)
 (define-key evil-normal-state-map (kbd "gb") 'pop-tag-mark)
 (key-chord-define evil-visual-state-map "gp" 'evilmi-jump-items)
 (define-key evil-visual-state-map (kbd "gl") 'goto-line)
