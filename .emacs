@@ -182,12 +182,12 @@ This command does not push erased text to kill-ring."
 (key-chord-define evil-normal-state-map (kbd "mP")
 		  '(lambda ()
 		     (interactive)
-		     (paren-completer--process-and-add-all-delimiters)
+		     (paren-completer-add-all-delimiters-with-newline)
 		     (forward-char)))
 (key-chord-define evil-normal-state-map (kbd "mp")
 		  '(lambda ()
 		     (interactive)
-		     (paren-completer--process-and-add-single-delimiter)
+		     (paren-completer-add-single-delimiter-with-newline)
 		     (forward-char)))
 		     
 
@@ -868,12 +868,8 @@ narrowed."
 (require 'powerline)
 (powerline-evil-theme)
 
+;;Auto-resize - Handle powerline issue
+(advice-add 'auto-resize--set-font-height-size :after 'powerline-reset)
 
-
-
-;;(powerline-reset)
-(defun auto-resize--set-font-height (size)
-  (set-face-attribute 'default 
-                      (selected-frame)
-                      :height size)
-  (powerline-reset))
+(provide .emacs)
+;;; .emacs ends here
