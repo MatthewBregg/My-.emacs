@@ -6,7 +6,7 @@
 ;;;### (autoloads nil nil ("../../../../../../../../home/ultimanium/.emacs.d/elpa/auto-resize-1.0/auto-resize-autoloads.el"
 ;;;;;;  "../../../../../../../../home/ultimanium/.emacs.d/elpa/auto-resize-1.0/auto-resize-pkg.el"
 ;;;;;;  "../../../../../../../../home/ultimanium/.emacs.d/elpa/auto-resize-1.0/auto-resize.el"
-;;;;;;  "auto-resize-pkg.el") (21918 64392 382604 190000))
+;;;;;;  "auto-resize-pkg.el") (21918 65392 786885 422000))
 
 ;;;***
 

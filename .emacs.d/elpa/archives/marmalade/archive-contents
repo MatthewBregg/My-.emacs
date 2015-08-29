@@ -1,7 +1,4 @@
 (1
- (nssh .
-       [(0 9 9)
-	nil "New SSH mode for Emacs" single])
  (zone-matrix .
 	      [(0 0 1)
 	       nil "Matrix themed Zone mode" tar])
@@ -102,7 +99,7 @@
 		 [(0 0 3)
 		  nil "Look up wxWidgets API by using local html manual." tar])
  (wsd-mode .
-	   [(0 3 0)
+	   [(0 4 0)
 	    nil "Emacs major-mode for www.websequencediagrams.com" tar])
  (ws-trim .
 	  [(1 4)
@@ -137,11 +134,13 @@
    [(1 1)
     nil "Poor-man's namespaces for elisp" single])
  (with-editor .
-   [(2 1 0)
+   [(2 2 1)
     ((emacs
       (24 4))
+     (async
+      (1 4))
      (dash
-      (2 10 0)))
+      (2 11 0)))
     "Use the Emacsclient as $EDITOR" tar])
  (wisp-mode .
 	    [(0 2 1)
@@ -506,7 +505,7 @@
 	    [(2012 4 7)
 	     nil "replace a word with a synonym looked up in a web service." single])
  (theme-looper .
-	       [(0 0 20150613)
+	       [(20150723 1104)
 		((cl-lib
 		  (0 5)))
 		"Loop thru the available color-themes" single])
@@ -919,7 +918,7 @@
 	    [(0 3)
 	     nil "helps you to use shell easily on Emacs. Only one key action to work." single])
  (shell-here .
-	     [(1 1)
+	     [(1 3)
 	      nil "Open a shell relative to the working directory" single])
  (shadchen .
 	   [(1 4)
@@ -1392,7 +1391,7 @@
 	   [(0 0 1)
 	    nil "get stuff from pinboard" single])
  (picpocket .
-	    [(14)
+	    [(16)
 	     nil "Image viewer" single])
  (pickup .
 	 [(0 0 3)
@@ -1583,11 +1582,11 @@
 	     [(0 0 8)
 	      nil "export html and meta data used by static blog like nikola from org file" tar])
  (org2jekyll .
-	     [(0 1 6)
+	     [(0 1 7)
 	      ((dash
-		(2 10 0))
+		(2 11 0))
 	       (dash-functional
-		(1 2 0))
+		(2 11 0))
 	       (s
 		(1 9 0))
 	       (deferred
@@ -1601,15 +1600,17 @@
 	      (1 6 8)))
 	    "Blog from Org mode to wordpress" tar])
  (org-trello .
-	     [(0 7 0)
+	     [(0 7 4)
 	      ((request-deferred
 		(0 2 0))
 	       (deferred
 		   (0 3 2))
 	       (s
 		(1 9 0))
+	       (dash-functional
+		(2 11 0))
 	       (dash
-		(2 8 0))
+		(2 11 0))
 	       (emacs
 		(24)))
 	      "Minor mode to synchronize org-mode buffer and trello board" tar])
@@ -1656,7 +1657,7 @@
 	       (6 1)))
 	     "basic support for magit links" single])
  (org-journal .
-	      [(1 9 5)
+	      [(1 9 6)
 	       nil "a simple org-mode based journaling mode" single])
  (org-gnome .
 	    [(0 1)
@@ -1744,6 +1745,9 @@
  (nssh-n .
 	 [(0 9 8)
 	  nil "SSH mode for Emacs" single])
+ (nssh .
+       [(0 9 9)
+	nil "New SSH mode for Emacs" single])
  (nsis-mode .
 	    [(0 44)
 	     nil "NSIS-mode" single])
@@ -1813,7 +1817,7 @@
 	  [(20071215)
 	   nil "mode for Notation 3" single])
  (myterminal-controls .
-		      [(0 0 20150427)
+		      [(20150427 347)
 		       ((emacs
 			 (24))
 			(cl-lib
@@ -1944,6 +1948,9 @@
  (mic-paren .
 	    [(3 8)
 	     nil "advanced highlighting of matching parentheses" single])
+ (meta-presenter .
+		 [(20150501 410)
+		  nil "A simple multi-file presentation tool for Emacs" single])
  (message-templ .
 		[(0 1 20141026)
 		 nil "Templates for message-mode." single])
@@ -2027,13 +2034,13 @@
 	       [(1 0 0)
 		nil "collection of faces for markup language modes" single])
  (markdown-toc .
-	       [(0 0 7)
+	       [(0 0 8)
 		((markdown-mode
 		  (2 0))
 		 (dash
-		  (2 5 0))
+		  (2 11 0))
 		 (s
-		  (1 7 0)))
+		  (1 9 0)))
 		"A simple TOC generator for markdown file" single])
  (markdown-mode .
 		[(2 0)
@@ -2093,11 +2100,13 @@
 		       (1 0 0)))
 		     "simple keybindings for Magit" single])
  (magit-popup .
-	      [(2 1 0)
+	      [(2 2 1)
 	       ((emacs
 		 (24 4))
+		(async
+		 (1 4))
 		(dash
-		 (2 10 0)))
+		 (2 11 0)))
 	       "Define prefix-infix-suffix command combos" tar])
  (magit-gh-pulls .
 		 [(0 3)
@@ -2112,17 +2121,19 @@
 		     (1 2 0)))
 		   "completing-read over all files in Git" single])
  (magit .
-	[(2 1 0)
+	[(2 2 1)
 	 ((emacs
 	   (24 4))
+	  (async
+	   (1 4))
 	  (dash
-	   (2 10 0))
+	   (2 11 0))
 	  (with-editor
-	      (2 1 0))
+	      (2 2 1))
 	  (git-commit
-	   (2 1 0))
+	   (2 2 1))
 	  (magit-popup
-	   (2 1 0)))
+	   (2 2 1)))
 	 "A Git porcelain inside Emacs" tar])
  (mactag .
 	 [(0 0 1)
@@ -2872,13 +2883,13 @@
 	       (2 9 0)))
 	     "draft git commit messages" single])
  (git-commit .
-	     [(2 1 0)
+	     [(2 2 1)
 	      ((emacs
 		(24 4))
 	       (dash
-		(2 10 0))
+		(2 11 0))
 	       (with-editor
-		   (2 1 0)))
+		   (2 2 1)))
 	      "Edit Git commit messages" single])
  (git-auto-commit-mode .
 		       [(4 4 0)
@@ -3097,6 +3108,9 @@
 	      ((flymake
 		(0 4 13)))
 	      "A flymake handler for go-mode files" single])
+ (flymake-gdc .
+	      [(0 1)
+	       nil "A flymake handler for d-mode files using the GDC compiler" tar])
  (flymake-elixir .
 		 [(0 5)
 		  nil "A flymake handler for elixir-mode .ex files." single])
@@ -3132,6 +3146,13 @@
  (flymake .
 	  [(0 4 16)
 	   nil "a universal on-the-fly syntax checker" single])
+ (flycheck-vala .
+		[(0 1)
+		 ((vala-mode
+		   (20150324 1525))
+		  (flycheck
+		   (20150317 2246)))
+		 "Provides support for use of valac as a Flycheck checker for Vala." tar])
  (flycheck-tcl .
 	       [(0 4)
 		((flycheck
@@ -3169,6 +3190,20 @@
 		     (let-alist
 		      (1 0 1)))
 		    "Flycheck: Cabal projects and sandboxes" tar])
+ (flycheck-gdc-dub .
+		   [(0 1)
+		    ((d-mode
+		      (20150317 117))
+		     (flycheck
+		      (20150317 2246)))
+		    "Provides support for retrieving include paths from dub build descriptions.." tar])
+ (flycheck-gdc .
+	       [(0 3)
+		((d-mode
+		  (20150317 117))
+		 (flycheck
+		  (20150317 2246)))
+		"Provides support for use of GDC as a Flycheck checker for Dlang." tar])
  (flycheck-color-mode-line .
 			   [(0 3)
 			    ((flycheck
@@ -3676,6 +3711,9 @@
 		  (pcache
 		   (0 2 3)))
 		 "Set faces based on available fonts" single])
+ (dxr .
+      [(2 1)
+       nil "Convenient access to a DXR server" single])
  (durendal .
 	   [(0 2)
 	    ((clojure-mode
@@ -3826,13 +3864,13 @@
        [(2 11 0)
 	nil "A modern list library for Emacs" single])
  (dart-mode .
-	    [(0 13)
+	    [(0 14)
 	     ((cl-lib
 	       (0 5))
 	      (dash
 	       (2 10 0))
 	      (flycheck
-	       (0 24)))
+	       (0 23)))
 	     "Major mode for editing Dart files" single])
  (d-mode .
 	 [(2 0 4)
@@ -4228,6 +4266,17 @@
  (center-text .
 	      [(0 8)
 	       nil "Center the text in a fixed-width column" single])
+ (celery .
+	 [(0 0 3)
+	  ((emacs
+	    (24))
+	   (dash-functional
+	    (2 11 0))
+	   (s
+	    (1 9 0))
+	   (deferred
+	       (0 3 2)))
+	  "a minor mode to draw stats from celery and more?" single])
  (cedit .
 	[(0 0 0)
 	 nil "paredit-like commands for c-like languages" single])
@@ -4386,6 +4435,9 @@
 		 ((popup
 		   (0 5)))
 		 "Auto Completion for GNU Emacs" tar])
+ (async .
+	[(1 4)
+	 nil "Asynchronous processing in Emacs" tar])
  (assemblage-theme .
 		   [(20130715 621)
 		    nil "a dark theme for Emacs 24" single])
@@ -4455,11 +4507,17 @@
 		  (1 11 5)))
 		"Space align various Clojure forms" single])
  (alchemist .
-	    [(1 2 0)
-	     ((emacs
+	    [(1 5 0)
+	     ((elixir-mode
+	       (2 2 5))
+	      (dash
+	       (2 11 0))
+	      (emacs
 	       (24 4))
 	      (company
-	       (0 8 0)))
+	       (0 8 0))
+	      (pkg-info
+	       (0 4)))
 	     "Elixir tooling integration into Emacs" tar])
  (ahg .
       [(0 99)

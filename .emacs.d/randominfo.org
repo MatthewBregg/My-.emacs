@@ -42,3 +42,6 @@ ssh -XCY thunder.cise.ufl.edu -l mbregg
 ssh -XCY lin115-01 -l mbregg
 
 matlab
+* Flyspell
+M-$ to check spelling
+i to add to dictionary
