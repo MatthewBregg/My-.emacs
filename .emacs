@@ -47,7 +47,7 @@
 ;;Handle font scale
 
 ;;Turn off auto-resize plugin when on laptop
-(when (not (string= system-name "ulti-thinkpad"))
+(when (not (string= system-name "localhost.localdomain"))
   (require 'auto-resize))
 
 
@@ -558,7 +558,8 @@ This command does not push erased text to kill-ring."
 
 
 ;Make f7 toggle between shells, C-u f7 to make a new shell.
- (global-set-key [f7] 'alt-shell-dwim)
+ ;(global-set-key [f7] 'alt-shell-dwim)
+ (global-set-key [f7] 'eshell)
 
  (defun alt-shell-dwim (arg)
    "Run an inferior shell like `shell'. If an inferior shell as its I/O
