@@ -896,6 +896,9 @@ narrowed."
  '(eclimd-wait-for-process nil)
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(global-flycheck-mode t nil (flycheck))
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/College/College Junior Spring/Stat : STA3032/HW/HW 4/HW4.org")))
  '(org-babel-load-languages
    (quote
     ((java . t)
@@ -937,4 +940,8 @@ narrowed."
 
 (provide '.emacs)
 ;;; .emacs ends here
+
+
+(fset 'org-give-hat
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([105 36 92 104 97 116 123 escape 119 97 125 36 escape] 0 "%d")) arg)))
 
