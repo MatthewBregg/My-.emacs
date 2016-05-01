@@ -190,7 +190,9 @@ This command does not push erased text to kill-ring."
 	     (if (not
 		  (eq (paren-completer-add-single-delimiter-with-newline) 0))
 			 nil
-		       (cond ((derived-mode-p 'sgml-mode) (sgml-close-tag)))
+		       (cond ((derived-mode-p 'sgml-mode) (sgml-close-tag))
+			     ((derived-mode-p 'nxml-mode) (nxml-finish-element)))
+		      
 		       )
 		     (forward-char)))
 		     
@@ -912,6 +914,7 @@ narrowed."
  '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
  '(paren-completer--ignore-stringsp\? nil)
  '(paren-completer-print-message-if-empty nil)
+ '(paren-completer-print-message-if-emptyp\? nil)
  '(quack-programs
    (quote
     ("scheme58" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mzscheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
