@@ -186,8 +186,12 @@ This command does not push erased text to kill-ring."
 		     (forward-char)))
 (key-chord-define evil-normal-state-map (kbd "mp")
 		  '(lambda ()
-		     (interactive)
-		     (paren-completer-add-single-delimiter-with-newline)
+	     (interactive)
+	     (if (not
+		  (eq (paren-completer-add-single-delimiter-with-newline) 0))
+			 nil
+		       (cond ((derived-mode-p 'sgml-mode) (sgml-close-tag)))
+		       )
 		     (forward-char)))
 		     
 
@@ -558,8 +562,8 @@ This command does not push erased text to kill-ring."
 
 
 ;Make f7 toggle between shells, C-u f7 to make a new shell.
- ;(global-set-key [f7] 'alt-shell-dwim)
- (global-set-key [f7] 'eshell)
+ (global-set-key [f7] 'alt-shell-dwim)
+ ;(global-set-key [f7] 'eshell)
 
  (defun alt-shell-dwim (arg)
    "Run an inferior shell like `shell'. If an inferior shell as its I/O
@@ -907,6 +911,7 @@ narrowed."
      (plantuml . t))))
  '(org-plantuml-jar-path "~/.emacs.d/plantuml.jar")
  '(paren-completer--ignore-stringsp\? nil)
+ '(paren-completer-print-message-if-empty nil)
  '(quack-programs
    (quote
     ("scheme58" "bigloo" "csi" "csi -hygienic" "gosh" "gracket" "gsi" "gsi ~~/syntax-case.scm -" "guile" "kawa" "mit-scheme" "mzscheme" "racket" "racket -il typed/racket" "rs" "scheme" "scheme48" "scsh" "sisc" "stklos" "sxi")))
