@@ -188,13 +188,12 @@ This command does not push erased text to kill-ring."
 		  '(lambda ()
 	     (interactive)
 	     (if (not
-		  (eq (paren-completer-add-single-delimiter-with-newline) 0))
-			 nil
-		       (cond ((derived-mode-p 'sgml-mode) (sgml-close-tag))
-			     ((derived-mode-p 'nxml-mode) (nxml-finish-element)))
-		      
-		       )
-		     (forward-char)))
+		  (eq (paren-completer-add-single-delimiter) 0))
+		 (insert-char 10)
+	       (cond ((derived-mode-p 'sgml-mode) (sgml-close-tag) (insert-char 10))
+		     ((derived-mode-p 'nxml-mode) (nxml-finish-element) (insert-char 10)))
+	       )
+	     (forward-char)))
 		     
 
 (global-set-key (kbd "C-x <SPC>") 'ido-switch-buffer)
