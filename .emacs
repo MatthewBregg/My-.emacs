@@ -815,6 +815,12 @@ narrowed."
     (ispell-kill-ispell t)
     ))
 
+
+;; Register keybindings
+(key-chord-define evil-normal-state-map "mr" 'point-to-register) ;;Make the register
+(key-chord-define evil-normal-state-map "gr" 'jump-to-register) ;; Go to the register
+
+
 ;;Eshell fuckery
 
 ;;  (global-set-key [f7] 'eshell-to-buffer)
