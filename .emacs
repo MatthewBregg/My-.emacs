@@ -158,12 +158,18 @@ This command does not push erased text to kill-ring."
 (require 'evil-matchit)
 (global-evil-matchit-mode 1)
 ;;Key Chord bindings
- (setq key-chord-two-keys-delay 0.4)
+ (setq key-chord-two-keys-delay 0.6)
  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
  (key-chord-define evil-normal-state-map "sf" 'imenu)
  (key-chord-define evil-normal-state-map "zz" 'narrow-or-widen-dwim)
 ;;Visual and Normal mode
  (key-chord-define evil-normal-state-map "gp" 'evilmi-jump-items)
+(key-chord-define evil-normal-state-map "ss" 'ace-window)
+(key-chord-define evil-normal-state-map "  " 'ido-switch-buffer)
+
+(key-chord-define evil-motion-state-map "ss" 'ace-window)
+(key-chord-define evil-motion-state-map "  " 'ido-switch-buffer)
+
 (define-key evil-normal-state-map  (kbd "gl") 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
 (define-key evil-normal-state-map (kbd "gd") 'ggtags-find-tag-evil)

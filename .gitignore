@@ -1,0 +1,53 @@
+#ignore the temp files emacs makes
+*~
+*.save
+session.*
+*.saves*
+/semanticdb
+/.emacs.d/ac-comphist.dat
+/.emacs.d/eshell/history
+/.emacs.d/eshell/lastdir
+/.emacs.d/plantuml.jar
+/.emacs.d/eshell/
+/.emads.d/url/*
+/.emacs.d/ac-comphist (Frankenpad-ThinkPad-T601p's conflicted copy 2014-04-09).dat
+/.emacs.d/elpa/oldbrowse-kill-ring-20131116.2113/browse-kill-ring-autoloads.el~
+/.emacs.d/elpa/archives/gnu/archive-contents~
+/.emacs.d/elpa/archives/marmalade/archive-contents~
+/.emacs.d/elpa/archives/melpa/archive-contents~
+/#.gitignore#
+/.emacs.d/ac-comphist (Ulti-Desktop's conflicted copy 2014-06-20).dat
+/.emacs.d/ac-comphist (ulti-desktop's conflicted copy 2014-07-09).dat
+/.emacs.d/ac-comphist (ulti-desktop's conflicted copy 2014-07-12).dat
+/.emacs.d/ac-comphist (ulti-thinkpad's conflicted copy 2014-10-14).dat
+/#.emacs#
+/.emacs.d/tramp
+/.emacs.d/.org-id-locations
+/.emacs.d/ac-comphist (ulti-desktop's conflicted copy 2015-01-06).dat
+/.emacs.d/elpa/gnupg/
+/.emacs.d/elpa/GPATH
+/.emacs.d/elpa/GRTAGS
+/.emacs.d/elpa/GTAGS
+/.emacs.d/elpa/archives/gnu/archive-contents (ulti-thinkpad's conflicted copy 2015-03-11).signed
+/.emacs.d/elpa/archives/melpa/archive-contents (ulti-thinkpad's conflicted copy 2015-03-11)
+/.emacs.d/srecode-map (ulti-thinkpad's conflicted copy 2015-03-11).el
+/GSYMS
+/GTAGS
+/GRTAGS
+/.emacs.d/jabber-avatar-cache
+/.emacs.d/jabber-avatar-cache
+/.emacs.d/semanticdb
+/.emacs.d/semanticdb/!home!ultimanium!coding!semantic.cache
+/emacsFullscreenWork.el
+/.emacs.d/semanticdb/!home!ultimanium!semantic.cache
+/.emacs.d/semanticdb/!usr!include!semantic.cache
+/.#.emacs
+/.emacs.d/general-close/
+/.emacs.d/elpa/paren-completer-1.3.2/
+/.emacs.d/elpa/paren-completer-1.2.1/
+/.emacs.d/ido.last
+/.emacs.d/ido.last*
+/.emacs.d/ido*.last
+/.emacs.d/smex-items
+/.emacs.d/abbrev_defs
+/.emacs.d/smex-items*
