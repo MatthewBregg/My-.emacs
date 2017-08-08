@@ -159,7 +159,10 @@ This command does not push erased text to kill-ring."
 (global-evil-matchit-mode 1)
 ;;Key Chord bindings
  (setq key-chord-two-keys-delay 0.6)
- (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;;;;; Remove jj as a modifier to enter normal state,
+;;;;; as I am now using capslock -> esc instead.
+;;;;; The jj mapping is annoying.
  (key-chord-define evil-normal-state-map "sf" 'imenu)
  (key-chord-define evil-normal-state-map "zz" 'narrow-or-widen-dwim)
 ;;Visual and Normal mode
@@ -169,6 +172,17 @@ This command does not push erased text to kill-ring."
 
 (key-chord-define evil-motion-state-map "ss" 'ace-window)
 (key-chord-define evil-motion-state-map "  " 'ido-switch-buffer)
+
+;; Enable modifying the width of a window in all three evil states.
+(define-key evil-emacs-state-map (kbd "C->") 'evil-window-increase-width)
+(define-key evil-emacs-state-map (kbd "C-<") 'evil-window-decrease-width)
+(define-key evil-normal-state-map (kbd "C->") 'evil-window-increase-width)
+(define-key evil-normal-state-map (kbd "C-<") 'evil-window-decrease-width)
+(define-key evil-insert-state-map (kbd "C->") 'evil-window-increase-width)
+(define-key evil-insert-state-map (kbd "C-<") 'evil-window-decrease-width)
+(define-key evil-visual-state-map (kbd "C->") 'evil-window-increase-width)
+(define-key evil-visual-state-map (kbd "C-<") 'evil-window-decrease-width)
+
 
 (define-key evil-normal-state-map  (kbd "gl") 'goto-line)
 (define-key evil-normal-state-map (kbd "esc") 'electric-buffer-list)
@@ -292,7 +306,15 @@ This command does not push erased text to kill-ring."
 
 ;Flyspell and linewrap
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
+(add-hook 'org-mode-hook (lambda () (flyspell-mode 1)))
+
+;; this is how I did spell checking in programming buffers.
+;; OVerall I am deciding against it, for now. Might turn it back on later, but need a way to eliminate more falsepostiives.
+;; Maybe only run on words > 8, so stuff like i, iter, and such don't get caught? chars?
+;; Also find a way to get it to only run on variable definations!!
+;; So perhaps startb y only running in C++ mode, and go from there....
+;; Good project to come back to one day!
+;;(add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
 
 (add-hook 'tex-mode-hook 'turn-on-visual-line-mode)
 (add-hook 'tex-mode-hook (lambda () (flyspell-mode 1)))
@@ -645,6 +667,13 @@ This command does not push erased text to kill-ring."
 (add-hook 'c-mode-common-hook   'hs-minor-mode)
 (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
 (add-hook 'java-mode-hook       'hs-minor-mode)
+;; Make java handle annotations correctly
+(add-hook 'java-mode-hook
+              (lambda ()
+                "Treat Java 1.5 @-style annotations as comments."
+                (setq c-comment-start-regexp "(@|/(/|[*][*]?))")
+                (modify-syntax-entry ?@ "< b" java-mode-syntax-table)))
+
 (add-hook 'lisp-mode-hook       'hs-minor-mode)
 (add-hook 'perl-mode-hook       'hs-minor-mode)
 (add-hook 'sh-mode-hook         'hs-minor-mode)
@@ -771,6 +800,7 @@ narrowed."
 ;; 1. aspell is older
 ;; 2. looks Kevin Atkinson still get some road map for aspell:
 ;; @see http://lists.gnu.org/archive/html/aspell-announce/2011-09/msg00000.html
+
 (defun flyspell-detect-ispell-args (&optional RUN-TOGETHER)
   "if RUN-TOGETHER is true, spell check the CamelCase words"
   (let (args)
@@ -957,10 +987,102 @@ narrowed."
 ;;Auto-resize - Handle powerline issue
 (advice-add 'auto-resize--set-font-height-size :after 'powerline-reset)
 
+
+;; It's time, to make emacs my window manager!
+;;; Begin EXWM config
+(require 'exwm)
+(require 'exwm-config)
+(exwm-config-default)
+(exwm-input-set-key (kbd "s-q")
+                    (call-interactively #'exwm-input-grab-keyboard))
+
+(exwm-input-set-simulation-keys
+ '(([?\C-s] . ?\C-f)))
+(add-hook 'exwm-manage-finish-hook
+          (lambda ()
+            (when (and exwm-class-name
+                       (string= exwm-class-name "Gnome-terminal"))
+              (exwm-input-set-local-simulation-keys '(([?\C-c ?\C-c] . ?\C-c))))))
+(add-hook 'exwm-manage-finish-hook
+          (lambda ()
+            (when (and exwm-class-name
+                       (string= exwm-class-name "Firefox"))
+              (exwm-input-set-local-simulation-keys '(([?\C-w] . ?\C-w) ([?\C-s] . ?\C-f) ([?\C-r] . ?\C-g) ([?\C-h] . ?\C-h))))))
+
+;;https://www.reddit.com/r/unixporn/comments/3lp961/exwm_so_emacs_is_now_my_window_manager/
+(display-time-mode 1)
+;;https://www.reddit.com/r/emacs/comments/5zb7yo/package_of_the_day_exwmx_another_window_manager/
+;;https://emacs.stackexchange.com/questions/33326/how-do-i-cut-and-paste-effectively-between-applications-while-using-exwm
+
+(defun fhd/exwm-input-line-mode ()
+  "Set exwm window to line-mode and show mode line"
+  (call-interactively #'exwm-input-grab-keyboard))
+
+(defun fhd/exwm-input-char-mode ()
+  "Set exwm window to char-mode and hide mode line"
+  (call-interactively #'exwm-input-release-keyboard))
+
+(defun fhd/exwm-input-toggle-mode ()
+  "Toggle between line- and char-mode"
+  (interactive)
+  (with-current-buffer (window-buffer)
+    (when (eq major-mode 'exwm-mode)
+      (if (equal (second (second mode-line-process)) "line")
+          (fhd/exwm-input-char-mode)
+        (fhd/exwm-input-line-mode)))))
+(exwm-input-set-key (kbd "s-i") #'fhd/exwm-input-toggle-mode)
+
+;; It makes sense to display the battery indicator in the side bar when using this.
+(display-battery-mode 1)
+
+;; EXWM windows start in emacs normal mode
+;; Enable redeffing this to change hook behavior without fucking evil.
+(defun evil-emacs-mode ()
+  (evil-emacs-state)
+  )
+(add-hook 'exwm-mode-hook 'evil-emacs-mode)
+
+(add-hook 'exwm-workspace-switch-hook 'auto-resize--resize-frame)
+
+(defun start-gnome-screensaver ()
+  (start-process-shell-command "gnome-screensaver" nil "gnome-screensaver"))
+(add-hook 'exwm-init-hook 'start-gnome-screensaver)
+
+(defun lock-computer()
+  (interactive)
+  (shell-command "gnome-screensaver-command -l")
+  )
+(defun suspend-computer()
+  (interactive)
+  (shell-command "systemctl suspend")
+  )
+
+;; Give the normal screen locking command.
+(global-set-key "\C-\M-l" 'suspend-computer)
+
+(defun set-screen-brightness(brightness)
+  ;; Set the screen brightness, enter a number 0.0-100.0
+  ;; Careful setting below .2, will blank screen.
+  (interactive "nEnter the number of the desired screen brightness (0-100): ")
+  (shell-command
+   (concat
+    "/usr/sbin/set-brightness "
+    (number-to-string (round (* (/ 850.0 100.0) brightness))))
+   "*Messages*")
+  )
+;; Set brightness is a bash script
+;; tee /sys/class/backlight/intel_backlight/brightness <<< $1
+;; Need to give self write permission to brightness!
+;; Should be harmless to let anyone change this!
+
+;; End exwm config. If un exwming, remove this all as one chunk!
+
+
 (provide '.emacs)
 ;;; .emacs ends here
 
 
 (fset 'org-give-hat
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([105 36 92 104 97 116 123 escape 119 97 125 36 escape] 0 "%d")) arg)))
+
 
